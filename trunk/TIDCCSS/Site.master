@@ -47,12 +47,26 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">TIAC14</a>
+                    <a class="navbar-brand" runat="server" href="~/">CCSS</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/UI/TarjetaIndice">Tarjeta Índice</a></li>
-                        <li><a runat="server" href="~/UI/Expediente">Expediente</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Expedientes<b class="caret"></b></a>
+                             <ul class="dropdown-menu">
+                                     <li class="divider"></li>
+                                     <li><a runat="server" href="~/UI/Expediente">Expediente</a></li>
+                                     <li><a runat="server" href="#">Buscar Expedientes</a></li>
+                                     <li class="divider"></li>
+                                     <li><a runat="server" href="~/UI/ExpedienteEntrada">Registro de Entradas</a></li>
+                                     <li><a runat="server" href="~/UI/ExpedienteSalida">Registro de Salidas</a></li>
+                                     <li class="divider"></li>
+                                     <li><a runat="server" href="#">Registrar Médico</a></li>
+                                     <li><a runat="server" href="#">Registrar Ubicación</a></li>
+
+                             </ul>
+                      </li>
                         <li><a runat="server" href="~/Información">Información</a></li>
                         <li><a runat="server" href="~/Reportes">Reportes</a></li>
                         <li><a runat="server" href="~/UI/HojasUrgencia">Hojas de Urgencia</a></li>
@@ -81,7 +95,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now %> - Mi aplicación ASP.NET</p>
+                <p>&copy; TIAC14 - Sistema de Información para la Automatización de la Tarjeta índice</p>
             </footer>
         </div>
     </form>
