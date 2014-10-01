@@ -38,44 +38,20 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-     <%--   <div class= "navbar navbar-inverse">
-
-        <div class="header-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-1 col-sm-2 col-xs-4">
-                        <div class="logo">
-                            <a title="Caja Costarricense de Seguro Social">
-                                <img alt="Caja Costarricense de Seguro Social" src="img/logo.png" class="logo-img">
-                            </a>
-                        </div>
-                        <!-- //logo -->
-                    </div>
-                    <!-- //col-md-3 -->
-                    <div class="col-md-6 col-sm-6 col-xs-8">
-                        <h3 style="float: left; color: #0065a4; margin-top: 15px;" title="Caja Costarricense de Seguro Social" alt="Caja Costarricense de Seguro Social">Caja Costarricense de Seguro Social</h3>
-                    </div>
-                </div>
-                <!-- //row -->
-            </div>
-            <!-- //container -->
-        </div>
-        </div>--%>
-        <div class="navbar navbar-inverse navbar-fixed-top">
+     
+         <<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <div class="col-md-1 col-sm-2 col-xs-4">
-                        <div class="logo">
-                            <a title="Caja Costarricense de Seguro Social">
-                                <img alt="Caja Costarricense de Seguro Social" src="img/logo.png" class="logo-img">
-                            </a>
-                        </div>
-                        <!-- //logo -->
-                    </div>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">TIAC14</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Tarjeta Índice</a></li>
+                        <li><a runat="server" href="~/UI/TarjetaIndice">Tarjeta Índice</a></li>
                         <li><a runat="server" href="~/UI/Expediente">Expediente</a></li>
                         <li><a runat="server" href="~/Información">Información</a></li>
                         <li><a runat="server" href="~/Reportes">Reportes</a></li>
