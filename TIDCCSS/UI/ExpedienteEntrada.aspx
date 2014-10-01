@@ -1,13 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Expediente.aspx.cs" Inherits="UI_Expediente" %>
+﻿<%@ Page Title="Expediente" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="ExpedienteEntrada.aspx.cs" Inherits="UI_Expediente" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <p class="text-danger"></p>
         <asp:Literal runat="server" ID="ErrorMessage" />
     
     <link href="../Content/bootstrap.css" rel="stylesheet" />
    
         <div class="form-horizontal">
-            <h4>Registro de la Ubicación del Expediente</h4>
+            <h4>Registro de Entrada del Expediente</h4>
             <hr/>
             <asp:ValidationSummary runat="server" CssClass="text-danger" />
             <div class="row">
@@ -19,21 +19,15 @@
                </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Bloque</asp:Label>
+                <asp:Label runat="server" CssClass="col-md-2 control-label">Código Area</asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" placeholder="Bloque del Expediente"/>
+                    <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" placeholder="Codigo del área"/>
                </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Cubiculo</asp:Label>
+                <asp:Label runat="server" CssClass="col-md-2 control-label">Código Doctor</asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox2" CssClass="form-control" placeholder="Cubiculo del Expediente" />
-               </div>
-            </div>
-            <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Estado</asp:Label>
-                <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox5" CssClass="form-control" placeholder="Estado del Expediente" />
+                    <asp:TextBox runat="server" ID="TextBox2" CssClass="form-control" placeholder="Codigo de Doctor" />
                </div>
             </div>
         </div>
@@ -46,9 +40,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Creación</asp:Label>
+                <asp:Label runat="server" CssClass="col-md-2 control-label">Fecha</asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox4" CssClass="form-control" placeholder="Fecha de la Creación"/>
+                    <asp:TextBox runat="server" ID="TextBox4" CssClass="form-control" placeholder="Fecha de Entrada"/>
                </div>
             </div>
              <div class="form-group">
@@ -79,4 +73,3 @@
         </div>
     </div>
 </asp:Content>
-
