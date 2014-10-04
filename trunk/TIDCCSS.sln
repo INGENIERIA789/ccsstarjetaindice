@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TIDCCSS", "http://localhost:51502", "{C02D29CF-9ACD-4132-A39E-43D1524B0838}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TIDCCSS(1)", "http://localhost:64109", "{01772BE6-995D-4371-A113-EC13B30D3EEC}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_51502"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\TIDCCSS\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51502\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64109"
+		Debug.AspNetCompiler.PhysicalPath = "TIDCCSS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64109\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_51502"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\TIDCCSS\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51502\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64109"
+		Release.AspNetCompiler.PhysicalPath = "TIDCCSS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64109\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\..\..\..\inetpub\wwwroot\TIDCCSS\"
+		SlnRelativePath = "TIDCCSS\"
 	EndProjectSection
 EndProject
 Global
@@ -29,8 +29,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C02D29CF-9ACD-4132-A39E-43D1524B0838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C02D29CF-9ACD-4132-A39E-43D1524B0838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01772BE6-995D-4371-A113-EC13B30D3EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01772BE6-995D-4371-A113-EC13B30D3EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
