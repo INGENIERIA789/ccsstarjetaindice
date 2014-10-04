@@ -51,7 +51,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/UI/TarjetaIndice">Tarjeta Índice</a></li>
+                        <li><a runat="server" href="~/UI/Paciente/TIDPACIENTE">Tarjeta Índice</a></li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Expedientes<b class="caret"></b></a>
                              <ul class="dropdown-menu">
