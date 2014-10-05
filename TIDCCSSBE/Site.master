@@ -61,7 +61,6 @@
 
                              </ul>
                       </li>
-                        <li><a runat="server" href="~/Información">Información</a></li>
                         <li><a runat="server" href="~/Reportes">Reportes</a></li>
                         <li><a runat="server" href="~/UI/HojasUrgencia">Hojas de Urgencia</a></li>
                     </ul>
