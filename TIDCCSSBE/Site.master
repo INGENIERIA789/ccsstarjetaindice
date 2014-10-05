@@ -89,6 +89,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
+
                 <p>&copy; TIAC14 - Sistema de Información para la Automatización de la Tarjeta índice</p>
             </footer>
         </div>
