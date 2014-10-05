@@ -8,11 +8,11 @@
 <div class="stepwizard">
     <div class="stepwizard-row setup-panel">
         <div class="stepwizard-step">
-            <a href="#step-1" type="button" class="btn btn-primary btn-circle"disabled="disabled">1</a>
+            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
             <p>Datos del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+            <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
             <p>Detalles del Paciente</p>
         </div>
         <div class="stepwizard-step">
@@ -28,7 +28,7 @@
                     <h3>Datos del Paciente</h3>
                     <!-- Aqui va todos los datos del paciente los basicos--->
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Cedula</label>
                                 <input runat="server" maxlength="100" id="txtcedulaPaciente" type="text" required="required" class="form-control" placeholder="0-0000-0000" />
@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Estado Civil</label>
                                 <input runat="server" id="txtEstCilPaciente" type="text" required="required" class="form-control" placeholder="Estado Civil" />
@@ -61,23 +61,34 @@
                                 <input runat="server" type="date" class="form-control" id="txtFechaNaci" name="date">
                             </div>
                             <div class="form-group">
+                                <label for="date" class="control-label">Observación</label>    
+                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                            </div>
+                            <div class="form-group">
                                 <label class="control-label">Estado de la Tarjeta Indice</label>
                                 <div class="input-group">
                                     <select class="form-control" name="validate-select" id="txttidestado" required>
-                                        <option value="">Estado</option>
+                                        <option value="">--Seleccione--</option>
                                         <option value="item_1">Activa</option>
                                         <option value="item_2">Pasiva</option>
                                     </select>
                                  </div>
                             </div>
-                            <div class="form-group">
-                                <label for="date" class="control-label">Observación</label>    
-                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 less-pad-left">
+                            <div class="contact-input-form box-wrapper">
+                                <div class="single-sidebar">
+                                    <h2 class="sidebar-title"><span>Ventajas de este registro</span></h2>
+                                    <div class="alert alert-warning" role="alert">
+                                        <p>Toda la información contenida en este portal es de libre navegación. Sin embargo, el registro permite a un usuario marcar como "favoritos" aquellos módulos que más le interesan con el fin de hacer más efeciente y eficaz su visita.</p>
+                                        <p>Asimismo, podrá suscribirse - si lo desea - a nuestros boletines informativos tales como últimas noticias, alertas epidemiológicas, campañas de salud o avisos de interés.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
 
-                    <!--  Aqui terminan los datos del paciente-->
+                    <!--  Aqui terminan los datos del pacient disabled="disabled" e-->
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                 </div>
             </div>
@@ -146,10 +157,14 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="date" class="control-label">Observación</label>    
+                                <asp:TextBox runat="server" ID="txtObserExpe" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                            </div>
+                            <div class="form-group">
                                 <label class="control-label">Estado del Expediente</label>
                                 <div class="input-group">
                                     <select class="form-control" name="validate-select" id="txtValida" required>
-                                        <option value="">Estado</option>
+                                        <option value="">--Seleccione--</option>
                                         <option value="item_1">Archivado</option>
                                         <option value="item_2">Fuera</option>
                                     </select>
@@ -157,9 +172,19 @@
                             </div>                           
                         </div>
                     </div>
-                    
-                    <button class="btn btn-success btn-lg pull-center" type="submit">Imprimir</button>
-                    <button class="btn btn-success btn-lg pull-right" type="submit">Guardar</button>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-3">
+                    <button class="btn btn-success btn-lg pull-right" type="submit">Imprimir</button>
+
+                        </div>
+                        <div class="col-md-3">
+                    <button class="btn btn-success btn-lg pull-left" type="submit">Guardar</button>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

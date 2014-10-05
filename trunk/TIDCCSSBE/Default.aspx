@@ -5,7 +5,7 @@
     <script src="Scripts/Contenido-TID/Default.js"></script>
    <div class="container">
 	<div class="row">
-		<h2>Sistema de Información para la Automatización de la Tarjeta índice.</h2>
+		<h2></h2>
 	</div>
     
     <div class="row">
