@@ -12,7 +12,7 @@
             <p>Datos del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+            <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
             <p>Detalles del Paciente</p>
         </div>
         <div class="stepwizard-step">
@@ -45,13 +45,13 @@
                                 <label class="control-label">Segundo Apellido</label>
                                 <input runat="server" id="txtApellido2" type="text" required="required" class="form-control" placeholder="Apellido" />
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Genero</label>
                                 <input runat="server" id="txtGenero" type="text" required="required" class="form-control" placeholder="Genero" />
                             </div>
+                        </div>
+
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Estado Civil</label>
                                 <input runat="server" id="txtEstadoCivil" type="text" required="required" class="form-control" placeholder="Estado Civil" />
@@ -59,6 +59,10 @@
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
                                 <input runat="server" type="date" class="form-control" id="date" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="date" class="control-label">Observación</label>    
+                                <asp:TextBox runat="server" ID="TextBox2" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
                             </div>
                         </div>
                     </div>
@@ -72,14 +76,39 @@
             <div class="col-xs-12">
                 <div class="col-md-12">
                     <h3>Detalles del Paciente</h3>
-                    <div class="form-group">
-                        <label class="control-label">Company Name</label>
-                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
+                    <!-- Detalles del paciente -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Nombre del Padre</label>
+                                <input runat="server" maxlength="100" id="Text1" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Nombre de la Madre</label>
+                                <input runat="server" id="Text5" type="text" required="required" class="form-control" placeholder="Genero" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Numero Patronal </label>
+                                <input runat="server" id="Text3" type="text" required="required" class="form-control" placeholder="00000" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Nombre del Patrono</label>
+                                <input runat="server" id="Text4" type="text" required="required" class="form-control" placeholder="0000" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Domicio</label>
+                                 <asp:TextBox runat="server" ID="TextBox3"  CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Observación</label>  
+                                <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                            </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label">Company Address</label>
-                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
-                    </div>
+           </div>
+                    <!-- Termina los detalles del paciente -->
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                 </div>
             </div>
@@ -88,6 +117,27 @@
             <div class="col-xs-12">
                 <div class="col-md-12">
                     <h3>Expediente del Paciente</h3>
+                    <div class="row">
+                        <!-- Expediente Clinico -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Bloque</label>
+                                <input runat="server" maxlength="100" id="Text2" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label">Cubiculo de loque</label>
+                                <input runat="server" maxlength="100" id="Text6" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Domicio</label>
+                                <asp:TextBox runat="server" ID="TextBox4" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Dirección Exacta" />
+                            </div>
+                        </div>
+                    </div>
                     <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
                 </div>
             </div>
