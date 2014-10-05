@@ -8,15 +8,15 @@
 <div class="stepwizard">
     <div class="stepwizard-row setup-panel">
         <div class="stepwizard-step">
-            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+            <a href="#step-1" type="button" class="btn btn-primary btn-circle"disabled="disabled">1</a>
             <p>Datos del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
+            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
             <p>Detalles del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+            <a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
             <p>Expediente del Paciente</p>
         </div>
     </div>
@@ -31,38 +31,48 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Cedula</label>
-                                <input runat="server" maxlength="100" id="txtcedula" type="text" required="required" class="form-control" placeholder="0-0000-0000" />
+                                <input runat="server" maxlength="100" id="txtcedulaPaciente" type="text" required="required" class="form-control" placeholder="0-0000-0000" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
-                                <input runat="server" id="txtNombre" type="text" required="required" class="form-control" placeholder="Nombre" />
+                                <input runat="server" id="txtNombrePacinete" type="text" required="required" class="form-control" placeholder="Nombre" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Primer Apellido</label>
-                                <input runat="server" id="txtApellido1" type="text" required="required" class="form-control" placeholder="Apellido" />
+                                <input runat="server" id="txtApellido1Paciente" type="text" required="required" class="form-control" placeholder="Apellido" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Segundo Apellido</label>
-                                <input runat="server" id="txtApellido2" type="text" required="required" class="form-control" placeholder="Apellido" />
+                                <input runat="server" id="txtApellido2Paciente" type="text" required="required" class="form-control" placeholder="Apellido" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Genero</label>
-                                <input runat="server" id="txtGenero" type="text" required="required" class="form-control" placeholder="Genero" />
+                                <input runat="server" id="txtGenPaciente" type="text" required="required" class="form-control" placeholder="Genero" />
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Estado Civil</label>
-                                <input runat="server" id="txtEstadoCivil" type="text" required="required" class="form-control" placeholder="Estado Civil" />
+                                <input runat="server" id="txtEstCilPaciente" type="text" required="required" class="form-control" placeholder="Estado Civil" />
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
-                                <input runat="server" type="date" class="form-control" id="date" name="date">
+                                <input runat="server" type="date" class="form-control" id="txtFechaNaci" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Estado de la Tarjeta Indice</label>
+                                <div class="input-group">
+                                    <select class="form-control" name="validate-select" id="txttidestado" required>
+                                        <option value="">Estado</option>
+                                        <option value="item_1">Activa</option>
+                                        <option value="item_2">Pasiva</option>
+                                    </select>
+                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Observación</label>    
-                                <asp:TextBox runat="server" ID="TextBox2" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
                             </div>
                         </div>
                     </div>
@@ -81,30 +91,30 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Nombre del Padre</label>
-                                <input runat="server" maxlength="100" id="Text1" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
+                                <input runat="server" maxlength="100" id="txtNomPadre" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre de la Madre</label>
-                                <input runat="server" id="Text5" type="text" required="required" class="form-control" placeholder="Genero" />
+                                <input runat="server" id="txtNombreMadre" type="text" required="required" class="form-control" placeholder="Genero" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Numero Patronal </label>
-                                <input runat="server" id="Text3" type="text" required="required" class="form-control" placeholder="00000" />
+                                <input runat="server" id="txtNumPatrono" type="text" required="required" class="form-control" placeholder="00000" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre del Patrono</label>
-                                <input runat="server" id="Text4" type="text" required="required" class="form-control" placeholder="0000" />
+                                <input runat="server" id="txtxNombrePatrono" type="text" required="required" class="form-control" placeholder="0000" />
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Domicio</label>
-                                 <asp:TextBox runat="server" ID="TextBox3"  CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
+                                <label class="control-label">Domicilio</label>
+                                 <asp:TextBox runat="server" ID="txtDomicilio"  CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Observación</label>  
-                                <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                                <asp:TextBox runat="server" ID="txtObserVacion" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
                             </div>
                     </div>
            </div>
@@ -122,23 +132,34 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Bloque</label>
-                                <input runat="server" maxlength="100" id="Text2" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
+                                <input runat="server" maxlength="100" id="txtBloqueExpediente" type="text" required="required" class="form-control" placeholder="ABCD" />
                             </div>
                              <div class="form-group">
-                                <label class="control-label">Cubiculo de loque</label>
-                                <input runat="server" maxlength="100" id="Text6" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
+                                <label class="control-label">Cubiculo de Bloque</label>
+                                <input runat="server" maxlength="100" id="txtNumBlo" type="text" required="required" class="form-control" placeholder="00" />
                             </div>
-
+                             <div class="form-group">
+                                <label class="control-label">Fecha de la Creación</label>
+                                <input runat="server" maxlength="100" id="txtFechaCreaciónExpediente" type="text" required="required" class="form-control" placeholder="00/00/0000" />
+                            </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Domicio</label>
-                                <asp:TextBox runat="server" ID="TextBox4" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Dirección Exacta" />
-                            </div>
+                                <label class="control-label">Estado del Expediente</label>
+                                <div class="input-group">
+                                    <select class="form-control" name="validate-select" id="txtValida" required>
+                                        <option value="">Estado</option>
+                                        <option value="item_1">Archivado</option>
+                                        <option value="item_2">Fuera</option>
+                                    </select>
+                                 </div>
+                            </div>                           
                         </div>
                     </div>
-                    <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                    
+                    <button class="btn btn-success btn-lg pull-center" type="submit">Imprimir</button>
+                    <button class="btn btn-success btn-lg pull-right" type="submit">Guardar</button>
                 </div>
             </div>
         </div>
