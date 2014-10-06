@@ -5,6 +5,9 @@
     <script src="Scripts/Contenido-TID/Default.js"></script>
    <div class="container">
 	<div class="row">
+        <br />
+        <br />
+        <br />
 		<h2></h2>
 	</div>
     
@@ -21,21 +24,21 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				<div class="item active">
-                    <img src="http://placehold.it/1200x400" />
+                    <img src="img/tres.jpg" />
                     <div class="carousel-caption">
-                        <h1 class="carousel-caption-header">Slide 1</h1>
+                        <h1 class="carousel-caption-header">Hospital la Anexión</h1>
                         <p class="carousel-caption-text hidden-sm hidden-xs">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                           El Hospital la Anexión se encuentra en la entrada principal de Nicoya.
                         </p>
                     </div>
                 </div>
                 
                 <div class="item">
-                    <img src="http://placehold.it/1200x400/AAAAAA/888888" />
+                    <img src="img/img-sliderhome-bg-ph.jpg" />
                     <div class="carousel-caption">
-                        <h1 class="carousel-caption-header">Slide 2</h1>
+                        <h1 class="carousel-caption-header">Área de Archivos Clinicos</h1>
                         <p class="carousel-caption-text hidden-sm hidden-xs">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                           Se encarga de gestionar todos los archivos clinicos.
                         </p>
                     </div>
                 </div>
