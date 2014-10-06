@@ -43,14 +43,22 @@
                 <div class="navbar-header">    
                     <a class="navbar-brand" runat="server" href="~/">CCSS</a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" >
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/UI/Paciente/TIDPACIENTE">Tarjeta Índice</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Tarjeta Indice<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="divider"></li>
+                                <li><a runat="server" href="#">Buscar</a></li>
+                                <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/Paciente/TIDPACIENTE">Registrar</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>                      
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Expedientes<b class="caret"></b></a>
                              <ul class="dropdown-menu">
                                      <li class="divider"></li>
-                                     <li><a runat="server" href="~/UI/Expediente">Expediente</a></li>
                                      <li><a runat="server" href="#">Buscar Expedientes</a></li>
                                      <li class="divider"></li>
                                      <li><a runat="server" href="~/UI/ExpedienteEntrada">Registro de Entradas</a></li>

@@ -7,6 +7,9 @@
     <link href="../Content/bootstrap.css" rel="stylesheet" />
    
         <div class="form-horizontal">
+            <br />
+            <br />
+            <br />
             <h4>Registro Salida del Expediente</h4>
             <hr/>
             <asp:ValidationSummary runat="server" CssClass="text-danger" />

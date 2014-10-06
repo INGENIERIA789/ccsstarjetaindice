@@ -12,11 +12,11 @@
             <p>Datos del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
+            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
             <p>Detalles del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
+            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
             <p>Expediente del Paciente</p>
         </div>
     </div>
@@ -58,11 +58,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
-                                <input runat="server" type="date" class="form-control" id="txtFechaNaci" name="date">
+                                <input runat="server" type="date" class="form-control" id="txtFechaNaci" name="date" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Observación</label>    
-                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3" required="required" TextMode="MultiLine" placeholder="Observaciones" />  
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Estado de la Tarjeta Indice</label>
@@ -78,17 +78,17 @@
                         <div class="col-md-3 col-sm-4 col-xs-12 less-pad-left">
                             <div class="contact-input-form box-wrapper">
                                 <div class="single-sidebar">
-                                    <h2 class="sidebar-title"><span>Ventajas de este registro</span></h2>
+                                    <h4 class="sidebar-title"><span>Ventajas de la TID</span></h4>
                                     <div class="alert alert-warning" role="alert">
-                                        <p>Toda la información contenida en este portal es de libre navegación. Sin embargo, el registro permite a un usuario marcar como "favoritos" aquellos módulos que más le interesan con el fin de hacer más efeciente y eficaz su visita.</p>
-                                        <p>Asimismo, podrá suscribirse - si lo desea - a nuestros boletines informativos tales como últimas noticias, alertas epidemiológicas, campañas de salud o avisos de interés.</p>
+                                        <p>La tarjeta índice represanta la existencia de un expediente medigo.</p>
+                                        <p>Asimismo, podrá registrar y buscar la tarjeta índice de cada paciente para saber la información de este.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div> 
 
-                    <!--  Aqui terminan los datos del pacient disabled="disabled" e-->
+                    <!--  Aqui terminan los datos del pacient  e-->
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                 </div>
             </div>
@@ -121,11 +121,11 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Domicilio</label>
-                                 <asp:TextBox runat="server" ID="txtDomicilio"  CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
+                                 <asp:TextBox runat="server" ID="txtDomicilio"  required="required" CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Observación</label>  
-                                <asp:TextBox runat="server" ID="txtObserVacion" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                                <asp:TextBox runat="server" ID="txtObserVacion" required="required" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
                             </div>
                     </div>
            </div>
