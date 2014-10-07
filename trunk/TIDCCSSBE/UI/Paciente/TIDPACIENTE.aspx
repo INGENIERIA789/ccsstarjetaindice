@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="TIDPACIENTE.aspx.cs" Inherits="UI_Paciente_TIDPACIENTE" %>
+﻿<%@ Page Title="" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="TIDPACIENTE.aspx.cs" Inherits="UI_Paciente_TIDPACIENTE" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <link href="../../Scripts/Contenido-TID/CSSTID.css" rel="stylesheet" />
     <script src="../../Scripts/Contenido-TID/JSTID.js"></script>
+  
     <h4>Tarjeta Indice del Paciente.</h4>
     <div class="container"></div>
 <div class="stepwizard">
@@ -12,11 +13,11 @@
             <p>Datos del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+            <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
             <p>Detalles del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+            <a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
             <p>Expediente del Paciente</p>
         </div>
     </div>
@@ -31,34 +32,35 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Cedula</label>
-                                <input runat="server" maxlength="100" id="txtcedulaPaciente" type="text" required="required" class="form-control" placeholder="0-0000-0000" />
+                                <asp:TextBox ID="txtCedulaPaciente" runat="server" class="form-control" required="required"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
-                                <input runat="server" id="txtNombrePacinete" type="text" required="required" class="form-control" placeholder="Nombre" />
-                            </div>
+                                <asp:TextBox ID="txtNombrePaciente" runat="server" class="form-control" required="required"></asp:TextBox>
+
+                            &nbsp;</div>
                             <div class="form-group">
                                 <label class="control-label">Primer Apellido</label>
-                                <input runat="server" id="txtApellido1Paciente" type="text" required="required" class="form-control" placeholder="Apellido" />
-                            </div>
+                                <asp:TextBox ID="txtApellido1Paciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                </div>
                             <div class="form-group">
                                 <label class="control-label">Segundo Apellido</label>
-                                <input runat="server" id="txtApellido2Paciente" type="text" required="required" class="form-control" placeholder="Apellido" />
+                            <asp:TextBox ID="txtApellido2Paciente" runat="server" class="form-control" required="required"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Genero</label>
-                                <input runat="server" id="txtGenPaciente" type="text" required="required" class="form-control" placeholder="Genero" />
-                            </div>
+                                <asp:TextBox ID="txtGenPaciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Estado Civil</label>
-                                <input runat="server" id="txtEstCilPaciente" type="text" required="required" class="form-control" placeholder="Estado Civil" />
+                                <asp:TextBox ID="txtEstCilPaciente" runat="server" class="form-control" required="required"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
-                                <input runat="server" type="date" class="form-control" id="txtFechaNaci" name="date" required="required">
+                                <asp:TextBox ID="txtFechaNaci" runat="server" class="form-control" required="required"></asp:TextBox>                                
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Observación</label>    
@@ -66,13 +68,14 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Estado de la Tarjeta Indice</label>
-                                <div class="input-group">
-                                    <select class="form-control" name="validate-select" id="txttidestado" required>
+                                <asp:TextBox ID="txtEstadoTID" runat="server" class="form-control" required="required"></asp:TextBox> 
+                            <!--    <div class="input-group">
+                                    <select class="form-control" name="validate-select" ID="txttidestado" required>
                                         <option value="">--Seleccione--</option>
                                         <option value="item_1">Activa</option>
                                         <option value="item_2">Pasiva</option>
                                     </select>
-                                 </div>
+                                 </div>-->
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-12 less-pad-left">
@@ -88,7 +91,7 @@
                         </div>
                     </div> 
 
-                    <!--  Aqui terminan los datos del pacient  e-->
+                    <!--  Aqui terminan los datos del pacient e-->
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                 </div>
             </div>
@@ -102,30 +105,30 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Nombre del Padre</label>
-                                <input runat="server" maxlength="100" id="txtNomPadre" type="text" required="required" class="form-control" placeholder="Nombre del Padre" />
+                                <asp:TextBox ID="txtNomPadre" runat="server" class="form-control" required="required"></asp:TextBox>                               
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre de la Madre</label>
-                                <input runat="server" id="txtNombreMadre" type="text" required="required" class="form-control" placeholder="Genero" />
+                                 <asp:TextBox ID="txtNombreMadre" runat="server" class="form-control" required="required"></asp:TextBox>                                
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Numero Patronal </label>
-                                <input runat="server" id="txtNumPatrono" type="text" required="required" class="form-control" placeholder="00000" />
+                                <asp:TextBox ID="txtNumPatrono" runat="server" class="form-control" required="required"></asp:TextBox> 
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre del Patrono</label>
-                                <input runat="server" id="txtxNombrePatrono" type="text" required="required" class="form-control" placeholder="0000" />
+                                <asp:TextBox ID="txtxNombrePatrono" runat="server" class="form-control" required="required"></asp:TextBox>                               
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Domicilio</label>
+                                <label class="control-label">Domicilio</label>                              
                                  <asp:TextBox runat="server" ID="txtDomicilio"  required="required" CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Observación</label>  
-                                <asp:TextBox runat="server" ID="txtObserVacion" required="required" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
+                                <label class="control-label">Observación</label> 
+                                <asp:TextBox ID="txtObservacionDetalles" runat="server" class="form-control" required="required"></asp:TextBox>                              
                             </div>
                     </div>
            </div>
@@ -143,15 +146,15 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Bloque</label>
-                                <input runat="server" maxlength="100" id="txtBloqueExpediente" type="text" required="required" class="form-control" placeholder="ABCD" />
+                                <asp:TextBox ID="txtBloqueExpediente" runat="server" class="form-control" required="required"></asp:TextBox> 
                             </div>
                              <div class="form-group">
                                 <label class="control-label">Cubiculo de Bloque</label>
-                                <input runat="server" maxlength="100" id="txtNumBlo" type="text" required="required" class="form-control" placeholder="00" />
+                                 <asp:TextBox ID="txtNumBlo" runat="server" class="form-control" required="required"></asp:TextBox>                                
                             </div>
                              <div class="form-group">
                                 <label class="control-label">Fecha de la Creación</label>
-                                <input runat="server" maxlength="100" id="txtFechaCreaciónExpediente" type="text" required="required" class="form-control" placeholder="00/00/0000" />
+                                 <asp:TextBox ID="txtFechaCreacióoExpediente" runat="server" class="form-control" required="required"></asp:TextBox>       
                             </div>
                         </div>
 
@@ -162,13 +165,14 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Estado del Expediente</label>
-                                <div class="input-group">
+                                <asp:TextBox ID="txtEstadoExpediente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                <!--<div class="input-group">
                                     <select class="form-control" name="validate-select" id="txtValida" required>
                                         <option value="">--Seleccione--</option>
                                         <option value="item_1">Archivado</option>
                                         <option value="item_2">Fuera</option>
                                     </select>
-                                 </div>
+                                 </div>-->
                             </div>                           
                         </div>
                     </div>
@@ -181,7 +185,7 @@
 
                         </div>
                         <div class="col-md-3">
-                    <button class="btn btn-success btn-lg pull-left" type="submit">Guardar</button>
+                            <asp:Button ID="Button1" class="btn btn-success btn-lg pull-left" runat="server" Text="Agregar" OnClick="Button1_Click" />
 
                         </div>
                     </div>

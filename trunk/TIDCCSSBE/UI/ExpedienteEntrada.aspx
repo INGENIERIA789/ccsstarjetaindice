@@ -14,38 +14,34 @@
             <hr/>
             <asp:ValidationSummary runat="server" CssClass="text-danger" />
             <div class="row">
-        <div class="col-md-6">
+                <div class="col-md-2"></div>
+        <div class="col-md-4">
              <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Cédula</asp:Label>
-                <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox9" CssClass="form-control" placeholder="Cédula del paciente" />
-               </div>
+                 <label class="control-label">Cedula</label>
+                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="Cédula del paciente" />
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Código Area</asp:Label>
-                <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" placeholder="Codigo del área"/>
-               </div>
+                <label class="control-label">Codigo Area</label>
+                    <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" placeholder="Codigo del área"/>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Código Doctor</asp:Label>
-                <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox2" CssClass="form-control" placeholder="Codigo de Doctor" />
-               </div>
+                <label class="control-label">Codigo Doctor</label>
+                    <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" placeholder="Codigo de Doctor" />
             </div>
+            
         </div>
    
         <div class="col-md-6">
               <div class="form-group">
                 <asp:Label runat="server" CssClass="col-md-2 control-label">Encargado</asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox10" CssClass="form-control" placeholder="Encargado" />
+                    <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" placeholder="Encargado" />
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label runat="server" CssClass="col-md-2 control-label">Fecha</asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="TextBox4" CssClass="form-control" placeholder="Fecha de Entrada"/>
+                    <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" placeholder="Fecha de Entrada"/>
                </div>
             </div>
              <div class="form-group">
