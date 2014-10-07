@@ -13,11 +13,15 @@ namespace TIDCCSS
             // Habilitar la aplicación para que use una cookie para almacenar la información del usuario que inició sesión
             // y almacenar también información acerca de un usuario que inicie sesión con un proveedor de inicio de sesión de un tercero.
             // Es obligatorio si la aplicación permite a los usuarios iniciar sesión
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login")
-            });
+            })
+            ;
+
+
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Quitar las marcas de comentario de las líneas siguientes para habilitar el inicio de sesión con proveedores de inicio de sesión de terceros
