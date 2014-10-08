@@ -39,7 +39,8 @@
         </asp:ScriptManager>
      
          <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <h1>hola</h1>
+             <div class="container">
                 <div class="navbar-header">    
                     <a class="navbar-brand" runat="server" href="~/">CCSS</a>
                 </div>
@@ -51,7 +52,7 @@
                                 <li class="divider"></li>
                                 <li><a runat="server" href="#">Buscar</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Paciente/TIDPACIENTE">Registrar</a></li>
+                                <li><a runat="server" href="~/UI/Paciente/TIDPACIENTE">Registrar TID</a></li>
                                 <li class="divider"></li>
                             </ul>
                         </li>                      
@@ -61,16 +62,24 @@
                                      <li class="divider"></li>
                                      <li><a runat="server" href="#">Buscar Expedientes</a></li>
                                      <li class="divider"></li>
-                                     <li><a runat="server" href="~/UI/ExpedienteEntrada">Registro de Entradas</a></li>
-                                     <li><a runat="server" href="~/UI/ExpedienteSalida">Registro de Salidas</a></li>
+                                     <li><a runat="server" href="~/UI/Paciente/ExpedienteEntrada">Registro de Entradas</a></li>
+                                     <li><a runat="server" href="~/UI/Paciente/ExpedienteSalida">Registro de Salidas</a></li>
                                      <li class="divider"></li>
-                                     <li><a runat="server" href="#">Registrar Médico</a></li>
-                                     <li><a runat="server" href="#">Registrar Ubicación</a></li>
-
+                                     <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
+                                     <li><a runat="server" href="~/HojasEspecialidad">Examenes externos</a></li>
                              </ul>
                       </li>
-                        <li><a runat="server" href="~/Reportes">Reportes</a></li>
-                        <li><a runat="server" href="~/UI/HojasUrgencia">Hojas de Urgencia</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Administrador<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="divider"></li>
+                                <li><a runat="server" href="#">Registrar Médico</a></li>
+                                <li><a runat="server" href="#">Registrar Ubicación</a></li>
+                                <li class="divider"></li>
+                                <li><a runat="server" href="#">Reportes</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>           
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>

@@ -37,8 +37,7 @@
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
                                 <asp:TextBox ID="txtNombrePaciente" runat="server" class="form-control" required="required"></asp:TextBox>
-
-                            &nbsp;</div>
+                            </div>
                             <div class="form-group">
                                 <label class="control-label">Primer Apellido</label>
                                 <asp:TextBox ID="txtApellido1Paciente" runat="server" class="form-control" required="required"></asp:TextBox>
@@ -128,7 +127,8 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Observación</label> 
-                                <asp:TextBox ID="txtObservacionDetalles" runat="server" class="form-control" required="required"></asp:TextBox>                              
+                                <asp:TextBox runat="server" ID="txtObservacionDetalle"  required="required" CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
+                                                             
                             </div>
                     </div>
            </div>
@@ -154,7 +154,7 @@
                             </div>
                              <div class="form-group">
                                 <label class="control-label">Fecha de la Creación</label>
-                                 <asp:TextBox ID="txtFechaCreacióoExpediente" runat="server" class="form-control" required="required"></asp:TextBox>       
+                                 <asp:TextBox ID="txtFechaCreacionExpediente" runat="server" class="form-control" required="required"></asp:TextBox>       
                             </div>
                         </div>
 
@@ -176,6 +176,7 @@
                             </div>                           
                         </div>
                     </div>
+<hr/>
                     <div class="row">
                         <div class="col-md-6">
 
