@@ -13,6 +13,8 @@ public class clsTarjetaIndice
     private string ps_Cubiculo_Bloque;
     private bool pb_EstadoTid;
     private string ps_ObsTid;
+
+   
 	public clsTarjetaIndice()
 	{
 		//
