@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TIDCCSSBE", "http://localhost:51078", "{AD8E9AF6-695C-4284-9487-E1F5F971890B}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -24,13 +24,24 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TIDCCSSBE", "http://localho
 		SlnRelativePath = "TIDCCSSBE\"
 	EndProjectSection
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DBTIAC14", "DBTIAC14\DBTIAC14.sqlproj", "{5D0C9BF2-7765-4C08-B9BB-5367535CD496}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AD8E9AF6-695C-4284-9487-E1F5F971890B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AD8E9AF6-695C-4284-9487-E1F5F971890B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8E9AF6-695C-4284-9487-E1F5F971890B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8E9AF6-695C-4284-9487-E1F5F971890B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5D0C9BF2-7765-4C08-B9BB-5367535CD496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D0C9BF2-7765-4C08-B9BB-5367535CD496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D0C9BF2-7765-4C08-B9BB-5367535CD496}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5D0C9BF2-7765-4C08-B9BB-5367535CD496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D0C9BF2-7765-4C08-B9BB-5367535CD496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D0C9BF2-7765-4C08-B9BB-5367535CD496}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

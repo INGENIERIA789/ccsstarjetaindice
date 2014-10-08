@@ -7,15 +7,9 @@ using System.Web.UI.WebControls;
 
 public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public void agregar()
     {
-
-    }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        
-        string identi ="0";
+        string identi = "0";
         DateTime thisDay = DateTime.Today;
         int lester = 504000352;
 
@@ -32,24 +26,34 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
            txtObserPaciente.Text);
 
         db.sp_INSERTAR_TID(int.Parse(txtCedulaPaciente.Text),
-                                     thisDay, 
-                                     txtEstadoTID.Text, 
-                                     txtObserPaciente.Text, 
+                                     thisDay,
+                                     txtEstadoTID.Text,
+                                     txtObserPaciente.Text,
                                      lester);
 
-        db.sp_INSERT_DETALLESPACIENTE(txtNomPadre.Text, 
-                                      txtNombreMadre.Text, 
-                                      txtDomicilio.Text, 
-                                      int.Parse(txtCedulaPaciente.Text), 
+        db.sp_INSERT_DETALLESPACIENTE(txtNomPadre.Text,
+                                      txtNombreMadre.Text,
+                                      txtDomicilio.Text,
+                                      int.Parse(txtCedulaPaciente.Text),
                                       int.Parse(txtNumPatrono.Text),
-                                      txtxNombrePatrono.Text, 
-                                      txtObservacionDetalles.Text);
-        db.sp_INSERT_EXPEDIENTE(int.Parse(txtCedulaPaciente.Text), 
-                                 txtBloqueExpediente.Text, 
-                                 txtNumBlo.Text, 
-                                 thisDay, 
-                                 txtEstadoExpediente.Text, 
+                                      txtxNombrePatrono.Text,
+                                      txtObservacionDetalle.Text);
+        db.sp_INSERT_EXPEDIENTE(int.Parse(txtCedulaPaciente.Text),
+                                 txtBloqueExpediente.Text,
+                                 txtNumBlo.Text,
+                                 thisDay,
+                                 txtEstadoExpediente.Text,
                                  txtObserExpe.Text);
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        agregar();
+        
        
     }
 }
