@@ -9,6 +9,12 @@ using System.Web;
 public class clsEntradaExpediente
 {
     private int ps_CedPaEN;
+
+    public int Ps_CedPaEN
+    {
+        get { return ps_CedPaEN; }
+        set { ps_CedPaEN = value; }
+    }
     private string ps_Responsable;
     private int ps_CodEspecialidad;
     private DateTime ps_Entrad;

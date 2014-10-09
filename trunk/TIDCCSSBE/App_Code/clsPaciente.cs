@@ -18,8 +18,106 @@ public class clsPaciente
     private DateTime pd_FecDef;
     private string ps_Obs;
 
-
-
+    
+    public string Ps_NomPa
+    {
+        get
+        {
+            return ps_NomPa;
+        }
+        set
+        {
+            ps_NomPa = value;
+        }
+    }
+    public string Ps_PriApe
+    {
+        get
+        {
+            return ps_PriApe;
+        }
+        set
+        {
+            ps_PriApe = value;
+        }
+    }
+    public string Ps_SegApe
+    {
+        get
+        {
+            return ps_SegApe;
+        }
+        set
+        {
+            ps_SegApe = value;
+        }
+    }
+    public int Pn_CedPa
+    {
+        get
+        {
+            return pn_CedPa;
+        }
+        set
+        {
+            pn_CedPa = value;
+        }
+    }
+    public string Ps_Sexo
+    {
+        get
+        {
+            return ps_Sexo;
+        }
+        set
+        {
+           ps_Sexo = value;
+        }
+    }
+    public string Ps_EstCivil
+    {
+        get
+        {
+            return ps_EstCivil;
+        }
+        set
+        {
+            ps_EstCivil = value;
+        }
+    }
+    public DateTime Pd_FecNac
+    {
+        get
+        {
+            return pd_FecNac;
+        }
+        set
+        {
+            pd_FecNac = value;
+        }
+    }
+    public DateTime Pd_FecNac
+    {
+        get
+        {
+            return pd_FecNac;
+        }
+        set
+        {
+            pd_FecNac = value;
+        }
+    }
+    public string Ps_Obs
+    {
+        get
+        {
+            return ps_Obs;
+        }
+        set
+        {
+            ps_Obs = value;
+        }
+    }
 	public clsPaciente()
 	{
 		//
