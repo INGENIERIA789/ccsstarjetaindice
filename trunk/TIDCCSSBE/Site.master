@@ -39,7 +39,6 @@
         </asp:ScriptManager>
      
          <div class="navbar navbar-inverse navbar-fixed-top">
-            <h1>hola</h1>
              <div class="container">
                 <div class="navbar-header">    
                     <a class="navbar-brand" runat="server" href="~/">CCSS</a>
@@ -62,8 +61,8 @@
                                      <li class="divider"></li>
                                      <li><a runat="server" href="#">Buscar Expedientes</a></li>
                                      <li class="divider"></li>
-                                     <li><a runat="server" href="~/UI/Paciente/ExpedienteEntrada">Registro de Entradas</a></li>
-                                     <li><a runat="server" href="~/UI/Paciente/ExpedienteSalida">Registro de Salidas</a></li>
+                                     <li><a runat="server" href="~/UI/Paciente/MovimientosExpediente">Movimientos</a></li>
+                                     
                                      <li class="divider"></li>
                                      <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
                                      <li><a runat="server" href="~/HojasEspecialidad">Examenes externos</a></li>
@@ -90,7 +89,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Su cuenta!">Hola, <%: Context.User.Identity.GetUserName()  %>!</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
