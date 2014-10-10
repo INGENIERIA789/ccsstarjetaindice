@@ -20,7 +20,7 @@
         <elementListCompartment Id="36eb2e05-c34f-416d-b898-ad847f0cd490" absoluteBounds="3.14, 3.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 0.71875); (5.03125 : 0.71875); (5.03125 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(0.5 : 1.86620198567708); (0.34 : 1.86620198567708); (0.34 : 6.44049967447917); (4.2187495 : 6.44049967447917); (4.2187495 : 5.28049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE/TID_PACIENTE_TID_DETALLE_PACIENTE" />
       <nodes>
         <classShapeMoniker Id="38ca0421-a526-4419-b2c3-faea7ca3eadc" />
@@ -33,18 +33,258 @@
         <elementListCompartment Id="542e0f2e-1091-4025-bce6-0320a09f86ea" absoluteBounds="2.8899999999999997, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.875 : 1.73159912109375); (4.94791666666667 : 1.73159912109375 : JumpStart); (5.11458333333333 : 1.73159912109375 : JumpEnd); (5.375 : 1.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4 : 1); (4 : 0.26); (5.76041466666667 : 0.259999999999999 : JumpStart); (5.92708133333333 : 0.26 : JumpEnd); (6.375 : 0.26); (6.375 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE/TID_TARJETA_INDICE_TID_EXPEDIENTE" />
       <nodes>
         <classShapeMoniker Id="98a2fa5c-4c94-4a4c-9a70-4cbdc254027f" />
         <classShapeMoniker Id="ee32de8c-cec7-4aee-b662-39500e3bf164" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 1.88544840494792); (2.875 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 2.7444482421875); (2.60416666666667 : 2.7444482421875 : JumpStart); (2.77083333333333 : 2.7444482421875 : JumpEnd); (2.875 : 2.7444482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE/TID_PACIENTE_TID_TARJETA_INDICE" />
       <nodes>
         <classShapeMoniker Id="38ca0421-a526-4419-b2c3-faea7ca3eadc" />
         <classShapeMoniker Id="98a2fa5c-4c94-4a4c-9a70-4cbdc254027f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2a494fa4-2f0d-401b-b5a7-3885e37290b8" absoluteBounds="0.875, 3.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_AREA_UBICACION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fc61daa-f7a6-47da-8624-5778ce5b70f6" absoluteBounds="0.89, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21c0fb08-c8ca-410c-acac-509f68c7c7b8" absoluteBounds="5.625, 3.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_DETALLE_PACIENTE1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="343ba6a0-7cc6-4b8d-af1e-97641581ab46" absoluteBounds="5.64, 4.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.94794840494792); (2.60416666666667 : 2.94794840494792 : JumpStart); (2.77083333333333 : 2.94794840494792 : JumpEnd); (4.91536866652756 : 2.94794840494792 : JumpStart); (5.08203533319423 : 2.94794840494792 : JumpEnd); (7.53125 : 2.94794840494792); (7.53125 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE/TID_PACIENTE_TID_DETALLE_PACIENTE1" />
+      <nodes>
+        <classShapeMoniker Id="38ca0421-a526-4419-b2c3-faea7ca3eadc" />
+        <classShapeMoniker Id="21c0fb08-c8ca-410c-acac-509f68c7c7b8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7c093245-0fd3-430d-88d7-88e8a108b254" absoluteBounds="1.25, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_DOCTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3839ccff-8c1d-413d-9260-cb83abcb7ab8" absoluteBounds="1.2650000000000001, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20d3038a-98b6-4b8e-ba50-cebc8140d7dd" absoluteBounds="4.5, 0.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_ENTRADA_EXPEDIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f6e372f-d6f3-414d-a2f2-4314922a8d66" absoluteBounds="4.515, 1.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 4.47199625651042); (5.5 : 2.5881982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_AREA_UBICACION/TID_AREA_UBICACION_TID_ENTRADA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="2a494fa4-2f0d-401b-b5a7-3885e37290b8" />
+        <classShapeMoniker Id="20d3038a-98b6-4b8e-ba50-cebc8140d7dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 0.76125); (3.66666416666667 : 0.761249999999999 : JumpStart); (3.83333083333333 : 0.76125 : JumpEnd); (3.91666666666667 : 0.761249999999999 : JumpStart); (4.08333333333333 : 0.76125 : JumpEnd); (4.5 : 0.76125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_DOCTOR/TID_DOCTOR_TID_ENTRADA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="7c093245-0fd3-430d-88d7-88e8a108b254" />
+        <classShapeMoniker Id="20d3038a-98b6-4b8e-ba50-cebc8140d7dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 1.88544840494792); (6.75 : 1.88544840494792); (6.75 : 1.60659912109375); (6.5 : 1.60659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE/TID_TARJETA_INDICE_TID_ENTRADA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="98a2fa5c-4c94-4a4c-9a70-4cbdc254027f" />
+        <classShapeMoniker Id="20d3038a-98b6-4b8e-ba50-cebc8140d7dd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="028adeeb-4a89-402a-bdc5-560f52eafd34" absoluteBounds="0.5, 3.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_EXAMENES_EXTERNOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3807faf-fd57-4ec0-9ce4-8c892aac88b4" absoluteBounds="0.515, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.5 : 4.95274983723958); (0.423333333333333 : 4.95274983723958 : JumpStart); (0.256666666666667 : 4.95274983723958 : JumpEnd); (0.00999999999999995 : 4.95274983723958); (0.00999999999999995 : 0.00999999999999995); (1.66640699869792 : 0.00999999999999937 : JumpStart); (1.83307366536458 : 0.00999999999999995 : JumpEnd); (2.16666666666667 : 0.00999999999999937 : JumpStart); (2.33333333333333 : 0.00999999999999995 : JumpEnd); (5.843748 : 0.00999999999999995); (5.843748 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_EXAMENES_EXTERNOS/TID_EXAMENES_EXTERNOS_TID_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="028adeeb-4a89-402a-bdc5-560f52eafd34" />
+        <classShapeMoniker Id="ee32de8c-cec7-4aee-b662-39500e3bf164" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="669d3c37-2e00-4c23-b30f-03b03c99f615" absoluteBounds="1.25, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_EXPEDIENTE1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64ba5c7b-127a-4718-8764-eb8218dd8413" absoluteBounds="1.2650000000000001, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 6.03049967447917); (1.5 : 6.28049967447917); (2.25 : 6.28049967447917); (2.25 : 5.65549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_EXAMENES_EXTERNOS/TID_EXAMENES_EXTERNOS_TID_EXPEDIENTE1" />
+      <nodes>
+        <classShapeMoniker Id="028adeeb-4a89-402a-bdc5-560f52eafd34" />
+        <classShapeMoniker Id="669d3c37-2e00-4c23-b30f-03b03c99f615" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.875 : 1.88544840494792); (2.25 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE/TID_TARJETA_INDICE_TID_EXPEDIENTE1" />
+      <nodes>
+        <classShapeMoniker Id="98a2fa5c-4c94-4a4c-9a70-4cbdc254027f" />
+        <classShapeMoniker Id="669d3c37-2e00-4c23-b30f-03b03c99f615" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="618c1a23-347e-41d8-a19d-c8bf2d407bb6" absoluteBounds="0.5, 1.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_FUNCIONARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07179c71-0734-4e78-8291-f6dc852cd68d" absoluteBounds="0.515, 2.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.82817110742188); (2.60416666666667 : 2.82817110742187 : JumpStart); (2.77083333333333 : 2.82817110742188 : JumpEnd); (3.875 : 2.82817110742188); (3.875 : 2.77089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_FUNCIONARIO/TID_FUNCIONARIO_TID_TARJETA_INDICE" />
+      <nodes>
+        <classShapeMoniker Id="618c1a23-347e-41d8-a19d-c8bf2d407bb6" />
+        <classShapeMoniker Id="98a2fa5c-4c94-4a4c-9a70-4cbdc254027f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="68e82f97-53b0-49d5-9a83-1802dd41221a" absoluteBounds="1.5, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_HOJAS_URGENCIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5aad537b-c634-480b-a577-464cee78a780" absoluteBounds="1.5150000000000001, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 0.53125); (3.66666416666667 : 0.531249999999999 : JumpStart); (3.83333083333333 : 0.53125 : JumpEnd); (3.91666666666667 : 0.531249999999999 : JumpStart); (4.08333333333333 : 0.53125 : JumpEnd); (4.32291666666667 : 0.531249999999999 : JumpStart); (4.48958333333333 : 0.53125 : JumpEnd); (5.375 : 0.53125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_HOJAS_URGENCIA/TID_HOJAS_URGENCIA_TID_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="68e82f97-53b0-49d5-9a83-1802dd41221a" />
+        <classShapeMoniker Id="ee32de8c-cec7-4aee-b662-39500e3bf164" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.6875 : 2.65549967447917); (2.6875 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_HOJAS_URGENCIA/TID_HOJAS_URGENCIA_TID_EXPEDIENTE1" />
+      <nodes>
+        <classShapeMoniker Id="68e82f97-53b0-49d5-9a83-1802dd41221a" />
+        <classShapeMoniker Id="669d3c37-2e00-4c23-b30f-03b03c99f615" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4c8e6bf8-8257-4462-a16c-ececb758d220" absoluteBounds="0.5, 1.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a8b9579-f58b-472d-aa5e-e280f6be5f1f" absoluteBounds="0.515, 1.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.28125); (2.60416666666667 : 3.28125 : JumpStart); (2.77083333333333 : 3.28125 : JumpEnd); (3.125 : 3.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE1/TID_PACIENTE1_TID_DETALLE_PACIENTE" />
+      <nodes>
+        <classShapeMoniker Id="4c8e6bf8-8257-4462-a16c-ececb758d220" />
+        <classShapeMoniker Id="90966d36-dcc5-46f4-a0f3-25b3fa447f9f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.97920090494792); (2.60416666666667 : 2.97920090494792 : JumpStart); (2.89583333333333 : 2.97920090494792 : JumpEnd); (4.87181951111056 : 2.97920090494792 : JumpStart); (5.03848617777722 : 2.97920090494792 : JumpEnd); (7.4999975 : 2.97920090494792); (7.4999975 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE1/TID_PACIENTE1_TID_DETALLE_PACIENTE1" />
+      <nodes>
+        <classShapeMoniker Id="4c8e6bf8-8257-4462-a16c-ececb758d220" />
+        <classShapeMoniker Id="21c0fb08-c8ca-410c-acac-509f68c7c7b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.13022545247396); (2.60416666666667 : 3.13022545247396 : JumpStart); (2.77083333333333 : 3.13022545247396 : JumpEnd); (2.8125 : 3.13022545247396); (2.8125 : 2.86464680989583); (3.343748 : 2.86464680989583); (3.343748 : 2.77089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE1/TID_PACIENTE1_TID_TARJETA_INDICE" />
+      <nodes>
+        <classShapeMoniker Id="4c8e6bf8-8257-4462-a16c-ececb758d220" />
+        <classShapeMoniker Id="98a2fa5c-4c94-4a4c-9a70-4cbdc254027f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8829fb4d-8d16-4aa0-a96e-44353c51ff12" absoluteBounds="0.5, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_SALIDA_EXPEDIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1e98f37-9cac-4965-b035-f6a939a9be43" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 3.875); (1.5 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_AREA_UBICACION/TID_AREA_UBICACION_TID_SALIDA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="2a494fa4-2f0d-401b-b5a7-3885e37290b8" />
+        <classShapeMoniker Id="8829fb4d-8d16-4aa0-a96e-44353c51ff12" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.25 : 0.5); (2.25 : -0.125); (1.74974033203125 : -0.125); (1.74974033203125 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_DOCTOR/TID_DOCTOR_TID_SALIDA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="7c093245-0fd3-430d-88d7-88e8a108b254" />
+        <classShapeMoniker Id="8829fb4d-8d16-4aa0-a96e-44353c51ff12" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.7499975 : 1); (3.7499975 : 0.26); (2.33333333333333 : 0.259999999999999 : JumpStart); (2.16666666666667 : 0.26 : JumpEnd); (1.83307366536458 : 0.259999999999999 : JumpStart); (1.66640699869792 : 0.26 : JumpEnd); (1.5 : 0.26); (1.5 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE/TID_TARJETA_INDICE_TID_SALIDA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="98a2fa5c-4c94-4a4c-9a70-4cbdc254027f" />
+        <classShapeMoniker Id="8829fb4d-8d16-4aa0-a96e-44353c51ff12" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" absoluteBounds="0.5, 0.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c018667b-c381-465f-aa5a-5621a917ebd9" absoluteBounds="0.515, 1.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.5 : 1.21434899283854); (0.26 : 1.21434899283854); (0.26 : 0.135); (1.66640699869792 : 0.134999999999999 : JumpStart); (1.83307366536458 : 0.135 : JumpEnd); (2.16666666666667 : 0.134999999999999 : JumpStart); (2.33333333333333 : 0.135 : JumpEnd); (5.76041466666667 : 0.134999999999999 : JumpStart); (5.92708133333333 : 0.135 : JumpEnd); (6.906252 : 0.135); (6.906252 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE1/TID_TARJETA_INDICE1_TID_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" />
+        <classShapeMoniker Id="ee32de8c-cec7-4aee-b662-39500e3bf164" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.27883615208194 : 2.39589680989583); (1.51503140802932 : 2.6644240374466 : JumpStart); (1.62510750359369 : 2.78956807830785 : JumpEnd); (2.25 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE1/TID_TARJETA_INDICE1_TID_EXPEDIENTE1" />
+      <nodes>
+        <classShapeMoniker Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" />
+        <classShapeMoniker Id="669d3c37-2e00-4c23-b30f-03b03c99f615" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.62461538461538 : 1.625); (1.62461538461538 : 0.375); (1.20552987154447 : 0.375); (1.20552987154447 : 0.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_FUNCIONARIO/TID_FUNCIONARIO_TID_TARJETA_INDICE1" />
+      <nodes>
+        <classShapeMoniker Id="618c1a23-347e-41d8-a19d-c8bf2d407bb6" />
+        <classShapeMoniker Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.5 : 0.53125); (0.5 : 0.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE/TID_PACIENTE_TID_TARJETA_INDICE1" />
+      <nodes>
+        <classShapeMoniker Id="38ca0421-a526-4419-b2c3-faea7ca3eadc" />
+        <classShapeMoniker Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.55538461538462 : 1.375); (1.55538461538462 : 0.4375); (1.92067161207933 : 0.4375); (1.92067161207933 : 0.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE1/TID_PACIENTE1_TID_TARJETA_INDICE1" />
+      <nodes>
+        <classShapeMoniker Id="4c8e6bf8-8257-4462-a16c-ececb758d220" />
+        <classShapeMoniker Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 0.686299274188702); (2.8112992741887 : 0.375); (3.66666416666667 : 0.374999999999999 : JumpStart); (3.83333083333333 : 0.375 : JumpEnd); (3.91666666666667 : 0.374999999999999 : JumpStart); (4.08333333333333 : 0.375 : JumpEnd); (4.25 : 0.375); (4.5 : 0.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE1/TID_TARJETA_INDICE1_TID_ENTRADA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" />
+        <classShapeMoniker Id="20d3038a-98b6-4b8e-ba50-cebc8140d7dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5 : 0.625); (1.5 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE1/TID_TARJETA_INDICE1_TID_SALIDA_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="7ed63390-ba5d-4a67-b2f7-b19c107f1999" />
+        <classShapeMoniker Id="8829fb4d-8d16-4aa0-a96e-44353c51ff12" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="11546a56-4725-442e-8b21-195bcf9e43c9" absoluteBounds="0.5, 2.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_USUARIOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2eaf2621-ef5e-403f-b448-f2bf0d04b11c" absoluteBounds="0.515, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.5 : 3.44314697265625); (0.49232 : 3.44314697265625); (0.49232 : 3.01565176236979); (0.5 : 3.01565176236979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_USUARIOS/TID_USUARIOS_TID_FUNCIONARIO" />
+      <nodes>
+        <classShapeMoniker Id="11546a56-4725-442e-8b21-195bcf9e43c9" />
+        <classShapeMoniker Id="618c1a23-347e-41d8-a19d-c8bf2d407bb6" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

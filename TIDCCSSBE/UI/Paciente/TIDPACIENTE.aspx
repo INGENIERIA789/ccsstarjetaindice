@@ -32,15 +32,15 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Cedula</label>
-                                <asp:TextBox ID="txtCedulaPaciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtCedulaPaciente" runat="server" CssClass="form-control" required="required" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
-                                <asp:TextBox ID="txtNombrePaciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtNombrePaciente" runat="server" CssClass="form-control" required="required" ></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Primer Apellido</label>
-                                <asp:TextBox ID="txtApellido1Paciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtApellido1Paciente" runat="server" class="form-control"  required="required"></asp:TextBox>
                                 </div>
                             <div class="form-group">
                                 <label class="control-label">Segundo Apellido</label>
@@ -55,7 +55,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Estado Civil</label>
-                                <asp:TextBox ID="txtEstCilPaciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtEstCilPaciente" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
@@ -63,18 +63,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Observación</label>    
-                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3" required="required" TextMode="MultiLine" placeholder="Observaciones" />  
+                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3"  TextMode="MultiLine"  required="required" placeholder="Observaciones" />  
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Estado de la Tarjeta Indice</label>
-                                <asp:TextBox ID="txtEstadoTID" runat="server" class="form-control" required="required"></asp:TextBox> 
-                            <!--    <div class="input-group">
-                                    <select class="form-control" name="validate-select" ID="txttidestado" required>
+                            <div class="form-group">                        
+                                <div class="input-group">
+                                    <select class="form-control" runat="server" name="validate-select" id="txttidestado" required>
                                         <option value="">--Seleccione--</option>
                                         <option value="item_1">Activa</option>
                                         <option value="item_2">Pasiva</option>
                                     </select>
-                                 </div>-->
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-12 less-pad-left">
@@ -163,16 +161,14 @@
                                 <label for="date" class="control-label">Observación</label>    
                                 <asp:TextBox runat="server" ID="txtObserExpe" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />  
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Estado del Expediente</label>
-                                <asp:TextBox ID="txtEstadoExpediente" runat="server" class="form-control" required="required"></asp:TextBox>
-                                <!--<div class="input-group">
-                                    <select class="form-control" name="validate-select" id="txtValida" required>
+                            <div class="form-group">                        
+                                <div class="input-group">
+                                    <select class="form-control" runat="server" name="validate-select" id="txtEstadoExpediente" required>
                                         <option value="">--Seleccione--</option>
                                         <option value="item_1">Archivado</option>
                                         <option value="item_2">Fuera</option>
                                     </select>
-                                 </div>-->
+                                 </div>
                             </div>                           
                         </div>
                     </div>
