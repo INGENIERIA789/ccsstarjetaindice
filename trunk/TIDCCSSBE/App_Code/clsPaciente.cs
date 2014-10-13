@@ -95,7 +95,7 @@ public class clsPaciente
         {
             pd_FecNac = value;
         }
-    }
+    }/*
     public DateTime Pd_FecNac
     {
         get
@@ -106,7 +106,7 @@ public class clsPaciente
         {
             pd_FecNac = value;
         }
-    }
+    }*/
     public string Ps_Obs
     {
         get
