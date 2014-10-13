@@ -2,12 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
    
-     <div class="jumbotron">
-         <asp:GridView ID="GridView1" runat="server">
-         </asp:GridView>
-         <asp:Timer ID="Timer1" runat="server">
-         </asp:Timer>
-    </div>
+    <asp:Button ID="Button1" runat="server" class="btn" Text="SOY UN SEXY BOTON" />
 
 </asp:Content>
 
