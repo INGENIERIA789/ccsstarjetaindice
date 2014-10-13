@@ -23,17 +23,17 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Primer Apellido</label>
-                    <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" placeholder="Barrios"/>
+                    <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" placeholder="Primer Apellido"/>
                
             </div>
             <div class="form-group">
                 <label class="control-label">Segundo Apellido</label>
-                    <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" placeholder="AAlgo" />
+                    <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" placeholder="Segundo Apellido" />
                 
             </div>
               <div class="form-group">
                   <label class="control-label">Nombre del Paciente</label>              
-                    <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" placeholder="Patito" />           
+                    <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" placeholder="Nombre" />           
             </div>
         </div>
    
@@ -43,7 +43,7 @@
                     <asp:TextBox runat="server" ID="txtFecha" CssClass="form-control" placeholder="Fecha de Registro"/>
             </div>
             <div class="form-group">
-                <label class="control-label">Numero del Asegurado</label>                 
+                <label class="control-label">Numero de Asegurado</label>                 
                     <asp:TextBox runat="server" ID="txtNumeroAsegurado" CssClass="form-control" placeholder="0-0000-00000000"/>
             </div>
              <div class="form-group">

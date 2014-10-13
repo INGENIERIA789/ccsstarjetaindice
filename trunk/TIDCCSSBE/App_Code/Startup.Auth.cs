@@ -11,8 +11,7 @@ namespace TIDCCSS
         public void ConfigureAuth(IAppBuilder app)
         {
             // Habilitar la aplicación para que use una cookie para almacenar la información del usuario que inició sesión
-            // y almacenar también información acerca de un usuario que inicie sesión con un proveedor de inicio de sesión de un tercero.
-            // Es obligatorio si la aplicación permite a los usuarios iniciar sesión
+           
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
@@ -24,20 +23,6 @@ namespace TIDCCSS
 
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
-            // Quitar las marcas de comentario de las líneas siguientes para habilitar el inicio de sesión con proveedores de inicio de sesión de terceros
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
-
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
-
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
-
-            //app.UseGoogleAuthentication();
         }
     }
 }
