@@ -60,38 +60,35 @@
             </div>
         </div>
                 <div class="col-md-6">
-                    <h3><center>Historial de movimientos</center></h3>
+                    <h3><center>Historial de movimientos</center>
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                        <Columns>
+                            <asp:CommandField ShowEditButton="True" />
+                            <asp:CommandField ShowSelectButton="True" />
+                            <asp:BoundField HeaderText="Cedula" />
+                            <asp:BoundField HeaderText="Area" />
+                            <asp:BoundField HeaderText="Doctor" />
+                            <asp:BoundField HeaderText="Encargado" />
+                            <asp:BoundField HeaderText="Fecha" />
+                            <asp:BoundField HeaderText="Observacion" />
+                            <asp:BoundField HeaderText="Estado" />
+                        </Columns>
+                        <EmptyDataTemplate>
+                            Fechas<br />
+                        </EmptyDataTemplate>
+                        <FooterStyle BackColor="White" ForeColor="#333333" />
+                        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="White" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                        <SortedAscendingHeaderStyle BackColor="#487575" />
+                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                        <SortedDescendingHeaderStyle BackColor="#275353" />
+                    </asp:GridView>
+                    </h3>
                    
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Email</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>rockybalboa@mail.com</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>peterparker@mail.com</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>johnrambo@mail.com</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                    
                 <asp:Button ID="btnImprimirHistorial" runat="server" Text="Imprimir" CssClass="btn btn-default pull-right" />
            

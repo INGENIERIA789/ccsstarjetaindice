@@ -51,6 +51,9 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
         catch(Exception e)
         {
             Console.WriteLine(e.Message);
+        }
+        finally{
+            db.Dispose();//Libera todo los recursos!!
         };
 
     }
