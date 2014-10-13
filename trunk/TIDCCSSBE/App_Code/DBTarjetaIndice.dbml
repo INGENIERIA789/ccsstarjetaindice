@@ -1,5 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TIAC14" Class="DBTarjetaIndiceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=WIN-EDIIQI6V5R4\SQLEXPRESS;Initial Catalog=TIAC14;Persist Security Info=True;User ID=Lester94" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TIAC14ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TID_EXPEDIENTES" Member="TID_EXPEDIENTES">
+    <Type Name="TID_EXPEDIENTES">
+      <Column Name="CEDULA_PACIENTE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BLOQUE_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUBICULO_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FECHA_CREACION_EXPEDIENTE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="TID_TARJETA_INDICE_TID_EXPEDIENTES" Member="TID_TARJETA_INDICE" ThisKey="CEDULA_PACIENTE" OtherKey="CEDULA_PACIENTE" Type="TID_TARJETA_INDICE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TID_TARJETA_INDICE" Member="TID_TARJETA_INDICE">
+    <Type Name="TID_TARJETA_INDICE">
+      <Column Name="CEDULA_PACIENTE" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FECHA_CREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO_TARJETA_INDICE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="OBSERVACION_TARJETA_INDICE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CEDULA_FUNCIONARIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TID_TARJETA_INDICE_TID_EXPEDIENTES" Member="TID_EXPEDIENTES" ThisKey="CEDULA_PACIENTE" OtherKey="CEDULA_PACIENTE" Type="TID_EXPEDIENTES" />
+      <Association Name="TID_TARJETA_INDICE_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_MOVIMIENTO_EXPEDIENTE" ThisKey="CEDULA_PACIENTE" OtherKey="CEDULA_PACIENTE" Type="TID_MOVIMIENTO_EXPEDIENTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TID_MOVIMIENTO_EXPEDIENTE" Member="TID_MOVIMIENTO_EXPEDIENTE">
+    <Type Name="TID_MOVIMIENTO_EXPEDIENTE">
+      <Column Name="CEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CODIGO_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODIGO_DOCTOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OBSERVACION_MOVIMIENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="TID_TARJETA_INDICE_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_TARJETA_INDICE" ThisKey="CEDULA_PACIENTE" OtherKey="CEDULA_PACIENTE" Type="TID_TARJETA_INDICE" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.sp_INSERTAR_PACIENTE" Method="sp_INSERTAR_PACIENTE">
     <Parameter Name="TID_IDENTIFICACION" Parameter="tID_IDENTIFICACION" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="NUM_IDENTIFICACION" Parameter="nUM_IDENTIFICACION" Type="System.Int32" DbType="Int" />
@@ -58,23 +91,31 @@
       <Column Name="OBSERVACION1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_INSERTAR" Method="SP_INSERTAR">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SP_INSERTARResult">
-      <Column Name="NUM_IDENTIFICACION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="NOM_APELLIDO2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="NOM_NOMBRE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="IND_SEXO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="COD_ESTADO_CIVIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="FEC_NACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="NOMBRE_PADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NOMBRE_MADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOMICILIO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CODIGO_PATRONO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE_PATRONO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="OBSERVACION1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+  <Function Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE" Method="SP_SELECCION_EXISTENCIA_EXPEDIENTE">
+    <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SP_SELECCION_EXISTENCIA_EXPEDIENTEResult">
+      <Column Name="CEDULA_PACIENTE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_MOVIMIENTO" Method="SP_INSERTAR_MOVIMIENTO">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CODIGO_AREA" Parameter="cODIGO_AREA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CODIGO_DOCTOR" Parameter="cODIGO_DOCTOR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FECHA_ULTIMO_REGISTRO" Parameter="fECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ESTADO_EXPEDIENTE" Parameter="eSTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GENERAR_HISTORIAL" Method="GENERAR_HISTORIAL">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="GENERAR_HISTORIALResult">
+      <Column Name="CODIGO_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODIGO_DOCTOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OBSERVACION_MOVIMIENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
