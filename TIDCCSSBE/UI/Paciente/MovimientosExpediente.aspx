@@ -10,7 +10,7 @@
             <br />
             <br />
             <br />
-            <h4>Registro de Entrada del Expediente</h4>
+            <h4>Movimientos del Expediente</h4>
             <hr/>
             <asp:ValidationSummary runat="server" CssClass="text-danger" />
 
@@ -19,7 +19,7 @@
         <div class="col-md-3">
              <div class="form-group">
                  <label class="control-label">Cedula</label>
-                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="Cédula del paciente" />
+                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="Cédula del paciente" AutoPostBack="True" OnTextChanged="txtCedulaPaciente_TextChanged" />
             </div>
             <div class="form-group">
                 <label class="control-label">Codigo Area</label>
@@ -62,17 +62,6 @@
                 <div class="col-md-6">
                     <h3><center>Historial de movimientos</center>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
-                        <Columns>
-                            <asp:CommandField ShowEditButton="True" />
-                            <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField HeaderText="Cedula" />
-                            <asp:BoundField HeaderText="Area" />
-                            <asp:BoundField HeaderText="Doctor" />
-                            <asp:BoundField HeaderText="Encargado" />
-                            <asp:BoundField HeaderText="Fecha" />
-                            <asp:BoundField HeaderText="Observacion" />
-                            <asp:BoundField HeaderText="Estado" />
-                        </Columns>
                         <EmptyDataTemplate>
                             Fechas<br />
                         </EmptyDataTemplate>
