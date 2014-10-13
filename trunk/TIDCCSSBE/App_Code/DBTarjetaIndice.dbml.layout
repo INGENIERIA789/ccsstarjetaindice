@@ -47,10 +47,10 @@
         <classShapeMoniker Id="1484841f-5d07-4978-b3a6-fe3d464ae011" />
       </nodes>
     </associationConnector>
-    <classShape Id="f64846b7-8857-4463-a7a6-9583ba73ebca" absoluteBounds="2.375, 0.5, 2, 1.1939925130208333">
+    <classShape Id="f64846b7-8857-4463-a7a6-9583ba73ebca" absoluteBounds="2.125, 0.5, 2, 1.1939925130208333">
       <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_AREA_UBICACION" />
       <nestedChildShapes>
-        <elementListCompartment Id="9b41dd02-a629-48e9-9545-adb87bb70b9e" absoluteBounds="2.39, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9b41dd02-a629-48e9-9545-adb87bb70b9e" absoluteBounds="2.14, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(3.3125 : 1.69399251302083); (3.3125 : 2.36224659375); (4.125 : 2.36224659375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
@@ -58,6 +58,32 @@
       <nodes>
         <classShapeMoniker Id="f64846b7-8857-4463-a7a6-9583ba73ebca" />
         <classShapeMoniker Id="1484841f-5d07-4978-b3a6-fe3d464ae011" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="28fab6a5-1ab8-4e93-b176-3873dc553223" absoluteBounds="6.875, 4.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1642a81-7b0c-45f2-b64e-2fdd47f4f269" absoluteBounds="6.89, 5.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 5.13544840494792); (5.25 : 5.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE/TID_PACIENTE_TID_TARJETA_INDICE" />
+      <nodes>
+        <classShapeMoniker Id="28fab6a5-1ab8-4e93-b176-3873dc553223" />
+        <classShapeMoniker Id="bc5009a1-b9b0-4fb5-aae5-b0f7448960ed" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d9ef6274-f244-44ac-aabb-4fcde0f07b14" absoluteBounds="3.875, 6, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_DETALLE_PACIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebcd2bb6-2373-4e4b-a1e9-beedc020ed3c" absoluteBounds="3.89, 6.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 6.80370198567708); (5.875 : 6.80370198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_PACIENTE/TID_PACIENTE_TID_DETALLE_PACIENTE" />
+      <nodes>
+        <classShapeMoniker Id="28fab6a5-1ab8-4e93-b176-3873dc553223" />
+        <classShapeMoniker Id="d9ef6274-f244-44ac-aabb-4fcde0f07b14" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

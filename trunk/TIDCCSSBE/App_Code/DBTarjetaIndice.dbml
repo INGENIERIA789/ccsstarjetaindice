@@ -20,6 +20,7 @@
       <Column Name="CEDULA_FUNCIONARIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TID_TARJETA_INDICE_TID_EXPEDIENTES" Member="TID_EXPEDIENTES" ThisKey="CEDULA_PACIENTE" OtherKey="CEDULA_PACIENTE" Type="TID_EXPEDIENTES" />
       <Association Name="TID_TARJETA_INDICE_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_MOVIMIENTO_EXPEDIENTE" ThisKey="CEDULA_PACIENTE" OtherKey="CEDULA_PACIENTE" Type="TID_MOVIMIENTO_EXPEDIENTE" />
+      <Association Name="TID_PACIENTE_TID_TARJETA_INDICE" Member="TID_PACIENTE" ThisKey="CEDULA_PACIENTE" OtherKey="NUM_IDENTIFICACION" Type="TID_PACIENTE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TID_MOVIMIENTO_EXPEDIENTE" Member="TID_MOVIMIENTO_EXPEDIENTE">
@@ -52,6 +53,34 @@
       <Column Name="CODIGO_AREA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NOMBRE_DEPARTAMENTO" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Association Name="TID_AREA_UBICACION_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_MOVIMIENTO_EXPEDIENTE" ThisKey="CODIGO_AREA" OtherKey="CODIGO_AREA" Type="TID_MOVIMIENTO_EXPEDIENTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TID_PACIENTE" Member="TID_PACIENTE">
+    <Type Name="TID_PACIENTE">
+      <Column Name="TID_IDENTIFICACION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NUM_IDENTIFICACION" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOM_APELLIDO2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOM_NOMBRE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IND_SEXO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="COD_ESTADO_CIVIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FEC_NACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FEC_DEFUNCION" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="TID_PACIENTE_TID_TARJETA_INDICE" Member="TID_TARJETA_INDICE" ThisKey="NUM_IDENTIFICACION" OtherKey="CEDULA_PACIENTE" Type="TID_TARJETA_INDICE" Cardinality="One" />
+      <Association Name="TID_PACIENTE_TID_DETALLE_PACIENTE" Member="TID_DETALLE_PACIENTE" ThisKey="NUM_IDENTIFICACION" OtherKey="CEDULA_PACIENTE" Type="TID_DETALLE_PACIENTE" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TID_DETALLE_PACIENTE" Member="TID_DETALLE_PACIENTE">
+    <Type Name="TID_DETALLE_PACIENTE">
+      <Column Name="NOMBRE_PADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRE_MADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOMICILIO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CEDULA_PACIENTE" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CODIGO_PATRONO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PATRONO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="TID_PACIENTE_TID_DETALLE_PACIENTE" Member="TID_PACIENTE" ThisKey="CEDULA_PACIENTE" OtherKey="NUM_IDENTIFICACION" Type="TID_PACIENTE" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.sp_INSERTAR_PACIENTE" Method="sp_INSERTAR_PACIENTE">
