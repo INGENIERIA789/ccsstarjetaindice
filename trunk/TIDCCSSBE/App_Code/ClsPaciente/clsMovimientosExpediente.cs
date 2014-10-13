@@ -43,6 +43,13 @@ public class clsMovimientosExpediente
         get { return ps_Obs; }
         set { ps_Obs = value; }
     }
+    private string ps_Est;
+
+    public string Ps_Est
+    {
+        get { return ps_Est; }
+        set { ps_Est = value; }
+    }
     private string Ps_Res;
 
     public string Ps_Res1

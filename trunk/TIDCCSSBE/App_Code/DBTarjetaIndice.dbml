@@ -30,7 +30,28 @@
       <Column Name="FECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="OBSERVACION_MOVIMIENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="TID_TARJETA_INDICE_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_TARJETA_INDICE" ThisKey="CEDULA_PACIENTE" OtherKey="CEDULA_PACIENTE" Type="TID_TARJETA_INDICE" IsForeignKey="true" />
+      <Association Name="TID_DOCTOR_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_DOCTOR" ThisKey="CODIGO_DOCTOR" OtherKey="CODIGO_DOCTOR" Type="TID_DOCTOR" IsForeignKey="true" />
+      <Association Name="TID_AREA_UBICACION_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_AREA_UBICACION" ThisKey="CODIGO_AREA" OtherKey="CODIGO_AREA" Type="TID_AREA_UBICACION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TID_DOCTOR" Member="TID_DOCTOR">
+    <Type Name="TID_DOCTOR">
+      <Column Name="CODIGO_DOCTOR" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="APELLIDO_1_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOMBRE_DOCTOR" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="APELLIDO_2_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ESPECIALIDAD_DOCTOR" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="AREA_TRABAJO_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="TID_DOCTOR_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_MOVIMIENTO_EXPEDIENTE" ThisKey="CODIGO_DOCTOR" OtherKey="CODIGO_DOCTOR" Type="TID_MOVIMIENTO_EXPEDIENTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TID_AREA_UBICACION" Member="TID_AREA_UBICACION">
+    <Type Name="TID_AREA_UBICACION">
+      <Column Name="CODIGO_AREA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE_DEPARTAMENTO" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Association Name="TID_AREA_UBICACION_TID_MOVIMIENTO_EXPEDIENTE" Member="TID_MOVIMIENTO_EXPEDIENTE" ThisKey="CODIGO_AREA" OtherKey="CODIGO_AREA" Type="TID_MOVIMIENTO_EXPEDIENTE" />
     </Type>
   </Table>
   <Function Name="dbo.sp_INSERTAR_PACIENTE" Method="sp_INSERTAR_PACIENTE">
@@ -98,15 +119,6 @@
       <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_INSERTAR_MOVIMIENTO" Method="SP_INSERTAR_MOVIMIENTO">
-    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="CODIGO_AREA" Parameter="cODIGO_AREA" Type="System.Int32" DbType="Int" />
-    <Parameter Name="CODIGO_DOCTOR" Parameter="cODIGO_DOCTOR" Type="System.Int32" DbType="Int" />
-    <Parameter Name="FECHA_ULTIMO_REGISTRO" Parameter="fECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ESTADO_EXPEDIENTE" Parameter="eSTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.GENERAR_HISTORIAL" Method="GENERAR_HISTORIAL">
     <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
     <ElementType Name="GENERAR_HISTORIALResult">
@@ -116,6 +128,29 @@
       <Column Name="OBSERVACION_MOVIMIENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_MOVIMIENTO" Method="SP_INSERTAR_MOVIMIENTO">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CODIGO_AREA" Parameter="cODIGO_AREA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CODIGO_DOCTOR" Parameter="cODIGO_DOCTOR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FECHA_ULTIMO_REGISTRO" Parameter="fECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ESTADO_EXPEDIENTE" Parameter="eSTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="RESPONSABLE" Parameter="rESPONSABLE" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_buscar_area" Method="sp_buscar_area">
+    <Parameter Name="CODIGO_AREA" Parameter="cODIGO_AREA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_areaResult">
+      <Column Name="NOMBRE_DEPARTAMENTO" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_buscar_doctor" Method="sp_buscar_doctor">
+    <Parameter Name="CODIGO_DOCTOR" Parameter="cODIGO_DOCTOR" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_doctorResult">
+      <Column Name="NOMBRE_DOCTOR" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="APELLIDO_1_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
