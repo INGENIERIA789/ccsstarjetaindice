@@ -16,9 +16,33 @@ public class clsEntradaExpediente
         set { ps_CedPaEN = value; }
     }
     private string ps_Responsable;
+
+    public string Ps_Responsable
+    {
+        get { return ps_Responsable; }
+        set { ps_Responsable = value; }
+    }
     private int ps_CodEspecialidad;
+
+    public int Ps_CodEspecialidad
+    {
+        get { return ps_CodEspecialidad; }
+        set { ps_CodEspecialidad = value; }
+    }
     private DateTime ps_Entrad;
-    private string ps_Obs; 
+
+    public DateTime Ps_Entrad
+    {
+        get { return ps_Entrad; }
+        set { ps_Entrad = value; }
+    }
+    private string ps_Obs;
+
+    public string Ps_Obs
+    {
+        get { return ps_Obs; }
+        set { ps_Obs = value; }
+    } 
 
 	public clsEntradaExpediente()
 	{
