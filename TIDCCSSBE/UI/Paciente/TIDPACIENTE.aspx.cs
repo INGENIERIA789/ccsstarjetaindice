@@ -8,12 +8,13 @@ using System.Web.UI.WebControls;
 public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 {
    public DBTarjetaIndiceDataContext db = new DBTarjetaIndiceDataContext();
-   public void llenar() { 
-   
-   }
     public void agregar()
     {
-      
+        string identi = "0";
+        DateTime thisDay = DateTime.Today;
+        int lester = 504000352;
+
+        
         try
         {
             db.sp_INSERTAR_PACIENTE(

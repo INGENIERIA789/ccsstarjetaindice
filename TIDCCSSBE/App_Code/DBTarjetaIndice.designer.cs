@@ -38,6 +38,12 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
   partial void InsertTID_AREA_UBICACION(TID_AREA_UBICACION instance);
   partial void UpdateTID_AREA_UBICACION(TID_AREA_UBICACION instance);
   partial void DeleteTID_AREA_UBICACION(TID_AREA_UBICACION instance);
+  partial void InsertTID_PACIENTE(TID_PACIENTE instance);
+  partial void UpdateTID_PACIENTE(TID_PACIENTE instance);
+  partial void DeleteTID_PACIENTE(TID_PACIENTE instance);
+  partial void InsertTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
+  partial void UpdateTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
+  partial void DeleteTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
   #endregion
 	
 	public DBTarjetaIndiceDataContext() : 
@@ -107,6 +113,22 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<TID_AREA_UBICACION>();
+		}
+	}
+	
+	public System.Data.Linq.Table<TID_PACIENTE> TID_PACIENTE
+	{
+		get
+		{
+			return this.GetTable<TID_PACIENTE>();
+		}
+	}
+	
+	public System.Data.Linq.Table<TID_DETALLE_PACIENTE> TID_DETALLE_PACIENTE
+	{
+		get
+		{
+			return this.GetTable<TID_DETALLE_PACIENTE>();
 		}
 	}
 	
@@ -314,6 +336,8 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 	
 	private System.Nullable<int> _CEDULA_FUNCIONARIO;
 	
+	private EntityRef<TID_PACIENTE> _TID_PACIENTE;
+	
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -332,6 +356,7 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 	
 	public TID_TARJETA_INDICE()
 	{
+		this._TID_PACIENTE = default(EntityRef<TID_PACIENTE>);
 		OnCreated();
 	}
 	
@@ -346,6 +371,10 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 		{
 			if ((this._CEDULA_PACIENTE != value))
 			{
+				if (this._TID_PACIENTE.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
 				this.OnCEDULA_PACIENTEChanging(value);
 				this.SendPropertyChanging();
 				this._CEDULA_PACIENTE = value;
@@ -431,6 +460,40 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 				this._CEDULA_FUNCIONARIO = value;
 				this.SendPropertyChanged("CEDULA_FUNCIONARIO");
 				this.OnCEDULA_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_TARJETA_INDICE", Storage="_TID_PACIENTE", ThisKey="CEDULA_PACIENTE", OtherKey="NUM_IDENTIFICACION", IsForeignKey=true)]
+	public TID_PACIENTE TID_PACIENTE
+	{
+		get
+		{
+			return this._TID_PACIENTE.Entity;
+		}
+		set
+		{
+			TID_PACIENTE previousValue = this._TID_PACIENTE.Entity;
+			if (((previousValue != value) 
+						|| (this._TID_PACIENTE.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._TID_PACIENTE.Entity = null;
+					previousValue.TID_TARJETA_INDICE = null;
+				}
+				this._TID_PACIENTE.Entity = value;
+				if ((value != null))
+				{
+					value.TID_TARJETA_INDICE = this;
+					this._CEDULA_PACIENTE = value.NUM_IDENTIFICACION;
+				}
+				else
+				{
+					this._CEDULA_PACIENTE = default(string);
+				}
+				this.SendPropertyChanged("TID_PACIENTE");
 			}
 		}
 	}
@@ -834,6 +897,595 @@ public partial class TID_AREA_UBICACION : INotifyPropertyChanging, INotifyProper
 				this._NOMBRE_DEPARTAMENTO = value;
 				this.SendPropertyChanged("NOMBRE_DEPARTAMENTO");
 				this.OnNOMBRE_DEPARTAMENTOChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_PACIENTE")]
+public partial class TID_PACIENTE : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private string _TID_IDENTIFICACION;
+	
+	private string _NUM_IDENTIFICACION;
+	
+	private string _NOM_APELLIDO1;
+	
+	private string _NOM_APELLIDO2;
+	
+	private string _NOM_NOMBRE;
+	
+	private string _IND_SEXO;
+	
+	private string _COD_ESTADO_CIVIL;
+	
+	private System.Nullable<System.DateTime> _FEC_NACIMIENTO;
+	
+	private System.Nullable<System.DateTime> _FEC_DEFUNCION;
+	
+	private string _OBSERVACION;
+	
+	private EntityRef<TID_TARJETA_INDICE> _TID_TARJETA_INDICE;
+	
+	private EntityRef<TID_DETALLE_PACIENTE> _TID_DETALLE_PACIENTE;
+	
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTID_IDENTIFICACIONChanging(string value);
+    partial void OnTID_IDENTIFICACIONChanged();
+    partial void OnNUM_IDENTIFICACIONChanging(string value);
+    partial void OnNUM_IDENTIFICACIONChanged();
+    partial void OnNOM_APELLIDO1Changing(string value);
+    partial void OnNOM_APELLIDO1Changed();
+    partial void OnNOM_APELLIDO2Changing(string value);
+    partial void OnNOM_APELLIDO2Changed();
+    partial void OnNOM_NOMBREChanging(string value);
+    partial void OnNOM_NOMBREChanged();
+    partial void OnIND_SEXOChanging(string value);
+    partial void OnIND_SEXOChanged();
+    partial void OnCOD_ESTADO_CIVILChanging(string value);
+    partial void OnCOD_ESTADO_CIVILChanged();
+    partial void OnFEC_NACIMIENTOChanging(System.Nullable<System.DateTime> value);
+    partial void OnFEC_NACIMIENTOChanged();
+    partial void OnFEC_DEFUNCIONChanging(System.Nullable<System.DateTime> value);
+    partial void OnFEC_DEFUNCIONChanged();
+    partial void OnOBSERVACIONChanging(string value);
+    partial void OnOBSERVACIONChanged();
+    #endregion
+	
+	public TID_PACIENTE()
+	{
+		this._TID_TARJETA_INDICE = default(EntityRef<TID_TARJETA_INDICE>);
+		this._TID_DETALLE_PACIENTE = default(EntityRef<TID_DETALLE_PACIENTE>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TID_IDENTIFICACION", DbType="VarChar(30)")]
+	public string TID_IDENTIFICACION
+	{
+		get
+		{
+			return this._TID_IDENTIFICACION;
+		}
+		set
+		{
+			if ((this._TID_IDENTIFICACION != value))
+			{
+				this.OnTID_IDENTIFICACIONChanging(value);
+				this.SendPropertyChanging();
+				this._TID_IDENTIFICACION = value;
+				this.SendPropertyChanged("TID_IDENTIFICACION");
+				this.OnTID_IDENTIFICACIONChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_IDENTIFICACION", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+	public string NUM_IDENTIFICACION
+	{
+		get
+		{
+			return this._NUM_IDENTIFICACION;
+		}
+		set
+		{
+			if ((this._NUM_IDENTIFICACION != value))
+			{
+				this.OnNUM_IDENTIFICACIONChanging(value);
+				this.SendPropertyChanging();
+				this._NUM_IDENTIFICACION = value;
+				this.SendPropertyChanged("NUM_IDENTIFICACION");
+				this.OnNUM_IDENTIFICACIONChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_APELLIDO1", DbType="VarChar(30)")]
+	public string NOM_APELLIDO1
+	{
+		get
+		{
+			return this._NOM_APELLIDO1;
+		}
+		set
+		{
+			if ((this._NOM_APELLIDO1 != value))
+			{
+				this.OnNOM_APELLIDO1Changing(value);
+				this.SendPropertyChanging();
+				this._NOM_APELLIDO1 = value;
+				this.SendPropertyChanged("NOM_APELLIDO1");
+				this.OnNOM_APELLIDO1Changed();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_APELLIDO2", DbType="VarChar(30)")]
+	public string NOM_APELLIDO2
+	{
+		get
+		{
+			return this._NOM_APELLIDO2;
+		}
+		set
+		{
+			if ((this._NOM_APELLIDO2 != value))
+			{
+				this.OnNOM_APELLIDO2Changing(value);
+				this.SendPropertyChanging();
+				this._NOM_APELLIDO2 = value;
+				this.SendPropertyChanged("NOM_APELLIDO2");
+				this.OnNOM_APELLIDO2Changed();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_NOMBRE", DbType="VarChar(25)")]
+	public string NOM_NOMBRE
+	{
+		get
+		{
+			return this._NOM_NOMBRE;
+		}
+		set
+		{
+			if ((this._NOM_NOMBRE != value))
+			{
+				this.OnNOM_NOMBREChanging(value);
+				this.SendPropertyChanging();
+				this._NOM_NOMBRE = value;
+				this.SendPropertyChanged("NOM_NOMBRE");
+				this.OnNOM_NOMBREChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IND_SEXO", DbType="VarChar(15)")]
+	public string IND_SEXO
+	{
+		get
+		{
+			return this._IND_SEXO;
+		}
+		set
+		{
+			if ((this._IND_SEXO != value))
+			{
+				this.OnIND_SEXOChanging(value);
+				this.SendPropertyChanging();
+				this._IND_SEXO = value;
+				this.SendPropertyChanged("IND_SEXO");
+				this.OnIND_SEXOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COD_ESTADO_CIVIL", DbType="VarChar(20)")]
+	public string COD_ESTADO_CIVIL
+	{
+		get
+		{
+			return this._COD_ESTADO_CIVIL;
+		}
+		set
+		{
+			if ((this._COD_ESTADO_CIVIL != value))
+			{
+				this.OnCOD_ESTADO_CIVILChanging(value);
+				this.SendPropertyChanging();
+				this._COD_ESTADO_CIVIL = value;
+				this.SendPropertyChanged("COD_ESTADO_CIVIL");
+				this.OnCOD_ESTADO_CIVILChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_NACIMIENTO", DbType="Date")]
+	public System.Nullable<System.DateTime> FEC_NACIMIENTO
+	{
+		get
+		{
+			return this._FEC_NACIMIENTO;
+		}
+		set
+		{
+			if ((this._FEC_NACIMIENTO != value))
+			{
+				this.OnFEC_NACIMIENTOChanging(value);
+				this.SendPropertyChanging();
+				this._FEC_NACIMIENTO = value;
+				this.SendPropertyChanged("FEC_NACIMIENTO");
+				this.OnFEC_NACIMIENTOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_DEFUNCION", DbType="Date")]
+	public System.Nullable<System.DateTime> FEC_DEFUNCION
+	{
+		get
+		{
+			return this._FEC_DEFUNCION;
+		}
+		set
+		{
+			if ((this._FEC_DEFUNCION != value))
+			{
+				this.OnFEC_DEFUNCIONChanging(value);
+				this.SendPropertyChanging();
+				this._FEC_DEFUNCION = value;
+				this.SendPropertyChanged("FEC_DEFUNCION");
+				this.OnFEC_DEFUNCIONChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION", DbType="VarChar(100)")]
+	public string OBSERVACION
+	{
+		get
+		{
+			return this._OBSERVACION;
+		}
+		set
+		{
+			if ((this._OBSERVACION != value))
+			{
+				this.OnOBSERVACIONChanging(value);
+				this.SendPropertyChanging();
+				this._OBSERVACION = value;
+				this.SendPropertyChanged("OBSERVACION");
+				this.OnOBSERVACIONChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_TARJETA_INDICE", Storage="_TID_TARJETA_INDICE", ThisKey="NUM_IDENTIFICACION", OtherKey="CEDULA_PACIENTE", IsUnique=true, IsForeignKey=false)]
+	public TID_TARJETA_INDICE TID_TARJETA_INDICE
+	{
+		get
+		{
+			return this._TID_TARJETA_INDICE.Entity;
+		}
+		set
+		{
+			TID_TARJETA_INDICE previousValue = this._TID_TARJETA_INDICE.Entity;
+			if (((previousValue != value) 
+						|| (this._TID_TARJETA_INDICE.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._TID_TARJETA_INDICE.Entity = null;
+					previousValue.TID_PACIENTE = null;
+				}
+				this._TID_TARJETA_INDICE.Entity = value;
+				if ((value != null))
+				{
+					value.TID_PACIENTE = this;
+				}
+				this.SendPropertyChanged("TID_TARJETA_INDICE");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_DETALLE_PACIENTE", Storage="_TID_DETALLE_PACIENTE", ThisKey="NUM_IDENTIFICACION", OtherKey="CEDULA_PACIENTE", IsUnique=true, IsForeignKey=false)]
+	public TID_DETALLE_PACIENTE TID_DETALLE_PACIENTE
+	{
+		get
+		{
+			return this._TID_DETALLE_PACIENTE.Entity;
+		}
+		set
+		{
+			TID_DETALLE_PACIENTE previousValue = this._TID_DETALLE_PACIENTE.Entity;
+			if (((previousValue != value) 
+						|| (this._TID_DETALLE_PACIENTE.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._TID_DETALLE_PACIENTE.Entity = null;
+					previousValue.TID_PACIENTE = null;
+				}
+				this._TID_DETALLE_PACIENTE.Entity = value;
+				if ((value != null))
+				{
+					value.TID_PACIENTE = this;
+				}
+				this.SendPropertyChanged("TID_DETALLE_PACIENTE");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_DETALLE_PACIENTE")]
+public partial class TID_DETALLE_PACIENTE : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private string _NOMBRE_PADRE;
+	
+	private string _NOMBRE_MADRE;
+	
+	private string _DOMICILIO;
+	
+	private string _CEDULA_PACIENTE;
+	
+	private int _CODIGO_PATRONO;
+	
+	private string _NOMBRE_PATRONO;
+	
+	private string _OBSERVACION;
+	
+	private EntityRef<TID_PACIENTE> _TID_PACIENTE;
+	
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNOMBRE_PADREChanging(string value);
+    partial void OnNOMBRE_PADREChanged();
+    partial void OnNOMBRE_MADREChanging(string value);
+    partial void OnNOMBRE_MADREChanged();
+    partial void OnDOMICILIOChanging(string value);
+    partial void OnDOMICILIOChanged();
+    partial void OnCEDULA_PACIENTEChanging(string value);
+    partial void OnCEDULA_PACIENTEChanged();
+    partial void OnCODIGO_PATRONOChanging(int value);
+    partial void OnCODIGO_PATRONOChanged();
+    partial void OnNOMBRE_PATRONOChanging(string value);
+    partial void OnNOMBRE_PATRONOChanged();
+    partial void OnOBSERVACIONChanging(string value);
+    partial void OnOBSERVACIONChanged();
+    #endregion
+	
+	public TID_DETALLE_PACIENTE()
+	{
+		this._TID_PACIENTE = default(EntityRef<TID_PACIENTE>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_PADRE", DbType="VarChar(50)")]
+	public string NOMBRE_PADRE
+	{
+		get
+		{
+			return this._NOMBRE_PADRE;
+		}
+		set
+		{
+			if ((this._NOMBRE_PADRE != value))
+			{
+				this.OnNOMBRE_PADREChanging(value);
+				this.SendPropertyChanging();
+				this._NOMBRE_PADRE = value;
+				this.SendPropertyChanged("NOMBRE_PADRE");
+				this.OnNOMBRE_PADREChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_MADRE", DbType="VarChar(50)")]
+	public string NOMBRE_MADRE
+	{
+		get
+		{
+			return this._NOMBRE_MADRE;
+		}
+		set
+		{
+			if ((this._NOMBRE_MADRE != value))
+			{
+				this.OnNOMBRE_MADREChanging(value);
+				this.SendPropertyChanging();
+				this._NOMBRE_MADRE = value;
+				this.SendPropertyChanged("NOMBRE_MADRE");
+				this.OnNOMBRE_MADREChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOMICILIO", DbType="VarChar(100)")]
+	public string DOMICILIO
+	{
+		get
+		{
+			return this._DOMICILIO;
+		}
+		set
+		{
+			if ((this._DOMICILIO != value))
+			{
+				this.OnDOMICILIOChanging(value);
+				this.SendPropertyChanging();
+				this._DOMICILIO = value;
+				this.SendPropertyChanged("DOMICILIO");
+				this.OnDOMICILIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_PACIENTE", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+	public string CEDULA_PACIENTE
+	{
+		get
+		{
+			return this._CEDULA_PACIENTE;
+		}
+		set
+		{
+			if ((this._CEDULA_PACIENTE != value))
+			{
+				if (this._TID_PACIENTE.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnCEDULA_PACIENTEChanging(value);
+				this.SendPropertyChanging();
+				this._CEDULA_PACIENTE = value;
+				this.SendPropertyChanged("CEDULA_PACIENTE");
+				this.OnCEDULA_PACIENTEChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_PATRONO", DbType="Int NOT NULL")]
+	public int CODIGO_PATRONO
+	{
+		get
+		{
+			return this._CODIGO_PATRONO;
+		}
+		set
+		{
+			if ((this._CODIGO_PATRONO != value))
+			{
+				this.OnCODIGO_PATRONOChanging(value);
+				this.SendPropertyChanging();
+				this._CODIGO_PATRONO = value;
+				this.SendPropertyChanged("CODIGO_PATRONO");
+				this.OnCODIGO_PATRONOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_PATRONO", DbType="VarChar(50)")]
+	public string NOMBRE_PATRONO
+	{
+		get
+		{
+			return this._NOMBRE_PATRONO;
+		}
+		set
+		{
+			if ((this._NOMBRE_PATRONO != value))
+			{
+				this.OnNOMBRE_PATRONOChanging(value);
+				this.SendPropertyChanging();
+				this._NOMBRE_PATRONO = value;
+				this.SendPropertyChanged("NOMBRE_PATRONO");
+				this.OnNOMBRE_PATRONOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION", DbType="VarChar(100)")]
+	public string OBSERVACION
+	{
+		get
+		{
+			return this._OBSERVACION;
+		}
+		set
+		{
+			if ((this._OBSERVACION != value))
+			{
+				this.OnOBSERVACIONChanging(value);
+				this.SendPropertyChanging();
+				this._OBSERVACION = value;
+				this.SendPropertyChanged("OBSERVACION");
+				this.OnOBSERVACIONChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_DETALLE_PACIENTE", Storage="_TID_PACIENTE", ThisKey="CEDULA_PACIENTE", OtherKey="NUM_IDENTIFICACION", IsForeignKey=true)]
+	public TID_PACIENTE TID_PACIENTE
+	{
+		get
+		{
+			return this._TID_PACIENTE.Entity;
+		}
+		set
+		{
+			TID_PACIENTE previousValue = this._TID_PACIENTE.Entity;
+			if (((previousValue != value) 
+						|| (this._TID_PACIENTE.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._TID_PACIENTE.Entity = null;
+					previousValue.TID_DETALLE_PACIENTE = null;
+				}
+				this._TID_PACIENTE.Entity = value;
+				if ((value != null))
+				{
+					value.TID_DETALLE_PACIENTE = this;
+					this._CEDULA_PACIENTE = value.NUM_IDENTIFICACION;
+				}
+				else
+				{
+					this._CEDULA_PACIENTE = default(string);
+				}
+				this.SendPropertyChanged("TID_PACIENTE");
 			}
 		}
 	}
