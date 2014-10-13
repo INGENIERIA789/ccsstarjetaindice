@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Management.Instrumentation;
 
 public partial class UI_Expediente : System.Web.UI.Page
 {
@@ -17,6 +18,7 @@ public partial class UI_Expediente : System.Web.UI.Page
         clsmovimientos.Pd_FecSalida = Convert.ToDateTime(txtfecha.Text);
         clsmovimientos.Ps_Obs = txtObservacion.Text;
         clsmovimientos.Ps_Res1 = txtEncargado.Text;
+        clsmovimientos.Ps_Est = txtEstadoExpediente.Value;
     }
     
     protected void Page_Load(object sender, EventArgs e)
@@ -24,10 +26,7 @@ public partial class UI_Expediente : System.Web.UI.Page
         txtfecha.Text = Convert.ToString(DateTime.Now);
         clsmovimientos.Pn_CedPaSE = txtCedulaPaciente.Text;
     }
-    public void buscarExpediente() {
-        
-
-    }
+  
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
     {
         
@@ -43,9 +42,7 @@ public partial class UI_Expediente : System.Web.UI.Page
             if (encontrado != "")
             {
                 Response.Write("<script language=javascript>alert('El expediente existe! Continue!');</script>");
-                var tabla_historial = db.GENERAR_HISTORIAL(clsmovimientos.Pn_CedPaSE);
-                GridView1.DataSource = tabla_historial;
-                GridView1.DataBind();
+               
             }
             else {
                 Response.Write("<script language=javascript>alert('El expediente no existe!');</script>");
@@ -60,8 +57,90 @@ public partial class UI_Expediente : System.Web.UI.Page
         {
             db.Dispose();
         }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            llenado();
+            db.SP_INSERTAR_MOVIMIENTO(clsmovimientos.Pn_CedPaSE,
+                                      clsmovimientos.Pn_CodArea,
+                                      clsmovimientos.Pn_CodDoctor,
+                                      clsmovimientos.Pd_FecSalida,
+                                      clsmovimientos.Ps_Obs,
+                                      clsmovimientos.Ps_Est,
+                                      clsmovimientos.Ps_Res1);
+        }
+        catch (Exception ex)
+        { Response.Write("<script language=javascript>alert('Error " + ex + "!');</script>");
+        }
+        finally
+        {
+            db.Dispose();
+            Response.Redirect("MovimientosExpediente.aspx");
+
+        }
+    }
+    protected void txtCodDoc_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            string encontrado = "";
+            clsmovimientos.Pn_CodDoctor = Convert.ToInt32(txtCodDoc.Text);
+            var resultado = db.sp_buscar_doctor(clsmovimientos.Pn_CodDoctor);
+            foreach (sp_buscar_doctorResult datos in resultado)
+            {
+                encontrado = datos.NOMBRE_DOCTOR + datos.APELLIDO_1_DOCTOR ;
+            }
+            if (encontrado != "")
+            {
+                Response.Write("<script language=javascript>alert('El doctor existe! Continue!');</script>");
+                txtNombreDoctor.Text = encontrado;
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('El doctor no existe!');</script>");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            Response.Write("<script language=javascript>alert('Error " + ex + "!');</script>");
+        }
+        finally
+        {
+            db.Dispose();
+        }
+    }
+    protected void txtCodAre_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            string encontrado = "";
+            clsmovimientos.Pn_CodArea = Convert.ToInt32(txtCodAre.Text);
+            var resultado = db.sp_buscar_area(clsmovimientos.Pn_CodArea);
+            foreach (sp_buscar_areaResult datos in resultado)
+            {
+                encontrado = datos.NOMBRE_DEPARTAMENTO;
+            }
+            if (encontrado != "")
+            {
+                Response.Write("<script language=javascript>alert('El área existe! Continue!');</script>");
+                txtArea.Text = encontrado;
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('El expediente no existe!');</script>");
+            }
        
-          
-        
+        }
+        catch (Exception ex)
+        {
+            Response.Write("<script language=javascript>alert('Error " + ex + "!');</script>");
+        }
+        finally
+        {
+            db.Dispose();
+        }
     }
 }

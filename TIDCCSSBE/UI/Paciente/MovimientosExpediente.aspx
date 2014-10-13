@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="Expediente" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="MovimientosExpediente.aspx.cs" Inherits="UI_Expediente" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <p class="text-danger"></p>
-        <asp:Literal runat="server" ID="ErrorMessage" />
     
     <link href="../Content/bootstrap.css" rel="stylesheet" />
    
@@ -12,26 +10,30 @@
             <br />
             <h4>Movimientos del Expediente</h4>
             <hr/>
-            <asp:ValidationSummary runat="server" CssClass="text-danger" />
 
             <div class="row">
                 
         <div class="col-md-3">
              <div class="form-group">
                  <label class="control-label">Cedula</label>
-                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="Cédula del paciente" AutoPostBack="True" OnTextChanged="txtCedulaPaciente_TextChanged" />
+                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" required="required" placeholder="Cédula del paciente" AutoPostBack="True" OnTextChanged="txtCedulaPaciente_TextChanged" />
             </div>
             <div class="form-group">
-                <label class="control-label">Codigo Area</label>
-                    <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" placeholder="Codigo del área"/>
+                <label class="control-label">Codigo Area<br />
+                <br />
+                </label><asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control"  AutoPostBack="True" placeholder="Codigo del área" OnTextChanged="txtCodAre_TextChanged"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Area</label>
-                    <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" placeholder="Codigo del área"/>
+                    <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" required="required" placeholder="Codigo del área"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Codigo Doctor</label>
-                    <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" placeholder="Codigo de Doctor" />
+                    <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" required="required" placeholder="Codigo de Doctor" AutoPostBack="True" OnTextChanged="txtCodDoc_TextChanged" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre Doctor</label>
+                    <asp:TextBox runat="server" ID="txtNombreDoctor" CssClass="form-control" required="required" placeholder="Codigo de Doctor" />
             </div>
             
         </div>
@@ -39,64 +41,64 @@
         <div class="col-md-3">
               <div class="form-group">
                   <label class="control-label">Encarcado</label>              
-                    <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" placeholder="Encargado" />           
+                    <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" required="required" placeholder="Encargado" />           
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha del Ultimo Movimiento</label>                 
-                    <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" placeholder="Fecha de Entrada"/>
+                    <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" required="required" placeholder="Fecha de Entrada"/>
             </div>
              <div class="form-group">
                  <label class="control-label">Observación</label> 
-                    <asp:TextBox runat="server" ID="txtObservacion"  CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Observaciones"/>
+                    <asp:TextBox runat="server" ID="txtObservacion"  CssClass="form-control" Rows="2" TextMode="MultiLine"  placeholder="Observaciones"/>
             </div> 
             <div class="form-group">
+                <label class="control-label">Estado</label> 
                 <div class="input-group">
                     <select class="form-control" runat="server" name="validate-select" id="txtEstadoExpediente" required>
                         <option value="">--Seleccione--</option>
-                        <option value="item_1">Archivado</option>
-                        <option value="item_2">Pendiente</option>
+                        <option value="Archivado">Archivado</option>
+                        <option value="Pendiente">Pendiente</option>
                     </select>
                 </div>
             </div>
         </div>
                 <div class="col-md-6">
-                    <h3><center>Historial de movimientos</center>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
-                        <EmptyDataTemplate>
-                            Fechas<br />
-                        </EmptyDataTemplate>
-                        <FooterStyle BackColor="White" ForeColor="#333333" />
-                        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="White" ForeColor="#333333" />
-                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                        <SortedAscendingHeaderStyle BackColor="#487575" />
-                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                        <SortedDescendingHeaderStyle BackColor="#275353" />
+                   <h3>Historial de Movimientos</h3>
+
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="LinqHistorial" PageSize="5">
+                        <Columns>
+                            <asp:BoundField DataField="CODIGO_AREA" HeaderText="AREA" ReadOnly="True" SortExpression="CODIGO_AREA" />
+                            <asp:BoundField DataField="CODIGO_DOCTOR" HeaderText="DOCTOR" ReadOnly="True" SortExpression="CODIGO_DOCTOR" />
+                            <asp:BoundField DataField="FECHA_ULTIMO_REGISTRO" HeaderText="FECHA" ReadOnly="True" SortExpression="FECHA_ULTIMO_REGISTRO" />
+                            <asp:BoundField DataField="ESTADO_EXPEDIENTE" HeaderText="ESTADO" ReadOnly="True" SortExpression="ESTADO_EXPEDIENTE" />
+                            <asp:BoundField DataField="OBSERVACION_MOVIMIENTO" HeaderText="OBSERVACION" ReadOnly="True" SortExpression="OBSERVACION_MOVIMIENTO" />
+                            <asp:BoundField DataField="RESPONSABLE" HeaderText="RESPONSABLE" ReadOnly="True" SortExpression="RESPONSABLE" />
+                        </Columns>
+                        <FooterStyle BackColor="White" ForeColor="#000066" />
+                        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                        <RowStyle ForeColor="#000066" />
+                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#00547E" />
                     </asp:GridView>
-                    </h3>
-                   
-                    
-                   
-                <asp:Button ID="btnImprimirHistorial" runat="server" Text="Imprimir" CssClass="btn btn-default pull-right" />
-           
-            </div>
+                    <asp:LinqDataSource ID="LinqHistorial" runat="server" ContextTypeName="DBTarjetaIndiceDataContext" EntityTypeName="" Select="new (CODIGO_AREA, CODIGO_DOCTOR, FECHA_ULTIMO_REGISTRO, ESTADO_EXPEDIENTE, OBSERVACION_MOVIMIENTO, RESPONSABLE)" TableName="TID_MOVIMIENTO_EXPEDIENTE" Where="CEDULA_PACIENTE == @CEDULA_PACIENTE">
+                        <WhereParameters>
+                            <asp:ControlParameter ControlID="txtCedulaPaciente" Name="CEDULA_PACIENTE" PropertyName="Text" Type="String" />
+                        </WhereParameters>
+                    </asp:LinqDataSource>
+                     <asp:Button ID="btnImprimirHistorial" runat="server" Text="Imprimir" CssClass="btn btn-default pull-right" />
                 </div>
-    </div>
-         
-           <hr/>
+                </div>
+    </div>  
     <div class="form-group">
         <div class="row">
             <div class="col-md-2">
 
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button ID="Button1" runat="server" Text="Registrarse" CssClass="btn btn-default" />
-            </div>
-            </div>
-            <div class="col-md-2">
-            <div class="col-md-offset-2 col-md-10">
-                <asp:Button ID="Button3" runat="server" Text="Modificar" CssClass="btn btn-default" />
+                <asp:Button ID="Button1" runat="server" Text="Registrar" CssClass="btn btn-default" OnClick="Button1_Click" />
             </div>
             </div>
         </div>

@@ -21,17 +21,43 @@
         <classShapeMoniker Id="9aa3d927-cdc4-4979-bd31-55ff8772834c" />
       </nodes>
     </associationConnector>
-    <classShape Id="42d2da6c-97cd-4dcf-8da0-49e9cbbb461b" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
+    <classShape Id="1484841f-5d07-4978-b3a6-fe3d464ae011" absoluteBounds="4.125, 0.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_MOVIMIENTO_EXPEDIENTE" />
       <nestedChildShapes>
-        <elementListCompartment Id="0c91f6de-4bcf-4d85-8d28-c963a0b71722" absoluteBounds="3.5149999999999997, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="245972ba-e2ec-4a2c-b16c-7ad400869a0a" absoluteBounds="4.14, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.375 : 3.625); (4.375 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.6875 : 3.625); (4.6875 : 3.03049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE/TID_TARJETA_INDICE_TID_MOVIMIENTO_EXPEDIENTE" />
       <nodes>
         <classShapeMoniker Id="bc5009a1-b9b0-4fb5-aae5-b0f7448960ed" />
-        <classShapeMoniker Id="42d2da6c-97cd-4dcf-8da0-49e9cbbb461b" />
+        <classShapeMoniker Id="1484841f-5d07-4978-b3a6-fe3d464ae011" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7a3f6bdf-31e5-44fd-b227-6a07299ffb56" absoluteBounds="6.625, 1.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_DOCTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="075574df-321b-45ea-b974-f64a55a66a7b" absoluteBounds="6.64, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 2.45274983723958); (6.125 : 2.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_DOCTOR/TID_DOCTOR_TID_MOVIMIENTO_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="7a3f6bdf-31e5-44fd-b227-6a07299ffb56" />
+        <classShapeMoniker Id="1484841f-5d07-4978-b3a6-fe3d464ae011" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f64846b7-8857-4463-a7a6-9583ba73ebca" absoluteBounds="2.375, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_AREA_UBICACION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b41dd02-a629-48e9-9545-adb87bb70b9e" absoluteBounds="2.39, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.3125 : 1.69399251302083); (3.3125 : 2.36224659375); (4.125 : 2.36224659375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_AREA_UBICACION/TID_AREA_UBICACION_TID_MOVIMIENTO_EXPEDIENTE" />
+      <nodes>
+        <classShapeMoniker Id="f64846b7-8857-4463-a7a6-9583ba73ebca" />
+        <classShapeMoniker Id="1484841f-5d07-4978-b3a6-fe3d464ae011" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
