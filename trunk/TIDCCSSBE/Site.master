@@ -76,6 +76,7 @@
                                 <li><a runat="server" href="#">Registrar Ubicación</a></li>
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Reportes">Reportes</a></li>
+                                <li><a runat="server" href="#">Crear Usuario</a></li>
                                 <li class="divider"></li>
                             </ul>
                         </li>           
