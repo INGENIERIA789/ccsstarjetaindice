@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="HojasUrgencia.aspx.cs" Inherits="UI_HojasUrgencia" %>
+﻿<%@ Page Title="Urgencias" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="HojasUrgencia.aspx.cs" Inherits="UI_HojasUrgencia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-         
+        
         <asp:Literal runat="server" ID="ErrorMessage" />
     
     <link href="../Content/bootstrap.css" rel="stylesheet" />
