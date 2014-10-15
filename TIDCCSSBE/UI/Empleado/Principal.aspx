@@ -1,7 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Principal.aspx.cs" Inherits="UI_Principal" %>
+﻿<%@ Page Title="Principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Principal.aspx.cs" Inherits="UI_Principal" %>
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+  
     <link href="../Content/Alimentador.css" rel="stylesheet" />
+    
     <div class="container"> 
         <br />
         <br />
@@ -9,6 +11,7 @@
          <hr/>
     
     <br>
+     
     <center>
     <h1><b>Bienvenido!</b></h1>
     <h3>Necesita ingresar sus credenciales!</h3>
@@ -16,8 +19,9 @@
   <button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Ingresar</button>
   </center>
   <br>
-    <hr />
+    <hr /> 
  </div>
+        
   
 
 <!-- Modal -->

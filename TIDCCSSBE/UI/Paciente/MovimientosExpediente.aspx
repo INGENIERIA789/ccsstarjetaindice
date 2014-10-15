@@ -19,9 +19,8 @@
                     <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" required="required" placeholder="Cédula del paciente" AutoPostBack="True" OnTextChanged="txtCedulaPaciente_TextChanged" />
             </div>
             <div class="form-group">
-                <label class="control-label">Codigo Area<br />
-                <br />
-                </label><asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control"  AutoPostBack="True" placeholder="Codigo del área" OnTextChanged="txtCodAre_TextChanged"/>
+                <label class="control-label">Codigo Area</label>
+                <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control"  AutoPostBack="True" placeholder="Codigo del área" OnTextChanged="txtCodAre_TextChanged"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Area</label>
