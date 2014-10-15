@@ -185,6 +185,20 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		return ((ISingleResult<sp_Selecionar_PacienteResult>)(result.ReturnValue));
 	}
 	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_TID")]
+	public int sp_INSERTAR_TID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_CREACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_TARJETA_INDICE", DbType="VarChar(30)")] string eSTADO_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION_TARJETA_INDICE", DbType="VarChar(100)")] string oBSERVACION_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_FUNCIONARIO", DbType="Int")] System.Nullable<int> cEDULA_FUNCIONARIO)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, fECHA_CREACION, eSTADO_TARJETA_INDICE, oBSERVACION_TARJETA_INDICE, cEDULA_FUNCIONARIO);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_PACIENTE")]
+	public int sp_INSERTAR_PACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NUM_IDENTIFICACION", DbType="VarChar(20)")] string nUM_IDENTIFICACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO1", DbType="VarChar(30)")] string nOM_APELLIDO1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO2", DbType="VarChar(30)")] string nOM_APELLIDO2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_NOMBRE", DbType="VarChar(25)")] string nOM_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IND_SEXO", DbType="VarChar(15)")] string iND_SEXO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="COD_ESTADO_CIVIL", DbType="VarChar(20)")] string cOD_ESTADO_CIVIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FEC_NACIMIENTO", DbType="Date")] System.Nullable<System.DateTime> fEC_NACIMIENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nUM_IDENTIFICACION, nOM_APELLIDO1, nOM_APELLIDO2, nOM_NOMBRE, iND_SEXO, cOD_ESTADO_CIVIL, fEC_NACIMIENTO, oBSERVACION);
+		return ((int)(result.ReturnValue));
+	}
+	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERT_DETALLESPACIENTE")]
 	public int sp_INSERT_DETALLESPACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PADRE", DbType="VarChar(50)")] string nOMBRE_PADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_MADRE", DbType="VarChar(50)")] string nOMBRE_MADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DOMICILIO", DbType="VarChar(100)")] string dOMICILIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIGO_PATRONO", DbType="Int")] System.Nullable<int> cODIGO_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PATRONO", DbType="VarChar(50)")] string nOMBRE_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
 	{
@@ -196,20 +210,6 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 	public int sp_INSERT_EXPEDIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BLOQUE_EXPEDIENTE", DbType="VarChar(20)")] string bLOQUE_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CUBICULO_BLOQUE", DbType="VarChar(20)")] string cUBICULO_BLOQUE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION_EXPEDIENTE", DbType="Date")] System.Nullable<System.DateTime> fECHA_CREACION_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_EXPEDIENTE", DbType="VarChar(20)")] string eSTADO_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, bLOQUE_EXPEDIENTE, cUBICULO_BLOQUE, fECHA_CREACION_EXPEDIENTE, eSTADO_EXPEDIENTE, oBSERVACION);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_PACIENTE")]
-	public int sp_INSERTAR_PACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NUM_IDENTIFICACION", DbType="VarChar(20)")] string nUM_IDENTIFICACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO1", DbType="VarChar(30)")] string nOM_APELLIDO1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO2", DbType="VarChar(30)")] string nOM_APELLIDO2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_NOMBRE", DbType="VarChar(25)")] string nOM_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IND_SEXO", DbType="VarChar(15)")] string iND_SEXO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="COD_ESTADO_CIVIL", DbType="VarChar(20)")] string cOD_ESTADO_CIVIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FEC_NACIMIENTO", DbType="Date")] System.Nullable<System.DateTime> fEC_NACIMIENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nUM_IDENTIFICACION, nOM_APELLIDO1, nOM_APELLIDO2, nOM_NOMBRE, iND_SEXO, cOD_ESTADO_CIVIL, fEC_NACIMIENTO, oBSERVACION);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_TID")]
-	public int sp_INSERTAR_TID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_CREACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_TARJETA_INDICE", DbType="VarChar(30)")] string eSTADO_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION_TARJETA_INDICE", DbType="VarChar(100)")] string oBSERVACION_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_FUNCIONARIO", DbType="Int")] System.Nullable<int> cEDULA_FUNCIONARIO)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, fECHA_CREACION, eSTADO_TARJETA_INDICE, oBSERVACION_TARJETA_INDICE, cEDULA_FUNCIONARIO);
 		return ((int)(result.ReturnValue));
 	}
 }

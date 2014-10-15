@@ -2,10 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
  
-    <br />
-     <br />
-     <br />
-     <br />
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
 <h3>Busqueda de paciente.</h3>
   <div class="row">

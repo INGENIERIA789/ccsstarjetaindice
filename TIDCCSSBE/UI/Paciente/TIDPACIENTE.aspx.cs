@@ -46,6 +46,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
    }
     public void agregar()
     {
+        llenarInformacionPaciente();
       
         try
         {  llenarInformacionPaciente();
@@ -79,13 +80,26 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                                      EXP.PdCreEX,
                                      EXP.PsEstEx,
                                      EXP.PsObs);
+            Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
         }
         catch(Exception e)
         {
-            Console.WriteLine(e.Message);
+           Console.WriteLine(e.Message);
            Response.Write("<script language=javascript>alert('error"+e+"');</script>");
         }
         finally{
+            string valida = "";
+            var datos = db.sp_Selecionar_Paciente(PAC.Ps_IdentiPa);
+            foreach (sp_Selecionar_PacienteResult resultado in datos)
+            {
+                valida = resultado.NUM_IDENTIFICACION;
+
+            }
+            if (valida == txtCedulaPaciente.Text)
+            {
+                Response.Write("<script language=javascript>alert('Usuario Ingresado Correctamente!!!');</script>");
+            }
+            
             Response.Redirect("TIDPACIENTE.aspx");
             db.Dispose();//Libera todo los recursos!!
         };
@@ -116,7 +130,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                 txtNomPadre.Text = resultado.NOMBRE_PADRE;
                 txtNombreMadre.Text = resultado.NOMBRE_MADRE;
                 txtxNombrePatrono.Text = resultado.NOMBRE_PATRONO;
-                txtObserPaciente.Text = resultado.OBSERVACION;
+            
                 txtObservacionDetalle.Text = resultado.OBSERVACION1;
                 txtNumPatrono.Text = Convert.ToString(resultado.CODIGO_PATRONO);
                 txtDomicilio.Text = resultado.DOMICILIO;
