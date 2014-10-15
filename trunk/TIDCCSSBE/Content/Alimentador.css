@@ -7,3 +7,32 @@ containertop {
     border-bottom-width: 25px;
     margin-bottom: 25px;
 }
+.navbar-inner{
+    height: 90px;
+  
+    }
+.navbar .brand{
+    padding: 0 10px;
+}
+.navbar .nav > li > a {
+    
+    padding: 35px 15px;
+}
+.navbar .btn-navbar {
+    margin-right: 0px;
+    margin-top:15px;
+}
+.brand img{
+    margin-top: 5px
+}
+@media (max-width:600px) {
+    .brand img{
+        margin-bottom: 5px
+    }
+    .navbar .btn-navbar{
+        margin-right: -15px;
+    }
+    .navbar .nav > li > a {
+        padding: 10px 15px;
+    }
+}

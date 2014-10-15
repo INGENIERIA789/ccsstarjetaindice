@@ -41,7 +41,7 @@
          <div class="navbar navbar-inverse navbar-fixed-top">
              <div class="container">
                 <div class="navbar-header">    
-                    <a class="navbar-brand" runat="server" href="~/">CCSS</a>
+                    <a class="navbar-brand" runat="server" href="#">CCSS</a>
                 </div>
                 <div class="navbar-collapse collapse" >
                     <ul class="nav navbar-nav">
@@ -83,8 +83,7 @@
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Registrarse</a></li>
+                            <ul class="nav navbar-nav navbar-right">                                
                                 <li><a runat="server" href="~/Account/Login">Iniciar sesión</a></li>
                             </ul>
                         </AnonymousTemplate>

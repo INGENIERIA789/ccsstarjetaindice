@@ -44,6 +44,9 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
   partial void InsertTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
   partial void UpdateTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
   partial void DeleteTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
+  partial void InsertTID_FUNCIONARIO(TID_FUNCIONARIO instance);
+  partial void UpdateTID_FUNCIONARIO(TID_FUNCIONARIO instance);
+  partial void DeleteTID_FUNCIONARIO(TID_FUNCIONARIO instance);
   #endregion
 	
 	public DBTarjetaIndiceDataContext() : 
@@ -132,46 +135,12 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_PACIENTE")]
-	public int sp_INSERTAR_PACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TID_IDENTIFICACION", DbType="VarChar(30)")] string tID_IDENTIFICACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NUM_IDENTIFICACION", DbType="Int")] System.Nullable<int> nUM_IDENTIFICACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO1", DbType="VarChar(30)")] string nOM_APELLIDO1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO2", DbType="VarChar(30)")] string nOM_APELLIDO2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_NOMBRE", DbType="VarChar(25)")] string nOM_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IND_SEXO", DbType="VarChar(15)")] string iND_SEXO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="COD_ESTADO_CIVIL", DbType="VarChar(20)")] string cOD_ESTADO_CIVIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FEC_NACIMIENTO", DbType="Date")] System.Nullable<System.DateTime> fEC_NACIMIENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
+	public System.Data.Linq.Table<TID_FUNCIONARIO> TID_FUNCIONARIO
 	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tID_IDENTIFICACION, nUM_IDENTIFICACION, nOM_APELLIDO1, nOM_APELLIDO2, nOM_NOMBRE, iND_SEXO, cOD_ESTADO_CIVIL, fEC_NACIMIENTO, oBSERVACION);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERT_EXPEDIENTE")]
-	public int sp_INSERT_EXPEDIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="Int")] System.Nullable<int> cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BLOQUE_EXPEDIENTE", DbType="VarChar(20)")] string bLOQUE_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CUBICULO_BLOQUE", DbType="VarChar(20)")] string cUBICULO_BLOQUE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION_EXPEDIENTE", DbType="Date")] System.Nullable<System.DateTime> fECHA_CREACION_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_EXPEDIENTE", DbType="VarChar(20)")] string eSTADO_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, bLOQUE_EXPEDIENTE, cUBICULO_BLOQUE, fECHA_CREACION_EXPEDIENTE, eSTADO_EXPEDIENTE, oBSERVACION);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERT_DETALLESPACIENTE")]
-	public int sp_INSERT_DETALLESPACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PADRE", DbType="VarChar(50)")] string nOMBRE_PADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_MADRE", DbType="VarChar(50)")] string nOMBRE_MADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DOMICILIO", DbType="VarChar(100)")] string dOMICILIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="Int")] System.Nullable<int> cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIGO_PATRONO", DbType="Int")] System.Nullable<int> cODIGO_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PATRONO", DbType="VarChar(50)")] string nOMBRE_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nOMBRE_PADRE, nOMBRE_MADRE, dOMICILIO, cEDULA_PACIENTE, cODIGO_PATRONO, nOMBRE_PATRONO, oBSERVACION);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_TID")]
-	public int sp_INSERTAR_TID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="Int")] System.Nullable<int> cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_CREACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_TARJETA_INDICE", DbType="VarChar(30)")] string eSTADO_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION_TARJETA_INDICE", DbType="VarChar(100)")] string oBSERVACION_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_FUNCIONARIO", DbType="Int")] System.Nullable<int> cEDULA_FUNCIONARIO)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, fECHA_CREACION, eSTADO_TARJETA_INDICE, oBSERVACION_TARJETA_INDICE, cEDULA_FUNCIONARIO);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Selecionar_Paciente")]
-	public ISingleResult<sp_Selecionar_PacienteResult> sp_Selecionar_Paciente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="Int")] System.Nullable<int> cedula)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
-		return ((ISingleResult<sp_Selecionar_PacienteResult>)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE")]
-	public ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult> SP_SELECCION_EXISTENCIA_EXPEDIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(20)")] string cEDULA)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA);
-		return ((ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult>)(result.ReturnValue));
+		get
+		{
+			return this.GetTable<TID_FUNCIONARIO>();
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GENERAR_HISTORIAL")]
@@ -200,6 +169,48 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cODIGO_DOCTOR);
 		return ((ISingleResult<sp_buscar_doctorResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE")]
+	public ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult> SP_SELECCION_EXISTENCIA_EXPEDIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(20)")] string cEDULA)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA);
+		return ((ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Selecionar_Paciente")]
+	public ISingleResult<sp_Selecionar_PacienteResult> sp_Selecionar_Paciente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(20)")] string cedula)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+		return ((ISingleResult<sp_Selecionar_PacienteResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERT_DETALLESPACIENTE")]
+	public int sp_INSERT_DETALLESPACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PADRE", DbType="VarChar(50)")] string nOMBRE_PADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_MADRE", DbType="VarChar(50)")] string nOMBRE_MADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DOMICILIO", DbType="VarChar(100)")] string dOMICILIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIGO_PATRONO", DbType="Int")] System.Nullable<int> cODIGO_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PATRONO", DbType="VarChar(50)")] string nOMBRE_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nOMBRE_PADRE, nOMBRE_MADRE, dOMICILIO, cEDULA_PACIENTE, cODIGO_PATRONO, nOMBRE_PATRONO, oBSERVACION);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERT_EXPEDIENTE")]
+	public int sp_INSERT_EXPEDIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BLOQUE_EXPEDIENTE", DbType="VarChar(20)")] string bLOQUE_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CUBICULO_BLOQUE", DbType="VarChar(20)")] string cUBICULO_BLOQUE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION_EXPEDIENTE", DbType="Date")] System.Nullable<System.DateTime> fECHA_CREACION_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_EXPEDIENTE", DbType="VarChar(20)")] string eSTADO_EXPEDIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, bLOQUE_EXPEDIENTE, cUBICULO_BLOQUE, fECHA_CREACION_EXPEDIENTE, eSTADO_EXPEDIENTE, oBSERVACION);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_PACIENTE")]
+	public int sp_INSERTAR_PACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NUM_IDENTIFICACION", DbType="VarChar(20)")] string nUM_IDENTIFICACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO1", DbType="VarChar(30)")] string nOM_APELLIDO1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO2", DbType="VarChar(30)")] string nOM_APELLIDO2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_NOMBRE", DbType="VarChar(25)")] string nOM_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IND_SEXO", DbType="VarChar(15)")] string iND_SEXO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="COD_ESTADO_CIVIL", DbType="VarChar(20)")] string cOD_ESTADO_CIVIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FEC_NACIMIENTO", DbType="Date")] System.Nullable<System.DateTime> fEC_NACIMIENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nUM_IDENTIFICACION, nOM_APELLIDO1, nOM_APELLIDO2, nOM_NOMBRE, iND_SEXO, cOD_ESTADO_CIVIL, fEC_NACIMIENTO, oBSERVACION);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_TID")]
+	public int sp_INSERTAR_TID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_CREACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_TARJETA_INDICE", DbType="VarChar(30)")] string eSTADO_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION_TARJETA_INDICE", DbType="VarChar(100)")] string oBSERVACION_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_FUNCIONARIO", DbType="Int")] System.Nullable<int> cEDULA_FUNCIONARIO)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, fECHA_CREACION, eSTADO_TARJETA_INDICE, oBSERVACION_TARJETA_INDICE, cEDULA_FUNCIONARIO);
+		return ((int)(result.ReturnValue));
 	}
 }
 
@@ -338,6 +349,8 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 	
 	private EntityRef<TID_PACIENTE> _TID_PACIENTE;
 	
+	private EntityRef<TID_FUNCIONARIO> _TID_FUNCIONARIO;
+	
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -357,6 +370,7 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 	public TID_TARJETA_INDICE()
 	{
 		this._TID_PACIENTE = default(EntityRef<TID_PACIENTE>);
+		this._TID_FUNCIONARIO = default(EntityRef<TID_FUNCIONARIO>);
 		OnCreated();
 	}
 	
@@ -455,6 +469,10 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 		{
 			if ((this._CEDULA_FUNCIONARIO != value))
 			{
+				if (this._TID_FUNCIONARIO.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
 				this.OnCEDULA_FUNCIONARIOChanging(value);
 				this.SendPropertyChanging();
 				this._CEDULA_FUNCIONARIO = value;
@@ -494,6 +512,40 @@ public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyProper
 					this._CEDULA_PACIENTE = default(string);
 				}
 				this.SendPropertyChanged("TID_PACIENTE");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_FUNCIONARIO_TID_TARJETA_INDICE", Storage="_TID_FUNCIONARIO", ThisKey="CEDULA_FUNCIONARIO", OtherKey="CEDULA_FUNCIONARIO", IsForeignKey=true)]
+	public TID_FUNCIONARIO TID_FUNCIONARIO
+	{
+		get
+		{
+			return this._TID_FUNCIONARIO.Entity;
+		}
+		set
+		{
+			TID_FUNCIONARIO previousValue = this._TID_FUNCIONARIO.Entity;
+			if (((previousValue != value) 
+						|| (this._TID_FUNCIONARIO.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._TID_FUNCIONARIO.Entity = null;
+					previousValue.TID_TARJETA_INDICE.Remove(this);
+				}
+				this._TID_FUNCIONARIO.Entity = value;
+				if ((value != null))
+				{
+					value.TID_TARJETA_INDICE.Add(this);
+					this._CEDULA_FUNCIONARIO = value.CEDULA_FUNCIONARIO;
+				}
+				else
+				{
+					this._CEDULA_FUNCIONARIO = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("TID_FUNCIONARIO");
 			}
 		}
 	}
@@ -1511,10 +1563,522 @@ public partial class TID_DETALLE_PACIENTE : INotifyPropertyChanging, INotifyProp
 	}
 }
 
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_FUNCIONARIO")]
+public partial class TID_FUNCIONARIO : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _CEDULA_FUNCIONARIO;
+	
+	private string _APELLIDO_1_FUNCIONARIO;
+	
+	private string _APELLIDO_2_FUNCIONARIO;
+	
+	private string _NOMBRE_FUNCIONARIO;
+	
+	private System.Nullable<int> _TELEFONO_FUNCIONARIO;
+	
+	private System.Nullable<int> _CARNET_CCSS_FUNCIONARIO;
+	
+	private string _DIRECCION_FUNCIONARIO;
+	
+	private System.Nullable<System.DateTime> _FECHA_NACIMIENTO;
+	
+	private string _AREA_TRABAJO_FUNCIONARIO;
+	
+	private EntitySet<TID_TARJETA_INDICE> _TID_TARJETA_INDICE;
+	
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCEDULA_FUNCIONARIOChanging(int value);
+    partial void OnCEDULA_FUNCIONARIOChanged();
+    partial void OnAPELLIDO_1_FUNCIONARIOChanging(string value);
+    partial void OnAPELLIDO_1_FUNCIONARIOChanged();
+    partial void OnAPELLIDO_2_FUNCIONARIOChanging(string value);
+    partial void OnAPELLIDO_2_FUNCIONARIOChanged();
+    partial void OnNOMBRE_FUNCIONARIOChanging(string value);
+    partial void OnNOMBRE_FUNCIONARIOChanged();
+    partial void OnTELEFONO_FUNCIONARIOChanging(System.Nullable<int> value);
+    partial void OnTELEFONO_FUNCIONARIOChanged();
+    partial void OnCARNET_CCSS_FUNCIONARIOChanging(System.Nullable<int> value);
+    partial void OnCARNET_CCSS_FUNCIONARIOChanged();
+    partial void OnDIRECCION_FUNCIONARIOChanging(string value);
+    partial void OnDIRECCION_FUNCIONARIOChanged();
+    partial void OnFECHA_NACIMIENTOChanging(System.Nullable<System.DateTime> value);
+    partial void OnFECHA_NACIMIENTOChanged();
+    partial void OnAREA_TRABAJO_FUNCIONARIOChanging(string value);
+    partial void OnAREA_TRABAJO_FUNCIONARIOChanged();
+    #endregion
+	
+	public TID_FUNCIONARIO()
+	{
+		this._TID_TARJETA_INDICE = new EntitySet<TID_TARJETA_INDICE>(new Action<TID_TARJETA_INDICE>(this.attach_TID_TARJETA_INDICE), new Action<TID_TARJETA_INDICE>(this.detach_TID_TARJETA_INDICE));
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_FUNCIONARIO", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int CEDULA_FUNCIONARIO
+	{
+		get
+		{
+			return this._CEDULA_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._CEDULA_FUNCIONARIO != value))
+			{
+				this.OnCEDULA_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._CEDULA_FUNCIONARIO = value;
+				this.SendPropertyChanged("CEDULA_FUNCIONARIO");
+				this.OnCEDULA_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_1_FUNCIONARIO", DbType="VarChar(30)")]
+	public string APELLIDO_1_FUNCIONARIO
+	{
+		get
+		{
+			return this._APELLIDO_1_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._APELLIDO_1_FUNCIONARIO != value))
+			{
+				this.OnAPELLIDO_1_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._APELLIDO_1_FUNCIONARIO = value;
+				this.SendPropertyChanged("APELLIDO_1_FUNCIONARIO");
+				this.OnAPELLIDO_1_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_2_FUNCIONARIO", DbType="VarChar(30)")]
+	public string APELLIDO_2_FUNCIONARIO
+	{
+		get
+		{
+			return this._APELLIDO_2_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._APELLIDO_2_FUNCIONARIO != value))
+			{
+				this.OnAPELLIDO_2_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._APELLIDO_2_FUNCIONARIO = value;
+				this.SendPropertyChanged("APELLIDO_2_FUNCIONARIO");
+				this.OnAPELLIDO_2_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_FUNCIONARIO", DbType="VarChar(25)")]
+	public string NOMBRE_FUNCIONARIO
+	{
+		get
+		{
+			return this._NOMBRE_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._NOMBRE_FUNCIONARIO != value))
+			{
+				this.OnNOMBRE_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._NOMBRE_FUNCIONARIO = value;
+				this.SendPropertyChanged("NOMBRE_FUNCIONARIO");
+				this.OnNOMBRE_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TELEFONO_FUNCIONARIO", DbType="Int")]
+	public System.Nullable<int> TELEFONO_FUNCIONARIO
+	{
+		get
+		{
+			return this._TELEFONO_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._TELEFONO_FUNCIONARIO != value))
+			{
+				this.OnTELEFONO_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._TELEFONO_FUNCIONARIO = value;
+				this.SendPropertyChanged("TELEFONO_FUNCIONARIO");
+				this.OnTELEFONO_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CARNET_CCSS_FUNCIONARIO", DbType="Int")]
+	public System.Nullable<int> CARNET_CCSS_FUNCIONARIO
+	{
+		get
+		{
+			return this._CARNET_CCSS_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._CARNET_CCSS_FUNCIONARIO != value))
+			{
+				this.OnCARNET_CCSS_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._CARNET_CCSS_FUNCIONARIO = value;
+				this.SendPropertyChanged("CARNET_CCSS_FUNCIONARIO");
+				this.OnCARNET_CCSS_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIRECCION_FUNCIONARIO", DbType="VarChar(100)")]
+	public string DIRECCION_FUNCIONARIO
+	{
+		get
+		{
+			return this._DIRECCION_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._DIRECCION_FUNCIONARIO != value))
+			{
+				this.OnDIRECCION_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._DIRECCION_FUNCIONARIO = value;
+				this.SendPropertyChanged("DIRECCION_FUNCIONARIO");
+				this.OnDIRECCION_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_NACIMIENTO", DbType="Date")]
+	public System.Nullable<System.DateTime> FECHA_NACIMIENTO
+	{
+		get
+		{
+			return this._FECHA_NACIMIENTO;
+		}
+		set
+		{
+			if ((this._FECHA_NACIMIENTO != value))
+			{
+				this.OnFECHA_NACIMIENTOChanging(value);
+				this.SendPropertyChanging();
+				this._FECHA_NACIMIENTO = value;
+				this.SendPropertyChanged("FECHA_NACIMIENTO");
+				this.OnFECHA_NACIMIENTOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AREA_TRABAJO_FUNCIONARIO", DbType="VarChar(40)")]
+	public string AREA_TRABAJO_FUNCIONARIO
+	{
+		get
+		{
+			return this._AREA_TRABAJO_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._AREA_TRABAJO_FUNCIONARIO != value))
+			{
+				this.OnAREA_TRABAJO_FUNCIONARIOChanging(value);
+				this.SendPropertyChanging();
+				this._AREA_TRABAJO_FUNCIONARIO = value;
+				this.SendPropertyChanged("AREA_TRABAJO_FUNCIONARIO");
+				this.OnAREA_TRABAJO_FUNCIONARIOChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_FUNCIONARIO_TID_TARJETA_INDICE", Storage="_TID_TARJETA_INDICE", ThisKey="CEDULA_FUNCIONARIO", OtherKey="CEDULA_FUNCIONARIO")]
+	public EntitySet<TID_TARJETA_INDICE> TID_TARJETA_INDICE
+	{
+		get
+		{
+			return this._TID_TARJETA_INDICE;
+		}
+		set
+		{
+			this._TID_TARJETA_INDICE.Assign(value);
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_TID_TARJETA_INDICE(TID_TARJETA_INDICE entity)
+	{
+		this.SendPropertyChanging();
+		entity.TID_FUNCIONARIO = this;
+	}
+	
+	private void detach_TID_TARJETA_INDICE(TID_TARJETA_INDICE entity)
+	{
+		this.SendPropertyChanging();
+		entity.TID_FUNCIONARIO = null;
+	}
+}
+
+public partial class GENERAR_HISTORIALResult
+{
+	
+	private System.Nullable<int> _CODIGO_AREA;
+	
+	private System.Nullable<int> _CODIGO_DOCTOR;
+	
+	private System.Nullable<System.DateTime> _FECHA_ULTIMO_REGISTRO;
+	
+	private string _OBSERVACION_MOVIMIENTO;
+	
+	private string _ESTADO_EXPEDIENTE;
+	
+	private string _RESPONSABLE;
+	
+	public GENERAR_HISTORIALResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_AREA", DbType="Int")]
+	public System.Nullable<int> CODIGO_AREA
+	{
+		get
+		{
+			return this._CODIGO_AREA;
+		}
+		set
+		{
+			if ((this._CODIGO_AREA != value))
+			{
+				this._CODIGO_AREA = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_DOCTOR", DbType="Int")]
+	public System.Nullable<int> CODIGO_DOCTOR
+	{
+		get
+		{
+			return this._CODIGO_DOCTOR;
+		}
+		set
+		{
+			if ((this._CODIGO_DOCTOR != value))
+			{
+				this._CODIGO_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_ULTIMO_REGISTRO", DbType="DateTime")]
+	public System.Nullable<System.DateTime> FECHA_ULTIMO_REGISTRO
+	{
+		get
+		{
+			return this._FECHA_ULTIMO_REGISTRO;
+		}
+		set
+		{
+			if ((this._FECHA_ULTIMO_REGISTRO != value))
+			{
+				this._FECHA_ULTIMO_REGISTRO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION_MOVIMIENTO", DbType="VarChar(50)")]
+	public string OBSERVACION_MOVIMIENTO
+	{
+		get
+		{
+			return this._OBSERVACION_MOVIMIENTO;
+		}
+		set
+		{
+			if ((this._OBSERVACION_MOVIMIENTO != value))
+			{
+				this._OBSERVACION_MOVIMIENTO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_EXPEDIENTE", DbType="NChar(10)")]
+	public string ESTADO_EXPEDIENTE
+	{
+		get
+		{
+			return this._ESTADO_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._ESTADO_EXPEDIENTE != value))
+			{
+				this._ESTADO_EXPEDIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RESPONSABLE", DbType="VarChar(50)")]
+	public string RESPONSABLE
+	{
+		get
+		{
+			return this._RESPONSABLE;
+		}
+		set
+		{
+			if ((this._RESPONSABLE != value))
+			{
+				this._RESPONSABLE = value;
+			}
+		}
+	}
+}
+
+public partial class sp_buscar_areaResult
+{
+	
+	private string _NOMBRE_DEPARTAMENTO;
+	
+	public sp_buscar_areaResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DEPARTAMENTO", DbType="VarChar(40)")]
+	public string NOMBRE_DEPARTAMENTO
+	{
+		get
+		{
+			return this._NOMBRE_DEPARTAMENTO;
+		}
+		set
+		{
+			if ((this._NOMBRE_DEPARTAMENTO != value))
+			{
+				this._NOMBRE_DEPARTAMENTO = value;
+			}
+		}
+	}
+}
+
+public partial class sp_buscar_doctorResult
+{
+	
+	private string _NOMBRE_DOCTOR;
+	
+	private string _APELLIDO_1_DOCTOR;
+	
+	public sp_buscar_doctorResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DOCTOR", DbType="NChar(10)")]
+	public string NOMBRE_DOCTOR
+	{
+		get
+		{
+			return this._NOMBRE_DOCTOR;
+		}
+		set
+		{
+			if ((this._NOMBRE_DOCTOR != value))
+			{
+				this._NOMBRE_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_1_DOCTOR", DbType="VarChar(30)")]
+	public string APELLIDO_1_DOCTOR
+	{
+		get
+		{
+			return this._APELLIDO_1_DOCTOR;
+		}
+		set
+		{
+			if ((this._APELLIDO_1_DOCTOR != value))
+			{
+				this._APELLIDO_1_DOCTOR = value;
+			}
+		}
+	}
+}
+
+public partial class SP_SELECCION_EXISTENCIA_EXPEDIENTEResult
+{
+	
+	private string _CEDULA_PACIENTE;
+	
+	private string _ESTADO_EXPEDIENTE;
+	
+	public SP_SELECCION_EXISTENCIA_EXPEDIENTEResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_PACIENTE", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+	public string CEDULA_PACIENTE
+	{
+		get
+		{
+			return this._CEDULA_PACIENTE;
+		}
+		set
+		{
+			if ((this._CEDULA_PACIENTE != value))
+			{
+				this._CEDULA_PACIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_EXPEDIENTE", DbType="NChar(10)")]
+	public string ESTADO_EXPEDIENTE
+	{
+		get
+		{
+			return this._ESTADO_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._ESTADO_EXPEDIENTE != value))
+			{
+				this._ESTADO_EXPEDIENTE = value;
+			}
+		}
+	}
+}
+
 public partial class sp_Selecionar_PacienteResult
 {
 	
-	private int _NUM_IDENTIFICACION;
+	private string _NUM_IDENTIFICACION;
 	
 	private string _NOM_APELLIDO1;
 	
@@ -1542,12 +2106,22 @@ public partial class sp_Selecionar_PacienteResult
 	
 	private string _OBSERVACION1;
 	
+	private string _BLOQUE_EXPEDIENTE;
+	
+	private string _CUBICULO_EXPEDIENTE;
+	
+	private System.Nullable<System.DateTime> _FECHA_CREACION_EXPEDIENTE;
+	
+	private string _OBSERVACION2;
+	
+	private string _ESTADO_EXPEDIENTE;
+	
 	public sp_Selecionar_PacienteResult()
 	{
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_IDENTIFICACION", DbType="Int NOT NULL")]
-	public int NUM_IDENTIFICACION
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_IDENTIFICACION", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+	public string NUM_IDENTIFICACION
 	{
 		get
 		{
@@ -1769,31 +2343,67 @@ public partial class sp_Selecionar_PacienteResult
 			}
 		}
 	}
-}
-
-public partial class SP_SELECCION_EXISTENCIA_EXPEDIENTEResult
-{
 	
-	private string _CEDULA_PACIENTE;
-	
-	private string _ESTADO_EXPEDIENTE;
-	
-	public SP_SELECCION_EXISTENCIA_EXPEDIENTEResult()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_PACIENTE", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-	public string CEDULA_PACIENTE
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BLOQUE_EXPEDIENTE", DbType="VarChar(20)")]
+	public string BLOQUE_EXPEDIENTE
 	{
 		get
 		{
-			return this._CEDULA_PACIENTE;
+			return this._BLOQUE_EXPEDIENTE;
 		}
 		set
 		{
-			if ((this._CEDULA_PACIENTE != value))
+			if ((this._BLOQUE_EXPEDIENTE != value))
 			{
-				this._CEDULA_PACIENTE = value;
+				this._BLOQUE_EXPEDIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUBICULO_EXPEDIENTE", DbType="VarChar(20)")]
+	public string CUBICULO_EXPEDIENTE
+	{
+		get
+		{
+			return this._CUBICULO_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._CUBICULO_EXPEDIENTE != value))
+			{
+				this._CUBICULO_EXPEDIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_CREACION_EXPEDIENTE", DbType="Date")]
+	public System.Nullable<System.DateTime> FECHA_CREACION_EXPEDIENTE
+	{
+		get
+		{
+			return this._FECHA_CREACION_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._FECHA_CREACION_EXPEDIENTE != value))
+			{
+				this._FECHA_CREACION_EXPEDIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION2", DbType="VarChar(50)")]
+	public string OBSERVACION2
+	{
+		get
+		{
+			return this._OBSERVACION2;
+		}
+		set
+		{
+			if ((this._OBSERVACION2 != value))
+			{
+				this._OBSERVACION2 = value;
 			}
 		}
 	}
@@ -1810,192 +2420,6 @@ public partial class SP_SELECCION_EXISTENCIA_EXPEDIENTEResult
 			if ((this._ESTADO_EXPEDIENTE != value))
 			{
 				this._ESTADO_EXPEDIENTE = value;
-			}
-		}
-	}
-}
-
-public partial class GENERAR_HISTORIALResult
-{
-	
-	private System.Nullable<int> _CODIGO_AREA;
-	
-	private System.Nullable<int> _CODIGO_DOCTOR;
-	
-	private System.Nullable<System.DateTime> _FECHA_ULTIMO_REGISTRO;
-	
-	private string _OBSERVACION_MOVIMIENTO;
-	
-	private string _ESTADO_EXPEDIENTE;
-	
-	private string _RESPONSABLE;
-	
-	public GENERAR_HISTORIALResult()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_AREA", DbType="Int")]
-	public System.Nullable<int> CODIGO_AREA
-	{
-		get
-		{
-			return this._CODIGO_AREA;
-		}
-		set
-		{
-			if ((this._CODIGO_AREA != value))
-			{
-				this._CODIGO_AREA = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_DOCTOR", DbType="Int")]
-	public System.Nullable<int> CODIGO_DOCTOR
-	{
-		get
-		{
-			return this._CODIGO_DOCTOR;
-		}
-		set
-		{
-			if ((this._CODIGO_DOCTOR != value))
-			{
-				this._CODIGO_DOCTOR = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_ULTIMO_REGISTRO", DbType="DateTime")]
-	public System.Nullable<System.DateTime> FECHA_ULTIMO_REGISTRO
-	{
-		get
-		{
-			return this._FECHA_ULTIMO_REGISTRO;
-		}
-		set
-		{
-			if ((this._FECHA_ULTIMO_REGISTRO != value))
-			{
-				this._FECHA_ULTIMO_REGISTRO = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION_MOVIMIENTO", DbType="VarChar(50)")]
-	public string OBSERVACION_MOVIMIENTO
-	{
-		get
-		{
-			return this._OBSERVACION_MOVIMIENTO;
-		}
-		set
-		{
-			if ((this._OBSERVACION_MOVIMIENTO != value))
-			{
-				this._OBSERVACION_MOVIMIENTO = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_EXPEDIENTE", DbType="NChar(10)")]
-	public string ESTADO_EXPEDIENTE
-	{
-		get
-		{
-			return this._ESTADO_EXPEDIENTE;
-		}
-		set
-		{
-			if ((this._ESTADO_EXPEDIENTE != value))
-			{
-				this._ESTADO_EXPEDIENTE = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RESPONSABLE", DbType="VarChar(50)")]
-	public string RESPONSABLE
-	{
-		get
-		{
-			return this._RESPONSABLE;
-		}
-		set
-		{
-			if ((this._RESPONSABLE != value))
-			{
-				this._RESPONSABLE = value;
-			}
-		}
-	}
-}
-
-public partial class sp_buscar_areaResult
-{
-	
-	private string _NOMBRE_DEPARTAMENTO;
-	
-	public sp_buscar_areaResult()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DEPARTAMENTO", DbType="VarChar(40)")]
-	public string NOMBRE_DEPARTAMENTO
-	{
-		get
-		{
-			return this._NOMBRE_DEPARTAMENTO;
-		}
-		set
-		{
-			if ((this._NOMBRE_DEPARTAMENTO != value))
-			{
-				this._NOMBRE_DEPARTAMENTO = value;
-			}
-		}
-	}
-}
-
-public partial class sp_buscar_doctorResult
-{
-	
-	private string _NOMBRE_DOCTOR;
-	
-	private string _APELLIDO_1_DOCTOR;
-	
-	public sp_buscar_doctorResult()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DOCTOR", DbType="NChar(10)")]
-	public string NOMBRE_DOCTOR
-	{
-		get
-		{
-			return this._NOMBRE_DOCTOR;
-		}
-		set
-		{
-			if ((this._NOMBRE_DOCTOR != value))
-			{
-				this._NOMBRE_DOCTOR = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_1_DOCTOR", DbType="VarChar(30)")]
-	public string APELLIDO_1_DOCTOR
-	{
-		get
-		{
-			return this._APELLIDO_1_DOCTOR;
-		}
-		set
-		{
-			if ((this._APELLIDO_1_DOCTOR != value))
-			{
-				this._APELLIDO_1_DOCTOR = value;
 			}
 		}
 	}
