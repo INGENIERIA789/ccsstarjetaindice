@@ -57,13 +57,6 @@ public class clsPaciente
         get { return pd_FecNac; }
         set { pd_FecNac = value; }
     }
-    private DateTime pd_FecDef;
-
-    public DateTime Pd_FecDef
-    {
-        get { return pd_FecDef; }
-        set { pd_FecDef = value; }
-    }
     private string ps_Obs;
 
     public string Ps_Obs

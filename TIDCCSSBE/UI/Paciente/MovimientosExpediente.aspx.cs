@@ -94,7 +94,6 @@ public partial class UI_Expediente : System.Web.UI.Page
             }
             if (encontrado != "")
             {
-                Response.Write("<script language=javascript>alert('El doctor existe! Continue!');</script>");
                 txtNombreDoctor.Text = encontrado;
             }
             else
@@ -124,8 +123,7 @@ public partial class UI_Expediente : System.Web.UI.Page
                 encontrado = datos.NOMBRE_DEPARTAMENTO;
             }
             if (encontrado != "")
-            {
-                Response.Write("<script language=javascript>alert('El área existe! Continue!');</script>");
+            {               
                 txtArea.Text = encontrado;
             }
             else

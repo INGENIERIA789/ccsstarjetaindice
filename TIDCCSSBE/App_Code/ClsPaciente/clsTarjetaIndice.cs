@@ -8,13 +8,15 @@ using System.Web;
 /// </summary>
 public class clsTarjetaIndice
 {
-    private int pn_CedPaTid;
+    private string pn_CedPaTid;
 
-    public int Pn_CedPaTid
+    public string Pn_CedPaTid
     {
         get { return pn_CedPaTid; }
         set { pn_CedPaTid = value; }
     }
+
+
     private DateTime pd_FecCreacionTid;
 
     public DateTime Pd_FecCreacionTid

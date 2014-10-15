@@ -44,7 +44,7 @@
                     <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" required="required" placeholder="Encargado" />           
             </div>
             <div class="form-group">
-                <label class="control-label">Fecha del Ultimo Movimiento</label>                 
+                <label class="control-label">Fecha</label>                 
                     <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" required="required" placeholder="Fecha de Entrada"/>
             </div>
              <div class="form-group">
@@ -69,7 +69,7 @@
                         <Columns>
                             <asp:BoundField DataField="CODIGO_AREA" HeaderText="AREA" ReadOnly="True" SortExpression="CODIGO_AREA" />
                             <asp:BoundField DataField="CODIGO_DOCTOR" HeaderText="DOCTOR" ReadOnly="True" SortExpression="CODIGO_DOCTOR" />
-                            <asp:BoundField DataField="FECHA_ULTIMO_REGISTRO" HeaderText="FECHA" ReadOnly="True" SortExpression="FECHA_ULTIMO_REGISTRO" />
+                            <asp:BoundField DataField="FECHA_ULTIMO_REGISTRO" HeaderText="ULTIMO REGISTRO" ReadOnly="True" SortExpression="FECHA_ULTIMO_REGISTRO" />
                             <asp:BoundField DataField="ESTADO_EXPEDIENTE" HeaderText="ESTADO" ReadOnly="True" SortExpression="ESTADO_EXPEDIENTE" />
                             <asp:BoundField DataField="OBSERVACION_MOVIMIENTO" HeaderText="OBSERVACION" ReadOnly="True" SortExpression="OBSERVACION_MOVIMIENTO" />
                             <asp:BoundField DataField="RESPONSABLE" HeaderText="RESPONSABLE" ReadOnly="True" SortExpression="RESPONSABLE" />
@@ -84,7 +84,7 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#00547E" />
                     </asp:GridView>
-                    <asp:LinqDataSource ID="LinqHistorial" runat="server" ContextTypeName="DBTarjetaIndiceDataContext" EntityTypeName="" Select="new (CODIGO_AREA, CODIGO_DOCTOR, FECHA_ULTIMO_REGISTRO, ESTADO_EXPEDIENTE, OBSERVACION_MOVIMIENTO, RESPONSABLE)" TableName="TID_MOVIMIENTO_EXPEDIENTE" Where="CEDULA_PACIENTE == @CEDULA_PACIENTE">
+                    <asp:LinqDataSource ID="LinqHistorial" runat="server" ContextTypeName="DBTarjetaIndiceDataContext" EntityTypeName="" Select="new (CODIGO_AREA, CODIGO_DOCTOR, FECHA_ULTIMO_REGISTRO, ESTADO_EXPEDIENTE, OBSERVACION_MOVIMIENTO, RESPONSABLE)" TableName="TID_MOVIMIENTO_EXPEDIENTE" Where="CEDULA_PACIENTE == @CEDULA_PACIENTE" OrderBy="FECHA_ULTIMO_REGISTRO desc">
                         <WhereParameters>
                             <asp:ControlParameter ControlID="txtCedulaPaciente" Name="CEDULA_PACIENTE" PropertyName="Text" Type="String" />
                         </WhereParameters>

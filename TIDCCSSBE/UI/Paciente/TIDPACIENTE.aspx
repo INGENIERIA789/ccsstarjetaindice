@@ -13,11 +13,11 @@
             <p>Datos del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
+            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
             <p>Detalles del Paciente</p>
         </div>
         <div class="stepwizard-step">
-            <a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
+            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
             <p>Expediente del Paciente</p>
         </div>
     </div>
@@ -48,29 +48,42 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Genero</label>
-                                <asp:TextBox ID="txtGenPaciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                <select class="form-control" runat="server" name="validate-select" id="txtGenPacient" required>
+                                        <option value="">--Seleccione--</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
                              </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label class="control-label">Estado Civil</label>
-                                <asp:TextBox ID="txtEstCilPaciente" runat="server" CssClass="form-control"></asp:TextBox>
-                            </div>
+                                <label class="control-label">Estado Civil</label>                              
+                                    <select class="form-control" runat="server" name="validate-select" id="txtEstCilPacient" required="required">
+                                        <option value="">--Seleccione--</option>
+                                        <option value="Soltero">Soltero</option>
+                                        <option value="Casado">Casado</option>
+                                        <option value="Union Libre">Union Libre</option>
+                                    </select>
+                                </div>
+                            
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
-                                <asp:TextBox ID="txtFechaNaci" runat="server" class="form-control" required="required"></asp:TextBox>                                
+                                <asp:TextBox  ID="txtFechaNaci"  runat="server" class="form-control" required="required"></asp:TextBox> 
+               
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Observación</label>    
-                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3"  TextMode="MultiLine"  required="required" placeholder="Observaciones" />  
+                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3"  TextMode="MultiLine" placeholder="Observaciones" />  
                             </div>
-                            <div class="form-group">                        
+                            <div class="form-group">     
+                                 <label for="date" class="control-label">Estado de la tarjeta indice</label>                    
                                 <div class="input-group">
-                                    <select class="form-control" runat="server" name="validate-select" id="txttidestado" required>
+                                    <select class="form-control" runat="server" name="validate-select" id="txttidestado" required="required" visible="True">
                                         <option value="">--Seleccione--</option>
-                                        <option value="item_1">Activa</option>
-                                        <option value="item_2">Pasiva</option>
+                                        <option value="Activa">Activa</option>
+                                        <option value="Pasiva">Pasiva</option>
                                     </select>
                                 </div>
                             </div>
@@ -91,8 +104,8 @@
                     <!--  Aqui terminan los datos del pacient e-->
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
                 </div>
+           </div>
             </div>
-        </div>
         <div class="row setup-content" id="step-2">
             <div class="col-xs-12">
                 <div class="col-md-12">
@@ -121,11 +134,11 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Domicilio</label>                              
-                                 <asp:TextBox runat="server" ID="txtDomicilio"  required="required" CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
+                                 <asp:TextBox runat="server" ID="txtDomicilio"   CssClass="form-control" Rows="3" required="required" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Observación</label> 
-                                <asp:TextBox runat="server" ID="txtObservacionDetalle"  required="required" CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Dirección Exacta"/>
+                                <asp:TextBox runat="server" ID="txtObservacionDetalle"   CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Observación"/>
                                                              
                             </div>
                     </div>
@@ -163,10 +176,11 @@
                             </div>
                             <div class="form-group">                        
                                 <div class="input-group">
-                                    <select class="form-control" runat="server" name="validate-select" id="txtEstadoExpediente" required>
+                                    
+                                    <select class="form-control" runat="server" name="validate-select" id="txtEstadoExpediente" required="required">
                                         <option value="">--Seleccione--</option>
-                                        <option value="item_1">Archivado</option>
-                                        <option value="item_2">Fuera</option>
+                                        <option value="Archivado">Archivado</option>
+                                        <option value="Fuera">Fuera</option>
                                     </select>
                                  </div>
                             </div>                           
