@@ -176,7 +176,7 @@
                             </div>
                             <div class="form-group">                        
                                 <div class="input-group">
-                                    
+                                    <label for="date" class="control-label">Estado del Expediente</label>
                                     <select class="form-control" runat="server" name="validate-select" id="txtEstadoExpediente" required="required">
                                         <option value="">--Seleccione--</option>
                                         <option value="Archivado">Archivado</option>

@@ -163,6 +163,25 @@
       <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_INSERTAR_TID" Method="sp_INSERTAR_TID">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="FECHA_CREACION" Parameter="fECHA_CREACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ESTADO_TARJETA_INDICE" Parameter="eSTADO_TARJETA_INDICE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="OBSERVACION_TARJETA_INDICE" Parameter="oBSERVACION_TARJETA_INDICE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CEDULA_FUNCIONARIO" Parameter="cEDULA_FUNCIONARIO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_INSERTAR_PACIENTE" Method="sp_INSERTAR_PACIENTE">
+    <Parameter Name="NUM_IDENTIFICACION" Parameter="nUM_IDENTIFICACION" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="NOM_APELLIDO1" Parameter="nOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="NOM_APELLIDO2" Parameter="nOM_APELLIDO2" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="NOM_NOMBRE" Parameter="nOM_NOMBRE" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="IND_SEXO" Parameter="iND_SEXO" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="COD_ESTADO_CIVIL" Parameter="cOD_ESTADO_CIVIL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="FEC_NACIMIENTO" Parameter="fEC_NACIMIENTO" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_INSERT_DETALLESPACIENTE" Method="sp_INSERT_DETALLESPACIENTE">
     <Parameter Name="NOMBRE_PADRE" Parameter="nOMBRE_PADRE" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="NOMBRE_MADRE" Parameter="nOMBRE_MADRE" Type="System.String" DbType="VarChar(50)" />
@@ -180,25 +199,6 @@
     <Parameter Name="FECHA_CREACION_EXPEDIENTE" Parameter="fECHA_CREACION_EXPEDIENTE" Type="System.DateTime" DbType="Date" />
     <Parameter Name="ESTADO_EXPEDIENTE" Parameter="eSTADO_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(100)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_INSERTAR_PACIENTE" Method="sp_INSERTAR_PACIENTE">
-    <Parameter Name="NUM_IDENTIFICACION" Parameter="nUM_IDENTIFICACION" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="NOM_APELLIDO1" Parameter="nOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="NOM_APELLIDO2" Parameter="nOM_APELLIDO2" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="NOM_NOMBRE" Parameter="nOM_NOMBRE" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="IND_SEXO" Parameter="iND_SEXO" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="COD_ESTADO_CIVIL" Parameter="cOD_ESTADO_CIVIL" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="FEC_NACIMIENTO" Parameter="fEC_NACIMIENTO" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(100)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_INSERTAR_TID" Method="sp_INSERTAR_TID">
-    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="FECHA_CREACION" Parameter="fECHA_CREACION" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="ESTADO_TARJETA_INDICE" Parameter="eSTADO_TARJETA_INDICE" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="OBSERVACION_TARJETA_INDICE" Parameter="oBSERVACION_TARJETA_INDICE" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="CEDULA_FUNCIONARIO" Parameter="cEDULA_FUNCIONARIO" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

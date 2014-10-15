@@ -6,8 +6,6 @@
    <div class="container">
 	<div class="row">
         <br />
-        <br />
-        <br />
 		<h2></h2>
 	</div>
     

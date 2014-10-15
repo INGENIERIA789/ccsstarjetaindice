@@ -37,15 +37,21 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-     
-         <div class="navbar navbar-inverse navbar-fixed-top">
-             <div class="container">
-                <div class="navbar-header">    
-                    <a class="navbar-brand" runat="server" href="#">CCSS</a>
+        
+        <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a runat="server" href="~/Default" class="navbar-brand">CCSS</a>
                 </div>
-                <div class="navbar-collapse collapse" >
+                <div id="navbarCollapse" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Tarjeta Indice<b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -55,20 +61,20 @@
                                 <li><a runat="server" href="~/UI/Paciente/TIDPACIENTE">Registrar TID</a></li>
                                 <li class="divider"></li>
                             </ul>
-                        </li>                   
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Expedientes<b class="caret"></b></a>
-                             <ul class="dropdown-menu">
-                                     <li class="divider"></li>
-                                     <li><a runat="server" href="#">Buscar Expedientes</a></li>
-                                     <li class="divider"></li>
-                                     <li><a runat="server" href="~/UI/Paciente/MovimientosExpediente">Movimientos</a></li>
-                                     
-                                     <li class="divider"></li>
-                                     <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
-                                     <li><a runat="server" href="~/UI/HojasEspecialidad">Examenes externos</a></li>
-                             </ul>
-                      </li>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Expedientes<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="divider"></li>
+                                <li><a runat="server" href="#">Buscar Expedientes</a></li>
+                                <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/Paciente/MovimientosExpediente">Movimientos</a></li>
+
+                                <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
+                                <li><a runat="server" href="~/UI/HojasEspecialidad">Examenes externos</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Administrador<b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -80,11 +86,11 @@
                                 <li><a runat="server" href="~/Account/Register">Crear Usuario</a></li>
                                 <li class="divider"></li>
                             </ul>
-                        </li>           
+                        </li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">                                
+                            <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="UI/Empleado/Principal">Iniciar sesión</a></li>
                             </ul>
                         </AnonymousTemplate>
@@ -99,7 +105,7 @@
                     </asp:LoginView>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
