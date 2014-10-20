@@ -31,6 +31,12 @@
         <asp:HyperLink ID="HyperLink3" runat="server">Ver reporte de Creación de TID</asp:HyperLink>
        
     </div>
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    <br />
 
 </asp:Content>
 
