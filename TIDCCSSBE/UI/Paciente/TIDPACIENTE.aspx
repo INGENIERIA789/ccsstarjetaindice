@@ -29,22 +29,26 @@
                     <h3>Datos del Paciente</h3>
                     <!-- Aqui va todos los datos del paciente los basicos--->
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Cedula</label>
+                                <label class="control-label">Identificación</label>
                                 <asp:TextBox ID="txtCedulaPaciente" runat="server" CssClass="form-control" required="required" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se necesita ingresar la identificación." BackColor="White" ControlToValidate="txtCedulaPaciente" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
                                 <asp:TextBox ID="txtNombrePaciente" runat="server" CssClass="form-control" required="required" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se necesita ingresar el nombre." ControlToValidate="txtNombrePaciente" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Primer Apellido</label>
                                 <asp:TextBox ID="txtApellido1Paciente" runat="server" class="form-control"  required="required"></asp:TextBox>
-                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApellido1Paciente" Text="Se necesita el primer apellido." ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
                             <div class="form-group">
                                 <label class="control-label">Segundo Apellido</label>
                             <asp:TextBox ID="txtApellido2Paciente" runat="server" class="form-control" required="required"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApellido2Paciente" Text="Se necesita el segundo apellido." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Genero</label>
@@ -54,55 +58,50 @@
                                         <option value="Femenino">Femenino</option>
                                         <option value="Otro">Otro</option>
                                     </select>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtGenPacient" Text="Se necesita el genero." ForeColor="Red"></asp:RequiredFieldValidator>
                              </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Estado Civil</label>                              
-                                    <select class="form-control" runat="server" name="validate-select" id="txtEstCilPacient" required="required">
+                                    <select class="form-control" runat="server" name="validate-select" id="txtEstCilPacient" required="required" controltovalidate="txtEstCilPacient">
                                         <option value="">--Seleccione--</option>
                                         <option value="Soltero">Soltero</option>
                                         <option value="Casado">Casado</option>
                                         <option value="Union Libre">Union Libre</option>
                                     </select>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se necesita escoger el estado." ForeColor="Red" ControlToValidate="txtEstCilPacient"></asp:RequiredFieldValidator>
                                 </div>
                             
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
                                 <asp:TextBox  ID="txtFechaNaci"  runat="server" class="form-control" required="required"></asp:TextBox> 
-               
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se necesita la fecha de nacimiento." ControlToValidate="txtFechaNaci" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label for="date" class="control-label">Observación</label>    
-                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3"  TextMode="MultiLine" placeholder="Observaciones" />  
+                                <asp:TextBox runat="server" ID="txtObserPaciente" CssClass="form-control" Rows="3"  TextMode="MultiLine" placeholder="Observaciones" />
+                                  
                             </div>
                             <div class="form-group">     
                                  <label for="date" class="control-label">Estado de la tarjeta indice</label>                    
-                                <div class="input-group">
-                                    <select class="form-control" runat="server" name="validate-select" id="txttidestado" required="required" visible="True">
+                               
+                                    <select class="form-control" runat="server" name="validate-select" id="txttidestado" required="required" >
                                         <option value="">--Seleccione--</option>
                                         <option value="Activa">Activa</option>
                                         <option value="Pasiva">Pasiva</option>
                                     </select>
-                                </div>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txttidestado" Text=" Se necesita el estado de la tarjeta índice" ForeColor="Red"></asp:RequiredFieldValidator>
+                                 
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4 col-xs-12 less-pad-left">
-                            <div class="contact-input-form box-wrapper">
-                                <div class="single-sidebar">
-                                    <h4 class="sidebar-title"><span>Ventajas de la TID</span></h4>
-                                    <div class="alert alert-warning" role="alert">
-                                        <p>La tarjeta índice represanta la existencia de un expediente medigo.</p>
-                                        <p>Asimismo, podrá registrar y buscar la tarjeta índice de cada paciente para saber la información de este.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+         
                     </div> 
 
                     <!--  Aqui terminan los datos del pacient e-->
-                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
+          
+                    <asp:Button runat="server" ID="Button2" class="btn btn-primary nextBtn btn-lg pull-right" Text="Siguiente"/>
                 </div>
            </div>
             </div>
@@ -115,7 +114,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Nombre del Padre</label>
-                                <asp:TextBox ID="txtNomPadre" runat="server" class="form-control" required="required"></asp:TextBox>                               
+                                <asp:TextBox ID="txtNomPadre" runat="server" class="form-control" required="required"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se necesita el nombre del padre." ControlToValidate="txtNomPadre" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                               
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre de la Madre</label>
