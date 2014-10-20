@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using iTextSharp.text;
+using iTextSharp;
+
 
 public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 {
@@ -109,7 +112,6 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
     {
         txtFechaCreacionExpediente.Text = Convert.ToString(DateTime.Now);
     }
-
     protected void Button1_Click(object sender, EventArgs e)
     {
         agregar();
@@ -153,6 +155,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
         }
         finally {
             db.Dispose();
+           
         }
         }
     }
