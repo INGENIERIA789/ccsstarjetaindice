@@ -12,7 +12,13 @@ public class clsDetallePaciente
     private string psNomMa;
     private string psDom;
     private string psIndPac;
-    private int piCodPa;
+    private string piCodPa;
+
+    public string PiCodPa
+    {
+        get { return piCodPa; }
+        set { piCodPa = value; }
+    }
     public string PsIndPac
     {
         get { return psIndPac; }
@@ -20,11 +26,7 @@ public class clsDetallePaciente
     }
    
 
-    public int PiCodPa
-    {
-        get { return piCodPa; }
-        set { piCodPa = value; }
-    }
+  
     private string psNomPat;
 
     public string PsNomPat
