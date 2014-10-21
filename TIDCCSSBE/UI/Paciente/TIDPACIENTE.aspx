@@ -13,11 +13,11 @@
                 <p>Datos del Paciente</p>
             </div>
             <div class="stepwizard-step">
-                <a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
                 <p>Detalles del Paciente</p>
             </div>
             <div class="stepwizard-step">
-                <a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
                 <p>Expediente del Paciente</p>
             </div>
         </div>
