@@ -33,7 +33,7 @@
                             <div class="form-group">
                                 <label class="control-label">Identificación</label>
                                 <asp:TextBox ID="txtCedulaPaciente" runat="server" CssClass="form-control" required="required" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se necesita ingresar la identificación." BackColor="White" ControlToValidate="txtCedulaPaciente" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se necesita ingresar la identificación." BackColor="White" ControlToValidate="txtCedulaPaciente" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
@@ -191,7 +191,6 @@
                         <div class="col-md-6">
                         </div>
                         <div class="col-md-3">
-                            <asp:Button runat="server" ID="btnImprimir" class="btn btn-success btn-lg pull-right" Text="Imprimir" OnClick="btnImprimir_Click" CausesValidation="False" />
                         </div>
                         <div class="col-md-3">
                             <asp:Button ID="Button1" class="btn btn-success btn-lg pull-left" runat="server" Text="Agregar" OnClick="Button1_Click" />

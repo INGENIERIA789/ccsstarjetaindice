@@ -212,6 +212,20 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, fECHA_CREACION, eSTADO_TARJETA_INDICE, oBSERVACION_TARJETA_INDICE, cEDULA_FUNCIONARIO);
 		return ((int)(result.ReturnValue));
 	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_HOJAS_URGENCIA")]
+	public int SP_INSERTAR_HOJAS_URGENCIA([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_1_PACIENTE", DbType="VarChar(30)")] string aPELLIDO_1_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_2_PACIENTE", DbType="VarChar(30)")] string aPELLIDO_2_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PACIENTE", DbType="VarChar(25)")] string nOMBRE_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NUMERO_ASEGURADO", DbType="VarChar(50)")] string nUMERO_ASEGURADO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_REGISTRO", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_REGISTRO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(50)")] string oBSERVACION)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, aPELLIDO_1_PACIENTE, aPELLIDO_2_PACIENTE, nOMBRE_PACIENTE, nUMERO_ASEGURADO, fECHA_REGISTRO, oBSERVACION);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_EXAMENES_EXTERNOS")]
+	public int SP_INSERTAR_EXAMENES_EXTERNOS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_1_PACIENTE", DbType="VarChar(30)")] string aPELLIDO_1_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_2_PACIENTE", DbType="VarChar(30)")] string aPELLIDO_2_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PACIENTE", DbType="VarChar(25)")] string nOMBRE_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESPECIALIDAD", DbType="VarChar(50)")] string eSPECIALIDAD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_REGISTRO", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_REGISTRO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, aPELLIDO_1_PACIENTE, aPELLIDO_2_PACIENTE, nOMBRE_PACIENTE, eSPECIALIDAD, fECHA_REGISTRO, oBSERVACION);
+		return ((int)(result.ReturnValue));
+	}
 }
 
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_EXPEDIENTES")]

@@ -8,16 +8,16 @@ using System.Web;
 /// </summary>
 public class clsExamenExterno
 {
-    private int ps_CedPaEe;   
+    private string ps_CedPaEe;   
     private string ps_PriApePaEe;    
     private string ps_SegApePaEe;    
     private string ps_NomPAEe;    
-    private int pn_NumAseguradoEe;    
+    private string pn_NumAseguradoEe;    
     private string ps_Especialidad;    
     private DateTime ps_FecRegEe;    
     private string ps_ObsEe;
     
-    public int Ps_CedPaEe
+    public string Ps_CedPaEe
     {
         get { return ps_CedPaEe; }
         set { ps_CedPaEe = value; }
@@ -38,7 +38,7 @@ public class clsExamenExterno
         get { return ps_NomPAEe; }
         set { ps_NomPAEe = value; }
     }
-    public int Pn_NumAseguradoEe
+    public string Pn_NumAseguradoEe
     {
         get { return pn_NumAseguradoEe; }
         set { pn_NumAseguradoEe = value; }

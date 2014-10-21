@@ -10,30 +10,33 @@
             <br />
             <br />
             <br />
-            <h4>Registro de Hojas de Urgencias</h4>
+            <h4>Registro Hojas de Urgencias</h4>
             <hr/>
            
          <div class="row">
                 
         <div class="col-md-4">
              <div class="form-group">
-                 <label class="control-label">Cedula del Paciente</label>
+                 <label class="control-label">Identificación</label>
                     <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="0-000-000" AutoPostBack="True" OnTextChanged="txtCedulaPaciente_TextChanged" />
-                
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCedulaPaciente" Text="Se requiere la identificación." ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label class="control-label">Primer Apellido</label>
-                    <asp:TextBox runat="server" ID="txtAppelli1" CssClass="form-control" placeholder="Primer Apellido"/>
-               
+                    <asp:TextBox runat="server" ID="txtApelli1" CssClass="form-control" placeholder="Primer Apellido"/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApelli1" Text="Se requiere el apellido." ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label class="control-label">Segundo Apellido</label>
                     <asp:TextBox runat="server" ID="txtApelli2" CssClass="form-control" placeholder="Segundo Apellido" />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApelli2" Text="Se requiere el apellido." ForeColor="Red"></asp:RequiredFieldValidator>
                 
             </div>
               <div class="form-group">
                   <label class="control-label">Nombre del Paciente</label>              
-                    <asp:TextBox runat="server" ID="txtNombPac" CssClass="form-control" placeholder="Nombre" />           
+                    <asp:TextBox runat="server" ID="txtNombPac" CssClass="form-control" placeholder="Nombre" /> 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtNombPac" Text="Se necesita el nombre." ForeColor="Red"></asp:RequiredFieldValidator>
+                            
             </div>
         </div>
    
@@ -45,6 +48,8 @@
             <div class="form-group">
                 <label class="control-label">Numero de Asegurado</label>                 
                     <asp:TextBox runat="server" ID="txtNumeroAsegurado" CssClass="form-control" placeholder="0-0000-00000000"/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtNumeroAsegurado" Text="Se necesita el numero de asegurado." ForeColor="Red"></asp:RequiredFieldValidator>
+                
             </div>
              <div class="form-group">
                  <label class="control-label">Observación</label> 

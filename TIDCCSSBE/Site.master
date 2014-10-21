@@ -72,7 +72,7 @@
 
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
-                                <li><a runat="server" href="~/UI/HojasEspecialidad">Examenes externos</a></li>
+                                <li><a runat="server" href="~/UI/Paciente/HojasEspecialidad">Examenes externos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

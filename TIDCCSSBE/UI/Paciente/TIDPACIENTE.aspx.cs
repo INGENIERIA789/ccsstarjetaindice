@@ -45,7 +45,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                txtObserExpe.Text = resultado.OBSERVACION2;
                txtEstadoExpediente.Value = resultado.ESTADO_EXPEDIENTE;*/
            }
-           if (txtNombrePaciente.Text == "")
+           if (txtApellido1Paciente.Text == "")
            {
                Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
                txtNombrePaciente.Focus();
@@ -151,7 +151,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
         txtFechaCreacionExpediente.Text = Convert.ToString(DateTime.Now);
     }
     protected void Button1_Click(object sender, EventArgs e)
-    {
+    {    imprimir();
         agregar();
         string valida = "";//Se genera auxiliar para validar si se ingreso
         var datos = db.sp_Selecionar_Paciente(PAC.Ps_IdentiPa);
@@ -164,14 +164,15 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
             Response.Write("<script language=javascript>alert('Usuario Ingresado Correctamente!!!');</script>");
         }
         Response.Redirect("TIDPACIENTE.aspx");
+        
     }
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
     {
         buscarPaciente();
         txtNombrePaciente.Focus();
         }//Listo
-    protected void btnImprimir_Click(object sender, EventArgs e)
-    {
+   
+    public void imprimir(){
         try
         {
             string datos = txtCedulaPaciente.Text;
@@ -194,7 +195,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
             // Escribimos el encabezamiento en el documento
             doc.Add(new Paragraph("Tarjeta Índice del Paciente."));
             doc.Add(new Paragraph("Fecha de la Creación: " + Convert.ToString(DateTime.Now)));
-            doc.Add(new Paragraph("Responsable: "+TID.PiCedFun));
+            doc.Add(new Paragraph("Responsable: " + TID.PiCedFun));
             doc.Add(Chunk.NEWLINE);
 
             // Creamos una tabla que contendrá el nombre, apellido y país
@@ -298,5 +299,5 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
             Response.Write(ex);
         }
     }//Listo!!
-}
+    }
   
