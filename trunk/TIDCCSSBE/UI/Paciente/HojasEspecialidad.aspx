@@ -10,48 +10,62 @@
             <br />
             <br />
             <br />
-            <h4>Registro de Hojas de Urgencias</h4>
+            <h4>Registro Hojas de Especialidad</h4>
             <hr/>
            
          <div class="row">
                 
         <div class="col-md-4">
              <div class="form-group">
-                 <label class="control-label">Cedula del Paciente</label>
-                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="0-000-000" />
+                 <label class="control-label">Identificación</label>
+                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="0-000-000" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True" />
                 
             </div>
             <div class="form-group">
                 <label class="control-label">Primer Apellido</label>
-                    <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" placeholder="Barrios"/>
+                    <asp:TextBox runat="server" ID="txtPriAp" CssClass="form-control" placeholder="Barrios"/>
                
             </div>
             <div class="form-group">
                 <label class="control-label">Segundo Apellido</label>
-                    <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" placeholder="AAlgo" />
+                    <asp:TextBox runat="server" ID="txtSegApe" CssClass="form-control" placeholder="AAlgo" />
                 
             </div>
               <div class="form-group">
                   <label class="control-label">Nombre del Paciente</label>              
-                    <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" placeholder="Patito" />           
+                    <asp:TextBox runat="server" ID="txtNombPaci" CssClass="form-control" placeholder="Patito" />           
             </div>
         </div>
    
-        <div class="col-md-4">
-            <div class="form-group">
-                <label class="control-label">Fecha de Registro</label>                 
-                    <asp:TextBox runat="server" ID="txtFecha" CssClass="form-control" placeholder="Fecha de Registro"/>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Especialidad</label>                 
-                    <asp:TextBox runat="server" ID="txtNumeroAsegurado" CssClass="form-control" placeholder="uu"/>
-            </div>
-             <div class="form-group">
-                 <label class="control-label">Observación</label> 
-                    <asp:TextBox runat="server" ID="txtObservacion"  CssClass="form-control" Rows="3" TextMode="MultiLine"  placeholder="Observaciones"/>
-            </div> 
+             <div class="col-md-4">
+                 <div class="form-group">
+                     <label class="control-label">Fecha de Registro</label>
+                     <asp:TextBox runat="server" ID="txtFecha" CssClass="form-control" placeholder="Fecha de Registro" Enabled="False" />
+                 </div>
+                 <div class="form-group">
+                     <label class="control-label">Especialidad</label>
+                     <asp:TextBox runat="server" ID="txtEspecialidad" CssClass="form-control" placeholder="uu" />
+                 </div>
+                 <div class="form-group">
+                     <label class="control-label">Observación</label>
+                     <asp:TextBox runat="server" ID="txtObservacion" CssClass="form-control" Rows="3" TextMode="MultiLine" placeholder="Observaciones" />
+                 </div>
 
-        </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="form-group">
+                     <label class="control-label">Bloque del expediente.</label>
+                    <asp:TextBox runat="server" ID="txtBloqueExpediente"  CssClass="form-control" TextMode="SingleLine"  placeholder="BLOQUE" Enabled="False" />
+                 </div>
+                 <div class="form-group">
+                     <label class="control-label">Cubiculo del Expediente.</label>
+                    <asp:TextBox runat="server" ID="txtCubiculoExpediente"  CssClass="form-control"  TextMode="SingleLine"  placeholder="Cubiculo" Enabled="False" />
+                 </div>
+                  <div class="form-group">
+                     <label class="control-label">Estado del Expediente.</label>
+                    <asp:TextBox runat="server" ID="txtEstadoExpediente"  CssClass="form-control" TextMode="SingleLine"  placeholder="Estado" Enabled="False" />
+                 </div>
+             </div>
     </div>
          
            
@@ -59,11 +73,8 @@
                 <div class="row">
                     <hr/>
                     <div class="col-md-2">
-                        <asp:Button ID="Button1" runat="server" Text="Registrarse" CssClass="btn btn-default" />
-                    </div>
-                    <div class="col-md-2">
-                        <asp:Button ID="Button3" runat="server" Text="Modificar" CssClass="btn btn-default" />
-                    </div>
+                        <asp:Button ID="Button1" runat="server" Text="Registrarse" CssClass="btn btn-default" OnClick="Button1_Click" />
+                    </div>                   
                 </div>
             </div>
         </div>

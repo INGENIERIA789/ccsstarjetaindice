@@ -201,4 +201,24 @@
     <Parameter Name="CEDULA_FUNCIONARIO" Parameter="cEDULA_FUNCIONARIO" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_INSERTAR_HOJAS_URGENCIA" Method="SP_INSERTAR_HOJAS_URGENCIA">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="APELLIDO_1_PACIENTE" Parameter="aPELLIDO_1_PACIENTE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="APELLIDO_2_PACIENTE" Parameter="aPELLIDO_2_PACIENTE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="NOMBRE_PACIENTE" Parameter="nOMBRE_PACIENTE" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="NUMERO_ASEGURADO" Parameter="nUMERO_ASEGURADO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FECHA_REGISTRO" Parameter="fECHA_REGISTRO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_EXAMENES_EXTERNOS" Method="SP_INSERTAR_EXAMENES_EXTERNOS">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="APELLIDO_1_PACIENTE" Parameter="aPELLIDO_1_PACIENTE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="APELLIDO_2_PACIENTE" Parameter="aPELLIDO_2_PACIENTE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="NOMBRE_PACIENTE" Parameter="nOMBRE_PACIENTE" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="ESPECIALIDAD" Parameter="eSPECIALIDAD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FECHA_REGISTRO" Parameter="fECHA_REGISTRO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

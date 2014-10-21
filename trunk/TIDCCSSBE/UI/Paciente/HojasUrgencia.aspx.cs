@@ -15,9 +15,20 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
         HU.Ps_CedPaU = txtCedulaPaciente.Text;
         HU.Ps_NomPAU = txtNombPac.Text;
         HU.Ps_ObsU = txtObservacion.Text;
-        HU.Ps_PriApePaU = txtAppelli1.Text;
+        HU.Ps_PriApePaU = txtApelli1.Text;
         HU.Ps_SegApePaU = txtApelli2.Text;
 
+    }
+    public void limpiar() {
+        txtNumeroAsegurado.Text="";
+        txtCedulaPaciente.Text="";
+        txtNombPac.Text="";
+        txtObservacion.Text="";
+        txtApelli1.Text="";
+        txtApelli2.Text="";
+        txtBloqueExpediente.Text = "";
+        txtCubiculoExpediente.Text = "";
+        txtEstadoExpediente.Text = "";
     }
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -31,7 +42,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
             foreach (sp_Selecionar_PacienteResult resultado in datos)
             {
                 txtApelli2.Text = resultado.NOM_APELLIDO2;
-                txtAppelli1.Text = resultado.NOM_APELLIDO1;
+                txtApelli1.Text = resultado.NOM_APELLIDO1;
                 txtNombPac.Text = resultado.NOM_NOMBRE;
                 txtNumeroAsegurado.Text = resultado.CODIGO_PATRONO;
                 txtBloqueExpediente.Text = resultado.BLOQUE_EXPEDIENTE;
@@ -41,7 +52,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
             if (txtNombPac.Text == "")
             {
                 Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
-                txtNombPac.Focus();
+                txtApelli1.Focus();
             }
         }
         catch (Exception ex)
@@ -52,6 +63,19 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-
+        try
+        {
+            llenardatos();
+            db.SP_INSERTAR_HOJAS_URGENCIA(HU.Ps_CedPaU, HU.Ps_PriApePaU, HU.Ps_SegApePaU, HU.Ps_NomPAU, HU.Pn_NumAseguradoU, HU.Pd_FecRegU, HU.Ps_ObsU);
+        }
+        catch (Exception ex)
+        {
+            Response.Write(ex);
+        }
+        finally {
+            db.Dispose();
+            limpiar();
+            Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
+        }
     }
 }
