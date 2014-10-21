@@ -76,6 +76,8 @@
 
                             <div class="">
                                 <asp:Button ID="Button1" runat="server" Text="Registrar" CssClass="btn btn-default" OnClick="Button1_Click" />
+                               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Ver Historial</button>
+
                             </div>
                         </div>
                     </div>
@@ -86,35 +88,11 @@
         </div>
         <div class="row setup-content" id="step-2">
             <div class="col-xs-12">
-                <!--Aqui va todo lo de movimientos 
+                Aqui va todo lo de movimientos 
                 <div class="col-md-12">
                     <h3>Historial de Movimientos</h3>
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="" PageSize="5">
-                        <Columns>
-                            <asp:BoundField DataField="CODIGO_AREA" HeaderText="AREA" ReadOnly="True" SortExpression="CODIGO_AREA" />
-                            <asp:BoundField DataField="CODIGO_DOCTOR" HeaderText="DOCTOR" ReadOnly="True" SortExpression="CODIGO_DOCTOR" />
-                            <asp:BoundField DataField="FECHA_ULTIMO_REGISTRO" HeaderText="ULTIMO REGISTRO" ReadOnly="True" SortExpression="FECHA_ULTIMO_REGISTRO" />
-                            <asp:BoundField DataField="ESTADO_EXPEDIENTE" HeaderText="ESTADO" ReadOnly="True" SortExpression="ESTADO_EXPEDIENTE" />
-                            <asp:BoundField DataField="OBSERVACION_MOVIMIENTO" HeaderText="OBSERVACION" ReadOnly="True" SortExpression="OBSERVACION_MOVIMIENTO" />
-                            <asp:BoundField DataField="RESPONSABLE" HeaderText="RESPONSABLE" ReadOnly="True" SortExpression="RESPONSABLE" />
-                        </Columns>
-                        <FooterStyle BackColor="White" ForeColor="#000066" />
-                        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                        <RowStyle ForeColor="#000066" />
-                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                        <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                        <SortedDescendingHeaderStyle BackColor="#00547E" />
-                    </asp:GridView>
-                    <asp:LinqDataSource ID="LinqHistorial" runat="server" ContextTypeName="DBTarjetaIndiceDataContext" EntityTypeName="" Select="new (CODIGO_AREA, CODIGO_DOCTOR, FECHA_ULTIMO_REGISTRO, ESTADO_EXPEDIENTE, OBSERVACION_MOVIMIENTO, RESPONSABLE)" TableName="TID_MOVIMIENTO_EXPEDIENTE" Where="CEDULA_PACIENTE == @CEDULA_PACIENTE" OrderBy="FECHA_ULTIMO_REGISTRO desc">
-                        <WhereParameters>
-                            <asp:ControlParameter ControlID="txtCedulaPaciente" Name="CEDULA_PACIENTE" PropertyName="Text" Type="String" />
-                        </WhereParameters>
-                    </asp:LinqDataSource>
                     <asp:Button ID="btnImprimirHistorial" runat="server" Text="Imprimir" CssClass="btn btn-default pull-right" />
-                </div>-->
+                </div>
             </div>
         </div>
     </form>

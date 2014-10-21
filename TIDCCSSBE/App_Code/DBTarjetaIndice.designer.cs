@@ -171,20 +171,6 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		return ((ISingleResult<sp_buscar_doctorResult>)(result.ReturnValue));
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE")]
-	public ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult> SP_SELECCION_EXISTENCIA_EXPEDIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(20)")] string cEDULA)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA);
-		return ((ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult>)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_TID")]
-	public int sp_INSERTAR_TID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_CREACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_TARJETA_INDICE", DbType="VarChar(30)")] string eSTADO_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION_TARJETA_INDICE", DbType="VarChar(100)")] string oBSERVACION_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_FUNCIONARIO", DbType="Int")] System.Nullable<int> cEDULA_FUNCIONARIO)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, fECHA_CREACION, eSTADO_TARJETA_INDICE, oBSERVACION_TARJETA_INDICE, cEDULA_FUNCIONARIO);
-		return ((int)(result.ReturnValue));
-	}
-	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_PACIENTE")]
 	public int sp_INSERTAR_PACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NUM_IDENTIFICACION", DbType="VarChar(20)")] string nUM_IDENTIFICACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO1", DbType="VarChar(30)")] string nOM_APELLIDO1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_APELLIDO2", DbType="VarChar(30)")] string nOM_APELLIDO2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOM_NOMBRE", DbType="VarChar(25)")] string nOM_NOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IND_SEXO", DbType="VarChar(15)")] string iND_SEXO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="COD_ESTADO_CIVIL", DbType="VarChar(20)")] string cOD_ESTADO_CIVIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FEC_NACIMIENTO", DbType="Date")] System.Nullable<System.DateTime> fEC_NACIMIENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
 	{
@@ -203,6 +189,27 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 	public int sp_INSERT_DETALLESPACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PADRE", DbType="VarChar(50)")] string nOMBRE_PADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_MADRE", DbType="VarChar(50)")] string nOMBRE_MADRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DOMICILIO", DbType="VarChar(100)")] string dOMICILIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIGO_PATRONO", DbType="VarChar(50)")] string cODIGO_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PATRONO", DbType="VarChar(50)")] string nOMBRE_PATRONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION", DbType="VarChar(100)")] string oBSERVACION)
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nOMBRE_PADRE, nOMBRE_MADRE, dOMICILIO, cEDULA_PACIENTE, cODIGO_PATRONO, nOMBRE_PATRONO, oBSERVACION);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Selecionar_Paciente")]
+	public ISingleResult<sp_Selecionar_PacienteResult> sp_Selecionar_Paciente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(20)")] string cedula)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+		return ((ISingleResult<sp_Selecionar_PacienteResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE")]
+	public ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult> SP_SELECCION_EXISTENCIA_EXPEDIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(20)")] string cEDULA)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA);
+		return ((ISingleResult<SP_SELECCION_EXISTENCIA_EXPEDIENTEResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_INSERTAR_TID")]
+	public int sp_INSERTAR_TID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_CREACION", DbType="DateTime")] System.Nullable<System.DateTime> fECHA_CREACION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESTADO_TARJETA_INDICE", DbType="VarChar(30)")] string eSTADO_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OBSERVACION_TARJETA_INDICE", DbType="VarChar(100)")] string oBSERVACION_TARJETA_INDICE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_FUNCIONARIO", DbType="Int")] System.Nullable<int> cEDULA_FUNCIONARIO)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE, fECHA_CREACION, eSTADO_TARJETA_INDICE, oBSERVACION_TARJETA_INDICE, cEDULA_FUNCIONARIO);
 		return ((int)(result.ReturnValue));
 	}
 }
@@ -2019,6 +2026,356 @@ public partial class sp_buscar_doctorResult
 			if ((this._APELLIDO_1_DOCTOR != value))
 			{
 				this._APELLIDO_1_DOCTOR = value;
+			}
+		}
+	}
+}
+
+public partial class sp_Selecionar_PacienteResult
+{
+	
+	private string _NUM_IDENTIFICACION;
+	
+	private string _NOM_APELLIDO1;
+	
+	private string _NOM_APELLIDO2;
+	
+	private string _NOM_NOMBRE;
+	
+	private string _IND_SEXO;
+	
+	private string _COD_ESTADO_CIVIL;
+	
+	private System.Nullable<System.DateTime> _FEC_NACIMIENTO;
+	
+	private string _OBSERVACION;
+	
+	private string _NOMBRE_PADRE;
+	
+	private string _NOMBRE_MADRE;
+	
+	private string _DOMICILIO;
+	
+	private string _CODIGO_PATRONO;
+	
+	private string _NOMBRE_PATRONO;
+	
+	private string _OBSERVACION1;
+	
+	private string _BLOQUE_EXPEDIENTE;
+	
+	private string _CUBICULO_EXPEDIENTE;
+	
+	private System.Nullable<System.DateTime> _FECHA_CREACION_EXPEDIENTE;
+	
+	private string _OBSERVACION2;
+	
+	private string _ESTADO_EXPEDIENTE;
+	
+	public sp_Selecionar_PacienteResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_IDENTIFICACION", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+	public string NUM_IDENTIFICACION
+	{
+		get
+		{
+			return this._NUM_IDENTIFICACION;
+		}
+		set
+		{
+			if ((this._NUM_IDENTIFICACION != value))
+			{
+				this._NUM_IDENTIFICACION = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_APELLIDO1", DbType="VarChar(30)")]
+	public string NOM_APELLIDO1
+	{
+		get
+		{
+			return this._NOM_APELLIDO1;
+		}
+		set
+		{
+			if ((this._NOM_APELLIDO1 != value))
+			{
+				this._NOM_APELLIDO1 = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_APELLIDO2", DbType="VarChar(30)")]
+	public string NOM_APELLIDO2
+	{
+		get
+		{
+			return this._NOM_APELLIDO2;
+		}
+		set
+		{
+			if ((this._NOM_APELLIDO2 != value))
+			{
+				this._NOM_APELLIDO2 = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_NOMBRE", DbType="VarChar(25)")]
+	public string NOM_NOMBRE
+	{
+		get
+		{
+			return this._NOM_NOMBRE;
+		}
+		set
+		{
+			if ((this._NOM_NOMBRE != value))
+			{
+				this._NOM_NOMBRE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IND_SEXO", DbType="VarChar(15)")]
+	public string IND_SEXO
+	{
+		get
+		{
+			return this._IND_SEXO;
+		}
+		set
+		{
+			if ((this._IND_SEXO != value))
+			{
+				this._IND_SEXO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COD_ESTADO_CIVIL", DbType="VarChar(20)")]
+	public string COD_ESTADO_CIVIL
+	{
+		get
+		{
+			return this._COD_ESTADO_CIVIL;
+		}
+		set
+		{
+			if ((this._COD_ESTADO_CIVIL != value))
+			{
+				this._COD_ESTADO_CIVIL = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_NACIMIENTO", DbType="Date")]
+	public System.Nullable<System.DateTime> FEC_NACIMIENTO
+	{
+		get
+		{
+			return this._FEC_NACIMIENTO;
+		}
+		set
+		{
+			if ((this._FEC_NACIMIENTO != value))
+			{
+				this._FEC_NACIMIENTO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION", DbType="VarChar(100)")]
+	public string OBSERVACION
+	{
+		get
+		{
+			return this._OBSERVACION;
+		}
+		set
+		{
+			if ((this._OBSERVACION != value))
+			{
+				this._OBSERVACION = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_PADRE", DbType="VarChar(50)")]
+	public string NOMBRE_PADRE
+	{
+		get
+		{
+			return this._NOMBRE_PADRE;
+		}
+		set
+		{
+			if ((this._NOMBRE_PADRE != value))
+			{
+				this._NOMBRE_PADRE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_MADRE", DbType="VarChar(50)")]
+	public string NOMBRE_MADRE
+	{
+		get
+		{
+			return this._NOMBRE_MADRE;
+		}
+		set
+		{
+			if ((this._NOMBRE_MADRE != value))
+			{
+				this._NOMBRE_MADRE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOMICILIO", DbType="VarChar(100)")]
+	public string DOMICILIO
+	{
+		get
+		{
+			return this._DOMICILIO;
+		}
+		set
+		{
+			if ((this._DOMICILIO != value))
+			{
+				this._DOMICILIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_PATRONO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string CODIGO_PATRONO
+	{
+		get
+		{
+			return this._CODIGO_PATRONO;
+		}
+		set
+		{
+			if ((this._CODIGO_PATRONO != value))
+			{
+				this._CODIGO_PATRONO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_PATRONO", DbType="VarChar(50)")]
+	public string NOMBRE_PATRONO
+	{
+		get
+		{
+			return this._NOMBRE_PATRONO;
+		}
+		set
+		{
+			if ((this._NOMBRE_PATRONO != value))
+			{
+				this._NOMBRE_PATRONO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION1", DbType="VarChar(100)")]
+	public string OBSERVACION1
+	{
+		get
+		{
+			return this._OBSERVACION1;
+		}
+		set
+		{
+			if ((this._OBSERVACION1 != value))
+			{
+				this._OBSERVACION1 = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BLOQUE_EXPEDIENTE", DbType="VarChar(20)")]
+	public string BLOQUE_EXPEDIENTE
+	{
+		get
+		{
+			return this._BLOQUE_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._BLOQUE_EXPEDIENTE != value))
+			{
+				this._BLOQUE_EXPEDIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUBICULO_EXPEDIENTE", DbType="VarChar(20)")]
+	public string CUBICULO_EXPEDIENTE
+	{
+		get
+		{
+			return this._CUBICULO_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._CUBICULO_EXPEDIENTE != value))
+			{
+				this._CUBICULO_EXPEDIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_CREACION_EXPEDIENTE", DbType="Date")]
+	public System.Nullable<System.DateTime> FECHA_CREACION_EXPEDIENTE
+	{
+		get
+		{
+			return this._FECHA_CREACION_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._FECHA_CREACION_EXPEDIENTE != value))
+			{
+				this._FECHA_CREACION_EXPEDIENTE = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION2", DbType="VarChar(50)")]
+	public string OBSERVACION2
+	{
+		get
+		{
+			return this._OBSERVACION2;
+		}
+		set
+		{
+			if ((this._OBSERVACION2 != value))
+			{
+				this._OBSERVACION2 = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_EXPEDIENTE", DbType="NChar(10)")]
+	public string ESTADO_EXPEDIENTE
+	{
+		get
+		{
+			return this._ESTADO_EXPEDIENTE;
+		}
+		set
+		{
+			if ((this._ESTADO_EXPEDIENTE != value))
+			{
+				this._ESTADO_EXPEDIENTE = value;
 			}
 		}
 	}

@@ -191,7 +191,7 @@
                         <div class="col-md-6">
                         </div>
                         <div class="col-md-3">
-                            <asp:Button runat="server" ID="btnImprimir" class="btn btn-success btn-lg pull-right" Text="Imprimir" OnClick="btnImprimir_Click" />
+                            <asp:Button runat="server" ID="btnImprimir" class="btn btn-success btn-lg pull-right" Text="Imprimir" OnClick="btnImprimir_Click" CausesValidation="False" />
                         </div>
                         <div class="col-md-3">
                             <asp:Button ID="Button1" class="btn btn-success btn-lg pull-left" runat="server" Text="Agregar" OnClick="Button1_Click" />

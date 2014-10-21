@@ -48,6 +48,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
            if (txtNombrePaciente.Text == "")
            {
                Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
+               txtNombrePaciente.Focus();
            }
        }
        catch (Exception ex)
@@ -56,7 +57,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
        }
        finally
        {
-           db.Dispose();//Libera los recursos
+           //Libera los recursos
        }
    }
     public void llenarInformacionPaciente() {
@@ -133,7 +134,6 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                                      EXP.PdCreEX,
                                      EXP.PsEstEx,
                                      EXP.PsObs);
-            Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
         }
         catch(Exception e)
         {
@@ -142,7 +142,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
         }
         finally{
             
-            db.Dispose();//Libera todo los recursos!!
+          //Libera todo los recursos!!
         };
 
     }
@@ -158,7 +158,6 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
         foreach (sp_Selecionar_PacienteResult resultado in datos)
         {
             valida = resultado.NUM_IDENTIFICACION;
-
         }
         if (valida == txtCedulaPaciente.Text)
         {

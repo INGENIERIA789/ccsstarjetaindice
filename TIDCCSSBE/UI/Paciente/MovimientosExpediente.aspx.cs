@@ -39,15 +39,10 @@ public partial class UI_Expediente : System.Web.UI.Page
                 txtEstadoExpediente.Value = resultado.ESTADO_EXPEDIENTE;
                 encontrado = resultado.ESTADO_EXPEDIENTE;
             }
-            if (encontrado != "")
+            if (encontrado == "")
             {
-                Response.Write("<script language=javascript>alert('El expediente existe! Continue!');</script>");
-               
-            }
-            else {
-                Response.Write("<script language=javascript>alert('El expediente no existe!');</script>");
-            }
-            
+                Response.Write("<script language=javascript>alert('El expediente no existe!');</script>");     
+            }        
         }
         catch (Exception ex)
         {
