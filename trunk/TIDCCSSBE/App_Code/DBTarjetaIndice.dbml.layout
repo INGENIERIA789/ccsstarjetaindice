@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.625" name="DBTarjetaIndice">
   <DataContextMoniker Name="/DBTarjetaIndiceDataContext" />
   <nestedChildShapes>
-    <classShape Id="9aa3d927-cdc4-4979-bd31-55ff8772834c" absoluteBounds="0.5, 1.25, 2, 1.9631982421875">
+    <classShape Id="9aa3d927-cdc4-4979-bd31-55ff8772834c" absoluteBounds="0.5, 0.875, 2, 1.9631982421875">
       <DataClassMoniker Name="/DBTarjetaIndiceDataContext/TID_EXPEDIENTES" />
       <nestedChildShapes>
-        <elementListCompartment Id="1667eb7f-3f72-4acc-a716-81bbe1656255" absoluteBounds="0.515, 1.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1667eb7f-3f72-4acc-a716-81bbe1656255" absoluteBounds="0.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="bc5009a1-b9b0-4fb5-aae5-b0f7448960ed" absoluteBounds="2, 3.5, 2, 1.7708968098958331">
@@ -14,7 +14,7 @@
         <elementListCompartment Id="2b24e475-07d8-4afc-8108-dd25ce8baa13" absoluteBounds="2.0149999999999997, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.25 : 3.5); (2.25 : 3.2131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.25 : 3.5); (2.25 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE/TID_TARJETA_INDICE_TID_EXPEDIENTES" />
       <nodes>
         <classShapeMoniker Id="bc5009a1-b9b0-4fb5-aae5-b0f7448960ed" />
@@ -27,7 +27,7 @@
         <elementListCompartment Id="245972ba-e2ec-4a2c-b16c-7ad400869a0a" absoluteBounds="4.015, 2.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.25 : 3.5); (3.25 : 3.09537512825521); (4 : 3.09537512825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.25 : 3.5); (3.25 : 2.59699625651042); (4 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_TARJETA_INDICE/TID_TARJETA_INDICE_TID_MOVIMIENTO_EXPEDIENTE" />
       <nodes>
         <classShapeMoniker Id="bc5009a1-b9b0-4fb5-aae5-b0f7448960ed" />
@@ -53,7 +53,7 @@
         <elementListCompartment Id="9b41dd02-a629-48e9-9545-adb87bb70b9e" absoluteBounds="2.015, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.25 : 1.69399251302083); (3.25 : 2.62824725651042); (4 : 2.62824725651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.875001 : 1.69399251302083); (2.875001 : 2.11424288476563); (4 : 2.11424288476563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBTarjetaIndiceDataContext/TID_AREA_UBICACION/TID_AREA_UBICACION_TID_MOVIMIENTO_EXPEDIENTE" />
       <nodes>
         <classShapeMoniker Id="f64846b7-8857-4463-a7a6-9583ba73ebca" />

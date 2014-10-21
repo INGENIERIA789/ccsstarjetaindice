@@ -132,21 +132,6 @@
       <Column Name="APELLIDO_1_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE" Method="SP_SELECCION_EXISTENCIA_EXPEDIENTE">
-    <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="SP_SELECCION_EXISTENCIA_EXPEDIENTEResult">
-      <Column Name="CEDULA_PACIENTE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_INSERTAR_TID" Method="sp_INSERTAR_TID">
-    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="FECHA_CREACION" Parameter="fECHA_CREACION" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="ESTADO_TARJETA_INDICE" Parameter="eSTADO_TARJETA_INDICE" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="OBSERVACION_TARJETA_INDICE" Parameter="oBSERVACION_TARJETA_INDICE" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="CEDULA_FUNCIONARIO" Parameter="cEDULA_FUNCIONARIO" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_INSERTAR_PACIENTE" Method="sp_INSERTAR_PACIENTE">
     <Parameter Name="NUM_IDENTIFICACION" Parameter="nUM_IDENTIFICACION" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="NOM_APELLIDO1" Parameter="nOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" />
@@ -175,6 +160,45 @@
     <Parameter Name="CODIGO_PATRONO" Parameter="cODIGO_PATRONO" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="NOMBRE_PATRONO" Parameter="nOMBRE_PATRONO" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Selecionar_Paciente" Method="sp_Selecionar_Paciente">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_Selecionar_PacienteResult">
+      <Column Name="NUM_IDENTIFICACION" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOM_APELLIDO2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOM_NOMBRE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IND_SEXO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="COD_ESTADO_CIVIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FEC_NACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NOMBRE_PADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRE_MADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOMICILIO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CODIGO_PATRONO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PATRONO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OBSERVACION1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BLOQUE_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUBICULO_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FECHA_CREACION_EXPEDIENTE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACION2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE" Method="SP_SELECCION_EXISTENCIA_EXPEDIENTE">
+    <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SP_SELECCION_EXISTENCIA_EXPEDIENTEResult">
+      <Column Name="CEDULA_PACIENTE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_INSERTAR_TID" Method="sp_INSERTAR_TID">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="FECHA_CREACION" Parameter="fECHA_CREACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ESTADO_TARJETA_INDICE" Parameter="eSTADO_TARJETA_INDICE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="OBSERVACION_TARJETA_INDICE" Parameter="oBSERVACION_TARJETA_INDICE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CEDULA_FUNCIONARIO" Parameter="cEDULA_FUNCIONARIO" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
