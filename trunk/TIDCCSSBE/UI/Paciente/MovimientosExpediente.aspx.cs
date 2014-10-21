@@ -29,7 +29,6 @@ public partial class UI_Expediente : System.Web.UI.Page
   
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
     {
-        
         try
         {
             string encontrado = "";

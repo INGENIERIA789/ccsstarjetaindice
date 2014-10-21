@@ -8,16 +8,16 @@ using System.Web;
 /// </summary>
 public class clsHojaUrgencia
 {
-    private int ps_CedPaU;
+    private string ps_CedPaU;
     private string ps_PriApePaU;
     private string ps_SegApePaU;
     private string ps_NomPAU;
-    private int pn_NumAseguradoU;
+    private string pn_NumAseguradoU;
     private DateTime pd_FecRegU;
     private string ps_ObsU;
 
 
-    public int Ps_CedPaU
+    public string Ps_CedPaU
     {
         get { return ps_CedPaU; }
         set { ps_CedPaU = value; }
@@ -37,7 +37,7 @@ public class clsHojaUrgencia
         get { return ps_NomPAU; }
         set { ps_NomPAU = value; }
     }
-    public int Pn_NumAseguradoU
+    public string Pn_NumAseguradoU
     {
         get { return pn_NumAseguradoU; }
         set { pn_NumAseguradoU = value; }
