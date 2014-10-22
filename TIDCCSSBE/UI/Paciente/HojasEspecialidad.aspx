@@ -19,7 +19,7 @@
              <div class="form-group">
                  <label class="control-label">Identificación</label>
                     <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="0-000-000" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True" />
-                
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCedulaPaciente" Text="Se requiere la identificación." ForeColor="Red"> </asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label class="control-label">Primer Apellido</label>

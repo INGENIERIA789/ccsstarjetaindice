@@ -32,8 +32,7 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                
+                <asp:ScriptReference Name="WebFormsBundle" />               
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
@@ -66,10 +65,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Expedientes<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider"></li>
-                                <li><a runat="server" href="#">Buscar Expedientes</a></li>
+                                <li><a runat="server" href="~/UI/Paciente/BuscarExpediente">Buscar Expedientes</a></li>
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Paciente/MovimientosExpediente">Movimientos</a></li>
-
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
                                 <li><a runat="server" href="~/UI/Paciente/HojasEspecialidad">Examenes externos</a></li>
