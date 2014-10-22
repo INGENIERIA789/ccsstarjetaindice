@@ -70,7 +70,7 @@ public partial class UI_Expediente : System.Web.UI.Page
         }
         finally
         {
-            Response.Write("<script language=javascript>alert('SE AGREGO!!!!');</script>");
+            Response.Write("<script language=javascript>alert('SE AGREGO !!!');</script>");
             db.Dispose();
             Response.Redirect("MovimientosExpediente.aspx");
 
