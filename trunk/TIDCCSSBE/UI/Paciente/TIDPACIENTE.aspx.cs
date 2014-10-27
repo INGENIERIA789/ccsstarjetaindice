@@ -37,7 +37,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                txtObservacionDetalle.Text = resultado.OBSERVACION1;
                txtNumPatrono.Text = Convert.ToString(resultado.CODIGO_PATRONO);
                txtDomicilio.Text = resultado.DOMICILIO;
-               txtFechaNaci.Text = Convert.ToString(resultado.FEC_NACIMIENTO);
+               txtFechaNaci.Text = String.Format("{0:MM/dd/yyyy}", resultado.FEC_NACIMIENTO);
                /*
                txtNumBlo.Text = resultado.CUBICULO_EXPEDIENTE;
                txtBloqueExpediente.Text = resultado.BLOQUE_EXPEDIENTE;
@@ -45,11 +45,9 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                txtObserExpe.Text = resultado.OBSERVACION2;
                txtEstadoExpediente.Value = resultado.ESTADO_EXPEDIENTE;*/
            }
-           if (txtApellido1Paciente.Text == "")
-           {
+          
                Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
-               txtNombrePaciente.Focus();
-           }
+           
        }
        catch (Exception ex)
        {
@@ -163,7 +161,6 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
         {
             Response.Write("<script language=javascript>alert('Usuario Ingresado Correctamente!!!');</script>");
         }
-        Response.Redirect("TIDPACIENTE.aspx");
         
     }
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
@@ -179,7 +176,10 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
             // Creamos el documento con el tamaño de página tradicional
             Document doc = new Document(PageSize.LETTER);
             // Indicamos donde vamos a guardar el documento
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(@"C:\" + datos + ".pdf", FileMode.Create));
+            Response.Clear();
+            Response.ContentType = "application/octet-stream";
+            Response.AddHeader("Content-Disposition", "attachment; filename="+datos+".pdf");
+            PdfWriter writer = PdfWriter.GetInstance(doc, Response.OutputStream/*new FileStream(@"C:\" + datos + ".pdf", FileMode.Create)*/);
 
             // Le colocamos el título y el autor
             // **Nota: Esto no será visible en el documento
@@ -292,7 +292,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 
             doc.Close();
             writer.Close();
-            System.Diagnostics.Process.Start("C:\\" + datos + ".pdf");
+          //  System.Diagnostics.Process.Start("C:\\" + datos + ".pdf");
         }
         catch (Exception ex)
         {

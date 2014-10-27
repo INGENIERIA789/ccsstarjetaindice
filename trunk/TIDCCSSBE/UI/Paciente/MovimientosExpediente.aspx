@@ -28,23 +28,23 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Identificación</label>
-                            <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" required="required" placeholder="Cédula del paciente" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True" />
+                            <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" required="required" Width="1387px" placeholder="Cédula del paciente" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Código Área</label>
-                            <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" AutoPostBack="True" placeholder="Codigo del área" OnTextChanged="txtCodAre_TextChanged" />
+                            <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" AutoPostBack="True" Width="1387px" placeholder="Codigo del área" OnTextChanged="txtCodAre_TextChanged" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Área</label>
-                            <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" required="required" placeholder="Nombre área" />
+                            <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" required="required"  Width="1387px" placeholder="Nombre área" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Código Doctor</label>
-                            <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" required="required" placeholder="Codigo de Doctor" AutoPostBack="True" OnTextChanged="txtCodDoc_TextChanged" />
+                            <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" required="required" Width="1387px" placeholder="Codigo de Doctor" AutoPostBack="True" OnTextChanged="txtCodDoc_TextChanged" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Nombre Doctor</label>
-                            <asp:TextBox runat="server" ID="txtNombreDoctor" CssClass="form-control" required="required" placeholder="Codigo de Doctor" />
+                            <asp:TextBox runat="server" ID="txtNombreDoctor" CssClass="form-control" required="required" Width="1387px" placeholder="Codigo de Doctor" />
                         </div>
 
                     </div>
@@ -52,15 +52,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Encarcado</label>
-                            <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" required="required" placeholder="Encargado" />
+                            <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" required="required" Width="1387px" placeholder="Encargado" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Fecha</label>
-                            <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" required="required" placeholder="Fecha de Entrada" />
+                            <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" required="required" Width="1387px" placeholder="Fecha de Entrada" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Observación</label>
-                            <asp:TextBox runat="server" ID="txtObservacion" CssClass="form-control" Rows="2" TextMode="MultiLine" placeholder="Observaciones" />
+                            <asp:TextBox runat="server" ID="txtObservacion" CssClass="form-control" Rows="2" Width="1387px" TextMode="MultiLine" placeholder="Observaciones" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Estado</label>
@@ -82,8 +82,21 @@
         <div class="row setup-content" id="step-2">
             <div class="col-xs-12">
                 <div class="col-md-12">
-                    <h3>Historial de Movimientos</h3>
-                    <asp:Button ID="btnImprimirHistorial" runat="server" Text="Imprimir" CssClass="btn btn-default pull-right" />
+                   <center><h3>Historial de Movimientos</h3></center>
+                    <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                        <AlternatingRowStyle BackColor="#CCCCCC" />
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
+                    </asp:GridView>
+                    <br />
+                    <br />
+
                 </div>
             </div>
         </div>

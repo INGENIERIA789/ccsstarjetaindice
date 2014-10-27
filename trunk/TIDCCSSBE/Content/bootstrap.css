@@ -860,6 +860,8 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: -12px;
+    left: 4px;
 }
 
 .col-xs-1,
@@ -1719,7 +1721,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .form-control {
   display: block;
-  width: 1073px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.428571429;

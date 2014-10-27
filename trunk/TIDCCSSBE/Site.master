@@ -109,8 +109,10 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-
-                <p>&copy; TIAC14 - Sistema de Información para la Automatización de la Tarjeta índice</p>
+                <img src="img/Logotiac14102114-1647.png" runat="server"/>
+                <img src="img/37232_Universidad_Nacional_de_Costa_Rica.gif" runat="server"/>
+                <img src="img/Caja_Seguro_Social_Costa_Rica.png" runat="server"/>
+                &copy; TIAC14 - Sistema de Información para la Automatización de la Tarjeta índice
             </footer>
         </div>
     </form>

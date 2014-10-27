@@ -8,18 +8,18 @@
       
       <div class="col-sm-2">
           <label class="control-label">Nombre</label>
-          <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server" AutoPostBack="True" ></asp:TextBox> 
+          <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server" AutoPostBack="True" Width="117px" ></asp:TextBox> 
 
       </div>
       <div class="col-sm-2">
           <label class="control-label">Primer Apellido</label>
-         <asp:TextBox ID="txtPriApe" CssClass="form-control" runat="server" AutoPostBack="True" ></asp:TextBox> 
+         <asp:TextBox ID="txtPriApe" CssClass="form-control" runat="server" AutoPostBack="True" Width="112px" ></asp:TextBox> 
 
       </div>
       
       <div class="col-sm-2">
         <label class="control-label">Segundo Apellido</label>
-         <asp:TextBox ID="txtSenApe" CssClass="form-control" runat="server" AutoPostBack="True" ></asp:TextBox> 
+         <asp:TextBox ID="txtSenApe" CssClass="form-control" runat="server" AutoPostBack="True" Width="104px" ></asp:TextBox> 
       </div>
           
   </div><br />

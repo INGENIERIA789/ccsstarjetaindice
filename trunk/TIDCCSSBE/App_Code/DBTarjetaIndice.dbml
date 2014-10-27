@@ -98,17 +98,6 @@
       <Association Name="TID_FUNCIONARIO_TID_TARJETA_INDICE" Member="TID_TARJETA_INDICE" ThisKey="CEDULA_FUNCIONARIO" OtherKey="CEDULA_FUNCIONARIO" Type="TID_TARJETA_INDICE" />
     </Type>
   </Table>
-  <Function Name="dbo.GENERAR_HISTORIAL" Method="GENERAR_HISTORIAL">
-    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="GENERAR_HISTORIALResult">
-      <Column Name="CODIGO_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CODIGO_DOCTOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="OBSERVACION_MOVIMIENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_INSERTAR_MOVIMIENTO" Method="SP_INSERTAR_MOVIMIENTO">
     <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="CODIGO_AREA" Parameter="cODIGO_AREA" Type="System.Int32" DbType="Int" />
@@ -229,5 +218,16 @@
     <Parameter Name="ESPECIALIDAD" Parameter="eSPECIALIDAD" Type="System.String" DbType="VarChar(25)" />
     <Parameter Name="AREA_DE_TRABAJO" Parameter="aREA_DE_TRABAJO" Type="System.String" DbType="VarChar(25)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GENERAR_HISTORIAL_MOVIMIENTO" Method="GENERAR_HISTORIAL_MOVIMIENTO">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="GENERAR_HISTORIAL_MOVIMIENTOResult">
+      <Column Name="CODIGO_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODIGO_DOCTOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OBSERVACION_MOVIMIENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>
