@@ -10,7 +10,7 @@
             <br />
             <br />
             <br />
-            <h4>Registro Hojas de Especialidad</h4>
+            <h4>Registro Hojas de Especialidad </h4>
             <hr/>
            
          <div class="row">
@@ -67,8 +67,7 @@
                  </div>
              </div>
     </div>
-         
-           
+                 
             <div class="form-group">
                 <div class="row">
                     <hr/>

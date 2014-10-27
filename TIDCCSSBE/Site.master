@@ -70,6 +70,7 @@
                                 <li><a runat="server" href="~/UI/Paciente/MovimientosExpediente">Movimientos</a></li>
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
+                                <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Paciente/HojasEspecialidad">Examenes externos</a></li>
                             </ul>
                         </li>
@@ -77,10 +78,12 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Administrador<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider"></li>
-                                <li><a runat="server" href="#">Registrar Médico</a></li>
+                                <li><a runat="server" href="~/UI/Medicos/AgregarMedico">Registrar Médico</a></li>
+                                <li class="divider"></li>
                                 <li><a runat="server" href="#">Registrar Ubicación</a></li>
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Reportes">Reportes</a></li>
+                                <li class="divider"></li>
                                 <li><a runat="server" href="~/Account/Register">Crear Usuario</a></li>
                                 <li class="divider"></li>
                             </ul>
