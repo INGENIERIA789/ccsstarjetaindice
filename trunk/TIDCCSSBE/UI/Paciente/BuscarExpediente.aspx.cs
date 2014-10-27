@@ -14,6 +14,7 @@ public partial class UI_Paciente_BuscarExpediente : System.Web.UI.Page
     }
     protected void TextBox1_TextChanged(object sender, EventArgs e)
     {
+
         try
         {
             string encontrado = "";
