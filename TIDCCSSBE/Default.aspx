@@ -40,13 +40,13 @@
                         </p>
                     </div>
                 </div>
-                
                 <div class="item">
-                    <img src="http://placehold.it/1200x400/888888/555555" />
+                <img src="img/Hospital-Quirón-Bizkaia.jpg" />
+
                     <div class="carousel-caption">
-                        <h1 class="carousel-caption-header">Slide 3</h1>
+                        <h1 class="carousel-caption-header">Mision</h1>
                         <p class="carousel-caption-text hidden-sm hidden-xs">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim aliquet rutrum. Praesent vitae ante in nisi condimentum egestas. Aliquam.
+                            Ser  una  entidad estratégica asesora del núcleo director de la Institución, líder en el conocimiento de la problemática y soluciones técnicas actuariales, en materia de equilibrio y sostenimiento financiero del Seguro de Salud y Pensiones, como respuesta a los requerimientos técnicos en esta  materia, que requieren las autoridades superiores de la Institución para la toma de decisiones.
                         </p>
                     </div>
                 </div>

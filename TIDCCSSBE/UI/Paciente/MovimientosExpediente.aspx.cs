@@ -10,7 +10,7 @@ public partial class UI_Expediente : System.Web.UI.Page
 {
     public DBTarjetaIndiceDataContext db = new DBTarjetaIndiceDataContext();
     public clsMovimientosExpediente clsmovimientos = new clsMovimientosExpediente();
-    
+    public string cedula = "504000352";
     public void llenado() {
         clsmovimientos.Pn_CedPaSE = txtCedulaPaciente.Text;
         clsmovimientos.Pn_CodArea = Convert.ToInt32(txtCodAre.Text);
@@ -25,6 +25,7 @@ public partial class UI_Expediente : System.Web.UI.Page
     {
         txtfecha.Text = Convert.ToString(DateTime.Now);
         clsmovimientos.Pn_CedPaSE = txtCedulaPaciente.Text;
+        
     }
   
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
@@ -40,8 +41,12 @@ public partial class UI_Expediente : System.Web.UI.Page
             }
             if (encontrado == "")
             {
-                Response.Write("<script language=javascript>alert('El expediente no existe!');</script>");     
-            }        
+                Response.Write("<script language=javascript>alert('El expediente no existe!');</script>");
+            }
+            else
+            {
+                movimientosDatos();
+            }
         }
         catch (Exception ex)
         {
@@ -135,5 +140,11 @@ public partial class UI_Expediente : System.Web.UI.Page
         {
             db.Dispose();
         }
+    }
+    public void movimientosDatos() {
+        GridView2.DataSource = db.GENERAR_HISTORIAL_MOVIMIENTO(txtCedulaPaciente.Text).ToList();
+        GridView2.DataBind();
+       
+    
     }
 }

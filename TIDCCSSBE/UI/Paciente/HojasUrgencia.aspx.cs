@@ -30,6 +30,17 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
         txtCubiculoExpediente.Text = "";
         txtEstadoExpediente.Text = "";
     }
+    public void limpiar2() {
+        txtNumeroAsegurado.Text = "";
+        txtNombPac.Text = "";
+        txtObservacion.Text = "";
+        txtApelli1.Text = "";
+        txtApelli2.Text = "";
+        txtBloqueExpediente.Text = "";
+        txtCubiculoExpediente.Text = "";
+        txtEstadoExpediente.Text = "";
+    
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         txtFecha.Text = Convert.ToString(DateTime.Now);
