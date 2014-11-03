@@ -13,7 +13,10 @@ public partial class UI_Principal : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        Session["User"] = UserName.Text;
+        Session["Password"] = Password.Text;
+        Session["User"] = true;
+        Session["Password"] = true;
     }
 
     protected void LogIn(object sender, EventArgs e)

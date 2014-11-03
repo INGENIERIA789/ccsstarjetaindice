@@ -37,7 +37,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                txtObservacionDetalle.Text = resultado.OBSERVACION1;
                txtNumPatrono.Text = Convert.ToString(resultado.CODIGO_PATRONO);
                txtDomicilio.Text = resultado.DOMICILIO;
-               txtFechaNaci.Text = String.Format("{0:MM/dd/yyyy}", resultado.FEC_NACIMIENTO);
+               txtFechaNaci.Text = String.Format("{0:yyyy-MM-dd}", resultado.FEC_NACIMIENTO);
                /*
                txtNumBlo.Text = resultado.CUBICULO_EXPEDIENTE;
                txtBloqueExpediente.Text = resultado.BLOQUE_EXPEDIENTE;
@@ -147,6 +147,11 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         txtFechaCreacionExpediente.Text = Convert.ToString(DateTime.Now);
+        if (Session["User"] == null && Session["Password"] == null)
+        {
+            Response.Redirect("Principal.aspx");
+            Response.Write("<script language=javascript>alert('Debe iniciar sección!');</script>");
+        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {    imprimir();
