@@ -45,7 +45,7 @@ public partial class UI_Expediente : System.Web.UI.Page
             }
             else
             {
-                movimientosDatos();
+                MovimientosDatos();
             }
         }
         catch (Exception ex)
@@ -141,10 +141,8 @@ public partial class UI_Expediente : System.Web.UI.Page
             db.Dispose();
         }
     }
-    public void movimientosDatos() {
+    public void MovimientosDatos() {
         GridView2.DataSource = db.GENERAR_HISTORIAL_MOVIMIENTO(txtCedulaPaciente.Text).ToList();
         GridView2.DataBind();
-       
-    
     }
 }

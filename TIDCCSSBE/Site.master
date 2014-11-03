@@ -13,7 +13,6 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-
 </head>
 <body>
     <form runat="server">
