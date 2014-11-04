@@ -17,16 +17,19 @@ public partial class UI_Paciente_BuscarExpediente : System.Web.UI.Page
 
         try
         {
-            string encontrado = "";
-            var datos = db.SP_SELECCION_EXISTENCIA_EXPEDIENTE(TextBox1.Text);
-            foreach (SP_SELECCION_EXISTENCIA_EXPEDIENTEResult resultado in datos)
+           string result="";
+            var datos = db.SP_SELECCIONAR_EXPEDIENTE(TextBox1.Text);
+            foreach (SP_SELECCIONAR_EXPEDIENTEResult resultado in datos)
             {
-                encontrado = resultado.ESTADO_EXPEDIENTE;
+                result = resultado.Estado;
+
             }
-            if (encontrado == "")
+            if (result != null)
             {
-                Response.Write("<script language=javascript>alert('El expediente no existe!');</script>");
+                GridView1.DataSource = db.SP_SELECCIONAR_EXPEDIENTE(TextBox1.Text);
+                GridView1.DataBind();
             }
+         
         }
         catch (Exception ex)
         {
@@ -35,6 +38,7 @@ public partial class UI_Paciente_BuscarExpediente : System.Web.UI.Page
         finally
         {
             db.Dispose();
+            
         }
 
     }

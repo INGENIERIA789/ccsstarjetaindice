@@ -83,7 +83,7 @@
             <div class="col-xs-12">
                 <div class="col-md-12">
                    <center><h3>Historial de Movimientos</h3></center>
-                    <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                    <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AllowCustomPaging="True" PageSize="5" HorizontalAlign="Justify">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <FooterStyle BackColor="#CCCCCC" />
                         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

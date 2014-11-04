@@ -54,9 +54,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Tarjeta Índice<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Paciente/BuscarTID">Buscar</a></li>
+                                <li><a runat="server" href="~/UI/BuscarTID">Buscar</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Paciente/TIDPACIENTE">Registrar TID</a></li>
+                                <li><a runat="server" href="~/UI/TIDPACIENTE">Registrar TID</a></li>
                                 <li class="divider"></li>
                             </ul>
                         </li>
@@ -64,21 +64,20 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Expedientes<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Paciente/BuscarExpediente">Buscar Expedientes</a></li>
+                                <li><a runat="server" href="~/UI/BuscarExpediente">Buscar Expedientes</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Paciente/MovimientosExpediente">Movimientos</a></li>
+                                <li><a runat="server" href="~/UI/MovimientosExpediente">Movimientos</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Paciente/HojasUrgencia">Hojas de Urgencias</a></li>
+                                <li><a runat="server" href="~/UI/HojasUrgencia">Hojas de Urgencias</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Paciente/HojasEspecialidad">Examenes externos</a></li>
+                                <li><a runat="server" href="~/UI/HojasEspecialidad">Examenes externos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Administrador<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/UI/Medicos/AgregarMedico">Registrar Médico</a></li>
-                                <li class="divider"></li>
+                                <li><a runat="server" href="~/UI/AgregarMedico">Registrar Médico</a></li>
                                 <li><a runat="server" href="#">Registrar Ubicación</a></li>
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/UI/Reportes">Reportes</a></li>
@@ -91,14 +90,14 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="UI/Empleado/Principal">Iniciar sesión</a></li>
+                                <li><a runat="server" href="UI/Principal">Iniciar sesión</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="#" title="Su cuenta!">Hola, <%: Context.User.Identity.GetUserName()  %>!</a></li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/UI/Empleado/Principal" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/UI/Paciente/Principal" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
