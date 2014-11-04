@@ -7,9 +7,7 @@
     <div class="container"> 
         <br />
         <br />
-
          <hr/>
-    
     <br>
      
     <center>

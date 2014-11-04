@@ -151,30 +151,6 @@
     <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_Selecionar_Paciente" Method="sp_Selecionar_Paciente">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="sp_Selecionar_PacienteResult">
-      <Column Name="NUM_IDENTIFICACION" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="NOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="NOM_APELLIDO2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="NOM_NOMBRE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="IND_SEXO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="COD_ESTADO_CIVIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="FEC_NACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="NOMBRE_PADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NOMBRE_MADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOMICILIO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CODIGO_PATRONO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE_PATRONO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="OBSERVACION1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="BLOQUE_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="CUBICULO_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="FECHA_CREACION_EXPEDIENTE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="OBSERVACION2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_SELECCION_EXISTENCIA_EXPEDIENTE" Method="SP_SELECCION_EXISTENCIA_EXPEDIENTE">
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(20)" />
     <ElementType Name="SP_SELECCION_EXISTENCIA_EXPEDIENTEResult">
@@ -219,15 +195,63 @@
     <Parameter Name="AREA_DE_TRABAJO" Parameter="aREA_DE_TRABAJO" Type="System.String" DbType="VarChar(25)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_BUSCAR_PACIENTE" Method="SP_BUSCAR_PACIENTE">
+    <Parameter Name="NOMBRE_PACIENTE" Parameter="nOMBRE_PACIENTE" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="AP1_PACIENTE" Parameter="aP1_PACIENTE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="AP2_PACIENTE" Parameter="aP2_PACIENTE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="CED_PACIENTE" Parameter="cED_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SP_BUSCAR_PACIENTEResult">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SegundoApellido" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Identificaciòn" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Selecionar_Paciente" Method="sp_Selecionar_Paciente">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_Selecionar_PacienteResult">
+      <Column Name="NUM_IDENTIFICACION" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NOM_APELLIDO1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOM_APELLIDO2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOM_NOMBRE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IND_SEXO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="COD_ESTADO_CIVIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FEC_NACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NOMBRE_PADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRE_MADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOMICILIO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CODIGO_PATRONO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PATRONO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OBSERVACION1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BLOQUE_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUBICULO_EXPEDIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FECHA_CREACION_EXPEDIENTE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACION2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="algo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_SELECCIONAR_EXPEDIENTE" Method="SP_SELECCIONAR_EXPEDIENTE">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SP_SELECCIONAR_EXPEDIENTEResult">
+      <Column Name="Bloque" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Cubiculo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.GENERAR_HISTORIAL_MOVIMIENTO" Method="GENERAR_HISTORIAL_MOVIMIENTO">
     <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
     <ElementType Name="GENERAR_HISTORIAL_MOVIMIENTOResult">
-      <Column Name="CODIGO_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CODIGO_DOCTOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FECHA_ULTIMO_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="OBSERVACION_MOVIMIENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ESTADO_EXPEDIENTE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Área" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Doctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Observaciòn" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

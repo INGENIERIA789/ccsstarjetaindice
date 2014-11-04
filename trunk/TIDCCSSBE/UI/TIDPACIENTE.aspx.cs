@@ -12,19 +12,40 @@ using System.IO;
 
 public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 {
-   public DBTarjetaIndiceDataContext db = new DBTarjetaIndiceDataContext();
-   public clsTarjetaIndice TID = new clsTarjetaIndice();
-   public clsPaciente PAC = new clsPaciente();
-   public clsDetallePaciente DET = new clsDetallePaciente();
-   public clsExpediente EXP = new clsExpediente();
+   public DBTarjetaIndiceDataContext db = new DBTarjetaIndiceDataContext();//Se llama a la conexión
+   public clsTarjetaIndice TID = new clsTarjetaIndice();//Se llama a la clase de la tarje indice
+   public clsPaciente PAC = new clsPaciente();//Se llama la clase paciente
+   public clsDetallePaciente DET = new clsDetallePaciente();//Se llama a la clase del Detalle del Paciente
+   public clsExpediente EXP = new clsExpediente(); //Se llama a la clase expediente
+   public void limpiarCampos() {
+       txtNombrePaciente.Text = "";
+       txtApellido1Paciente.Text = "";
+       txtApellido2Paciente.Text = "";
+       txtEstCilPacient.Value = "";
+       txtGenPacient.Value = "";
+       txtNomPadre.Text = "";
+       txtNombreMadre.Text = "";
+       txtxNombrePatrono.Text = "";
+       txtObservacionDetalle.Text = "";
+       txtNumPatrono.Text = "";
+       txtDomicilio.Text = "";
+       txtFechaNaci.Text = String.Format("{0:yyyy-MM-dd}", DateTime.Now);
+       txtNumBlo.Text = "";
+       txtBloqueExpediente.Text = "";
+       txtFechaCreacionExpediente.Text = "";
+       txtObserExpe.Text = "";
+       txtEstadoExpediente.Value = "";
+   }
    public void buscarPaciente()
    {
        try
        {
+           string existencia = "";
            string cedula = txtCedulaPaciente.Text;
            var datos = db.sp_Selecionar_Paciente(cedula);
            foreach (sp_Selecionar_PacienteResult resultado in datos)
-           {
+           { //Se carga los especio con los datos
+               existencia = resultado.algo;
                txtNombrePaciente.Text = resultado.NOM_NOMBRE;
                txtApellido1Paciente.Text = resultado.NOM_APELLIDO1;
                txtApellido2Paciente.Text = resultado.NOM_APELLIDO2;
@@ -33,7 +54,6 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                txtNomPadre.Text = resultado.NOMBRE_PADRE;
                txtNombreMadre.Text = resultado.NOMBRE_MADRE;
                txtxNombrePatrono.Text = resultado.NOMBRE_PATRONO;
-
                txtObservacionDetalle.Text = resultado.OBSERVACION1;
                txtNumPatrono.Text = Convert.ToString(resultado.CODIGO_PATRONO);
                txtDomicilio.Text = resultado.DOMICILIO;
@@ -45,9 +65,16 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
                txtObserExpe.Text = resultado.OBSERVACION2;
                txtEstadoExpediente.Value = resultado.ESTADO_EXPEDIENTE;*/
            }
-          
-               Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
-           
+
+           if (existencia == "Existe")
+           {
+               
+           }else{ 
+           Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
+               limpiarCampos();
+               txtNombrePaciente.Focus();
+           }
+
        }
        catch (Exception ex)
        {
@@ -147,36 +174,46 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         txtFechaCreacionExpediente.Text = Convert.ToString(DateTime.Now);
-        if (Session["User"] == null && Session["Password"] == null)
+       /* if (Session["User"] == null && Session["Password"] == null)
         {
             Response.Redirect("Principal.aspx");
             Response.Write("<script language=javascript>alert('Debe iniciar sección!');</script>");
-        }
+        }*/
     }
     protected void Button1_Click(object sender, EventArgs e)
-    {    imprimir();
+    {   imprimir();
         agregar();
-        string valida = "";//Se genera auxiliar para validar si se ingreso
-        var datos = db.sp_Selecionar_Paciente(PAC.Ps_IdentiPa);
-        foreach (sp_Selecionar_PacienteResult resultado in datos)
+        try
         {
-            valida = resultado.NUM_IDENTIFICACION;
+            string valida = "";//Se genera auxiliar para validar si se ingreso
+            var datos = db.sp_Selecionar_Paciente(txtCedulaPaciente.Text);
+            foreach (sp_Selecionar_PacienteResult resultado in datos)
+            {
+                valida = resultado.NUM_IDENTIFICACION;
+            }
+            if (valida == txtCedulaPaciente.Text)
+            {
+                Response.Write("<script language=javascript>alert('Usuario Ingresado Correctamente!!!');</script>");
+            }
         }
-        if (valida == txtCedulaPaciente.Text)
+        catch (Exception ex) { Response.Write(ex); }
+        finally
         {
-            Response.Write("<script language=javascript>alert('Usuario Ingresado Correctamente!!!');</script>");
+            Response.Redirect("TIDPACIENTE.aspx");
+            db.Dispose();
         }
         
     }
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
     {
-        buscarPaciente();
-        txtNombrePaciente.Focus();
+        buscarPaciente();//Se llama 
+        
         }//Listo
    
     public void imprimir(){
         try
         {
+            llenarInformacionPaciente();
             string datos = txtCedulaPaciente.Text;
             // Creamos el documento con el tamaño de página tradicional
             Document doc = new Document(PageSize.LETTER);
