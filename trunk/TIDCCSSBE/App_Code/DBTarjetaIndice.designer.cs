@@ -247,6 +247,13 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE);
 		return ((ISingleResult<GENERAR_HISTORIAL_MOVIMIENTOResult>)(result.ReturnValue));
 	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_APLICACIONSEGURIDAD")]
+	public ISingleResult<SP_APLICACIONSEGURIDADResult> SP_APLICACIONSEGURIDAD([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USUARIO", DbType="VarChar(20)")] string uSUARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CLAVE", DbType="VarChar(20)")] string cLAVE)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), uSUARIO, cLAVE);
+		return ((ISingleResult<SP_APLICACIONSEGURIDADResult>)(result.ReturnValue));
+	}
 }
 
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_EXPEDIENTES")]
@@ -2669,6 +2676,32 @@ public partial class GENERAR_HISTORIAL_MOVIMIENTOResult
 			if ((this._Responsable != value))
 			{
 				this._Responsable = value;
+			}
+		}
+	}
+}
+
+public partial class SP_APLICACIONSEGURIDADResult
+{
+	
+	private string _EXISTENCIA;
+	
+	public SP_APLICACIONSEGURIDADResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXISTENCIA", DbType="VarChar(10)")]
+	public string EXISTENCIA
+	{
+		get
+		{
+			return this._EXISTENCIA;
+		}
+		set
+		{
+			if ((this._EXISTENCIA != value))
+			{
+				this._EXISTENCIA = value;
 			}
 		}
 	}

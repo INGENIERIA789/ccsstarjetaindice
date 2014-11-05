@@ -254,4 +254,11 @@
       <Column Name="Responsable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SP_APLICACIONSEGURIDAD" Method="SP_APLICACIONSEGURIDAD">
+    <Parameter Name="USUARIO" Parameter="uSUARIO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CLAVE" Parameter="cLAVE" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SP_APLICACIONSEGURIDADResult">
+      <Column Name="EXISTENCIA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

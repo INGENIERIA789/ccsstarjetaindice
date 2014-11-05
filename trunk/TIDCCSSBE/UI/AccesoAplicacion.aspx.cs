@@ -10,29 +10,19 @@ using TIDCCSS;
 
 public partial class UI_AccesoAplicacion : System.Web.UI.Page
 {
+    DBTarjetaIndiceDataContext db = new DBTarjetaIndiceDataContext();//Conexión linq
     protected void Page_Load(object sender, EventArgs e)
     {
     }
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string a = "Lester", b = "1234", c, d;
-        c = txtUsuario.Text;
-        d = txtPassword.Text;
 
-        if (a == c && b == d)
-        {
-            Response.Redirect("~/Default");
-            Session["User"] = true;
-            Session["Pass"] = true;
-            Session["User"] = a;
-            Session["Pass"] = b;
-        }
-        else
-        {
+        var datos = db.SP_APLICACIONSEGURIDAD(txtUsuario.Text, txtPassword.Text);
+
 
             Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
-        }
+
         if (IsValid)
         {
             // Validate the user password
