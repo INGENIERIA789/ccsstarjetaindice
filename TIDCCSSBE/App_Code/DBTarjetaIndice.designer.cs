@@ -213,13 +213,6 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		return ((int)(result.ReturnValue));
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_MEDICO")]
-	public int SP_INSERTAR_MEDICO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIDO_MEDICO", DbType="Int")] System.Nullable<int> cODIDO_MEDICO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_1_DOCTOR", DbType="VarChar(25)")] string aPELLIDO_1_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_DOCTOR", DbType="VarChar(25)")] string nOMBRE_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_2_DOCTOR", DbType="VarChar(25)")] string aPELLIDO_2_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESPECIALIDAD", DbType="VarChar(25)")] string eSPECIALIDAD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AREA_DE_TRABAJO", DbType="VarChar(25)")] string aREA_DE_TRABAJO)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cODIDO_MEDICO, aPELLIDO_1_DOCTOR, nOMBRE_DOCTOR, aPELLIDO_2_DOCTOR, eSPECIALIDAD, aREA_DE_TRABAJO);
-		return ((int)(result.ReturnValue));
-	}
-	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_BUSCAR_PACIENTE")]
 	public ISingleResult<SP_BUSCAR_PACIENTEResult> SP_BUSCAR_PACIENTE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_PACIENTE", DbType="VarChar(25)")] string nOMBRE_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AP1_PACIENTE", DbType="VarChar(30)")] string aP1_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AP2_PACIENTE", DbType="VarChar(30)")] string aP2_PACIENTE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CED_PACIENTE", DbType="VarChar(20)")] string cED_PACIENTE)
 	{
@@ -253,6 +246,27 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), uSUARIO, cLAVE);
 		return ((ISingleResult<SP_APLICACIONSEGURIDADResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_MEDICO")]
+	public int SP_INSERTAR_MEDICO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIDO_MEDICO", DbType="Int")] System.Nullable<int> cODIDO_MEDICO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_1_DOCTOR", DbType="VarChar(25)")] string aPELLIDO_1_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_DOCTOR", DbType="VarChar(25)")] string nOMBRE_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_2_DOCTOR", DbType="VarChar(25)")] string aPELLIDO_2_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESPECIALIDAD", DbType="VarChar(25)")] string eSPECIALIDAD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AREA_DE_TRABAJO", DbType="VarChar(25)")] string aREA_DE_TRABAJO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EST", DbType="VarChar(20)")] string eST)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cODIDO_MEDICO, aPELLIDO_1_DOCTOR, nOMBRE_DOCTOR, aPELLIDO_2_DOCTOR, eSPECIALIDAD, aREA_DE_TRABAJO, eST);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_BUSCARDOCTOR")]
+	public ISingleResult<SP_BUSCARDOCTORResult> SP_BUSCARDOCTOR([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIGO_DOCTOR", DbType="Int")] System.Nullable<int> cODIGO_DOCTOR)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cODIGO_DOCTOR);
+		return ((ISingleResult<SP_BUSCARDOCTORResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ELIMINARDOCTOR")]
+	public int SP_ELIMINARDOCTOR([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIGO", DbType="Int")] System.Nullable<int> cODIGO)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cODIGO);
+		return ((int)(result.ReturnValue));
 	}
 }
 
@@ -2702,6 +2716,140 @@ public partial class SP_APLICACIONSEGURIDADResult
 			if ((this._EXISTENCIA != value))
 			{
 				this._EXISTENCIA = value;
+			}
+		}
+	}
+}
+
+public partial class SP_BUSCARDOCTORResult
+{
+	
+	private string _APELLIDO_1_DOCTOR;
+	
+	private string _APELLIDO_2_DOCTOR;
+	
+	private string _NOMBRE_DOCTOR;
+	
+	private string _ESPECIALIDAD_DOCTOR;
+	
+	private string _AREA_TRABAJO_DOCTOR;
+	
+	private string _ESTADO_DOCTOR;
+	
+	private System.Nullable<int> _ESTADO;
+	
+	public SP_BUSCARDOCTORResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_1_DOCTOR", DbType="VarChar(30)")]
+	public string APELLIDO_1_DOCTOR
+	{
+		get
+		{
+			return this._APELLIDO_1_DOCTOR;
+		}
+		set
+		{
+			if ((this._APELLIDO_1_DOCTOR != value))
+			{
+				this._APELLIDO_1_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_2_DOCTOR", DbType="VarChar(30)")]
+	public string APELLIDO_2_DOCTOR
+	{
+		get
+		{
+			return this._APELLIDO_2_DOCTOR;
+		}
+		set
+		{
+			if ((this._APELLIDO_2_DOCTOR != value))
+			{
+				this._APELLIDO_2_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DOCTOR", DbType="NChar(10)")]
+	public string NOMBRE_DOCTOR
+	{
+		get
+		{
+			return this._NOMBRE_DOCTOR;
+		}
+		set
+		{
+			if ((this._NOMBRE_DOCTOR != value))
+			{
+				this._NOMBRE_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESPECIALIDAD_DOCTOR", DbType="VarChar(40)")]
+	public string ESPECIALIDAD_DOCTOR
+	{
+		get
+		{
+			return this._ESPECIALIDAD_DOCTOR;
+		}
+		set
+		{
+			if ((this._ESPECIALIDAD_DOCTOR != value))
+			{
+				this._ESPECIALIDAD_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AREA_TRABAJO_DOCTOR", DbType="VarChar(30)")]
+	public string AREA_TRABAJO_DOCTOR
+	{
+		get
+		{
+			return this._AREA_TRABAJO_DOCTOR;
+		}
+		set
+		{
+			if ((this._AREA_TRABAJO_DOCTOR != value))
+			{
+				this._AREA_TRABAJO_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_DOCTOR", DbType="VarChar(20)")]
+	public string ESTADO_DOCTOR
+	{
+		get
+		{
+			return this._ESTADO_DOCTOR;
+		}
+		set
+		{
+			if ((this._ESTADO_DOCTOR != value))
+			{
+				this._ESTADO_DOCTOR = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="Int")]
+	public System.Nullable<int> ESTADO
+	{
+		get
+		{
+			return this._ESTADO;
+		}
+		set
+		{
+			if ((this._ESTADO != value))
+			{
+				this._ESTADO = value;
 			}
 		}
 	}

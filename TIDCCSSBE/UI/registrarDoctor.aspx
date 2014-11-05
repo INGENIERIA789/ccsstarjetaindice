@@ -16,7 +16,7 @@
         <div class="col-md-4">
              <div class="form-group">
                  <label class="control-label">Código Médico</label>
-                    <asp:TextBox runat="server" ID="txtCodigoMedico" CssClass="form-control" placeholder="0000000"  Width="1387px" />
+                    <asp:TextBox runat="server" ID="txtCodigoMedico" CssClass="form-control" placeholder="0000000"  Width="1387px" AutoPostBack="True" OnTextChanged="txtCodigoMedico_TextChanged" />
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere el código del médico." ForeColor="Red"> </asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
@@ -43,6 +43,23 @@
                      <asp:TextBox runat="server" ID="txtEspecialidadMedico" CssClass="form-control" placeholder="Ginecología" Width="1387px"/>
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere la especialidad del médico." ForeColor="Red"> </asp:RequiredFieldValidator>
                  </div>
+                 <div class="form-group">
+                     <label class="control-label">Área de Trabajo</label>
+                     <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" placeholder="Ginecología" Width="1387px"/>
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere la especialidad del médico." ForeColor="Red"> </asp:RequiredFieldValidator>
+                 </div>
+                 <div class="form-group">
+                            <label class="control-label">Estado</label>
+                            <div class="input-group">
+                                <select class="form-control" runat="server" name="validate-select" id="txtEstadoExpediente" required>
+                                    <option value="">--Seleccione--</option>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Suspendido">Suspendido</option>
+                                </select>
+                            </div>
+                        </div>
+                 <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Agregar" OnClick="Button1_Click" />
+                 <asp:Button ID="Button2" runat="server" class="btn btn-lg btn-primary btn-block" Text="Eliminar" OnClick="Button2_Click" />
              </div>
              </div>
 </asp:Content>
