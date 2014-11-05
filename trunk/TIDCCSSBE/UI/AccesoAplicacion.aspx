@@ -31,12 +31,14 @@
 			    	  	<div class="form-group">
                         <label>Nombre de Usuario</label>                      
                         <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" type="text" Width="305px"></asp:TextBox>
+                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se requiere el usuario." ControlToValidate="txtUsuario" ForeColor="Red"></asp:RequiredFieldValidator>
 			    		</div>
 			    		<div class="form-group">
                         <label>Contraseña</label>
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" type="password" Width="306px"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" type="password" Width="306px" TextMode="Password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtPassword" ForeColor="Red">Se requiere la contraseña.</asp:RequiredFieldValidator>
 			    		</div>
-                        <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Ingresar" />			    	
+                        <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Ingresar" OnClick="Button1_Click" />			    	
 			    	</fieldset>
 			      	</form>
 			    </div>

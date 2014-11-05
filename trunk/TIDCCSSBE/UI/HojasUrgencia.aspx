@@ -77,7 +77,7 @@
                 <div class="row">
                     <hr/>
                     <div class="col-md-2">
-                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrarse" CssClass="btn btn-default" OnClick="Button1_Click" />
+                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrarse" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />
                     </div>
                 
                 </div>

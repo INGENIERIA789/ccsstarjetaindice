@@ -202,7 +202,7 @@
                         <div class="col-md-3">
                         </div>
                         <div class="col-md-3">
-                            <asp:Button ID="Button1" class="btn btn-success btn-lg pull-left" runat="server" Text="Agregar" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" runat="server" Text="Agregar" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>

@@ -174,9 +174,9 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         txtFechaCreacionExpediente.Text = Convert.ToString(DateTime.Now);
-       /* if (Session["User"] == null && Session["Password"] == null)
+     /*   if (Session["User"] == null && Session["Pass"] == null)
         {
-            Response.Redirect("Principal.aspx");
+            Response.Redirect("~/UI/AccesoAplicacion");
             Response.Write("<script language=javascript>alert('Debe iniciar sección!');</script>");
         }*/
     }

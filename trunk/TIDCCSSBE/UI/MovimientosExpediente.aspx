@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-            <asp:Button ID="Button1" runat="server" Text="Registrar" CssClass="btn btn-default nextBtn btn-lg" OnClick="Button1_Click" />               
+            <asp:Button ID="Button1" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />               
                 <!--Aqui va todo lo de movimientos -->
             </div>
         </div>
