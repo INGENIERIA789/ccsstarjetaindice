@@ -201,7 +201,7 @@
                         <div class="col-md-3">
                         </div>
                         <div class="col-md-3">
-                            <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" runat="server" Text="Registrar" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" runat="server" Text="Registrar" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>

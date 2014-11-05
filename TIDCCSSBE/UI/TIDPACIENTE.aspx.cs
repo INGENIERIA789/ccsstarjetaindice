@@ -183,7 +183,14 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {   imprimir();
+    if (txtCedulaPaciente.Text != null && txtApellido2Paciente.Text != null)
+    {
         agregar();
+        Response.Write("<script language=javascript>alert('Usuario Ingresado Correctamente!!!');</script>");
+    }
+    else {
+        Response.Write("<script language=javascript>alert('Se necesitan completar los campos');</script>");
+    }
         try
         {
             string valida = "";//Se genera auxiliar para validar si se ingreso

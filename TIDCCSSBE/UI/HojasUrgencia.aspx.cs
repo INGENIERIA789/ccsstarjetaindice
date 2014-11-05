@@ -68,8 +68,18 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
     {
         try
         {
-            llenardatos();
-            db.SP_INSERTAR_HOJAS_URGENCIA(HU.Ps_CedPaU, HU.Ps_PriApePaU, HU.Ps_SegApePaU, HU.Ps_NomPAU, HU.Pn_NumAseguradoU, HU.Pd_FecRegU, HU.Ps_ObsU);
+            
+            if (txtCedulaPaciente.Text == "" && txtNombPac.Text == "")
+            {
+
+                Response.Write("<script language=javascript>alert('Se necesitan completar los campos');</script>");
+            }
+            else {
+                llenardatos();
+                db.SP_INSERTAR_HOJAS_URGENCIA(HU.Ps_CedPaU, HU.Ps_PriApePaU, HU.Ps_SegApePaU, HU.Ps_NomPAU, HU.Pn_NumAseguradoU,
+                    HU.Pd_FecRegU, HU.Ps_ObsU);
+                Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
+            }
         }
         catch (Exception ex)
         {
@@ -78,7 +88,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
         finally {
             db.Dispose();
             limpiar();
-            Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
+           
         }
     }
 }
