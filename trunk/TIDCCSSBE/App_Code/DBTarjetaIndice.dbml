@@ -186,15 +186,6 @@
     <Parameter Name="OBSERVACION" Parameter="oBSERVACION" Type="System.String" DbType="VarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_INSERTAR_MEDICO" Method="SP_INSERTAR_MEDICO">
-    <Parameter Name="CODIDO_MEDICO" Parameter="cODIDO_MEDICO" Type="System.Int32" DbType="Int" />
-    <Parameter Name="APELLIDO_1_DOCTOR" Parameter="aPELLIDO_1_DOCTOR" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="NOMBRE_DOCTOR" Parameter="nOMBRE_DOCTOR" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="APELLIDO_2_DOCTOR" Parameter="aPELLIDO_2_DOCTOR" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="ESPECIALIDAD" Parameter="eSPECIALIDAD" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="AREA_DE_TRABAJO" Parameter="aREA_DE_TRABAJO" Type="System.String" DbType="VarChar(25)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SP_BUSCAR_PACIENTE" Method="SP_BUSCAR_PACIENTE">
     <Parameter Name="NOMBRE_PACIENTE" Parameter="nOMBRE_PACIENTE" Type="System.String" DbType="VarChar(25)" />
     <Parameter Name="AP1_PACIENTE" Parameter="aP1_PACIENTE" Type="System.String" DbType="VarChar(30)" />
@@ -260,5 +251,31 @@
     <ElementType Name="SP_APLICACIONSEGURIDADResult">
       <Column Name="EXISTENCIA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_MEDICO" Method="SP_INSERTAR_MEDICO">
+    <Parameter Name="CODIDO_MEDICO" Parameter="cODIDO_MEDICO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="APELLIDO_1_DOCTOR" Parameter="aPELLIDO_1_DOCTOR" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="NOMBRE_DOCTOR" Parameter="nOMBRE_DOCTOR" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="APELLIDO_2_DOCTOR" Parameter="aPELLIDO_2_DOCTOR" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="ESPECIALIDAD" Parameter="eSPECIALIDAD" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="AREA_DE_TRABAJO" Parameter="aREA_DE_TRABAJO" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="EST" Parameter="eST" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_BUSCARDOCTOR" Method="SP_BUSCARDOCTOR">
+    <Parameter Name="CODIGO_DOCTOR" Parameter="cODIGO_DOCTOR" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_BUSCARDOCTORResult">
+      <Column Name="APELLIDO_1_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="APELLIDO_2_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOMBRE_DOCTOR" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ESPECIALIDAD_DOCTOR" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="AREA_TRABAJO_DOCTOR" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ESTADO_DOCTOR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ELIMINARDOCTOR" Method="SP_ELIMINARDOCTOR">
+    <Parameter Name="CODIGO" Parameter="cODIGO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

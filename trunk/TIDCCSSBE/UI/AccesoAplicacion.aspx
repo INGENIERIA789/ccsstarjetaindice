@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AccesoAplicacion.aspx.cs" Inherits="UI_AccesoAplicacion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="AccesoAplicacion.aspx.cs" Inherits="UI_AccesoAplicacion" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<link href="../Content/bootstrap.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<link href="../Content/bootstrap.css" rel="stylesheet" />
 <script src="../Scripts/bootstrap.js"></script>
 <script src="../Scripts/jquery-1.10.2.intellisense.js"></script>
 <script src="../Scripts/jquery-1.10.2.js"></script>
@@ -20,6 +20,11 @@
 
  <div class="container">
     <div class="row">
+        <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
+                        <p class="text-danger">
+                            <asp:Literal runat="server" ID="FailureText" />
+                        </p>
+                    </asp:PlaceHolder>
     	<div class="col-md-4 col-md-offset-4">
     		<div class="panel panel-default">
 			  	<div class="panel-heading">
@@ -28,17 +33,36 @@
 			  	<div class="panel-body">
 			    	<form accept-charset="UTF-8" runat="server" role="form">
                     <fieldset>
-			    	  	<div class="form-group">
-                        <label>Nombre de Usuario</label>                      
-                        <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" type="text" Width="305px"></asp:TextBox>
-                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" Text="Se requiere el usuario." ControlToValidate="txtUsuario" ForeColor="Red"></asp:RequiredFieldValidator>
-			    		</div>
-			    		<div class="form-group">
+			    	  	<h4>Utilice una cuenta local para iniciar sesión.</h4>
+                    <hr />
+                    <asp:PlaceHolder runat="server" ID="PlaceHolder1" Visible="false">
+                        <p class="text-danger">
+                            <asp:Literal runat="server" ID="Literal1" />
+                        </p>
+                    </asp:PlaceHolder>
+                    <div class="form-group">
+                        <label>Nombre de usuario</label>
+                       <!-- <asp:Label ID="Label1" runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Nombre de usuario</asp:Label>-->
+                       
+                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserName"
+                                CssClass="text-danger" ErrorMessage="El campo de nombre de usuario es obligatorio." />                    
+                    </div>
+                    <div class="form-group">
                         <label>Contraseña</label>
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" type="password" Width="306px" TextMode="Password"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtPassword" ForeColor="Red">Se requiere la contraseña.</asp:RequiredFieldValidator>
-			    		</div>
-                        <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Ingresar" OnClick="Button1_Click" />			    	
+                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="El campo de contraseña es obligatorio." />                     
+                    </div>
+                    <div class="form-group">
+                       
+                            <div class="checkbox">
+                                <asp:CheckBox runat="server" ID="RememberMe" />
+                                <asp:Label ID="Label3" runat="server" AssociatedControlID="RememberMe">¿Recordar cuenta?</asp:Label>
+                            </div>
+                        
+                    </div>
+                    
+                        <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Ingresar" OnClick="LogIn" />			    	
 			    	</fieldset>
 			      	</form>
 			    </div>

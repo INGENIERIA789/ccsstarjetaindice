@@ -15,28 +15,36 @@ public partial class UI_AccesoAplicacion : System.Web.UI.Page
     {
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
+   
+    protected void LogIn(object sender, EventArgs e)
     {
-
-        var datos = db.SP_APLICACIONSEGURIDAD(txtUsuario.Text, txtPassword.Text);
-
-
+        string respuesta = "";
+        var datos = db.SP_APLICACIONSEGURIDAD(UserName.Text, Password.Text);
+        foreach (SP_APLICACIONSEGURIDADResult resultado in datos)
+        {
+            respuesta = resultado.EXISTENCIA;
+        }
+        if (respuesta == "EXISTE")
+            Response.Redirect("~/Default");
+        else
             Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
 
         if (IsValid)
         {
             // Validate the user password
             var manager = new UserManager();
-            ApplicationUser user = manager.Find(txtUsuario.Text, txtPassword.Text);
+            ApplicationUser user = manager.Find(UserName.Text, Password.Text);
             if (user != null)
             {
-               // IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["Default"], Response);
+                IdentityHelper.SignIn(manager, user, RememberMe.Checked);
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else
             {
-                Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
+                FailureText.Text = "Invalid username or password.";
+                ErrorMessage.Visible = true;
             }
         }
+
     }
 }

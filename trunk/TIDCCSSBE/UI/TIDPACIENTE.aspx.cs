@@ -17,6 +17,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
    public clsPaciente PAC = new clsPaciente();//Se llama la clase paciente
    public clsDetallePaciente DET = new clsDetallePaciente();//Se llama a la clase del Detalle del Paciente
    public clsExpediente EXP = new clsExpediente(); //Se llama a la clase expediente
+
    public void limpiarCampos() {
        txtNombrePaciente.Text = "";
        txtApellido1Paciente.Text = "";
@@ -206,8 +207,58 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
     }
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
     {
-        buscarPaciente();//Se llama 
-        
+      //  buscarPaciente();//Se llama 
+        try
+        {
+            string existencia = "";
+            string cedula = txtCedulaPaciente.Text;
+            var datos = db.sp_Selecionar_Paciente(cedula);
+            foreach (sp_Selecionar_PacienteResult resultado in datos)
+            { //Se carga los especio con los datos
+                existencia = resultado.algo;
+                txtNombrePaciente.Text = resultado.NOM_NOMBRE;
+                txtApellido1Paciente.Text = resultado.NOM_APELLIDO1;
+                txtApellido2Paciente.Text = resultado.NOM_APELLIDO2;
+                txtEstCilPacient.Value = resultado.COD_ESTADO_CIVIL;
+                txtGenPacient.Value = resultado.IND_SEXO;
+                txtNomPadre.Text = resultado.NOMBRE_PADRE;
+                txtNombreMadre.Text = resultado.NOMBRE_MADRE;
+                txtxNombrePatrono.Text = resultado.NOMBRE_PATRONO;
+                txtObservacionDetalle.Text = resultado.OBSERVACION1;
+                txtNumPatrono.Text = Convert.ToString(resultado.CODIGO_PATRONO);
+                txtDomicilio.Text = resultado.DOMICILIO;
+                txtFechaNaci.Text = String.Format("{0:yyyy-MM-dd}", resultado.FEC_NACIMIENTO);
+                /*
+                txtNumBlo.Text = resultado.CUBICULO_EXPEDIENTE;
+                txtBloqueExpediente.Text = resultado.BLOQUE_EXPEDIENTE;
+                txtFechaCreacionExpediente.Text =Convert.ToString(resultado.FECHA_CREACION_EXPEDIENTE);
+                txtObserExpe.Text = resultado.OBSERVACION2;
+                txtEstadoExpediente.Value = resultado.ESTADO_EXPEDIENTE;*/
+            }
+
+            if (existencia == "Existe")
+            {
+
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
+                limpiarCampos();
+                txtNombrePaciente.Focus();
+            }
+            txtNombrePaciente.Focus();
+        }
+        catch (Exception ex)
+        {
+            Response.Write("<script language=javascript>alert('Error " + ex + "!');</script>");
+
+        }
+        finally
+        {
+            //Libera los recursos
+            txtNombrePaciente.Focus();
+        }
+        txtNombrePaciente.Focus();
         }//Listo
    
     public void imprimir(){
