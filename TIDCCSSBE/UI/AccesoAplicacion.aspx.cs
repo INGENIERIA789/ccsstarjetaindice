@@ -33,5 +33,20 @@ public partial class UI_AccesoAplicacion : System.Web.UI.Page
 
             Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
         }
+        if (IsValid)
+        {
+            // Validate the user password
+            var manager = new UserManager();
+            ApplicationUser user = manager.Find(txtUsuario.Text, txtPassword.Text);
+            if (user != null)
+            {
+               // IdentityHelper.SignIn(manager, user, RememberMe.Checked);
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["Default"], Response);
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
+            }
+        }
     }
 }
