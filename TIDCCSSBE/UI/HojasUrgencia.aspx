@@ -18,23 +18,23 @@
         <div class="col-md-4">
              <div class="form-group">
                  <label class="control-label">Identificación</label>
-                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="0-000-000" Width="1387px" AutoPostBack="True" OnTextChanged="txtCedulaPaciente_TextChanged" />
+                    <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" placeholder="Identificación del Paciente" Width="1387px" AutoPostBack="True" OnTextChanged="txtCedulaPaciente_TextChanged" />
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCedulaPaciente" Text="Se requiere la identificación." ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label class="control-label">Primer Apellido</label>
-                    <asp:TextBox runat="server" ID="txtApelli1" CssClass="form-control" placeholder="Primer Apellido" Width="1387px"/>
+                    <asp:TextBox runat="server" ID="txtApelli1" CssClass="form-control" placeholder="Primer Apellido del Paciente" Width="1387px"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApelli1" Text="Se requiere el apellido." ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label class="control-label">Segundo Apellido</label>
-                    <asp:TextBox runat="server" ID="txtApelli2" CssClass="form-control" placeholder="Segundo Apellido" Width="1387px" />
+                    <asp:TextBox runat="server" ID="txtApelli2" CssClass="form-control" placeholder="Segundo Apellido del Paciente" Width="1387px" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApelli2" Text="Se requiere el apellido." ForeColor="Red"></asp:RequiredFieldValidator>
                 
             </div>
               <div class="form-group">
                   <label class="control-label">Nombre del Paciente</label>              
-                    <asp:TextBox runat="server" ID="txtNombPac" CssClass="form-control" placeholder="Nombre" Width="1387px" /> 
+                    <asp:TextBox runat="server" ID="txtNombPac" CssClass="form-control" placeholder="Nombre del Paciente" Width="1387px" /> 
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtNombPac" Text="Se necesita el nombre." ForeColor="Red"></asp:RequiredFieldValidator>
                             
             </div>
@@ -59,15 +59,15 @@
              <div class="col-md-4">
                  <div class="form-group">
                      <label class="control-label">Bloque del expediente.</label>
-                    <asp:TextBox runat="server" ID="txtBloqueExpediente"  CssClass="form-control" TextMode="SingleLine" Width="1387px"  placeholder="BLOQUE" Enabled="False" />
+                    <asp:TextBox runat="server" ID="txtBloqueExpediente"  CssClass="form-control" TextMode="SingleLine" Width="1387px"  placeholder="Bloque del Expediente" Enabled="False" />
                  </div>
                  <div class="form-group">
-                     <label class="control-label">Cubiculo del Expediente.</label>
-                    <asp:TextBox runat="server" ID="txtCubiculoExpediente"  CssClass="form-control"  TextMode="SingleLine"  Width="1387px" placeholder="Cubiculo" Enabled="False" />
+                     <label class="control-label">Cubículo del Expediente.</label>
+                    <asp:TextBox runat="server" ID="txtCubiculoExpediente"  CssClass="form-control"  TextMode="SingleLine"  Width="1387px" placeholder="Cubículo del Expediente" Enabled="False" />
                  </div>
                   <div class="form-group">
                      <label class="control-label">Estado del Expediente.</label>
-                    <asp:TextBox runat="server" ID="txtEstadoExpediente"  CssClass="form-control" TextMode="SingleLine" Width="1387px"  placeholder="Estado" Enabled="False" />
+                    <asp:TextBox runat="server" ID="txtEstadoExpediente"  CssClass="form-control" TextMode="SingleLine" Width="1387px"  placeholder="Estado del Expediente" Enabled="False" />
                  </div>
              </div>
     </div>
@@ -77,7 +77,7 @@
                 <div class="row">
                     <hr/>
                     <div class="col-md-2">
-                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrarse" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />
+                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />
                     </div>
                 
                 </div>

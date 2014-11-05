@@ -35,11 +35,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
     {
         txtFecha.Text = Convert.ToString(DateTime.Now);
     //    txtFechaCreaci.Text = Convert.ToString(DateTime.Now);
-        if (Session["User"] == null && Session["Password"] == null)
-        {
-            Server.Transfer("Principal.aspx");
-            Response.Write("<script language=javascript>alert('Debe iniciar sección!');</script>");
-        }
+       
     }
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
     {
