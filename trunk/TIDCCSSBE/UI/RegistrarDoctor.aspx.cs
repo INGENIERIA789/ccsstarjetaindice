@@ -67,7 +67,8 @@ public partial class UI_registrarDoctor : System.Web.UI.Page
     txtNombreMedico.Text = "";
     txtArea.Text = "";
     }
-    protected void Button2_Click(object sender, EventArgs e)
+   
+    /* protected void Button2_Click(object sender, EventArgs e)
     {
         try
         {
@@ -79,5 +80,5 @@ public partial class UI_registrarDoctor : System.Web.UI.Page
             Response.Write(ex);
         
         }
-        }
+        }*/
 }

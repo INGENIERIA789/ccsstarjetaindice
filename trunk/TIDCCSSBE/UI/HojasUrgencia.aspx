@@ -77,7 +77,7 @@
                 <div class="row">
                     <hr/>
                     <div class="col-md-2">
-                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />
+                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />
                     </div>
                 
                 </div>

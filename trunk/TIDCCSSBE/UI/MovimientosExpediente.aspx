@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-            <asp:Button ID="Button1" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />               
+            <asp:Button ID="Button1" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />               
                 <!--Aqui va todo lo de movimientos -->
             </div>
         </div>

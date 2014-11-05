@@ -35,10 +35,16 @@ txtFecha.Text = Convert.ToString(DateTime.Now);
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        llenardatos();
+        
         try {
-            db.SP_INSERTAR_EXAMENES_EXTERNOS(EX.Ps_CedPaEe, EX.Ps_PriApePaEe, EX.Ps_SegApePaEe, EX.Ps_NomPAEe, EX.Ps_Especialidad, EX.Ps_FecRegEe, EX.Ps_ObsEe);
-
+            if (txtCedulaPaciente.Text != "" && txtNombPaci.Text != "")
+            {llenardatos();
+                db.SP_INSERTAR_EXAMENES_EXTERNOS(EX.Ps_CedPaEe, EX.Ps_PriApePaEe,
+                  EX.Ps_SegApePaEe, EX.Ps_NomPAEe, EX.Ps_Especialidad, EX.Ps_FecRegEe, EX.Ps_ObsEe);
+                Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
+            }
+            else
+                Response.Write("<script language=javascript>alert('Se necesitan llenar los campos!');</script>");
         }
        catch(Exception ex)
         {
@@ -48,7 +54,7 @@ txtFecha.Text = Convert.ToString(DateTime.Now);
         {
             db.Dispose();
             limpiar();
-            Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
+            
         }
      }
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
