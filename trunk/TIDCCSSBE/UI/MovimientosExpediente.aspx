@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">Código Área</label>
-                            <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" AutoPostBack="True" Width="1387px" placeholder="Codigo del área" OnTextChanged="txtCodAre_TextChanged" />
+                            <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" AutoPostBack="True" Width="1387px" placeholder="Código del área" OnTextChanged="txtCodAre_TextChanged" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Área</label>
@@ -40,23 +40,23 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">Código Doctor</label>
-                            <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" required="required" Width="1387px" placeholder="Codigo de Doctor" AutoPostBack="True" OnTextChanged="txtCodDoc_TextChanged" />
+                            <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" required="required" Width="1387px" placeholder="Código de Doctor" AutoPostBack="True" OnTextChanged="txtCodDoc_TextChanged" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Nombre Doctor</label>
-                            <asp:TextBox runat="server" ID="txtNombreDoctor" CssClass="form-control" required="required" Width="1387px" placeholder="Codigo de Doctor" />
+                            <asp:TextBox runat="server" ID="txtNombreDoctor" CssClass="form-control" required="required" Width="1387px" placeholder="Código de Doctor" />
                         </div>
 
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="control-label">Encarcado</label>
+                            <label class="control-label">Encargado</label>
                             <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" required="required" Width="1387px" placeholder="Encargado" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Fecha</label>
-                            <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" required="required" Width="1387px" placeholder="Fecha de Entrada" />
+                            <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" required="required" Width="1387px" placeholder="Fecha de Movimiento" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Observación</label>
@@ -83,16 +83,17 @@
             <div class="col-xs-12">
                 <div class="col-md-12">
                    <center><h3>Historial de Movimientos</h3></center>
-                    <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AllowCustomPaging="True" PageSize="5" HorizontalAlign="Justify">
-                        <AlternatingRowStyle BackColor="#CCCCCC" />
-                        <FooterStyle BackColor="#CCCCCC" />
-                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AllowCustomPaging="True" PageSize="5" HorizontalAlign="Justify">
+                        <AlternatingRowStyle BackColor="#DCDCDC" />
+                        <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                        <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                        <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
                         <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                        <SortedAscendingHeaderStyle BackColor="Gray" />
+                        <SortedAscendingHeaderStyle BackColor="#0000A9" />
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                        <SortedDescendingHeaderStyle BackColor="#383838" />
+                        <SortedDescendingHeaderStyle BackColor="#000065" />
                     </asp:GridView>
                     <br />
                     <br />

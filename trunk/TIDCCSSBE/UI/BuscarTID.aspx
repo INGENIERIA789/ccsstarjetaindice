@@ -5,6 +5,7 @@
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
 <h3>Busqueda de paciente.</h3>
   <div class="row">
+      <br />
       
       <div class="col-sm-2">
           <label class="control-label">Nombre</label>
