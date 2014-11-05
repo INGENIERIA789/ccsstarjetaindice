@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
              
-        <asp:Literal runat="server" ID="ErrorMessage" />
+        
     
     <link href="../Content/bootstrap.css" rel="stylesheet" />
    
@@ -23,17 +23,18 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Primer Apellido</label>
-                    <asp:TextBox runat="server" ID="txtPriAp" CssClass="form-control" placeholder="Barrios" Width="1387px"/>
-               
+                    <asp:TextBox runat="server" ID="txtPriAp" CssClass="form-control" placeholder="Barrios" Width="1387px" CausesValidation="True"/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtPriAp" ForeColor="Red">Se requiere el primer apellido.</asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label class="control-label">Segundo Apellido</label>
-                    <asp:TextBox runat="server" ID="txtSegApe" CssClass="form-control" placeholder="AAlgo" Width="1387px"/>
-                
+                    <asp:TextBox runat="server" ID="txtSegApe" CssClass="form-control" placeholder="AAlgo" Width="1387px" CausesValidation="True"/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtSegApe" ForeColor="Red">Se requiere el segundo apellido.</asp:RequiredFieldValidator>
             </div>
               <div class="form-group">
                   <label class="control-label">Nombre del Paciente</label>              
-                    <asp:TextBox runat="server" ID="txtNombPaci" CssClass="form-control" placeholder="Patito" Width="1387px"/>           
+                    <asp:TextBox runat="server" ID="txtNombPaci" CssClass="form-control" placeholder="Patito" Width="1387px" CausesValidation="True"/>   
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtNombPaci" ForeColor="Red">Se requiere el nombre.</asp:RequiredFieldValidator>
             </div>
         </div>
    
@@ -44,11 +45,13 @@
                  </div>
                  <div class="form-group">
                      <label class="control-label">Especialidad</label>
-                     <asp:TextBox runat="server" ID="txtEspecialidad" CssClass="form-control" placeholder="uu" Width="1387px"/>
+                     <asp:TextBox runat="server" ID="txtEspecialidad" CssClass="form-control" placeholder="uu" Width="1387px" CausesValidation="True"/>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtEspecialidad" ForeColor="Red">Se requiere la especialidad.</asp:RequiredFieldValidator>
                  </div>
                  <div class="form-group">
                      <label class="control-label">Observación</label>
                      <asp:TextBox runat="server" ID="txtObservacion" CssClass="form-control" Rows="3" TextMode="MultiLine" Width="1387px" placeholder="Observaciones" />
+
                  </div>
 
              </div>
@@ -72,7 +75,7 @@
                 <div class="row">
                     <hr/>
                     <div class="col-md-2">
-                        <asp:Button ID="Button1" runat="server" Text="Registrarse" CssClass="btn btn-default" OnClick="Button1_Click" />
+                        <asp:Button ID="Button1" runat="server" Text="Registrarse" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />
                     </div>                   
                 </div>
             </div>

@@ -73,5 +73,18 @@ public partial class SiteMaster : MasterPage
     {
         Context.GetOwinContext().Authentication.SignOut();
     }
+    protected void xxx(object sender, EventArgs e) { 
+    //href="UI/AccesoAplicacion"
+        Session["User"] = null;
+        Session["Pass"] = null;
+        Response.Redirect("~/UI/AccesoAplicacion");
+    }
 
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Session["User"] = null;
+        Session["Pass"] = null;
+        Response.Redirect("~/UI/AccesoAplicacion");
+
+    }
 }

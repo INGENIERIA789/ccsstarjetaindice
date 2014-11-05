@@ -9,7 +9,7 @@
 		<h2></h2>
 	</div>
     
-    <div class="row">
+    <div class="row" runat="server">
         <!-- The carousel -->
         <div id="transition-timer-carousel" class="carousel slide transition-timer-carousel" data-ride="carousel">
 			<!-- Indicators -->
@@ -20,9 +20,9 @@
 			</ol>
 
 			<!-- Wrapper for slides -->
-			<div class="carousel-inner">
-				<div class="item active">
-                    <img src="img/tres.jpg" />
+			<div class="carousel-inner" runat="server">
+				<div class="item active" runat="server">
+                    <img src="img/tres.jpg" runat="server" />
                     <div class="carousel-caption">
                         <h1 class="carousel-caption-header">Hospital la Anexión</h1>
                         <p class="carousel-caption-text hidden-sm hidden-xs">
@@ -32,7 +32,7 @@
                 </div>
                 
                 <div class="item">
-                    <img src="img/img-sliderhome-bg-ph.jpg" />
+                    <img src="img/img-sliderhome-bg-ph.jpg" runat="server" />
                     <div class="carousel-caption">
                         <h1 class="carousel-caption-header">Área de Archivos Clinicos</h1>
                         <p class="carousel-caption-text hidden-sm hidden-xs">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="item">
-                <img src="img/Hospital-Quirón-Bizkaia.jpg" />
+                <img src="img/Hospital-Quirón-Bizkaia.jpg" runat="server"/>
 
                     <div class="carousel-caption">
                         <h1 class="carousel-caption-header">Mision</h1>

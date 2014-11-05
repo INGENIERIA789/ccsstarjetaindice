@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Principal.aspx.cs" Inherits="UI_Principal" %>
+﻿<%--<%@ Page Title="Principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Principal.aspx.cs" Inherits="UI_Principal" %>--%>
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
   
