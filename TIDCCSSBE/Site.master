@@ -89,8 +89,8 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Administrador<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li class="divider"></li>
-                                            <li><a runat="server" href="~/UI/AgregarMedico">Registrar Médico</a></li>
-                                            <li><a runat="server" href="#">Registrar Ubicación</a></li>
+                                            <li><a runat="server" href="~/UI/registrarDoctor">Registrar Médico</a></li>
+                                            <li><a runat="server" href="~/AreaTrabajo">Registrar Ubicación</a></li>
                                             <li class="divider"></li>
                                             <li><a runat="server" href="~/UI/Reportes">Reportes</a></li>
                                             <li class="divider"></li>
