@@ -69,7 +69,8 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 
            if (existencia == "Existe")
            {
-               
+               txtApellido1Paciente.TabIndex=2;
+               txtNombrePaciente.Focus();
            }else{ 
            Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
                limpiarCampos();

@@ -46,6 +46,9 @@ public partial class UI_Expediente : System.Web.UI.Page
             else
             {
                 MovimientosDatos();
+                txtCodAre.Focus();
+               
+                
             }
         }
         catch (Exception ex)
@@ -55,6 +58,7 @@ public partial class UI_Expediente : System.Web.UI.Page
         finally
         {
             db.Dispose();
+            
         }
     }
     protected void Button1_Click(object sender, EventArgs e)
@@ -69,13 +73,14 @@ public partial class UI_Expediente : System.Web.UI.Page
                                       clsmovimientos.Ps_Obs,
                                       clsmovimientos.Ps_Est,
                                       clsmovimientos.Ps_Res1);
+
+            Response.Write("<script language=javascript>alert('SE AGREGO !!!');</script>");
         }
         catch (Exception ex)
         { Response.Write("<script language=javascript>alert('Error " + ex + "!');</script>");
         }
         finally
         {
-            Response.Write("<script language=javascript>alert('SE AGREGO !!!');</script>");
             db.Dispose();
             Response.Redirect("MovimientosExpediente.aspx");
 

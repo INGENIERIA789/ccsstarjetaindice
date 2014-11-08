@@ -38,9 +38,9 @@ txtFecha.Text = Convert.ToString(DateTime.Now);
         
         try {
             if (txtCedulaPaciente.Text != "" && txtNombPaci.Text != "")
-            {llenardatos();
+            {   llenardatos();
                 db.SP_INSERTAR_EXAMENES_EXTERNOS(EX.Ps_CedPaEe, EX.Ps_PriApePaEe,
-                  EX.Ps_SegApePaEe, EX.Ps_NomPAEe, EX.Ps_Especialidad, EX.Ps_FecRegEe, EX.Ps_ObsEe);
+                EX.Ps_SegApePaEe, EX.Ps_NomPAEe, EX.Ps_Especialidad, EX.Ps_FecRegEe, EX.Ps_ObsEe);
                 Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
             }
             else
