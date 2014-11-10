@@ -8,42 +8,42 @@ using System.Web;
 /// </summary>
 public class clsTarjetaIndice
 {
-    private string pn_CedPaTid;
+    private string Ps_CedPac;
+    private DateTime Pd_FecCre;
+    private string Ps_ObsTar;
+    private string Ps_EstTar;
+    private int Pi_CedFun;
 
     public string Pn_CedPaTid
     {
-        get { return pn_CedPaTid; }
-        set { pn_CedPaTid = value; }
+        get { return Ps_CedPac; }
+        set { Ps_CedPac = value; }
     }
 
 
-    private DateTime pd_FecCreacionTid;
 
     public DateTime Pd_FecCreacionTid
     {
-        get { return pd_FecCreacionTid; }
-        set { pd_FecCreacionTid = value; }
+        get { return Pd_FecCre; }
+        set { Pd_FecCre = value; }
     }
-    private string psEstTar;
 
     public string PsEstTar
     {
-        get { return psEstTar; }
-        set { psEstTar = value; }
+        get { return Ps_EstTar; }
+        set { Ps_EstTar = value; }
     }
-    private string psObsTarInd;
 
     public string PsObsTarInd
     {
-        get { return psObsTarInd; }
-        set { psObsTarInd = value; }
+        get { return Ps_ObsTar; }
+        set { Ps_ObsTar = value; }
     }
-    private int piCedFun;
 
     public int PiCedFun
     {
-        get { return piCedFun; }
-        set { piCedFun = value; }
+        get { return Pi_CedFun; }
+        set { Pi_CedFun = value; }
     }
 
 

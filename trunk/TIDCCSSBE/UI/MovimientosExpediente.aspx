@@ -83,6 +83,7 @@
             <div class="col-xs-12">
                 <div class="col-md-12">
                    <center><h3>Historial de Movimientos</h3></center>
+                    <center>     
                     <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AllowCustomPaging="True" PageSize="5" HorizontalAlign="Justify">
                         <AlternatingRowStyle BackColor="#DCDCDC" />
                         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -94,7 +95,7 @@
                         <SortedAscendingHeaderStyle BackColor="#0000A9" />
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#000065" />
-                    </asp:GridView>
+                    </asp:GridView></center>
                     <br />
                     <br />
 

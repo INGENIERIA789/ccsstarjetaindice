@@ -8,55 +8,52 @@ using System.Web;
 /// </summary>
 public class clsMovimientosExpediente
 {
-    private string pn_CedPaSE;
+    private string Ps_CedPac;
+    private int Pn_CodAre;
+    private int Pn_CodDoc;
+    private DateTime Pd_FecMov;
+    private string Ps_Obs;
+    private string Ps_Est;
+    private string Ps_Res;
 
-    public string Pn_CedPaSE
-    {
-        get { return pn_CedPaSE; }
-        set { pn_CedPaSE = value; }
-    }
-    private int pn_CodArea;
-
-    public int Pn_CodArea
-    {
-        get { return pn_CodArea; }
-        set { pn_CodArea = value; }
-    }
-    private int pn_CodDoctor;
-
-    public int Pn_CodDoctor
-    {
-        get { return pn_CodDoctor; }
-        set { pn_CodDoctor = value; }
-    }
-    private DateTime pd_FecSalida;
 
     public DateTime Pd_FecSalida
     {
-        get { return pd_FecSalida; }
-        set { pd_FecSalida = value; }
+        get { return Pd_FecMov; }
+        set { Pd_FecMov = value; }
     }
-    private string ps_Obs;
-
-    public string Ps_Obs
+    public string Pn_CedPaSE
     {
-        get { return ps_Obs; }
-        set { ps_Obs = value; }
+        get { return Ps_CedPac; }
+        set { Ps_CedPac = value; }
     }
-    private string ps_Est;
-
-    public string Ps_Est
+    public int Pn_CodArea
     {
-        get { return ps_Est; }
-        set { ps_Est = value; }
+        get { return Pn_CodAre; }
+        set { Pn_CodAre = value; }
     }
-    private string Ps_Res;
-
+    public int Pn_CodDoctor
+    {
+        get { return Pn_CodDoc; }
+        set { Pn_CodDoc = value; }
+    }
+    public string Ps_Obse
+    {
+        get { return Ps_Obs; }
+        set { Ps_Obs = value; }
+    }
+    public string Ps_Esta
+    {
+        get { return Ps_Est; }
+        set { Ps_Est = value; }
+    }
     public string Ps_Res1
     {
         get { return Ps_Res; }
         set { Ps_Res = value; }
     }
+    
+
 
  
 	public clsMovimientosExpediente()

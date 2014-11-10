@@ -90,11 +90,11 @@
                                         <ul class="dropdown-menu">
                                             <li class="divider"></li>
                                             <li><a runat="server" href="~/UI/registrarDoctor">Registrar Médico</a></li>
-                                            <li><a runat="server" href="~/AreaTrabajo">Registrar Ubicación</a></li>
+                                            <li><a runat="server" href="~/UI/AreaTrabajo">Registrar Ubicación</a></li>
                                             <li class="divider"></li>
                                             <li><a runat="server" href="~/UI/Reportes">Reportes</a></li>
                                             <li class="divider"></li>
-                                            <li><a runat="server" href="~/Account/Register">Crear Usuario</a></li>
+                                            <li><a runat="server" href="~/UI/PersonalHospital">Crear Usuario</a></li>
                                             <li class="divider"></li>
                                         </ul>
                                     </li>

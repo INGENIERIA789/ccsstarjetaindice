@@ -65,5 +65,8 @@
 		</div>
     </div>
 </div>
-
+        <br />
+        <br />
+            
+         <asp:Button ID="btnAdministrativo" runat="server" Cssclass="btn btn-info" Text="Administrativo" OnClientClick="return confirm('¿Esta seguro que desea ir al administrador?');" Height="80px" Width="1000px" Font-Size="Medium" Enabled="False" OnClick="btnAdministrativo_Click"  />               
 </asp:Content>

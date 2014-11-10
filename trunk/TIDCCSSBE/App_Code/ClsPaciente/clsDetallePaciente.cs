@@ -8,21 +8,21 @@ using System.Web;
 /// </summary>
 public class clsDetallePaciente
 {
-    private string psNomPa;
-    private string psNomMa;
-    private string psDom;
-    private string psIndPac;
-    private string piCodPa;
-
+    private string Ps_NomPac;
+    private string Ps_NomMad;
+    private string Ps_Dom;
+    private string Ps_IdePac;
+    private string Ps_CodPat;
+   
     public string PiCodPa
     {
-        get { return piCodPa; }
-        set { piCodPa = value; }
+        get { return Ps_CodPat; }
+        set { Ps_CodPat = value; }
     }
     public string PsIndPac
     {
-        get { return psIndPac; }
-        set { psIndPac = value; }
+        get { return Ps_IdePac; }
+        set { Ps_IdePac = value; }
     }
    
 
@@ -39,19 +39,19 @@ public class clsDetallePaciente
 
 public string PsNomPa
     {
-        get { return psNomPa; }
-        set { psNomPa = value; }
+        get { return Ps_NomPac; }
+        set { Ps_NomPac = value; }
     }
     public string PsNomMa
     {
-        get { return psNomMa; }
-        set { psNomMa = value; }
+        get { return Ps_NomMad; }
+        set { Ps_NomMad = value; }
     }
 
     public string PsDom
     {
-        get { return psDom; }
-        set { psDom = value; }
+        get { return Ps_Dom; }
+        set { Ps_Dom = value; }
     }
 
     public string PsObs

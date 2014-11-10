@@ -42,17 +42,17 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Primer Apellido</label>
-                                <asp:TextBox ID="txtApellido1Paciente" runat="server" class="form-control"  Width="1387px" placeholder="Primer Apellido del Paciente" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtApellido1Paciente" runat="server" CssClass="form-control"  Width="1387px" placeholder="Primer Apellido del Paciente" required="required"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Primer Apellido Faltante." ControlToValidate="txtApellido1Paciente" Text="Se necesita el primer apellido." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Segundo Apellido</label>
-                            <asp:TextBox ID="txtApellido2Paciente" runat="server" class="form-control" Width="1387px" placeholder="Segundo Apellido del Paciente" required="required"></asp:TextBox>
+                            <asp:TextBox ID="txtApellido2Paciente" runat="server" CssClass="form-control" Width="1387px" placeholder="Segundo Apellido del Paciente" required="required"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Segundo Apellido Faltante." ControlToValidate="txtApellido2Paciente" Text="Se necesita el segundo apellido." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Género</label>
-                                <select class="form-control" runat="server" name="validate-select" Width="1387px" id="txtGenPacient" required>
+                                <select class="form-control" runat="server" name="validate-select" Width="1387px" id="txtGenPacient" required  enableviewstate="True" visible="True">
                                         <option value="">--Seleccione--</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
@@ -76,7 +76,7 @@
                             
                             <div class="form-group">
                                 <label for="date" class="control-label">Fecha de Nacimiento</label>
-                                <asp:TextBox  ID="txtFechaNaci"  runat="server" class="form-control" Width="1387px" required="required" TextMode="Date" ValidateRequestMode="Enabled"></asp:TextBox> 
+                                <asp:TextBox  ID="txtFechaNaci"  runat="server" CssClass="form-control" Width="1387px" required="required" TextMode="Date" ValidateRequestMode="Enabled"></asp:TextBox> 
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Fecha de Nacimiento Faltante" Text="Se necesita la fecha de nacimiento." ControlToValidate="txtFechaNaci" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
@@ -111,24 +111,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Nombre del Padre</label>
-                                <asp:TextBox ID="txtNomPadre" runat="server" class="form-control" Width="1387px" placeholder="Nombre Completo del Padre" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtNomPadre" runat="server" CssClass="form-control" Width="1387px" placeholder="Nombre Completo del Padre" required="required"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Nombre del Padre Faltante." Text="Se necesita el nombre del padre." ControlToValidate="txtNomPadre" ForeColor="Red"></asp:RequiredFieldValidator>
 
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre de la Madre</label>
-                                <asp:TextBox ID="txtNombreMadre" runat="server" class="form-control" Width="1387px" placeholder="Nombre Completo de la Madre" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtNombreMadre" runat="server" CssClass="form-control" Width="1387px" placeholder="Nombre Completo de la Madre" required="required"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFielValidator11" runat="server" ErrorMessage="Nombre de la Madre Faltante." Text="Se necesita el nombre de la madre." ControlToValidate="txtNombreMadre" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Numero Patronal 
                                 </label>
-                                <asp:TextBox ID="txtNumPatrono" runat="server" class="form-control" Width="1387px" placeholder="00000" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtNumPatrono" runat="server" CssClass="form-control" Width="1387px" placeholder="00000" required="required"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Numero del Patrono Faltante." Text="Se requiere el numero Patronal." ControlToValidate="txtNumPatrono" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre del Patrono</label>
-                                <asp:TextBox ID="txtxNombrePatrono" runat="server" class="form-control" Width="1387px" placeholder="Nombre Completo del Patrono" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtxNombrePatrono" runat="server" CssClass="form-control" Width="1387px" placeholder="Nombre Completo del Patrono" required="required"></asp:TextBox>
                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="Nombre del Patrono Faltante." Text="Se el nombre del patrono." ControlToValidate="txtxNombrePatrono" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                         </div>
@@ -159,17 +159,17 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Bloque</label>
-                                <asp:TextBox ID="txtBloqueExpediente" runat="server" class="form-control" Width="1387px" required="required"></asp:TextBox> 
+                                <asp:TextBox ID="txtBloqueExpediente" runat="server" CssClass="form-control" Width="1387px" required="required"></asp:TextBox> 
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ErrorMessage="Bloque Faltante." ControlToValidate="txtBloqueExpediente" ForeColor="Red">Se necesita el bloque del expediente</asp:RequiredFieldValidator>
                                  </div>
                              <div class="form-group">
                                 <label class="control-label">Cubiculo de Bloque</label>
-                                 <asp:TextBox ID="txtNumBlo" runat="server" class="form-control" Width="1387px" required="required"></asp:TextBox> 
+                                 <asp:TextBox ID="txtNumBlo" runat="server" CssClass="form-control" Width="1387px" required="required"></asp:TextBox> 
                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Cubiculo Faltante." ControlToValidate="txtNumBlo" ForeColor="Red">Se requiere el numero del bloque.</asp:RequiredFieldValidator>             
                             </div>
                              <div class="form-group">
                                 <label class="control-label">Fecha de la Creación</label>
-                                 <asp:TextBox ID="txtFechaCreacionExpediente" runat="server" Width="1387px" class="form-control" required="required" Enabled="False"></asp:TextBox>       
+                                 <asp:TextBox ID="txtFechaCreacionExpediente" runat="server" Width="1387px" CssClass="form-control" required="required" Enabled="False"></asp:TextBox>       
                             </div>
                         </div>
 
@@ -201,7 +201,7 @@
                         <div class="col-md-3">
                         </div>
                         <div class="col-md-3">
-                            <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" runat="server" Text="Registrar" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Registrar" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>
