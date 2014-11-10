@@ -8,61 +8,61 @@ using System.Web;
 /// </summary>
 public class clsPaciente
 {
-    private string ps_IdentiPa;
+    private string Ps_IdePac;
+    private string Ps_PriApe;
+    private string Ps_SegApe;
+    private string Ps_NomPac;
+    private string Ps_Sex;
+    private string Ps_EstCiv;
+    private DateTime Pd_FecNac;
+    private string Ps_Obs;
 
     public string Ps_IdentiPa
     {
-        get { return ps_IdentiPa; }
-        set { ps_IdentiPa = value; }
+        get { return Ps_IdePac; }
+        set { Ps_IdePac = value; }
     }
-    private string ps_PriApe;
 
-    public string Ps_PriApe
+    public string Ps_PriApel
     {
-        get { return ps_PriApe; }
-        set { ps_PriApe = value; }
+        get { return Ps_PriApe; }
+        set { Ps_PriApe = value; }
     }
-    private string ps_SegApe;
 
-    public string Ps_SegApe
+    public string Ps_SegApel
     {
-        get { return ps_SegApe; }
-        set { ps_SegApe = value; }
+        get { return Ps_SegApe; }
+        set { Ps_SegApe = value; }
     }
-    private string ps_NomPa;
 
     public string Ps_NomPa
     {
-        get { return ps_NomPa; }
-        set { ps_NomPa = value; }
+        get { return Ps_NomPac; }
+        set { Ps_NomPac = value; }
     }
-    private string ps_Sexo;
 
     public string Ps_Sexo
     {
-        get { return ps_Sexo; }
-        set { ps_Sexo = value; }
+        get { return Ps_Sex; }
+        set { Ps_Sex = value; }
     }
-    private string ps_EstCivil;
 
     public string Ps_EstCivil
     {
-        get { return ps_EstCivil; }
-        set { ps_EstCivil = value; }
+        get { return Ps_EstCiv; }
+        set { Ps_EstCiv = value; }
     }
-    private DateTime pd_FecNac;
 
-    public DateTime Pd_FecNac
+    public DateTime Pd_FecNaci
     {
-        get { return pd_FecNac; }
-        set { pd_FecNac = value; }
+        get { return Pd_FecNac; }
+        set { Pd_FecNac = value; }
     }
-    private string ps_Obs;
 
-    public string Ps_Obs
+    public string Ps_Obse
     {
-        get { return ps_Obs; }
-        set { ps_Obs = value; }
+        get { return Ps_Obs; }
+        set { Ps_Obs = value; }
     }
 
     

@@ -8,47 +8,47 @@ using System.Web;
 /// </summary>
 public class clsExpediente 
 {
-    private string psCedPac;
-    private string psBloEx;
-    private string psCubEx;
-    private string psEstEx;
-    private DateTime pdCreEX;
+    private string Ps_CedPac;
+    private string Ps_BloExp;
+    private string Ps_CubExp;
+    private string Ps_EstExp;
+    private DateTime Pd_CreExp;
 
     public DateTime PdCreEX
     {
-        get { return pdCreEX; }
-        set { pdCreEX = value; }
+        get { return Pd_CreExp; }
+        set { Pd_CreExp = value; }
     }
-    private string psObs;
+    private string Ps_Obs;
     public string PsCubEx
     {
-        get { return psCubEx; }
-        set { psCubEx = value; }
+        get { return Ps_CubExp; }
+        set { Ps_CubExp = value; }
     }
     
     public string PsObs
     {
-        get { return psObs; }
-        set { psObs = value; }
+        get { return Ps_Obs; }
+        set { Ps_Obs = value; }
     }
     
 
     public string PsEstEx
     {
-        get { return psEstEx; }
-        set { psEstEx = value; }
+        get { return Ps_EstExp; }
+        set { Ps_EstExp = value; }
     }
 
     public string PsBloEx
     {
-        get { return psBloEx; }
-        set { psBloEx = value; }
+        get { return Ps_BloExp; }
+        set { Ps_BloExp = value; }
     }
 
     public string PsCedPac
     {
-        get { return psCedPac; }
-        set { psCedPac = value; }
+        get { return Ps_CedPac; }
+        set { Ps_CedPac = value; }
     }
 	public clsExpediente()
 	{

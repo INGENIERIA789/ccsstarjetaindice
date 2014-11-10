@@ -87,7 +87,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
         }
         finally {
             db.Dispose();
-            limpiar();
+            Response.Redirect("HojasUrgencia");
            
         }
     }

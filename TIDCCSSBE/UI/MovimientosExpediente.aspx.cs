@@ -16,9 +16,9 @@ public partial class UI_Expediente : System.Web.UI.Page
         clsmovimientos.Pn_CodArea = Convert.ToInt32(txtCodAre.Text);
         clsmovimientos.Pn_CodDoctor = Convert.ToInt32(txtCodDoc.Text);
         clsmovimientos.Pd_FecSalida = Convert.ToDateTime(txtfecha.Text);
-        clsmovimientos.Ps_Obs = txtObservacion.Text;
+        clsmovimientos.Ps_Obse = txtObservacion.Text;
         clsmovimientos.Ps_Res1 = txtEncargado.Text;
-        clsmovimientos.Ps_Est = txtEstadoExpediente.Value;
+        clsmovimientos.Ps_Esta = txtEstadoExpediente.Value;
     }
     
     protected void Page_Load(object sender, EventArgs e)
@@ -70,8 +70,8 @@ public partial class UI_Expediente : System.Web.UI.Page
                                       clsmovimientos.Pn_CodArea,
                                       clsmovimientos.Pn_CodDoctor,
                                       clsmovimientos.Pd_FecSalida,
-                                      clsmovimientos.Ps_Obs,
-                                      clsmovimientos.Ps_Est,
+                                      clsmovimientos.Ps_Obse,
+                                      clsmovimientos.Ps_Esta,
                                       clsmovimientos.Ps_Res1);
 
             Response.Write("<script language=javascript>alert('SE AGREGO !!!');</script>");

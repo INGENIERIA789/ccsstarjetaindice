@@ -37,6 +37,9 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
        txtObserExpe.Text = "";
        txtEstadoExpediente.Value = "";
    }
+   public void desabilitar() {
+      
+   }
    public void buscarPaciente()
    {
        try
@@ -69,8 +72,12 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 
            if (existencia == "Existe")
            {
-               txtApellido1Paciente.TabIndex=2;
-               txtNombrePaciente.Focus();
+               txtNombrePaciente.Enabled = false;
+               txtApellido1Paciente.Enabled = false;
+               txtApellido2Paciente.Enabled = false;
+               txtEstCilPacient.Disabled = false;
+               txtGenPacient.Disabled = false;
+               txtFechaNaci.Enabled = false;
            }else{ 
            Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
                limpiarCampos();
@@ -86,7 +93,8 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
        {
            //Libera los recursos
        }
-   }
+   }// no sirve
+
     public void llenarInformacionPaciente() {
        try
        {
@@ -96,13 +104,13 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
            TID.PsEstTar = txttidestado.Value;
            TID.PsObsTarInd = txtObservacionDetalle.Text;
 
-           PAC.Pd_FecNac = Convert.ToDateTime(txtFechaNaci.Text);
+           PAC.Pd_FecNaci = Convert.ToDateTime(txtFechaNaci.Text);
            PAC.Ps_EstCivil = txtEstCilPacient.Value;
            PAC.Ps_IdentiPa = txtCedulaPaciente.Text;
            PAC.Ps_NomPa = txtNombrePaciente.Text;
-           PAC.Ps_Obs = txtObserPaciente.Text;
-           PAC.Ps_PriApe = txtApellido1Paciente.Text;
-           PAC.Ps_SegApe = txtApellido2Paciente.Text;
+           PAC.Ps_Obse = txtObserPaciente.Text;
+           PAC.Ps_PriApel = txtApellido1Paciente.Text;
+           PAC.Ps_SegApel = txtApellido2Paciente.Text;
            PAC.Ps_Sexo = txtGenPacient.Value;
 
            DET.PiCodPa = txtNumPatrono.Text;
@@ -127,19 +135,19 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
    }
     public void agregar()
     {
-        llenarInformacionPaciente();
-      
+  
         try
         {  llenarInformacionPaciente();//Se manda a llamar el metodo llenar información del paciente
+            Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
             db.sp_INSERTAR_PACIENTE(  
                 PAC.Ps_IdentiPa,
-                PAC.Ps_PriApe,
-                PAC.Ps_SegApe,
+                PAC.Ps_PriApel,
+                PAC.Ps_SegApel,
                 PAC.Ps_NomPa,
                 PAC.Ps_Sexo,
                 PAC.Ps_EstCivil,
-                PAC.Pd_FecNac,
-                PAC.Ps_Obs);
+                PAC.Pd_FecNaci,
+                PAC.Ps_Obse);
             
             db.sp_INSERTAR_TID(TID.Pn_CedPaTid,
                                      TID.Pd_FecCreacionTid,
@@ -175,16 +183,20 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
     }
     protected void Page_Load(object sender, EventArgs e)
     {
+       
         txtFechaCreacionExpediente.Text = Convert.ToString(DateTime.Now);
      /*   if (Session["User"] == null && Session["Pass"] == null)
         {
             Response.Redirect("~/UI/AccesoAplicacion");
             Response.Write("<script language=javascript>alert('Debe iniciar sección!');</script>");
         }*/
+       
     }
     protected void Button1_Click(object sender, EventArgs e)
-    {   imprimir();
-    if (txtCedulaPaciente.Text != null && txtApellido2Paciente.Text != null)
+    {
+        agregar();
+        imprimir();
+  /*  if (txtCedulaPaciente.Text != null && txtApellido2Paciente.Text != null)
     {
         agregar();
         Response.Write("<script language=javascript>alert('Usuario Ingresado Correctamente!!!');</script>");
@@ -210,7 +222,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
         {
             Response.Redirect("TIDPACIENTE.aspx");
             db.Dispose();
-        }
+        }*/
         
     }
     protected void txtCedulaPaciente_TextChanged(object sender, EventArgs e)
@@ -246,7 +258,13 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
 
             if (existencia == "Existe")
             {
-
+                txtNombrePaciente.Enabled = false;
+                txtApellido1Paciente.Enabled = false;
+                txtApellido2Paciente.Enabled = false;
+                txtEstCilPacient.Disabled = false;
+              
+                txtGenPacient.Disabled = false;
+                txtFechaNaci.Enabled = false;
             }
             else
             {

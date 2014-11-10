@@ -29,24 +29,6 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 	
   #region Definiciones de métodos de extensibilidad
   partial void OnCreated();
-  partial void InsertTID_TARJETA_INDICE(TID_TARJETA_INDICE instance);
-  partial void UpdateTID_TARJETA_INDICE(TID_TARJETA_INDICE instance);
-  partial void DeleteTID_TARJETA_INDICE(TID_TARJETA_INDICE instance);
-  partial void InsertTID_DOCTOR(TID_DOCTOR instance);
-  partial void UpdateTID_DOCTOR(TID_DOCTOR instance);
-  partial void DeleteTID_DOCTOR(TID_DOCTOR instance);
-  partial void InsertTID_AREA_UBICACION(TID_AREA_UBICACION instance);
-  partial void UpdateTID_AREA_UBICACION(TID_AREA_UBICACION instance);
-  partial void DeleteTID_AREA_UBICACION(TID_AREA_UBICACION instance);
-  partial void InsertTID_PACIENTE(TID_PACIENTE instance);
-  partial void UpdateTID_PACIENTE(TID_PACIENTE instance);
-  partial void DeleteTID_PACIENTE(TID_PACIENTE instance);
-  partial void InsertTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
-  partial void UpdateTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
-  partial void DeleteTID_DETALLE_PACIENTE(TID_DETALLE_PACIENTE instance);
-  partial void InsertTID_FUNCIONARIO(TID_FUNCIONARIO instance);
-  partial void UpdateTID_FUNCIONARIO(TID_FUNCIONARIO instance);
-  partial void DeleteTID_FUNCIONARIO(TID_FUNCIONARIO instance);
   #endregion
 	
 	public DBTarjetaIndiceDataContext() : 
@@ -77,70 +59,6 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 			base(connection, mappingSource)
 	{
 		OnCreated();
-	}
-	
-	public System.Data.Linq.Table<TID_EXPEDIENTES> TID_EXPEDIENTES
-	{
-		get
-		{
-			return this.GetTable<TID_EXPEDIENTES>();
-		}
-	}
-	
-	public System.Data.Linq.Table<TID_TARJETA_INDICE> TID_TARJETA_INDICE
-	{
-		get
-		{
-			return this.GetTable<TID_TARJETA_INDICE>();
-		}
-	}
-	
-	public System.Data.Linq.Table<TID_MOVIMIENTO_EXPEDIENTE> TID_MOVIMIENTO_EXPEDIENTE
-	{
-		get
-		{
-			return this.GetTable<TID_MOVIMIENTO_EXPEDIENTE>();
-		}
-	}
-	
-	public System.Data.Linq.Table<TID_DOCTOR> TID_DOCTOR
-	{
-		get
-		{
-			return this.GetTable<TID_DOCTOR>();
-		}
-	}
-	
-	public System.Data.Linq.Table<TID_AREA_UBICACION> TID_AREA_UBICACION
-	{
-		get
-		{
-			return this.GetTable<TID_AREA_UBICACION>();
-		}
-	}
-	
-	public System.Data.Linq.Table<TID_PACIENTE> TID_PACIENTE
-	{
-		get
-		{
-			return this.GetTable<TID_PACIENTE>();
-		}
-	}
-	
-	public System.Data.Linq.Table<TID_DETALLE_PACIENTE> TID_DETALLE_PACIENTE
-	{
-		get
-		{
-			return this.GetTable<TID_DETALLE_PACIENTE>();
-		}
-	}
-	
-	public System.Data.Linq.Table<TID_FUNCIONARIO> TID_FUNCIONARIO
-	{
-		get
-		{
-			return this.GetTable<TID_FUNCIONARIO>();
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_MOVIMIENTO")]
@@ -268,1636 +186,33 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cODIGO);
 		return ((int)(result.ReturnValue));
 	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_EXPEDIENTES")]
-public partial class TID_EXPEDIENTES
-{
 	
-	private string _CEDULA_PACIENTE;
-	
-	private string _BLOQUE_EXPEDIENTE;
-	
-	private string _CUBICULO_EXPEDIENTE;
-	
-	private System.Nullable<System.DateTime> _FECHA_CREACION_EXPEDIENTE;
-	
-	private string _OBSERVACION;
-	
-	private string _ESTADO_EXPEDIENTE;
-	
-	public TID_EXPEDIENTES()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_PACIENTE", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-	public string CEDULA_PACIENTE
-	{
-		get
-		{
-			return this._CEDULA_PACIENTE;
-		}
-		set
-		{
-			if ((this._CEDULA_PACIENTE != value))
-			{
-				this._CEDULA_PACIENTE = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BLOQUE_EXPEDIENTE", DbType="VarChar(20)")]
-	public string BLOQUE_EXPEDIENTE
-	{
-		get
-		{
-			return this._BLOQUE_EXPEDIENTE;
-		}
-		set
-		{
-			if ((this._BLOQUE_EXPEDIENTE != value))
-			{
-				this._BLOQUE_EXPEDIENTE = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUBICULO_EXPEDIENTE", DbType="VarChar(20)")]
-	public string CUBICULO_EXPEDIENTE
-	{
-		get
-		{
-			return this._CUBICULO_EXPEDIENTE;
-		}
-		set
-		{
-			if ((this._CUBICULO_EXPEDIENTE != value))
-			{
-				this._CUBICULO_EXPEDIENTE = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_CREACION_EXPEDIENTE", DbType="Date")]
-	public System.Nullable<System.DateTime> FECHA_CREACION_EXPEDIENTE
-	{
-		get
-		{
-			return this._FECHA_CREACION_EXPEDIENTE;
-		}
-		set
-		{
-			if ((this._FECHA_CREACION_EXPEDIENTE != value))
-			{
-				this._FECHA_CREACION_EXPEDIENTE = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION", DbType="VarChar(50)")]
-	public string OBSERVACION
-	{
-		get
-		{
-			return this._OBSERVACION;
-		}
-		set
-		{
-			if ((this._OBSERVACION != value))
-			{
-				this._OBSERVACION = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_EXPEDIENTE", DbType="NChar(10)")]
-	public string ESTADO_EXPEDIENTE
-	{
-		get
-		{
-			return this._ESTADO_EXPEDIENTE;
-		}
-		set
-		{
-			if ((this._ESTADO_EXPEDIENTE != value))
-			{
-				this._ESTADO_EXPEDIENTE = value;
-			}
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_TARJETA_INDICE")]
-public partial class TID_TARJETA_INDICE : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private string _CEDULA_PACIENTE;
-	
-	private System.Nullable<System.DateTime> _FECHA_CREACION;
-	
-	private string _ESTADO_TARJETA_INDICE;
-	
-	private string _OBSERVACION_TARJETA_INDICE;
-	
-	private System.Nullable<int> _CEDULA_FUNCIONARIO;
-	
-	private EntityRef<TID_PACIENTE> _TID_PACIENTE;
-	
-	private EntityRef<TID_FUNCIONARIO> _TID_FUNCIONARIO;
-	
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCEDULA_PACIENTEChanging(string value);
-    partial void OnCEDULA_PACIENTEChanged();
-    partial void OnFECHA_CREACIONChanging(System.Nullable<System.DateTime> value);
-    partial void OnFECHA_CREACIONChanged();
-    partial void OnESTADO_TARJETA_INDICEChanging(string value);
-    partial void OnESTADO_TARJETA_INDICEChanged();
-    partial void OnOBSERVACION_TARJETA_INDICEChanging(string value);
-    partial void OnOBSERVACION_TARJETA_INDICEChanged();
-    partial void OnCEDULA_FUNCIONARIOChanging(System.Nullable<int> value);
-    partial void OnCEDULA_FUNCIONARIOChanged();
-    #endregion
-	
-	public TID_TARJETA_INDICE()
-	{
-		this._TID_PACIENTE = default(EntityRef<TID_PACIENTE>);
-		this._TID_FUNCIONARIO = default(EntityRef<TID_FUNCIONARIO>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_PACIENTE", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-	public string CEDULA_PACIENTE
-	{
-		get
-		{
-			return this._CEDULA_PACIENTE;
-		}
-		set
-		{
-			if ((this._CEDULA_PACIENTE != value))
-			{
-				if (this._TID_PACIENTE.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCEDULA_PACIENTEChanging(value);
-				this.SendPropertyChanging();
-				this._CEDULA_PACIENTE = value;
-				this.SendPropertyChanged("CEDULA_PACIENTE");
-				this.OnCEDULA_PACIENTEChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_CREACION", DbType="DateTime")]
-	public System.Nullable<System.DateTime> FECHA_CREACION
-	{
-		get
-		{
-			return this._FECHA_CREACION;
-		}
-		set
-		{
-			if ((this._FECHA_CREACION != value))
-			{
-				this.OnFECHA_CREACIONChanging(value);
-				this.SendPropertyChanging();
-				this._FECHA_CREACION = value;
-				this.SendPropertyChanged("FECHA_CREACION");
-				this.OnFECHA_CREACIONChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_TARJETA_INDICE", DbType="VarChar(30)")]
-	public string ESTADO_TARJETA_INDICE
-	{
-		get
-		{
-			return this._ESTADO_TARJETA_INDICE;
-		}
-		set
-		{
-			if ((this._ESTADO_TARJETA_INDICE != value))
-			{
-				this.OnESTADO_TARJETA_INDICEChanging(value);
-				this.SendPropertyChanging();
-				this._ESTADO_TARJETA_INDICE = value;
-				this.SendPropertyChanged("ESTADO_TARJETA_INDICE");
-				this.OnESTADO_TARJETA_INDICEChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION_TARJETA_INDICE", DbType="VarChar(100)")]
-	public string OBSERVACION_TARJETA_INDICE
-	{
-		get
-		{
-			return this._OBSERVACION_TARJETA_INDICE;
-		}
-		set
-		{
-			if ((this._OBSERVACION_TARJETA_INDICE != value))
-			{
-				this.OnOBSERVACION_TARJETA_INDICEChanging(value);
-				this.SendPropertyChanging();
-				this._OBSERVACION_TARJETA_INDICE = value;
-				this.SendPropertyChanged("OBSERVACION_TARJETA_INDICE");
-				this.OnOBSERVACION_TARJETA_INDICEChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_FUNCIONARIO", DbType="Int")]
-	public System.Nullable<int> CEDULA_FUNCIONARIO
-	{
-		get
-		{
-			return this._CEDULA_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._CEDULA_FUNCIONARIO != value))
-			{
-				if (this._TID_FUNCIONARIO.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCEDULA_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._CEDULA_FUNCIONARIO = value;
-				this.SendPropertyChanged("CEDULA_FUNCIONARIO");
-				this.OnCEDULA_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_TARJETA_INDICE", Storage="_TID_PACIENTE", ThisKey="CEDULA_PACIENTE", OtherKey="NUM_IDENTIFICACION", IsForeignKey=true)]
-	public TID_PACIENTE TID_PACIENTE
-	{
-		get
-		{
-			return this._TID_PACIENTE.Entity;
-		}
-		set
-		{
-			TID_PACIENTE previousValue = this._TID_PACIENTE.Entity;
-			if (((previousValue != value) 
-						|| (this._TID_PACIENTE.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._TID_PACIENTE.Entity = null;
-					previousValue.TID_TARJETA_INDICE = null;
-				}
-				this._TID_PACIENTE.Entity = value;
-				if ((value != null))
-				{
-					value.TID_TARJETA_INDICE = this;
-					this._CEDULA_PACIENTE = value.NUM_IDENTIFICACION;
-				}
-				else
-				{
-					this._CEDULA_PACIENTE = default(string);
-				}
-				this.SendPropertyChanged("TID_PACIENTE");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_FUNCIONARIO_TID_TARJETA_INDICE", Storage="_TID_FUNCIONARIO", ThisKey="CEDULA_FUNCIONARIO", OtherKey="CEDULA_FUNCIONARIO", IsForeignKey=true)]
-	public TID_FUNCIONARIO TID_FUNCIONARIO
-	{
-		get
-		{
-			return this._TID_FUNCIONARIO.Entity;
-		}
-		set
-		{
-			TID_FUNCIONARIO previousValue = this._TID_FUNCIONARIO.Entity;
-			if (((previousValue != value) 
-						|| (this._TID_FUNCIONARIO.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._TID_FUNCIONARIO.Entity = null;
-					previousValue.TID_TARJETA_INDICE.Remove(this);
-				}
-				this._TID_FUNCIONARIO.Entity = value;
-				if ((value != null))
-				{
-					value.TID_TARJETA_INDICE.Add(this);
-					this._CEDULA_FUNCIONARIO = value.CEDULA_FUNCIONARIO;
-				}
-				else
-				{
-					this._CEDULA_FUNCIONARIO = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("TID_FUNCIONARIO");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_MOVIMIENTO_EXPEDIENTE")]
-public partial class TID_MOVIMIENTO_EXPEDIENTE
-{
-	
-	private string _CEDULA_PACIENTE;
-	
-	private System.Nullable<int> _CODIGO_AREA;
-	
-	private System.Nullable<int> _CODIGO_DOCTOR;
-	
-	private System.Nullable<System.DateTime> _FECHA_ULTIMO_REGISTRO;
-	
-	private string _OBSERVACION_MOVIMIENTO;
-	
-	private string _ESTADO_EXPEDIENTE;
-	
-	private string _RESPONSABLE;
-	
-	public TID_MOVIMIENTO_EXPEDIENTE()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_PACIENTE", DbType="VarChar(20)")]
-	public string CEDULA_PACIENTE
-	{
-		get
-		{
-			return this._CEDULA_PACIENTE;
-		}
-		set
-		{
-			if ((this._CEDULA_PACIENTE != value))
-			{
-				this._CEDULA_PACIENTE = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_AREA", DbType="Int")]
-	public System.Nullable<int> CODIGO_AREA
-	{
-		get
-		{
-			return this._CODIGO_AREA;
-		}
-		set
-		{
-			if ((this._CODIGO_AREA != value))
-			{
-				this._CODIGO_AREA = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_DOCTOR", DbType="Int")]
-	public System.Nullable<int> CODIGO_DOCTOR
-	{
-		get
-		{
-			return this._CODIGO_DOCTOR;
-		}
-		set
-		{
-			if ((this._CODIGO_DOCTOR != value))
-			{
-				this._CODIGO_DOCTOR = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_ULTIMO_REGISTRO", DbType="DateTime")]
-	public System.Nullable<System.DateTime> FECHA_ULTIMO_REGISTRO
-	{
-		get
-		{
-			return this._FECHA_ULTIMO_REGISTRO;
-		}
-		set
-		{
-			if ((this._FECHA_ULTIMO_REGISTRO != value))
-			{
-				this._FECHA_ULTIMO_REGISTRO = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION_MOVIMIENTO", DbType="VarChar(50)")]
-	public string OBSERVACION_MOVIMIENTO
-	{
-		get
-		{
-			return this._OBSERVACION_MOVIMIENTO;
-		}
-		set
-		{
-			if ((this._OBSERVACION_MOVIMIENTO != value))
-			{
-				this._OBSERVACION_MOVIMIENTO = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO_EXPEDIENTE", DbType="NChar(10)")]
-	public string ESTADO_EXPEDIENTE
-	{
-		get
-		{
-			return this._ESTADO_EXPEDIENTE;
-		}
-		set
-		{
-			if ((this._ESTADO_EXPEDIENTE != value))
-			{
-				this._ESTADO_EXPEDIENTE = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RESPONSABLE", DbType="VarChar(50)")]
-	public string RESPONSABLE
-	{
-		get
-		{
-			return this._RESPONSABLE;
-		}
-		set
-		{
-			if ((this._RESPONSABLE != value))
-			{
-				this._RESPONSABLE = value;
-			}
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_DOCTOR")]
-public partial class TID_DOCTOR : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _CODIGO_DOCTOR;
-	
-	private string _APELLIDO_1_DOCTOR;
-	
-	private string _NOMBRE_DOCTOR;
-	
-	private string _APELLIDO_2_DOCTOR;
-	
-	private string _ESPECIALIDAD_DOCTOR;
-	
-	private string _AREA_TRABAJO_DOCTOR;
-	
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCODIGO_DOCTORChanging(int value);
-    partial void OnCODIGO_DOCTORChanged();
-    partial void OnAPELLIDO_1_DOCTORChanging(string value);
-    partial void OnAPELLIDO_1_DOCTORChanged();
-    partial void OnNOMBRE_DOCTORChanging(string value);
-    partial void OnNOMBRE_DOCTORChanged();
-    partial void OnAPELLIDO_2_DOCTORChanging(string value);
-    partial void OnAPELLIDO_2_DOCTORChanged();
-    partial void OnESPECIALIDAD_DOCTORChanging(string value);
-    partial void OnESPECIALIDAD_DOCTORChanged();
-    partial void OnAREA_TRABAJO_DOCTORChanging(string value);
-    partial void OnAREA_TRABAJO_DOCTORChanged();
-    #endregion
-	
-	public TID_DOCTOR()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_DOCTOR", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int CODIGO_DOCTOR
-	{
-		get
-		{
-			return this._CODIGO_DOCTOR;
-		}
-		set
-		{
-			if ((this._CODIGO_DOCTOR != value))
-			{
-				this.OnCODIGO_DOCTORChanging(value);
-				this.SendPropertyChanging();
-				this._CODIGO_DOCTOR = value;
-				this.SendPropertyChanged("CODIGO_DOCTOR");
-				this.OnCODIGO_DOCTORChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_1_DOCTOR", DbType="VarChar(30)")]
-	public string APELLIDO_1_DOCTOR
-	{
-		get
-		{
-			return this._APELLIDO_1_DOCTOR;
-		}
-		set
-		{
-			if ((this._APELLIDO_1_DOCTOR != value))
-			{
-				this.OnAPELLIDO_1_DOCTORChanging(value);
-				this.SendPropertyChanging();
-				this._APELLIDO_1_DOCTOR = value;
-				this.SendPropertyChanged("APELLIDO_1_DOCTOR");
-				this.OnAPELLIDO_1_DOCTORChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DOCTOR", DbType="NChar(10)")]
-	public string NOMBRE_DOCTOR
-	{
-		get
-		{
-			return this._NOMBRE_DOCTOR;
-		}
-		set
-		{
-			if ((this._NOMBRE_DOCTOR != value))
-			{
-				this.OnNOMBRE_DOCTORChanging(value);
-				this.SendPropertyChanging();
-				this._NOMBRE_DOCTOR = value;
-				this.SendPropertyChanged("NOMBRE_DOCTOR");
-				this.OnNOMBRE_DOCTORChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_2_DOCTOR", DbType="VarChar(30)")]
-	public string APELLIDO_2_DOCTOR
-	{
-		get
-		{
-			return this._APELLIDO_2_DOCTOR;
-		}
-		set
-		{
-			if ((this._APELLIDO_2_DOCTOR != value))
-			{
-				this.OnAPELLIDO_2_DOCTORChanging(value);
-				this.SendPropertyChanging();
-				this._APELLIDO_2_DOCTOR = value;
-				this.SendPropertyChanged("APELLIDO_2_DOCTOR");
-				this.OnAPELLIDO_2_DOCTORChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESPECIALIDAD_DOCTOR", DbType="VarChar(40)")]
-	public string ESPECIALIDAD_DOCTOR
-	{
-		get
-		{
-			return this._ESPECIALIDAD_DOCTOR;
-		}
-		set
-		{
-			if ((this._ESPECIALIDAD_DOCTOR != value))
-			{
-				this.OnESPECIALIDAD_DOCTORChanging(value);
-				this.SendPropertyChanging();
-				this._ESPECIALIDAD_DOCTOR = value;
-				this.SendPropertyChanged("ESPECIALIDAD_DOCTOR");
-				this.OnESPECIALIDAD_DOCTORChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AREA_TRABAJO_DOCTOR", DbType="VarChar(30)")]
-	public string AREA_TRABAJO_DOCTOR
-	{
-		get
-		{
-			return this._AREA_TRABAJO_DOCTOR;
-		}
-		set
-		{
-			if ((this._AREA_TRABAJO_DOCTOR != value))
-			{
-				this.OnAREA_TRABAJO_DOCTORChanging(value);
-				this.SendPropertyChanging();
-				this._AREA_TRABAJO_DOCTOR = value;
-				this.SendPropertyChanged("AREA_TRABAJO_DOCTOR");
-				this.OnAREA_TRABAJO_DOCTORChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_AREA_UBICACION")]
-public partial class TID_AREA_UBICACION : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _CODIGO_AREA;
-	
-	private string _NOMBRE_DEPARTAMENTO;
-	
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCODIGO_AREAChanging(int value);
-    partial void OnCODIGO_AREAChanged();
-    partial void OnNOMBRE_DEPARTAMENTOChanging(string value);
-    partial void OnNOMBRE_DEPARTAMENTOChanged();
-    #endregion
-	
-	public TID_AREA_UBICACION()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_AREA", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int CODIGO_AREA
-	{
-		get
-		{
-			return this._CODIGO_AREA;
-		}
-		set
-		{
-			if ((this._CODIGO_AREA != value))
-			{
-				this.OnCODIGO_AREAChanging(value);
-				this.SendPropertyChanging();
-				this._CODIGO_AREA = value;
-				this.SendPropertyChanged("CODIGO_AREA");
-				this.OnCODIGO_AREAChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_DEPARTAMENTO", DbType="VarChar(40)")]
-	public string NOMBRE_DEPARTAMENTO
-	{
-		get
-		{
-			return this._NOMBRE_DEPARTAMENTO;
-		}
-		set
-		{
-			if ((this._NOMBRE_DEPARTAMENTO != value))
-			{
-				this.OnNOMBRE_DEPARTAMENTOChanging(value);
-				this.SendPropertyChanging();
-				this._NOMBRE_DEPARTAMENTO = value;
-				this.SendPropertyChanged("NOMBRE_DEPARTAMENTO");
-				this.OnNOMBRE_DEPARTAMENTOChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_PACIENTE")]
-public partial class TID_PACIENTE : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private string _TID_IDENTIFICACION;
-	
-	private string _NUM_IDENTIFICACION;
-	
-	private string _NOM_APELLIDO1;
-	
-	private string _NOM_APELLIDO2;
-	
-	private string _NOM_NOMBRE;
-	
-	private string _IND_SEXO;
-	
-	private string _COD_ESTADO_CIVIL;
-	
-	private System.Nullable<System.DateTime> _FEC_NACIMIENTO;
-	
-	private System.Nullable<System.DateTime> _FEC_DEFUNCION;
-	
-	private string _OBSERVACION;
-	
-	private EntityRef<TID_TARJETA_INDICE> _TID_TARJETA_INDICE;
-	
-	private EntityRef<TID_DETALLE_PACIENTE> _TID_DETALLE_PACIENTE;
-	
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTID_IDENTIFICACIONChanging(string value);
-    partial void OnTID_IDENTIFICACIONChanged();
-    partial void OnNUM_IDENTIFICACIONChanging(string value);
-    partial void OnNUM_IDENTIFICACIONChanged();
-    partial void OnNOM_APELLIDO1Changing(string value);
-    partial void OnNOM_APELLIDO1Changed();
-    partial void OnNOM_APELLIDO2Changing(string value);
-    partial void OnNOM_APELLIDO2Changed();
-    partial void OnNOM_NOMBREChanging(string value);
-    partial void OnNOM_NOMBREChanged();
-    partial void OnIND_SEXOChanging(string value);
-    partial void OnIND_SEXOChanged();
-    partial void OnCOD_ESTADO_CIVILChanging(string value);
-    partial void OnCOD_ESTADO_CIVILChanged();
-    partial void OnFEC_NACIMIENTOChanging(System.Nullable<System.DateTime> value);
-    partial void OnFEC_NACIMIENTOChanged();
-    partial void OnFEC_DEFUNCIONChanging(System.Nullable<System.DateTime> value);
-    partial void OnFEC_DEFUNCIONChanged();
-    partial void OnOBSERVACIONChanging(string value);
-    partial void OnOBSERVACIONChanged();
-    #endregion
-	
-	public TID_PACIENTE()
-	{
-		this._TID_TARJETA_INDICE = default(EntityRef<TID_TARJETA_INDICE>);
-		this._TID_DETALLE_PACIENTE = default(EntityRef<TID_DETALLE_PACIENTE>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TID_IDENTIFICACION", DbType="VarChar(30)")]
-	public string TID_IDENTIFICACION
-	{
-		get
-		{
-			return this._TID_IDENTIFICACION;
-		}
-		set
-		{
-			if ((this._TID_IDENTIFICACION != value))
-			{
-				this.OnTID_IDENTIFICACIONChanging(value);
-				this.SendPropertyChanging();
-				this._TID_IDENTIFICACION = value;
-				this.SendPropertyChanged("TID_IDENTIFICACION");
-				this.OnTID_IDENTIFICACIONChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_IDENTIFICACION", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-	public string NUM_IDENTIFICACION
-	{
-		get
-		{
-			return this._NUM_IDENTIFICACION;
-		}
-		set
-		{
-			if ((this._NUM_IDENTIFICACION != value))
-			{
-				this.OnNUM_IDENTIFICACIONChanging(value);
-				this.SendPropertyChanging();
-				this._NUM_IDENTIFICACION = value;
-				this.SendPropertyChanged("NUM_IDENTIFICACION");
-				this.OnNUM_IDENTIFICACIONChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_APELLIDO1", DbType="VarChar(30)")]
-	public string NOM_APELLIDO1
-	{
-		get
-		{
-			return this._NOM_APELLIDO1;
-		}
-		set
-		{
-			if ((this._NOM_APELLIDO1 != value))
-			{
-				this.OnNOM_APELLIDO1Changing(value);
-				this.SendPropertyChanging();
-				this._NOM_APELLIDO1 = value;
-				this.SendPropertyChanged("NOM_APELLIDO1");
-				this.OnNOM_APELLIDO1Changed();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_APELLIDO2", DbType="VarChar(30)")]
-	public string NOM_APELLIDO2
-	{
-		get
-		{
-			return this._NOM_APELLIDO2;
-		}
-		set
-		{
-			if ((this._NOM_APELLIDO2 != value))
-			{
-				this.OnNOM_APELLIDO2Changing(value);
-				this.SendPropertyChanging();
-				this._NOM_APELLIDO2 = value;
-				this.SendPropertyChanged("NOM_APELLIDO2");
-				this.OnNOM_APELLIDO2Changed();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_NOMBRE", DbType="VarChar(25)")]
-	public string NOM_NOMBRE
-	{
-		get
-		{
-			return this._NOM_NOMBRE;
-		}
-		set
-		{
-			if ((this._NOM_NOMBRE != value))
-			{
-				this.OnNOM_NOMBREChanging(value);
-				this.SendPropertyChanging();
-				this._NOM_NOMBRE = value;
-				this.SendPropertyChanged("NOM_NOMBRE");
-				this.OnNOM_NOMBREChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IND_SEXO", DbType="VarChar(15)")]
-	public string IND_SEXO
-	{
-		get
-		{
-			return this._IND_SEXO;
-		}
-		set
-		{
-			if ((this._IND_SEXO != value))
-			{
-				this.OnIND_SEXOChanging(value);
-				this.SendPropertyChanging();
-				this._IND_SEXO = value;
-				this.SendPropertyChanged("IND_SEXO");
-				this.OnIND_SEXOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COD_ESTADO_CIVIL", DbType="VarChar(20)")]
-	public string COD_ESTADO_CIVIL
-	{
-		get
-		{
-			return this._COD_ESTADO_CIVIL;
-		}
-		set
-		{
-			if ((this._COD_ESTADO_CIVIL != value))
-			{
-				this.OnCOD_ESTADO_CIVILChanging(value);
-				this.SendPropertyChanging();
-				this._COD_ESTADO_CIVIL = value;
-				this.SendPropertyChanged("COD_ESTADO_CIVIL");
-				this.OnCOD_ESTADO_CIVILChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_NACIMIENTO", DbType="Date")]
-	public System.Nullable<System.DateTime> FEC_NACIMIENTO
-	{
-		get
-		{
-			return this._FEC_NACIMIENTO;
-		}
-		set
-		{
-			if ((this._FEC_NACIMIENTO != value))
-			{
-				this.OnFEC_NACIMIENTOChanging(value);
-				this.SendPropertyChanging();
-				this._FEC_NACIMIENTO = value;
-				this.SendPropertyChanged("FEC_NACIMIENTO");
-				this.OnFEC_NACIMIENTOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FEC_DEFUNCION", DbType="Date")]
-	public System.Nullable<System.DateTime> FEC_DEFUNCION
-	{
-		get
-		{
-			return this._FEC_DEFUNCION;
-		}
-		set
-		{
-			if ((this._FEC_DEFUNCION != value))
-			{
-				this.OnFEC_DEFUNCIONChanging(value);
-				this.SendPropertyChanging();
-				this._FEC_DEFUNCION = value;
-				this.SendPropertyChanged("FEC_DEFUNCION");
-				this.OnFEC_DEFUNCIONChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION", DbType="VarChar(100)")]
-	public string OBSERVACION
-	{
-		get
-		{
-			return this._OBSERVACION;
-		}
-		set
-		{
-			if ((this._OBSERVACION != value))
-			{
-				this.OnOBSERVACIONChanging(value);
-				this.SendPropertyChanging();
-				this._OBSERVACION = value;
-				this.SendPropertyChanged("OBSERVACION");
-				this.OnOBSERVACIONChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_TARJETA_INDICE", Storage="_TID_TARJETA_INDICE", ThisKey="NUM_IDENTIFICACION", OtherKey="CEDULA_PACIENTE", IsUnique=true, IsForeignKey=false)]
-	public TID_TARJETA_INDICE TID_TARJETA_INDICE
-	{
-		get
-		{
-			return this._TID_TARJETA_INDICE.Entity;
-		}
-		set
-		{
-			TID_TARJETA_INDICE previousValue = this._TID_TARJETA_INDICE.Entity;
-			if (((previousValue != value) 
-						|| (this._TID_TARJETA_INDICE.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._TID_TARJETA_INDICE.Entity = null;
-					previousValue.TID_PACIENTE = null;
-				}
-				this._TID_TARJETA_INDICE.Entity = value;
-				if ((value != null))
-				{
-					value.TID_PACIENTE = this;
-				}
-				this.SendPropertyChanged("TID_TARJETA_INDICE");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_DETALLE_PACIENTE", Storage="_TID_DETALLE_PACIENTE", ThisKey="NUM_IDENTIFICACION", OtherKey="CEDULA_PACIENTE", IsUnique=true, IsForeignKey=false)]
-	public TID_DETALLE_PACIENTE TID_DETALLE_PACIENTE
-	{
-		get
-		{
-			return this._TID_DETALLE_PACIENTE.Entity;
-		}
-		set
-		{
-			TID_DETALLE_PACIENTE previousValue = this._TID_DETALLE_PACIENTE.Entity;
-			if (((previousValue != value) 
-						|| (this._TID_DETALLE_PACIENTE.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._TID_DETALLE_PACIENTE.Entity = null;
-					previousValue.TID_PACIENTE = null;
-				}
-				this._TID_DETALLE_PACIENTE.Entity = value;
-				if ((value != null))
-				{
-					value.TID_PACIENTE = this;
-				}
-				this.SendPropertyChanged("TID_DETALLE_PACIENTE");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_DETALLE_PACIENTE")]
-public partial class TID_DETALLE_PACIENTE : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private string _NOMBRE_PADRE;
-	
-	private string _NOMBRE_MADRE;
-	
-	private string _DOMICILIO;
-	
-	private string _CEDULA_PACIENTE;
-	
-	private int _CODIGO_PATRONO;
-	
-	private string _NOMBRE_PATRONO;
-	
-	private string _OBSERVACION;
-	
-	private EntityRef<TID_PACIENTE> _TID_PACIENTE;
-	
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnNOMBRE_PADREChanging(string value);
-    partial void OnNOMBRE_PADREChanged();
-    partial void OnNOMBRE_MADREChanging(string value);
-    partial void OnNOMBRE_MADREChanged();
-    partial void OnDOMICILIOChanging(string value);
-    partial void OnDOMICILIOChanged();
-    partial void OnCEDULA_PACIENTEChanging(string value);
-    partial void OnCEDULA_PACIENTEChanged();
-    partial void OnCODIGO_PATRONOChanging(int value);
-    partial void OnCODIGO_PATRONOChanged();
-    partial void OnNOMBRE_PATRONOChanging(string value);
-    partial void OnNOMBRE_PATRONOChanged();
-    partial void OnOBSERVACIONChanging(string value);
-    partial void OnOBSERVACIONChanged();
-    #endregion
-	
-	public TID_DETALLE_PACIENTE()
-	{
-		this._TID_PACIENTE = default(EntityRef<TID_PACIENTE>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_PADRE", DbType="VarChar(50)")]
-	public string NOMBRE_PADRE
-	{
-		get
-		{
-			return this._NOMBRE_PADRE;
-		}
-		set
-		{
-			if ((this._NOMBRE_PADRE != value))
-			{
-				this.OnNOMBRE_PADREChanging(value);
-				this.SendPropertyChanging();
-				this._NOMBRE_PADRE = value;
-				this.SendPropertyChanged("NOMBRE_PADRE");
-				this.OnNOMBRE_PADREChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_MADRE", DbType="VarChar(50)")]
-	public string NOMBRE_MADRE
-	{
-		get
-		{
-			return this._NOMBRE_MADRE;
-		}
-		set
-		{
-			if ((this._NOMBRE_MADRE != value))
-			{
-				this.OnNOMBRE_MADREChanging(value);
-				this.SendPropertyChanging();
-				this._NOMBRE_MADRE = value;
-				this.SendPropertyChanged("NOMBRE_MADRE");
-				this.OnNOMBRE_MADREChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOMICILIO", DbType="VarChar(100)")]
-	public string DOMICILIO
-	{
-		get
-		{
-			return this._DOMICILIO;
-		}
-		set
-		{
-			if ((this._DOMICILIO != value))
-			{
-				this.OnDOMICILIOChanging(value);
-				this.SendPropertyChanging();
-				this._DOMICILIO = value;
-				this.SendPropertyChanged("DOMICILIO");
-				this.OnDOMICILIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_PACIENTE", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-	public string CEDULA_PACIENTE
-	{
-		get
-		{
-			return this._CEDULA_PACIENTE;
-		}
-		set
-		{
-			if ((this._CEDULA_PACIENTE != value))
-			{
-				if (this._TID_PACIENTE.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCEDULA_PACIENTEChanging(value);
-				this.SendPropertyChanging();
-				this._CEDULA_PACIENTE = value;
-				this.SendPropertyChanged("CEDULA_PACIENTE");
-				this.OnCEDULA_PACIENTEChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO_PATRONO", DbType="Int NOT NULL")]
-	public int CODIGO_PATRONO
-	{
-		get
-		{
-			return this._CODIGO_PATRONO;
-		}
-		set
-		{
-			if ((this._CODIGO_PATRONO != value))
-			{
-				this.OnCODIGO_PATRONOChanging(value);
-				this.SendPropertyChanging();
-				this._CODIGO_PATRONO = value;
-				this.SendPropertyChanged("CODIGO_PATRONO");
-				this.OnCODIGO_PATRONOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_PATRONO", DbType="VarChar(50)")]
-	public string NOMBRE_PATRONO
-	{
-		get
-		{
-			return this._NOMBRE_PATRONO;
-		}
-		set
-		{
-			if ((this._NOMBRE_PATRONO != value))
-			{
-				this.OnNOMBRE_PATRONOChanging(value);
-				this.SendPropertyChanging();
-				this._NOMBRE_PATRONO = value;
-				this.SendPropertyChanged("NOMBRE_PATRONO");
-				this.OnNOMBRE_PATRONOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACION", DbType="VarChar(100)")]
-	public string OBSERVACION
-	{
-		get
-		{
-			return this._OBSERVACION;
-		}
-		set
-		{
-			if ((this._OBSERVACION != value))
-			{
-				this.OnOBSERVACIONChanging(value);
-				this.SendPropertyChanging();
-				this._OBSERVACION = value;
-				this.SendPropertyChanged("OBSERVACION");
-				this.OnOBSERVACIONChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_PACIENTE_TID_DETALLE_PACIENTE", Storage="_TID_PACIENTE", ThisKey="CEDULA_PACIENTE", OtherKey="NUM_IDENTIFICACION", IsForeignKey=true)]
-	public TID_PACIENTE TID_PACIENTE
-	{
-		get
-		{
-			return this._TID_PACIENTE.Entity;
-		}
-		set
-		{
-			TID_PACIENTE previousValue = this._TID_PACIENTE.Entity;
-			if (((previousValue != value) 
-						|| (this._TID_PACIENTE.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._TID_PACIENTE.Entity = null;
-					previousValue.TID_DETALLE_PACIENTE = null;
-				}
-				this._TID_PACIENTE.Entity = value;
-				if ((value != null))
-				{
-					value.TID_DETALLE_PACIENTE = this;
-					this._CEDULA_PACIENTE = value.NUM_IDENTIFICACION;
-				}
-				else
-				{
-					this._CEDULA_PACIENTE = default(string);
-				}
-				this.SendPropertyChanged("TID_PACIENTE");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TID_FUNCIONARIO")]
-public partial class TID_FUNCIONARIO : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _CEDULA_FUNCIONARIO;
-	
-	private string _APELLIDO_1_FUNCIONARIO;
-	
-	private string _APELLIDO_2_FUNCIONARIO;
-	
-	private string _NOMBRE_FUNCIONARIO;
-	
-	private System.Nullable<int> _TELEFONO_FUNCIONARIO;
-	
-	private System.Nullable<int> _CARNET_CCSS_FUNCIONARIO;
-	
-	private string _DIRECCION_FUNCIONARIO;
-	
-	private System.Nullable<System.DateTime> _FECHA_NACIMIENTO;
-	
-	private string _AREA_TRABAJO_FUNCIONARIO;
-	
-	private EntitySet<TID_TARJETA_INDICE> _TID_TARJETA_INDICE;
-	
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCEDULA_FUNCIONARIOChanging(int value);
-    partial void OnCEDULA_FUNCIONARIOChanged();
-    partial void OnAPELLIDO_1_FUNCIONARIOChanging(string value);
-    partial void OnAPELLIDO_1_FUNCIONARIOChanged();
-    partial void OnAPELLIDO_2_FUNCIONARIOChanging(string value);
-    partial void OnAPELLIDO_2_FUNCIONARIOChanged();
-    partial void OnNOMBRE_FUNCIONARIOChanging(string value);
-    partial void OnNOMBRE_FUNCIONARIOChanged();
-    partial void OnTELEFONO_FUNCIONARIOChanging(System.Nullable<int> value);
-    partial void OnTELEFONO_FUNCIONARIOChanged();
-    partial void OnCARNET_CCSS_FUNCIONARIOChanging(System.Nullable<int> value);
-    partial void OnCARNET_CCSS_FUNCIONARIOChanged();
-    partial void OnDIRECCION_FUNCIONARIOChanging(string value);
-    partial void OnDIRECCION_FUNCIONARIOChanged();
-    partial void OnFECHA_NACIMIENTOChanging(System.Nullable<System.DateTime> value);
-    partial void OnFECHA_NACIMIENTOChanged();
-    partial void OnAREA_TRABAJO_FUNCIONARIOChanging(string value);
-    partial void OnAREA_TRABAJO_FUNCIONARIOChanged();
-    #endregion
-	
-	public TID_FUNCIONARIO()
-	{
-		this._TID_TARJETA_INDICE = new EntitySet<TID_TARJETA_INDICE>(new Action<TID_TARJETA_INDICE>(this.attach_TID_TARJETA_INDICE), new Action<TID_TARJETA_INDICE>(this.detach_TID_TARJETA_INDICE));
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA_FUNCIONARIO", DbType="Int NOT NULL", IsPrimaryKey=true)]
-	public int CEDULA_FUNCIONARIO
-	{
-		get
-		{
-			return this._CEDULA_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._CEDULA_FUNCIONARIO != value))
-			{
-				this.OnCEDULA_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._CEDULA_FUNCIONARIO = value;
-				this.SendPropertyChanged("CEDULA_FUNCIONARIO");
-				this.OnCEDULA_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_1_FUNCIONARIO", DbType="VarChar(30)")]
-	public string APELLIDO_1_FUNCIONARIO
-	{
-		get
-		{
-			return this._APELLIDO_1_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._APELLIDO_1_FUNCIONARIO != value))
-			{
-				this.OnAPELLIDO_1_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._APELLIDO_1_FUNCIONARIO = value;
-				this.SendPropertyChanged("APELLIDO_1_FUNCIONARIO");
-				this.OnAPELLIDO_1_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_2_FUNCIONARIO", DbType="VarChar(30)")]
-	public string APELLIDO_2_FUNCIONARIO
-	{
-		get
-		{
-			return this._APELLIDO_2_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._APELLIDO_2_FUNCIONARIO != value))
-			{
-				this.OnAPELLIDO_2_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._APELLIDO_2_FUNCIONARIO = value;
-				this.SendPropertyChanged("APELLIDO_2_FUNCIONARIO");
-				this.OnAPELLIDO_2_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_FUNCIONARIO", DbType="VarChar(25)")]
-	public string NOMBRE_FUNCIONARIO
-	{
-		get
-		{
-			return this._NOMBRE_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._NOMBRE_FUNCIONARIO != value))
-			{
-				this.OnNOMBRE_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._NOMBRE_FUNCIONARIO = value;
-				this.SendPropertyChanged("NOMBRE_FUNCIONARIO");
-				this.OnNOMBRE_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TELEFONO_FUNCIONARIO", DbType="Int")]
-	public System.Nullable<int> TELEFONO_FUNCIONARIO
-	{
-		get
-		{
-			return this._TELEFONO_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._TELEFONO_FUNCIONARIO != value))
-			{
-				this.OnTELEFONO_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._TELEFONO_FUNCIONARIO = value;
-				this.SendPropertyChanged("TELEFONO_FUNCIONARIO");
-				this.OnTELEFONO_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CARNET_CCSS_FUNCIONARIO", DbType="Int")]
-	public System.Nullable<int> CARNET_CCSS_FUNCIONARIO
-	{
-		get
-		{
-			return this._CARNET_CCSS_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._CARNET_CCSS_FUNCIONARIO != value))
-			{
-				this.OnCARNET_CCSS_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._CARNET_CCSS_FUNCIONARIO = value;
-				this.SendPropertyChanged("CARNET_CCSS_FUNCIONARIO");
-				this.OnCARNET_CCSS_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIRECCION_FUNCIONARIO", DbType="VarChar(100)")]
-	public string DIRECCION_FUNCIONARIO
-	{
-		get
-		{
-			return this._DIRECCION_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._DIRECCION_FUNCIONARIO != value))
-			{
-				this.OnDIRECCION_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._DIRECCION_FUNCIONARIO = value;
-				this.SendPropertyChanged("DIRECCION_FUNCIONARIO");
-				this.OnDIRECCION_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_NACIMIENTO", DbType="Date")]
-	public System.Nullable<System.DateTime> FECHA_NACIMIENTO
-	{
-		get
-		{
-			return this._FECHA_NACIMIENTO;
-		}
-		set
-		{
-			if ((this._FECHA_NACIMIENTO != value))
-			{
-				this.OnFECHA_NACIMIENTOChanging(value);
-				this.SendPropertyChanging();
-				this._FECHA_NACIMIENTO = value;
-				this.SendPropertyChanged("FECHA_NACIMIENTO");
-				this.OnFECHA_NACIMIENTOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AREA_TRABAJO_FUNCIONARIO", DbType="VarChar(40)")]
-	public string AREA_TRABAJO_FUNCIONARIO
-	{
-		get
-		{
-			return this._AREA_TRABAJO_FUNCIONARIO;
-		}
-		set
-		{
-			if ((this._AREA_TRABAJO_FUNCIONARIO != value))
-			{
-				this.OnAREA_TRABAJO_FUNCIONARIOChanging(value);
-				this.SendPropertyChanging();
-				this._AREA_TRABAJO_FUNCIONARIO = value;
-				this.SendPropertyChanged("AREA_TRABAJO_FUNCIONARIO");
-				this.OnAREA_TRABAJO_FUNCIONARIOChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TID_FUNCIONARIO_TID_TARJETA_INDICE", Storage="_TID_TARJETA_INDICE", ThisKey="CEDULA_FUNCIONARIO", OtherKey="CEDULA_FUNCIONARIO")]
-	public EntitySet<TID_TARJETA_INDICE> TID_TARJETA_INDICE
-	{
-		get
-		{
-			return this._TID_TARJETA_INDICE;
-		}
-		set
-		{
-			this._TID_TARJETA_INDICE.Assign(value);
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_AREA")]
+	public int SP_INSERTAR_AREA([global::System.Data.Linq.Mapping.ParameterAttribute(Name="AREA_CODIGO", DbType="Int")] System.Nullable<int> aREA_CODIGO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_DEPARTAMENTO", DbType="VarChar(40)")] string nOMBRE_DEPARTAMENTO)
 	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), aREA_CODIGO, nOMBRE_DEPARTAMENTO);
+		return ((int)(result.ReturnValue));
 	}
 	
-	protected virtual void SendPropertyChanged(String propertyName)
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_USUARIO")]
+	public int SP_INSERTAR_USUARIO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="Int")] System.Nullable<int> cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO1", DbType="VarChar(30)")] string aPELLIDO1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO2", DbType="VarChar(30)")] string aPELLIDO2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE", DbType="VarChar(25)")] string nOMBRE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TELEFONO", DbType="Int")] System.Nullable<int> tELEFONO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CARNET", DbType="Int")] System.Nullable<int> cARNET, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIRECCION", DbType="VarChar(100)")] string dIRECCION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA_NACIMIENTO", DbType="Date")] System.Nullable<System.DateTime> fECHA_NACIMIENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AREA_TRABAJO", DbType="VarChar(40)")] string aREA_TRABAJO)
 	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA, aPELLIDO1, aPELLIDO2, nOMBRE, tELEFONO, cARNET, dIRECCION, fECHA_NACIMIENTO, aREA_TRABAJO);
+		return ((int)(result.ReturnValue));
 	}
 	
-	private void attach_TID_TARJETA_INDICE(TID_TARJETA_INDICE entity)
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SELECCION_USUARIOS")]
+	public ISingleResult<SP_SELECCION_USUARIOSResult> SP_SELECCION_USUARIOS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="Int")] System.Nullable<int> cEDULA)
 	{
-		this.SendPropertyChanging();
-		entity.TID_FUNCIONARIO = this;
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA);
+		return ((ISingleResult<SP_SELECCION_USUARIOSResult>)(result.ReturnValue));
 	}
 	
-	private void detach_TID_TARJETA_INDICE(TID_TARJETA_INDICE entity)
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_ROLLES")]
+	public int SP_INSERTAR_ROLLES([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="Int")] System.Nullable<int> cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ROL", DbType="VarChar(30)")] string rOL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CLAVE", DbType="VarChar(20)")] string cLAVE)
 	{
-		this.SendPropertyChanging();
-		entity.TID_FUNCIONARIO = null;
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA, rOL, cLAVE);
+		return ((int)(result.ReturnValue));
 	}
 }
 
@@ -2850,6 +1165,176 @@ public partial class SP_BUSCARDOCTORResult
 			if ((this._ESTADO != value))
 			{
 				this._ESTADO = value;
+			}
+		}
+	}
+}
+
+public partial class SP_SELECCION_USUARIOSResult
+{
+	
+	private string _APELLIDO_1_FUNCIONARIO;
+	
+	private string _APELLIDO_2_FUNCIONARIO;
+	
+	private string _NOMBRE_FUNCIONARIO;
+	
+	private System.Nullable<int> _TELEFONO_FUNCIONARIO;
+	
+	private System.Nullable<int> _CARNET_CCSS_FUNCIONARIO;
+	
+	private string _DIRECCION_FUNCIONARIO;
+	
+	private System.Nullable<System.DateTime> _FECHA_NACIMIENTO;
+	
+	private string _AREA_TRABAJO_FUNCIONARIO;
+	
+	private string _ESTAD;
+	
+	public SP_SELECCION_USUARIOSResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_1_FUNCIONARIO", DbType="VarChar(30)")]
+	public string APELLIDO_1_FUNCIONARIO
+	{
+		get
+		{
+			return this._APELLIDO_1_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._APELLIDO_1_FUNCIONARIO != value))
+			{
+				this._APELLIDO_1_FUNCIONARIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO_2_FUNCIONARIO", DbType="VarChar(30)")]
+	public string APELLIDO_2_FUNCIONARIO
+	{
+		get
+		{
+			return this._APELLIDO_2_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._APELLIDO_2_FUNCIONARIO != value))
+			{
+				this._APELLIDO_2_FUNCIONARIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE_FUNCIONARIO", DbType="VarChar(25)")]
+	public string NOMBRE_FUNCIONARIO
+	{
+		get
+		{
+			return this._NOMBRE_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._NOMBRE_FUNCIONARIO != value))
+			{
+				this._NOMBRE_FUNCIONARIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TELEFONO_FUNCIONARIO", DbType="Int")]
+	public System.Nullable<int> TELEFONO_FUNCIONARIO
+	{
+		get
+		{
+			return this._TELEFONO_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._TELEFONO_FUNCIONARIO != value))
+			{
+				this._TELEFONO_FUNCIONARIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CARNET_CCSS_FUNCIONARIO", DbType="Int")]
+	public System.Nullable<int> CARNET_CCSS_FUNCIONARIO
+	{
+		get
+		{
+			return this._CARNET_CCSS_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._CARNET_CCSS_FUNCIONARIO != value))
+			{
+				this._CARNET_CCSS_FUNCIONARIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIRECCION_FUNCIONARIO", DbType="VarChar(100)")]
+	public string DIRECCION_FUNCIONARIO
+	{
+		get
+		{
+			return this._DIRECCION_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._DIRECCION_FUNCIONARIO != value))
+			{
+				this._DIRECCION_FUNCIONARIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_NACIMIENTO", DbType="Date")]
+	public System.Nullable<System.DateTime> FECHA_NACIMIENTO
+	{
+		get
+		{
+			return this._FECHA_NACIMIENTO;
+		}
+		set
+		{
+			if ((this._FECHA_NACIMIENTO != value))
+			{
+				this._FECHA_NACIMIENTO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AREA_TRABAJO_FUNCIONARIO", DbType="VarChar(40)")]
+	public string AREA_TRABAJO_FUNCIONARIO
+	{
+		get
+		{
+			return this._AREA_TRABAJO_FUNCIONARIO;
+		}
+		set
+		{
+			if ((this._AREA_TRABAJO_FUNCIONARIO != value))
+			{
+				this._AREA_TRABAJO_FUNCIONARIO = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTAD", DbType="VarChar(10)")]
+	public string ESTAD
+	{
+		get
+		{
+			return this._ESTAD;
+		}
+		set
+		{
+			if ((this._ESTAD != value))
+			{
+				this._ESTAD = value;
 			}
 		}
 	}
