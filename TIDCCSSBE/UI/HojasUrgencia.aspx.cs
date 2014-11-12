@@ -33,7 +33,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
  
     protected void Page_Load(object sender, EventArgs e)
     {
-        txtFecha.Text = Convert.ToString(DateTime.Now);
+        txtFecha.Text = String.Format("{0:yyyy-MM-dd}", DateTime.Now);
     //    txtFechaCreaci.Text = Convert.ToString(DateTime.Now);
        
     }
@@ -51,6 +51,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
                 txtBloqueExpediente.Text = resultado.BLOQUE_EXPEDIENTE;
                 txtCubiculoExpediente.Text = resultado.CUBICULO_EXPEDIENTE;
                 txtEstadoExpediente.Text = resultado.ESTADO_EXPEDIENTE;
+                txtNombPac.Text = resultado.NOM_NOMBRE;
             }
             if (txtNombPac.Text == "")
             {
@@ -69,17 +70,12 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
         try
         {
             
-            if (txtCedulaPaciente.Text == "" && txtNombPac.Text == "")
-            {
-
-                Response.Write("<script language=javascript>alert('Se necesitan completar los campos');</script>");
-            }
-            else {
+          
                 llenardatos();
                 db.SP_INSERTAR_HOJAS_URGENCIA(HU.Ps_CedPaU, HU.Ps_PriApePaU, HU.Ps_SegApePaU, HU.Ps_NomPAU, HU.Pn_NumAseguradoU,
                     HU.Pd_FecRegU, HU.Ps_ObsU);
                 Response.Write("<script language=javascript>alert('Se agrego correctamente!');</script>");
-            }
+            
         }
         catch (Exception ex)
         {
@@ -87,7 +83,7 @@ public partial class UI_HojasUrgencia : System.Web.UI.Page
         }
         finally {
             db.Dispose();
-            Response.Redirect("HojasUrgencia");
+            limpiar();
            
         }
     }

@@ -18,32 +18,41 @@ public partial class UI_AccesoAplicacion : System.Web.UI.Page
    
     protected void LogIn(object sender, EventArgs e)
     {
+        Session["user"] = true;
+        Session["pass"] = true;
+        Session["user"] = UserName.Text;
+        Session["pass"] = Password.Text;
         string respuesta = "";
-        var datos = db.SP_APLICACIONSEGURIDAD(UserName.Text, Password.Text);
-        foreach (SP_APLICACIONSEGURIDADResult resultado in datos)
+        try
         {
-            respuesta = resultado.EXISTENCIA;
-        }
-        if (respuesta == "EXISTE")
-            Response.Redirect("~/Default");
-        else
-            Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
-
-        if (IsValid)
-        {
-            // Validate the user password
-            var manager = new UserManager();
-            ApplicationUser user = manager.Find(UserName.Text, Password.Text);
-            if (user != null)
+            var datos = db.SP_APLICACIONSEGURIDAD(UserName.Text, Password.Text);
+            foreach (SP_APLICACIONSEGURIDADResult resultado in datos)
             {
-                IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                respuesta = resultado.EXISTENCIA;
             }
+            if (respuesta == "EXISTE")
+                Response.Redirect("~/Default");
             else
+                Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
+
+            if (IsValid)
             {
-                FailureText.Text = "Invalid username or password.";
-                ErrorMessage.Visible = true;
+                // Validate the user password
+                var manager = new UserManager();
+                ApplicationUser user = manager.Find(UserName.Text, Password.Text);
+                if (user != null)
+                {
+                    IdentityHelper.SignIn(manager, user, RememberMe.Checked);
+                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>alert('Usuario o Contraseña son incorrectadas!!');</script>");
+                }
             }
+        }
+        catch (Exception ex) {
+            Response.Write(ex);
         }
 
     }

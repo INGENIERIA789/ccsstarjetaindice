@@ -31,23 +31,27 @@
                         <div class="form-group">
                             <label class="control-label">Identificación</label>
                             <asp:TextBox runat="server" ID="txtCedulaPaciente" CssClass="form-control" required="required" Width="1387px" placeholder="Cédula del paciente" OnTextChanged="txtCedulaPaciente_TextChanged" AutoPostBack="True" />
-                        </div>
+                             </div>
                         <div class="form-group">
                             <label class="control-label">Código Área</label>
                             <asp:TextBox runat="server" ID="txtCodAre" CssClass="form-control" AutoPostBack="True" Width="1387px" placeholder="Código del área" OnTextChanged="txtCodAre_TextChanged" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodAre" ForeColor="Red">Se requiere el codigo del área.</asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Área</label>
                             <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" required="required"  Width="1387px" placeholder="Nombre área" />
-                        </div>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtArea" ForeColor="Red">Se requiere en nombre del área.</asp:RequiredFieldValidator>
+                           </div>
                         <div class="form-group">
                             <label class="control-label">Código Doctor</label>
                             <asp:TextBox runat="server" ID="txtCodDoc" CssClass="form-control" required="required" Width="1387px" placeholder="Código de Doctor" AutoPostBack="True" OnTextChanged="txtCodDoc_TextChanged" />
-                        </div>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodDoc" ForeColor="Red">Se requiere el codigo del Doctor.</asp:RequiredFieldValidator>
+                             </div>
                         <div class="form-group">
                             <label class="control-label">Nombre Doctor</label>
                             <asp:TextBox runat="server" ID="txtNombreDoctor" CssClass="form-control" required="required" Width="1387px" placeholder="Código de Doctor" />
-                        </div>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtNombreDoctor" ForeColor="Red">Se requiere el nombre del doctor</asp:RequiredFieldValidator>
+                             </div>
 
                     </div>
 
@@ -55,11 +59,12 @@
                         <div class="form-group">
                             <label class="control-label">Encargado</label>
                             <asp:TextBox runat="server" ID="txtEncargado" CssClass="form-control" required="required" Width="1387px" placeholder="Encargado" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtEncargado" ForeColor="Red">Se requiere el encargado.</asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Fecha</label>
                             <asp:TextBox runat="server" ID="txtfecha" CssClass="form-control" required="required" Width="1387px" placeholder="Fecha de Movimiento" />
-                        </div>
+                              </div>
                         <div class="form-group">
                             <label class="control-label">Observación</label>
                             <asp:TextBox runat="server" ID="txtObservacion" CssClass="form-control" Rows="2" Width="1387px" TextMode="MultiLine" placeholder="Observaciones" />
@@ -72,12 +77,13 @@
                                     <option value="Archivado">Archivado</option>
                                     <option value="Pendiente">Pendiente</option>
                                 </select>
-                            </div>
+                          <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtEstadoExpediente" ForeColor="Red">Se requiere el estado.</asp:RequiredFieldValidator>
+                                  </div>
                         </div>
                     </div>
                 </div>
 
-            <asp:Button ID="Button1" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />               
+            <asp:Button ID="Button1" runat="server" Text="Registrar" class="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />               
                 <!--Aqui va todo lo de movimientos -->
             </div>
         </div>

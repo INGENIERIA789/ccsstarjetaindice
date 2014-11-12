@@ -37,17 +37,17 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
-                                <asp:TextBox ID="txtNombrePaciente" runat="server" CssClass="form-control" Width="1387px" placeholder="Nombre de Paciente" required="required" ></asp:TextBox>
+                                <asp:TextBox ID="txtNombrePaciente" runat="server" CssClass="form-control" Width="1387px" placeholder="Nombre de Paciente" required="required" CausesValidation="True" ></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Nombre del Paciente Faltante." Text="Se necesita ingresar el nombre." ControlToValidate="txtNombrePaciente" ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Primer Apellido</label>
-                                <asp:TextBox ID="txtApellido1Paciente" runat="server" CssClass="form-control"  Width="1387px" placeholder="Primer Apellido del Paciente" required="required"></asp:TextBox>
+                                <asp:TextBox ID="txtApellido1Paciente" runat="server" CssClass="form-control"  Width="1387px" placeholder="Primer Apellido del Paciente" required="required" CausesValidation="True"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Primer Apellido Faltante." ControlToValidate="txtApellido1Paciente" Text="Se necesita el primer apellido." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Segundo Apellido</label>
-                            <asp:TextBox ID="txtApellido2Paciente" runat="server" CssClass="form-control" Width="1387px" placeholder="Segundo Apellido del Paciente" required="required"></asp:TextBox>
+                            <asp:TextBox ID="txtApellido2Paciente" runat="server" CssClass="form-control" Width="1387px" placeholder="Segundo Apellido del Paciente" required="required" CausesValidation="True"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Segundo Apellido Faltante." ControlToValidate="txtApellido2Paciente" Text="Se necesita el segundo apellido." ForeColor="Red"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
@@ -190,7 +190,7 @@
                             </div>                           
                         </div>
                         <div class="col-md-4">
-                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ShowMessageBox="True" />
 
                         </div>
                     </div>
@@ -199,9 +199,10 @@
                         <div class="col-md-6">
                         </div>
                         <div class="col-md-3">
+                             <asp:Button ID="Button2" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="General hoja" OnClick="Button2_Click" CausesValidation="False" />
                         </div>
                         <div class="col-md-3">
-                            <asp:Button ID="Button1" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Registrar" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Registrar" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>

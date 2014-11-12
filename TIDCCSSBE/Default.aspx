@@ -22,7 +22,7 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" runat="server">
 				<div class="item active" runat="server">
-                    <img src="img/tres.jpg" runat="server" />
+                    <img src="img/hospital.png" runat="server" />
                     <div class="carousel-caption">
                         <h1 class="carousel-caption-header">Hospital la Anexión</h1>
                         <p class="carousel-caption-text hidden-sm hidden-xs">
@@ -32,7 +32,7 @@
                 </div>
                 
                 <div class="item">
-                    <img src="img/img-sliderhome-bg-ph.jpg" runat="server" />
+                    <img src="img/hospital2.png" runat="server" />
                     <div class="carousel-caption">
                         <h1 class="carousel-caption-header">Área de Archivos Clinicos</h1>
                         <p class="carousel-caption-text hidden-sm hidden-xs">
@@ -68,5 +68,5 @@
         <br />
         <br />
             
-         <asp:Button ID="btnAdministrativo" runat="server" Cssclass="btn btn-info" Text="Administrativo" OnClientClick="return confirm('¿Esta seguro que desea ir al administrador?');" Height="80px" Width="1000px" Font-Size="Medium" Enabled="False" OnClick="btnAdministrativo_Click"  />               
+                      
 </asp:Content>

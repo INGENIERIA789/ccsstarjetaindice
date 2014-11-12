@@ -2,8 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
         
-        <asp:Literal runat="server" ID="ErrorMessage" />
-    
     <link href="../Content/bootstrap.css" rel="stylesheet" />
    
         <div class="form-horizontal">
@@ -43,7 +41,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label class="control-label">Fecha de Registro</label>                 
-                    <asp:TextBox runat="server" ID="txtFecha" CssClass="form-control" placeholder="Fecha de Registro" Enabled="False" Width="1387px"/>
+                    <asp:TextBox runat="server" ID="txtFecha" CssClass="form-control" placeholder="Fecha de Registro" Width="1387px" TextMode="Date"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Numero de Asegurado</label>                 
@@ -77,7 +75,7 @@
                 <div class="row">
                     <hr/>
                     <div class="col-md-2">
-                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrar" CssClass="btn btn-lg btn-primary btn-block" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" />
+                        <asp:Button ID="BtnResgistrar" runat="server" Text="Registrar" CssClass="btn btn-lg btn-primary btn-block" OnClick="Button1_Click" />
                     </div>
                 
                 </div>
