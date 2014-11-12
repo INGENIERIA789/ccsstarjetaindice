@@ -70,21 +70,15 @@ public partial class SiteMaster : MasterPage
     }
 
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
-    {
+    {Session.Remove("user");
+        Session.Remove("pass");
         Context.GetOwinContext().Authentication.SignOut();
+        
+        Response.Redirect("~/UI/AccesoAplicacion");
     }
     protected void xxx(object sender, EventArgs e) { 
     //href="UI/AccesoAplicacion"
-        Session["User"] = null;
-        Session["Pass"] = null;
-        Response.Redirect("~/UI/AccesoAplicacion");
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Session["User"] = null;
-        Session["Pass"] = null;
-        Response.Redirect("~/UI/AccesoAplicacion");
-
-    }
+   
 }

@@ -12,7 +12,13 @@ public class clsTarjetaIndice
     private DateTime Pd_FecCre;
     private string Ps_ObsTar;
     private string Ps_EstTar;
-    private int Pi_CedFun;
+    private string Pi_CedFun;
+
+    public string Pi_CedFun1
+    {
+        get { return Pi_CedFun; }
+        set { Pi_CedFun = value; }
+    }
 
     public string Pn_CedPaTid
     {
@@ -40,11 +46,7 @@ public class clsTarjetaIndice
         set { Ps_ObsTar = value; }
     }
 
-    public int PiCedFun
-    {
-        get { return Pi_CedFun; }
-        set { Pi_CedFun = value; }
-    }
+    
 
 
 

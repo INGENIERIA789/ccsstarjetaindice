@@ -8,7 +8,13 @@ using System.Web;
 /// </summary>
 public class clsFuncionario
 {
-    private int Pn_CedFun;
+    private string Pn_CedFun;
+
+    public string Pn_CedFun1
+    {
+        get { return Pn_CedFun; }
+        set { Pn_CedFun = value; }
+    }
     private string Ps_PriApeFun;
     private string Ps_SegApe;
     private string Ps_NomFun;
@@ -18,11 +24,7 @@ public class clsFuncionario
     private DateTime Ps_FecNac;
     private string Ps_AreTra;
 
-    public int Pn_CedFun1
-    {
-        get { return Pn_CedFun; }
-        set { Pn_CedFun = value; }
-    }
+    
 
     public string Ps_PriApeFun1
     {

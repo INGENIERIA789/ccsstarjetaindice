@@ -44,6 +44,7 @@ public partial class UI_registrarDoctor : System.Web.UI.Page
                 txtEspecialidadMedico.Text = resultado.ESPECIALIDAD_DOCTOR;
                 txtNombreMedico.Text = resultado.NOMBRE_DOCTOR;
                 txtEstadoExpediente.Value = resultado.ESTADO_DOCTOR;
+                txtArea.Text = resultado.AREA_TRABAJO_DOCTOR;
                 a = Convert.ToInt32(resultado.ESTADO);
             }
             if (a == 1)

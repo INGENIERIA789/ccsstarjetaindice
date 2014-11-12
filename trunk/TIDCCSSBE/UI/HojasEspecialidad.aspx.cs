@@ -11,10 +11,13 @@ public partial class UI_Paciente_HojasEspecialidad : System.Web.UI.Page
 
         txtEspecialidad.Text="";
         txtCedulaPaciente.Text="";
-       txtNombPaci.Text="";
-      txtObservacion.Text="";
-       txtPriAp.Text="";
+        txtNombPaci.Text="";
+        txtObservacion.Text="";
+        txtPriAp.Text="";
         txtSegApe.Text="";
+        txtCubiculoExpediente.Text = "";
+        txtEstadoExpediente.Text = "";
+        txtBloqueExpediente.Text = "";
     }
     public void llenardatos()
     {
@@ -31,7 +34,7 @@ public partial class UI_Paciente_HojasEspecialidad : System.Web.UI.Page
     clsExamenExterno EX = new clsExamenExterno();
     protected void Page_Load(object sender, EventArgs e)
     {
-txtFecha.Text = Convert.ToString(DateTime.Now);
+        txtFecha.Text = String.Format("{0:yyyy-MM-dd}", DateTime.Now);
     }
     protected void Button1_Click(object sender, EventArgs e)
     {

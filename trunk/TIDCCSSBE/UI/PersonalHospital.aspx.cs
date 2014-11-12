@@ -36,7 +36,7 @@ public partial class UI_PersonalHospital : System.Web.UI.Page
         fun.Ps_SegApe1 = txtApelli2.Text;
         fun.Ps_Tef1 = txtTelefono.Text;
         fun.Ps_NomFun1 = txtNombPac.Text;
-        fun.Pn_CedFun1 = Convert.ToInt32(txtCedulaFuncionario.Text);
+        fun.Pn_CedFun1 = txtCedulaFuncionario.Text;
         fun.Ps_AreTra1 = txtArea.Text;
         fun.Ps_CarFun1 = txtCarnet.Text;
         fun.Ps_Dir1 = txtDirec.Text;
