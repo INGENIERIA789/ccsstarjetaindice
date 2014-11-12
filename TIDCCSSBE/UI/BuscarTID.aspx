@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
  
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <br />
 <h3>Busqueda de paciente.</h3>
   <div class="row">
       <br />

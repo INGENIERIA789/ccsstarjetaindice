@@ -5,6 +5,7 @@
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../../Scripts/Contenido-TID/CSSTID.css" rel="stylesheet" />
     <script src="../../Scripts/Contenido-TID/JSTID.js"></script>
+    <br />
                 
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
@@ -21,7 +22,8 @@
     <form role="form">
         <div class="row setup-content" id="step-1">
             <div class="col-xs-12">
-                <center><h4>Movimientos del Expediente</h4></center>
+                <br />
+                <h3>Movimientos del Expediente</h3>
                 <br />
                 <br />
                 <div class="row">
@@ -82,7 +84,8 @@
         <div class="row setup-content" id="step-2">
             <div class="col-xs-12">
                 <div class="col-md-12">
-                   <center><h3>Historial de Movimientos</h3></center>
+                    <br />
+                   <h3>Historial de Movimientos</h3>
                     <center>     
                     <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AllowCustomPaging="True" PageSize="5" HorizontalAlign="Justify">
                         <AlternatingRowStyle BackColor="#DCDCDC" />

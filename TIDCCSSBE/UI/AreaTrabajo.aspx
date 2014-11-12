@@ -5,14 +5,14 @@
   <div class="row">
       <br />     
       <div class="col-sm-2">
-          <label class="control-label">Numero del área</label>
+          <label class="control-label">Número del área</label>
           <asp:TextBox ID="txtNumAre" CssClass="form-control" runat="server" required="required" AutoPostBack="True" Width="117px" OnTextChanged="txtNombre_TextChanged" Min="0" type="number" TextMode="Number"></asp:TextBox> 
       </div>
       <div class="col-sm-2">
           <label class="control-label">Nombre del área</label>
          <asp:TextBox ID="txtNomAre" CssClass="form-control" runat="server" required="required" Width="300px" CausesValidation="True" ></asp:TextBox> 
           <br />
-      <asp:Button ID="btnAgregarArea" runat="server" class="btn btn-lg btn-primary btn-block" Text="Registro" OnClick="Button1_Click" />
+      <asp:Button ID="btnAgregarArea" runat="server" class="btn btn-lg btn-primary btn-block" Text="Registrar" OnClick="Button1_Click" />
       </div>
     <br />
     <br />
