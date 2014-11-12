@@ -21,17 +21,17 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Nombre</label>
-                    <asp:TextBox runat="server" ID="txtNombreMedico" CssClass="form-control" placeholder="Carlos" Width="1387px"/>
+                    <asp:TextBox runat="server" ID="txtNombreMedico" CssClass="form-control" placeholder="Nombre del Doctor" Width="1387px"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere el nombre del médico." ForeColor="Red"> </asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label class="control-label">Primer Apellido</label>
-                    <asp:TextBox runat="server" ID="txtApellido1" CssClass="form-control" placeholder="Herrera" Width="1387px"/>
+                    <asp:TextBox runat="server" ID="txtApellido1" CssClass="form-control" placeholder="Primer Apellido del Doctor" Width="1387px"/>
                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere el apellido del médico." ForeColor="Red"> </asp:RequiredFieldValidator>
             </div>
               <div class="form-group">
                   <label class="control-label">Segundo Apellido</label>              
-                    <asp:TextBox runat="server" ID="txtApellido2" CssClass="form-control" placeholder="Corrales" Width="1387px"/> 
+                    <asp:TextBox runat="server" ID="txtApellido2" CssClass="form-control" placeholder="Segundo Apellido del Doctor" Width="1387px"/> 
                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere el segundo apellido del médico." ForeColor="Red"> </asp:RequiredFieldValidator>          
             </div>
         </div>
@@ -40,12 +40,12 @@
              <div class="col-md-4">
                  <div class="form-group">
                      <label class="control-label">Especialidad</label>
-                     <asp:TextBox runat="server" ID="txtEspecialidadMedico" CssClass="form-control" placeholder="Ginecología" Width="1387px"/>
+                     <asp:TextBox runat="server" ID="txtEspecialidadMedico" CssClass="form-control" placeholder="Especialidad Médica" Width="1387px"/>
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere la especialidad del médico." ForeColor="Red"> </asp:RequiredFieldValidator>
                  </div>
                  <div class="form-group">
                      <label class="control-label">Área de Trabajo</label>
-                     <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" placeholder="Ginecología" Width="1387px"/>
+                     <asp:TextBox runat="server" ID="txtArea" CssClass="form-control" placeholder="Área del hospital" Width="1387px"/>
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCodigoMedico" Text="Se requiere la especialidad del médico." ForeColor="Red"> </asp:RequiredFieldValidator>
                  </div>
                  <div class="form-group">
@@ -58,7 +58,7 @@
                                 </select>
                             </div>
                         </div>
-                 <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Agregar" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" EnableTheming="False" />
+                 <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Registrar" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" EnableTheming="False" />
                
              </div>
              </div>

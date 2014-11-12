@@ -13,7 +13,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-</head>
+</head>    
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -35,9 +35,9 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        
         <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
+            <img src="img/logo.png" runat="server" width="70" height="60" /><asp:Label ID="Label1" runat="server" Font-Size="XX-Large" ForeColor="#0066FF" Text="             Caja Costarricense del Seguro Social"></asp:Label>
+<div class="container">
                 <div class="navbar-header">
                     <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                         <span class="sr-only">Toggle navigation</span>
@@ -109,6 +109,8 @@
                 </div>
             </div>
         </nav>
+        <br />
+        <br />
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

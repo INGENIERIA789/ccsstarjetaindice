@@ -31,12 +31,12 @@
             </div>
             <div class="form-group">
                   <label class="control-label">Teléfono</label>              
-                    <asp:TextBox runat="server" ID="txtTelefono" CssClass="form-control" placeholder="Nombre del Usuario" Width="1387px" /> 
+                    <asp:TextBox runat="server" ID="txtTelefono" CssClass="form-control" placeholder="Telefono del Usuario" Width="1387px" /> 
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtTelefono" Text="Se necesita el nombre." ForeColor="Red"></asp:RequiredFieldValidator>                           
             </div>
             <div class="form-group">
                 <label class="control-label">Carnet de CCSS</label>                 
-                    <asp:TextBox runat="server" ID="txtCarnet" CssClass="form-control" placeholder="Fecha de Usuario"  Width="1387px"/>
+                    <asp:TextBox runat="server" ID="txtCarnet" CssClass="form-control" placeholder="Carnet de Usuario"  Width="1387px"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCarnet" Text="Se necesita el nombre." ForeColor="Red"></asp:RequiredFieldValidator>                                     
             </div>
         </div>
