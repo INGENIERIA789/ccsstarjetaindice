@@ -32,6 +32,7 @@ public partial class UI_Expediente : System.Web.UI.Page
     {
         try
         {
+            llenado();
             string encontrado = "";
             var datos = db.SP_SELECCION_EXISTENCIA_EXPEDIENTE(clsmovimientos.Pn_CedPaSE);
             foreach (SP_SELECCION_EXISTENCIA_EXPEDIENTEResult resultado in datos)

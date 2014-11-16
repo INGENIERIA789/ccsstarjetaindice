@@ -145,13 +145,6 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 		return ((ISingleResult<SP_SELECCIONAR_EXPEDIENTEResult>)(result.ReturnValue));
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GENERAR_HISTORIAL_MOVIMIENTO")]
-	public ISingleResult<GENERAR_HISTORIAL_MOVIMIENTOResult> GENERAR_HISTORIAL_MOVIMIENTO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE);
-		return ((ISingleResult<GENERAR_HISTORIAL_MOVIMIENTOResult>)(result.ReturnValue));
-	}
-	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_INSERTAR_MEDICO")]
 	public int SP_INSERTAR_MEDICO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CODIDO_MEDICO", DbType="Int")] System.Nullable<int> cODIDO_MEDICO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_1_DOCTOR", DbType="VarChar(25)")] string aPELLIDO_1_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOMBRE_DOCTOR", DbType="VarChar(25)")] string nOMBRE_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="APELLIDO_2_DOCTOR", DbType="VarChar(25)")] string aPELLIDO_2_DOCTOR, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ESPECIALIDAD", DbType="VarChar(25)")] string eSPECIALIDAD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AREA_DE_TRABAJO", DbType="VarChar(25)")] string aREA_DE_TRABAJO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EST", DbType="VarChar(20)")] string eST)
 	{
@@ -227,6 +220,13 @@ public partial class DBTarjetaIndiceDataContext : System.Data.Linq.DataContext
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
 		return ((ISingleResult<sp_seleccion_pacienteResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GENERAR_HISTORIAL_MOVIMIENTO")]
+	public ISingleResult<GENERAR_HISTORIAL_MOVIMIENTOResult> GENERAR_HISTORIAL_MOVIMIENTO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA_PACIENTE", DbType="VarChar(20)")] string cEDULA_PACIENTE)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA_PACIENTE);
+		return ((ISingleResult<GENERAR_HISTORIAL_MOVIMIENTOResult>)(result.ReturnValue));
 	}
 }
 
@@ -908,122 +908,6 @@ public partial class SP_SELECCIONAR_EXPEDIENTEResult
 	}
 }
 
-public partial class GENERAR_HISTORIAL_MOVIMIENTOResult
-{
-	
-	private System.Nullable<int> _Área;
-	
-	private System.Nullable<int> _Doctor;
-	
-	private System.Nullable<System.DateTime> _Fecha;
-	
-	private string _Observaciòn;
-	
-	private string _Estado;
-	
-	private string _Responsable;
-	
-	public GENERAR_HISTORIAL_MOVIMIENTOResult()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Área", DbType="Int")]
-	public System.Nullable<int> Área
-	{
-		get
-		{
-			return this._Área;
-		}
-		set
-		{
-			if ((this._Área != value))
-			{
-				this._Área = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doctor", DbType="Int")]
-	public System.Nullable<int> Doctor
-	{
-		get
-		{
-			return this._Doctor;
-		}
-		set
-		{
-			if ((this._Doctor != value))
-			{
-				this._Doctor = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
-	public System.Nullable<System.DateTime> Fecha
-	{
-		get
-		{
-			return this._Fecha;
-		}
-		set
-		{
-			if ((this._Fecha != value))
-			{
-				this._Fecha = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciòn", DbType="VarChar(50)")]
-	public string Observaciòn
-	{
-		get
-		{
-			return this._Observaciòn;
-		}
-		set
-		{
-			if ((this._Observaciòn != value))
-			{
-				this._Observaciòn = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="NChar(10)")]
-	public string Estado
-	{
-		get
-		{
-			return this._Estado;
-		}
-		set
-		{
-			if ((this._Estado != value))
-			{
-				this._Estado = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Responsable", DbType="VarChar(50)")]
-	public string Responsable
-	{
-		get
-		{
-			return this._Responsable;
-		}
-		set
-		{
-			if ((this._Responsable != value))
-			{
-				this._Responsable = value;
-			}
-		}
-	}
-}
-
 public partial class SP_BUSCARDOCTORResult
 {
 	
@@ -1689,6 +1573,122 @@ public partial class sp_seleccion_pacienteResult
 			if ((this._algo != value))
 			{
 				this._algo = value;
+			}
+		}
+	}
+}
+
+public partial class GENERAR_HISTORIAL_MOVIMIENTOResult
+{
+	
+	private System.Nullable<int> _Área;
+	
+	private System.Nullable<int> _Doctor;
+	
+	private System.Nullable<System.DateTime> _Fecha;
+	
+	private string _Observaciòn;
+	
+	private string _Estado;
+	
+	private string _Responsable;
+	
+	public GENERAR_HISTORIAL_MOVIMIENTOResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Área", DbType="Int")]
+	public System.Nullable<int> Área
+	{
+		get
+		{
+			return this._Área;
+		}
+		set
+		{
+			if ((this._Área != value))
+			{
+				this._Área = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doctor", DbType="Int")]
+	public System.Nullable<int> Doctor
+	{
+		get
+		{
+			return this._Doctor;
+		}
+		set
+		{
+			if ((this._Doctor != value))
+			{
+				this._Doctor = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+	public System.Nullable<System.DateTime> Fecha
+	{
+		get
+		{
+			return this._Fecha;
+		}
+		set
+		{
+			if ((this._Fecha != value))
+			{
+				this._Fecha = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciòn", DbType="VarChar(50)")]
+	public string Observaciòn
+	{
+		get
+		{
+			return this._Observaciòn;
+		}
+		set
+		{
+			if ((this._Observaciòn != value))
+			{
+				this._Observaciòn = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="NChar(10)")]
+	public string Estado
+	{
+		get
+		{
+			return this._Estado;
+		}
+		set
+		{
+			if ((this._Estado != value))
+			{
+				this._Estado = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Responsable", DbType="VarChar(50)")]
+	public string Responsable
+	{
+		get
+		{
+			return this._Responsable;
+		}
+		set
+		{
+			if ((this._Responsable != value))
+			{
+				this._Responsable = value;
 			}
 		}
 	}

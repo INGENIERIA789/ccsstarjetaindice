@@ -25,13 +25,15 @@ public partial class UI_Administrador_AreaTrabakj__ : System.Web.UI.Page
         {
             llenarInfo();
             db.SP_INSERTAR_AREA(Convert.ToInt32(Ar.Ps_CodAre1), Ar.Ps_NomAre1);
-
+            Response.Write("<script language=javascript>alert('El área se agrego correctamente!');</script>");
         }
         catch (Exception ex)
         {
             Response.Write(ex);
         }
         finally {
+            txtNomAre.Text = "";
+            txtNumAre.Text = "";
             db.Dispose();
         }
     }
@@ -46,6 +48,7 @@ public partial class UI_Administrador_AreaTrabakj__ : System.Web.UI.Page
            {
            txtNomAre.Text = resultado.NOMBRE_DEPARTAMENTO;
            }
+
         }
         catch (Exception ex)
         {

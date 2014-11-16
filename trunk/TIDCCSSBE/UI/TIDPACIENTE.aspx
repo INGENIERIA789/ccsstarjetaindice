@@ -169,7 +169,7 @@
                             </div>
                              <div class="form-group">
                                 <label class="control-label">Fecha de la Creación</label>
-                                 <asp:TextBox ID="txtFechaCreacionExpediente" runat="server" Width="1387px" CssClass="form-control" required="required" Enabled="False"></asp:TextBox>       
+                                 <asp:TextBox ID="txtFechaCreacionExpediente" runat="server" Width="1387px" CssClass="form-control" required="required" TextMode="Date"></asp:TextBox>       
                             </div>
                         </div>
 
