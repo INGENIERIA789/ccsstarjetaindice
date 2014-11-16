@@ -83,6 +83,7 @@ public partial class UI_Paciente_TIDPACIENTE : System.Web.UI.Page
            }else{ 
            Response.Write("<script language=javascript>alert('La cédula no existe!!');</script>");
                limpiarCampos();
+               txtFechaCreacionExpediente.Text = String.Format("{0:yyyy-MM-dd}", DateTime.Now);
                txtNombrePaciente.Focus();
            }
 

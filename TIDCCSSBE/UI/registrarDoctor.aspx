@@ -58,7 +58,7 @@
                                 </select>
                             </div>
                         </div>
-                 <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Registrar" OnClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" EnableTheming="False" />
+                 <asp:Button ID="Button1" runat="server" class="btn btn-lg btn-primary btn-block" Text="Registrar" ClientClick="return confirm('¿Esta seguro que desea agregarlo?');" OnClick="Button1_Click" EnableTheming="False" />
                
              </div>
              </div>

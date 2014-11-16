@@ -128,17 +128,6 @@
       <Column Name="Estado" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GENERAR_HISTORIAL_MOVIMIENTO" Method="GENERAR_HISTORIAL_MOVIMIENTO">
-    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="GENERAR_HISTORIAL_MOVIMIENTOResult">
-      <Column Name="Área" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Doctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Observaciòn" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="Responsable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_INSERTAR_MEDICO" Method="SP_INSERTAR_MEDICO">
     <Parameter Name="CODIDO_MEDICO" Parameter="cODIDO_MEDICO" Type="System.Int32" DbType="Int" />
     <Parameter Name="APELLIDO_1_DOCTOR" Parameter="aPELLIDO_1_DOCTOR" Type="System.String" DbType="VarChar(25)" />
@@ -243,6 +232,17 @@
       <Column Name="FEC_NACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="algo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GENERAR_HISTORIAL_MOVIMIENTO" Method="GENERAR_HISTORIAL_MOVIMIENTO">
+    <Parameter Name="CEDULA_PACIENTE" Parameter="cEDULA_PACIENTE" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="GENERAR_HISTORIAL_MOVIMIENTOResult">
+      <Column Name="Área" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Doctor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Observaciòn" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
