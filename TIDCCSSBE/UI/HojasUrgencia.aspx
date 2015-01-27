@@ -6,8 +6,7 @@
    
         <div class="form-horizontal">
             <br />
-            <br />
-            <br />
+            
             <h4>Registro Hojas de Urgencias</h4>
             <hr/>
            
