@@ -1,0 +1,20 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Persona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Personas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="ID_Persona"/>
+              <xs:element type="xs:string" name="Nombre"/>
+              <xs:element type="xs:string" name="Apellido1"/>
+              <xs:element type="xs:string" name="Apellido2"/>
+              <xs:element type="xs:string" name="Direccion"/>
+              <xs:element type="xs:string" name="Fecha_Nacimiento"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

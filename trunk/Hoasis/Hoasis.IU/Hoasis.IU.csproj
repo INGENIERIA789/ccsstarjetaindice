@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE1F0D53-2E83-4457-B4DB-AF72506567CB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hoasis.IU</RootNamespace>
+    <AssemblyName>Hoasis.IU</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\Max\Google Drive\UNA\Ingeneria 1,2,3\HOASIS\Libreria itext\itextsharp-all-5.5.3\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\bootstrap-theme.css" />
+    <Content Include="Css\bootstrap.css" />
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\CssContent.css" />
+    <Content Include="Css\CssIndex.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formularios\Citas\Citas.aspx" />
+    <Content Include="Formularios\Farmacia\ClasificacionConsultas.aspx" />
+    <Content Include="Formularios\Farmacia\ConsultaFarmacia.aspx" />
+    <Content Include="Formularios\Farmacia\RetiroMedicamento.aspx" />
+    <Content Include="Formularios\Imagenes\CCSS.gif" />
+    <Content Include="Formularios\Imagenes\eliminarmaspeque.png" />
+    <Content Include="Formularios\Imagenes\HoasisFoot.png" />
+    <Content Include="Formularios\Imagenes\Hospitalntro.jpg" />
+    <Content Include="Formularios\Imagenes\logoCaja.png" />
+    <Content Include="Formularios\Imagenes\logotipoico.ico" />
+    <Content Include="Formularios\Imagenes\reprogrmaspeque.png" />
+    <Content Include="Formularios\Index.aspx" />
+    <Content Include="Formularios\Inicio.aspx" />
+    <Content Include="Formularios\Usuarios\ActivacionPaciente.aspx" />
+    <Content Include="Formularios\Usuarios\Activar.aspx" />
+    <Content Include="Formularios\Usuarios\ActualizacionPaciente.aspx" />
+    <Content Include="Formularios\Usuarios\CargaXml.aspx" />
+    <Content Include="Formularios\Usuarios\ConsultaPaciente.aspx" />
+    <Content Include="Formularios\Usuarios\RegenerarContraseña.aspx" />
+    <Content Include="Formularios\Usuarios\RegistarPersonas.aspx" />
+    <Content Include="Imagenes\Farmaciapx.PNG" />
+    <Content Include="Imagenes\CCSS.gif" />
+    <Content Include="Imagenes\HoasisFoot.png" />
+    <Content Include="Imagenes\Hospitalntro.jpg" />
+    <Content Include="Imagenes\logoCaja.png" />
+    <Content Include="Imagenes\logotipoico.ico" />
+    <Content Include="Imagenes\px.jpg" />
+    <Content Include="Js\bootstrap.js" />
+    <Content Include="Js\bootstrap.min.js" />
+    <Content Include="Js\jquery.js" />
+    <Content Include="Js\latest-Query.js" />
+    <Content Include="Js\slider.js" />
+    <Content Include="Js\Validaciones\Validaciones.js" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Master\PagForms.Master" />
+    <None Include="Service References\WcfHoasis\Service1.disco" />
+    <None Include="Service References\WcfHoasis\configuration91.svcinfo" />
+    <None Include="Service References\WcfHoasis\configuration.svcinfo" />
+    <None Include="Service References\WcfHoasis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formularios\Citas\Citas.aspx.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Citas\Citas.aspx.designer.cs">
+      <DependentUpon>Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Farmacia\ClasificacionConsultas.aspx.cs">
+      <DependentUpon>ClasificacionConsultas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Farmacia\ClasificacionConsultas.aspx.designer.cs">
+      <DependentUpon>ClasificacionConsultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Farmacia\ConsultaFarmacia.aspx.cs">
+      <DependentUpon>ConsultaFarmacia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Farmacia\ConsultaFarmacia.aspx.designer.cs">
+      <DependentUpon>ConsultaFarmacia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Farmacia\RetiroMedicamento.aspx.cs">
+      <DependentUpon>RetiroMedicamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Farmacia\RetiroMedicamento.aspx.designer.cs">
+      <DependentUpon>RetiroMedicamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\ActivacionPaciente.aspx.cs">
+      <DependentUpon>ActivacionPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\ActivacionPaciente.aspx.designer.cs">
+      <DependentUpon>ActivacionPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Activar.aspx.cs">
+      <DependentUpon>Activar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Activar.aspx.designer.cs">
+      <DependentUpon>Activar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\ActualizacionPaciente.aspx.cs">
+      <DependentUpon>ActualizacionPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\ActualizacionPaciente.aspx.designer.cs">
+      <DependentUpon>ActualizacionPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\CargaXml.aspx.cs">
+      <DependentUpon>CargaXml.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\CargaXml.aspx.designer.cs">
+      <DependentUpon>CargaXml.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\ConsultaPaciente.aspx.cs">
+      <DependentUpon>ConsultaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\ConsultaPaciente.aspx.designer.cs">
+      <DependentUpon>ConsultaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\RegenerarContraseña.aspx.cs">
+      <DependentUpon>RegenerarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\RegenerarContraseña.aspx.designer.cs">
+      <DependentUpon>RegenerarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\RegistarPersonas.aspx.cs">
+      <DependentUpon>RegistarPersonas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\RegistarPersonas.aspx.designer.cs">
+      <DependentUpon>RegistarPersonas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\PagForms.Master.cs">
+      <DependentUpon>PagForms.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\PagForms.Master.designer.cs">
+      <DependentUpon>PagForms.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\PagIndex.Master.cs">
+      <DependentUpon>PagIndex.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\PagIndex.Master.designer.cs">
+      <DependentUpon>PagIndex.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WcfHoasis\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Master\PagIndex.Master" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="config.json" />
+    <None Include="Service References\WcfHoasis\Service1.wsdl" />
+    <None Include="Service References\WcfHoasis\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfHoasis\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfHoasis\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfHoasis\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WcfHoasis\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2173/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

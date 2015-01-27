@@ -1,0 +1,115 @@
+﻿body {
+    margin:0;
+    padding:0;
+}
+#header {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: white;
+    font-size: 110%;
+    background-color: #0c4f7d;
+    padding: 10px;
+}
+#header-2 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: white;
+    font-size: 110%;
+    background-color: #0c4f7d;
+    padding: 10px;
+}
+.img {
+    width:70%;
+    border:0;
+}
+#head2 {
+    top:10px;
+    right:40px;
+    text-align:right;
+}
+#head-1 {
+    right:35px;
+    text-align:right;
+}
+#head-2 {
+    right:20px;
+    text-align:right;
+}
+#head-1-1 {
+    right:35px;
+    text-align:right;
+}
+#head-2-1 {
+    right:20px;
+    text-align:right;
+}
+.enlace {
+    font-size:16px;
+    color:white;
+}
+    .enlace:hover {
+        color:#f2e9ac;
+        text-decoration:none;
+    }
+#HrlCerrar {
+    color:white;
+    text-decoration:none;
+}
+footer {
+    clear:both;
+    font-family: 'Segoe UI' Verdana Helvetica sans-serif; 
+}
+.foot-up img{
+    width:140px;
+    padding-left:50px;
+}
+.foot-down {
+    background-color:#0c4f7d;
+    padding: 20px 50px;
+    color:white;    
+    font-size:1em;
+}
+p {
+    color:white;
+    font-size:1em;
+}
+.p {
+    color:black;
+    text-align:justify;
+    margin-left:6px;
+    margin-right:6px;
+}
+.Autenticar {
+    text-align:center;
+    font-family: 'Segoe UI' Verdana Helvetica sans-serif; 
+    color:#3289ac;
+    margin-left:10%;
+    margin-right:10%;
+}
+.adaptar {
+    width:100%;
+}
+.adapta-form {
+    margin-right:8%;
+}
+.p1 {
+    color:#3278ac;
+}
+#p2 {
+    color:red;
+}
+tr {
+    color:#3278ac;
+}
+.t1 {
+    text-align:right;
+}
+.t2 {
+    text-align:left;
+}
+.t3 {
+    text-align:center;
+}
+.a {
+    text-decoration:none;
+    color:red;
+}
+
