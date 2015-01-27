@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoasis.IU", "Hoasis.IU\Hoasis.IU.csproj", "{EE1F0D53-2E83-4457-B4DB-AF72506567CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{02B1A530-C69C-4200-8657-872D67B4E053} = {02B1A530-C69C-4200-8657-872D67B4E053}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoasis.BS", "Hoasis.BS\Hoasis.BS.csproj", "{3A782321-1AA4-46CC-8759-3496D7AE197E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoasis.WCF", "Hoasis.WCF\Hoasis.WCF.csproj", "{02B1A530-C69C-4200-8657-872D67B4E053}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE1F0D53-2E83-4457-B4DB-AF72506567CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1F0D53-2E83-4457-B4DB-AF72506567CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1F0D53-2E83-4457-B4DB-AF72506567CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1F0D53-2E83-4457-B4DB-AF72506567CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A782321-1AA4-46CC-8759-3496D7AE197E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A782321-1AA4-46CC-8759-3496D7AE197E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A782321-1AA4-46CC-8759-3496D7AE197E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A782321-1AA4-46CC-8759-3496D7AE197E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B1A530-C69C-4200-8657-872D67B4E053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B1A530-C69C-4200-8657-872D67B4E053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B1A530-C69C-4200-8657-872D67B4E053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B1A530-C69C-4200-8657-872D67B4E053}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

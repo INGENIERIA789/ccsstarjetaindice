@@ -1,0 +1,24 @@
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\bin\Hoasis.WCF.dll
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\bin\Hoasis.WCF.pdb
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\bin\Hoasis.BS.dll
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\bin\Hoasis.BS.pdb
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.csprojResolveAssemblyReference.cache
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.dll
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.pdb
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.WCF\bin\Dominio\Validacion\validar.xsd
+F:\Hoasis\Hoasis.WCF\bin\Dominio\Validacion\validar.xsd
+F:\Hoasis\Hoasis.WCF\bin\Hoasis.WCF.dll
+F:\Hoasis\Hoasis.WCF\bin\Hoasis.WCF.pdb
+F:\Hoasis\Hoasis.WCF\bin\Hoasis.BS.dll
+F:\Hoasis\Hoasis.WCF\bin\Hoasis.BS.pdb
+F:\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.csprojResolveAssemblyReference.cache
+F:\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.dll
+F:\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.pdb
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\bin\Dominio\Validacion\validar.xsd
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\bin\Hoasis.WCF.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\bin\Hoasis.WCF.pdb
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\bin\Hoasis.BS.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\bin\Hoasis.BS.pdb
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.csprojResolveAssemblyReference.cache
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.WCF\obj\Debug\Hoasis.WCF.pdb

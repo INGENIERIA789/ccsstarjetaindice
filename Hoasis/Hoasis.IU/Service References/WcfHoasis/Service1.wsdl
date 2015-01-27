@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4640/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4640/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4640/Service1.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost:4640/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_AutenticarPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarPersona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AutenticarPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExistePersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExistePersona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExistePersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistePersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LlenarGrillaMedicamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:LlenarGrillaMedicamentos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LlenarGrillaMedicamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LlenarGrillaMedicamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_llenarGridMedicamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:llenarGridMedicamentos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_llenarGridMedicamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:llenarGridMedicamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarusuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarusuarios" />
+  </wsdl:message>
+  <wsdl:message name="IService1_registrarusuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarusuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LlenarGrilla_InputMessage">
+    <wsdl:part name="parameters" element="tns:LlenarGrilla" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LlenarGrilla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LlenarGrillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActivarPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActivarPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DesactivarPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:DesactivarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DesactivarPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DesactivarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_cargarXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:cargarXML" />
+  </wsdl:message>
+  <wsdl:message name="IService1_cargarXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cargarXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GridActivacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GridActivacion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GridActivacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GridActivacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_generarPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarPass" />
+  </wsdl:message>
+  <wsdl:message name="IService1_generarPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_actualizarconsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarconsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_actualizarconsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarconsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CargarConsult_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargarConsult" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CargarConsult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargarConsultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Cargar_Persona_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cargar_Persona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Cargar_Persona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cargar_PersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_enviar_correo_InputMessage">
+    <wsdl:part name="parameters" element="tns:enviar_correo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_enviar_correo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:enviar_correoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerConsultaPorEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerConsultaPorEstado" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerConsultaPorEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerConsultaPorEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IngresarConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:IngresarConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IngresarConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IngresarConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarMedicamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarMedicamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarMedicamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarMedicamentos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarMedicamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarMedicamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarPacientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPacientes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarPacientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPacientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContraseña" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerDatosPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerDatosPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarCitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCitas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarCitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReprogramarCitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReprogramarCitas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReprogramarCitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReprogramarCitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CancelarCitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarCitas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CancelarCitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarCitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_llenarGridCitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:llenarGridCitas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_llenarGridCitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:llenarGridCitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegenerarContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegenerarContraseña" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegenerarContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegenerarContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FiltrarPacientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:FiltrarPacientes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FiltrarPacientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FiltrarPacientesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="AutenticarPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AutenticarPersona" message="tns:IService1_AutenticarPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AutenticarPersonaResponse" message="tns:IService1_AutenticarPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistePersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExistePersona" message="tns:IService1_ExistePersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExistePersonaResponse" message="tns:IService1_ExistePersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LlenarGrillaMedicamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LlenarGrillaMedicamentos" message="tns:IService1_LlenarGrillaMedicamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LlenarGrillaMedicamentosResponse" message="tns:IService1_LlenarGrillaMedicamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="llenarGridMedicamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/llenarGridMedicamentos" message="tns:IService1_llenarGridMedicamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/llenarGridMedicamentosResponse" message="tns:IService1_llenarGridMedicamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarusuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/registrarusuarios" message="tns:IService1_registrarusuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/registrarusuariosResponse" message="tns:IService1_registrarusuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LlenarGrilla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LlenarGrilla" message="tns:IService1_LlenarGrilla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LlenarGrillaResponse" message="tns:IService1_LlenarGrilla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActivarPaciente" message="tns:IService1_ActivarPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActivarPacienteResponse" message="tns:IService1_ActivarPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DesactivarPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DesactivarPaciente" message="tns:IService1_DesactivarPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DesactivarPacienteResponse" message="tns:IService1_DesactivarPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/cargarXML" message="tns:IService1_cargarXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/cargarXMLResponse" message="tns:IService1_cargarXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GridActivacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GridActivacion" message="tns:IService1_GridActivacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GridActivacionResponse" message="tns:IService1_GridActivacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="generarPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/generarPass" message="tns:IService1_generarPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/generarPassResponse" message="tns:IService1_generarPass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarconsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/actualizarconsulta" message="tns:IService1_actualizarconsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/actualizarconsultaResponse" message="tns:IService1_actualizarconsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarConsult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CargarConsult" message="tns:IService1_CargarConsult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CargarConsultResponse" message="tns:IService1_CargarConsult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cargar_Persona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Cargar_Persona" message="tns:IService1_Cargar_Persona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Cargar_PersonaResponse" message="tns:IService1_Cargar_Persona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="enviar_correo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/enviar_correo" message="tns:IService1_enviar_correo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/enviar_correoResponse" message="tns:IService1_enviar_correo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerConsultaPorEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerConsultaPorEstado" message="tns:IService1_VerConsultaPorEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerConsultaPorEstadoResponse" message="tns:IService1_VerConsultaPorEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerConsulta" message="tns:IService1_VerConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerConsultaResponse" message="tns:IService1_VerConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IngresarConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IngresarConsulta" message="tns:IService1_IngresarConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IngresarConsultaResponse" message="tns:IService1_IngresarConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMedicamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BuscarMedicamento" message="tns:IService1_BuscarMedicamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BuscarMedicamentoResponse" message="tns:IService1_BuscarMedicamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarMedicamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarMedicamentos" message="tns:IService1_MostrarMedicamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarMedicamentosResponse" message="tns:IService1_MostrarMedicamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPacientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarPacientes" message="tns:IService1_ListarPacientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarPacientesResponse" message="tns:IService1_ListarPacientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarContraseña" message="tns:IService1_ActualizarContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarContraseñaResponse" message="tns:IService1_ActualizarContraseña_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarPaciente" message="tns:IService1_ActualizarPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarPacienteResponse" message="tns:IService1_ActualizarPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerDatosPaciente" message="tns:IService1_ObtenerDatosPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerDatosPacienteResponse" message="tns:IService1_ObtenerDatosPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BuscarCitas" message="tns:IService1_BuscarCitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BuscarCitasResponse" message="tns:IService1_BuscarCitas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprogramarCitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReprogramarCitas" message="tns:IService1_ReprogramarCitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReprogramarCitasResponse" message="tns:IService1_ReprogramarCitas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CancelarCitas" message="tns:IService1_CancelarCitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CancelarCitasResponse" message="tns:IService1_CancelarCitas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="llenarGridCitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/llenarGridCitas" message="tns:IService1_llenarGridCitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/llenarGridCitasResponse" message="tns:IService1_llenarGridCitas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegenerarContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegenerarContraseña" message="tns:IService1_RegenerarContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegenerarContraseñaResponse" message="tns:IService1_RegenerarContraseña_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FiltrarPacientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FiltrarPacientes" message="tns:IService1_FiltrarPacientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FiltrarPacientesResponse" message="tns:IService1_FiltrarPacientes_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutenticarPersona">
+      <soap:operation soapAction="http://tempuri.org/IService1/AutenticarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistePersona">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExistePersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LlenarGrillaMedicamentos">
+      <soap:operation soapAction="http://tempuri.org/IService1/LlenarGrillaMedicamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="llenarGridMedicamentos">
+      <soap:operation soapAction="http://tempuri.org/IService1/llenarGridMedicamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarusuarios">
+      <soap:operation soapAction="http://tempuri.org/IService1/registrarusuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LlenarGrilla">
+      <soap:operation soapAction="http://tempuri.org/IService1/LlenarGrilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActivarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesactivarPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/DesactivarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarXML">
+      <soap:operation soapAction="http://tempuri.org/IService1/cargarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GridActivacion">
+      <soap:operation soapAction="http://tempuri.org/IService1/GridActivacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generarPass">
+      <soap:operation soapAction="http://tempuri.org/IService1/generarPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarconsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/actualizarconsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarConsult">
+      <soap:operation soapAction="http://tempuri.org/IService1/CargarConsult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cargar_Persona">
+      <soap:operation soapAction="http://tempuri.org/IService1/Cargar_Persona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviar_correo">
+      <soap:operation soapAction="http://tempuri.org/IService1/enviar_correo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerConsultaPorEstado">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerConsultaPorEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresarConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/IngresarConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMedicamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/BuscarMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarMedicamentos">
+      <soap:operation soapAction="http://tempuri.org/IService1/MostrarMedicamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPacientes">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContraseña">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerDatosPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCitas">
+      <soap:operation soapAction="http://tempuri.org/IService1/BuscarCitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprogramarCitas">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReprogramarCitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCitas">
+      <soap:operation soapAction="http://tempuri.org/IService1/CancelarCitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="llenarGridCitas">
+      <soap:operation soapAction="http://tempuri.org/IService1/llenarGridCitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegenerarContraseña">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegenerarContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltrarPacientes">
+      <soap:operation soapAction="http://tempuri.org/IService1/FiltrarPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:4640/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

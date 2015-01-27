@@ -1,0 +1,69 @@
+﻿.Body {
+    padding:0;
+    margin-left:8%;
+    margin-right:8%;
+    text-align:justify;
+    border-radius:5px;
+    /*border: 2px solid #ccc;*/
+	font-family: 'Segoe UI' Verdana Helvetica sans-serif;
+    color:#3289ac;
+}
+#top {
+    text-align:center;
+}
+.ne {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+legend {
+    text-align:center;
+    font-size:22px;
+    font-style:oblique;
+}
+h2 {
+    text-align:center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding:6px;
+}
+hr {
+    border: 1px solid #ccc;
+}
+.grid {
+    vertical-align: middle;
+    text-align:center;
+    border-radius:5px;
+    background-color:#3227ac;
+}
+tr {
+    color:#3278ac;
+}
+.t1 {
+    text-align:right;
+}
+.t2 {
+    text-align:left;
+}
+.t3 {
+    text-align:center;
+}
+.t4 {
+    text-align:justify;
+    margin-left: 5%;
+    position:relative;
+    float:left;
+    font-size:20px;
+}
+.campos {
+    font-size:13px;
+    margin-left:8px;
+    color:red;
+}
+#navega {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align:center;
+}
+.t5 {
+    margin-left:20px;
+}

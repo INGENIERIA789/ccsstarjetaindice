@@ -1,0 +1,23 @@
+F:\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.csprojResolveAssemblyReference.cache
+F:\Hoasis\Hoasis.BS\bin\Debug\Dominio\Validacion\validar.xsd
+F:\Hoasis\Hoasis.BS\bin\Debug\Hoasis.BS.dll
+F:\Hoasis\Hoasis.BS\bin\Debug\Hoasis.BS.pdb
+F:\Hoasis\Hoasis.BS\bin\Debug\itextsharp.dll
+F:\Hoasis\Hoasis.BS\bin\Debug\itextsharp.xml
+F:\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.dll
+F:\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.pdb
+E:\Hoasis\Hoasis.BS\bin\Debug\Dominio\Validacion\validar.xsd
+E:\Hoasis\Hoasis.BS\bin\Debug\Hoasis.BS.dll
+E:\Hoasis\Hoasis.BS\bin\Debug\Hoasis.BS.pdb
+E:\Hoasis\Hoasis.BS\bin\Debug\itextsharp.xml
+E:\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.csprojResolveAssemblyReference.cache
+E:\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.dll
+E:\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.pdb
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\bin\Debug\Dominio\Validacion\validar.xsd
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\bin\Debug\Hoasis.BS.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\bin\Debug\Hoasis.BS.pdb
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\bin\Debug\itextsharp.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\bin\Debug\itextsharp.xml
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.csprojResolveAssemblyReference.cache
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.BS\obj\Debug\Hoasis.BS.pdb

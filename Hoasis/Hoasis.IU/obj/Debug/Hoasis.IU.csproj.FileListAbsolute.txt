@@ -1,0 +1,25 @@
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.IU\bin\Hoasis.IU.dll
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.IU\bin\Hoasis.IU.pdb
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.dll
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.pdb
+C:\Users\Martín\Documents\Visual Studio 2012\Projects\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.csprojResolveAssemblyReference.cache
+F:\Hoasis\Hoasis.IU\bin\Hoasis.IU.dll
+F:\Hoasis\Hoasis.IU\bin\Hoasis.IU.pdb
+F:\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.csprojResolveAssemblyReference.cache
+F:\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.dll
+F:\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.pdb
+F:\Hoasis\Hoasis.IU\bin\itextsharp.dll
+F:\Hoasis\Hoasis.IU\bin\itextsharp.xml
+E:\Hoasis\Hoasis.IU\bin\Hoasis.IU.dll
+E:\Hoasis\Hoasis.IU\bin\Hoasis.IU.pdb
+E:\Hoasis\Hoasis.IU\bin\itextsharp.xml
+E:\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.csprojResolveAssemblyReference.cache
+E:\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.dll
+E:\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.pdb
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.IU\bin\Hoasis.IU.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.IU\bin\Hoasis.IU.pdb
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.IU\bin\itextsharp.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.IU\bin\itextsharp.xml
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.csprojResolveAssemblyReference.cache
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.dll
+F:\Respaldo hoasis 31-10-14\Hoasis\Hoasis.IU\obj\Debug\Hoasis.IU.pdb
