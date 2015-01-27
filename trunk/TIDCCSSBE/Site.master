@@ -36,8 +36,10 @@
             </Scripts>
         </asp:ScriptManager>
         <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-            <img src="img/logo.png" runat="server" width="70" height="60" /><asp:Label ID="Label1" runat="server" Font-Size="XX-Large" ForeColor="#0066FF" Text="             Caja Costarricense del Seguro Social"></asp:Label>
-<div class="container">
+            <img src="img/head1.png" runat="server"/>
+            
+      <!--      <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" ForeColor="#0066FF" Text="Caja Costarricense del Seguro Social"></asp:Label>
+       --> <div class="container">
                 <div class="navbar-header">
                     <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                         <span class="sr-only">Toggle navigation</span>
@@ -109,7 +111,7 @@
                     </asp:LoginView>
                 </div>
             </div>
-        </nav>
+     </nav>
         <br />
         <br />
         <div class="container body-content">
