@@ -36,4 +36,8 @@ public partial class UI_Paciente_BuscarTID : System.Web.UI.Page
             db.Dispose();
         }
     }
+    public void busqueda()
+    {
+    
+    }
 }

@@ -1,6 +1,0 @@
-C:\Users\ProducJeffer\Documents\Visual Studio 2012\SocialNetwork\WS.SN\bin\Debug\WS.SN.dll.config
-C:\Users\ProducJeffer\Documents\Visual Studio 2012\SocialNetwork\WS.SN\bin\Debug\WS.SN.dll
-C:\Users\ProducJeffer\Documents\Visual Studio 2012\SocialNetwork\WS.SN\bin\Debug\WS.SN.pdb
-C:\Users\ProducJeffer\Documents\Visual Studio 2012\SocialNetwork\WS.SN\obj\Debug\WS.SN.csprojResolveAssemblyReference.cache
-C:\Users\ProducJeffer\Documents\Visual Studio 2012\SocialNetwork\WS.SN\obj\Debug\WS.SN.dll
-C:\Users\ProducJeffer\Documents\Visual Studio 2012\SocialNetwork\WS.SN\obj\Debug\WS.SN.pdb
